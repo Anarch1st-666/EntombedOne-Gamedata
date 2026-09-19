@@ -4,34 +4,56 @@
 		<text font="letterica16" r="238" g="224" b="198"/>		
 	</speech_menu>
 	
-	<static_health x="860" y="660" width="155" height="34">
+	<!--static_health x="860" y="660" width="155" height="34">
 		<texture>ui_hud_shkala_health</texture>
 		<auto_static x="5" y="10" width="19" height="18">
 			<texture>ui_hud_icon_health</texture>
 		</auto_static>
 	</static_health>
-
 	<progress_bar_health x="33" y="5" width="110" height="10" horz="1" min="0" max="100" pos="0">
 		<progress>
 			<texture>ui_hud_shk_health</texture>
 		</progress>
-	</progress_bar_health>
+	</progress_bar_health-->
 	
+     <static_health x="856" y="688" width="195" height="39" stretch="1">
+          <auto_static x="9955" y="6" width="80" height="20">
+               <text font="small" a="255" r="239" g="154" b="29" align="c">ui_hud_text_health</text>
+          </auto_static>
+          <texture>ui_hud_la_bar_health</texture>
+     </static_health>
+     <progress_bar_health x="35" y="12" width="114" height="14" horz="1" min="0" max="100" pos="0">
+          <progress>
+               <texture tile="0" length="114">ui_hud_progress_bar_red</texture>
+               <background>ui_la_blank</background>
+          </progress>
+     </progress_bar_health>
 	
-	<static_armor x="860" y="622" width="155" height="34">
+	<!--static_armor x="860" y="622" width="155" height="34">
 		<texture>ui_hud_shkala_armor</texture>		
 		<auto_static x="5" y="6" width="19" height="18">
 			<texture>ui_hud_icon_armour</texture>
 		</auto_static>
 	</static_armor>
-
 	<progress_bar_armor x="33" y="24" width="110" height="10" horz="1" min="0" max="100" pos="0">
 		<progress>
 			<texture>ui_hud_shk_armour</texture>
 		</progress>
-	</progress_bar_armor>
+	</progress_bar_armor-->
+     <static_armor x="858" y="665" width="195" height="30" stretch="1">
+          <texture>ui_hud_la_bar_stamina</texture>
+          <auto_static x="9955" y="6" width="80" height="20">
+               <text font="small" a="255" r="239" g="154" b="29" align="c">ui_hud_text_armor</text>
+          </auto_static>
+     </static_armor>
+     <progress_bar_armor x="33" y="11" width="114" height="14" horz="1" min="0" max="100" pos="0">
+          <progress>
+               <texture tile="0" length="114" a="255" r="248" g="163" b="30">ui_hud_progress_bar_green</texture>
+               <background>ui_la_blank</background>
+          </progress>
+     </progress_bar_armor>
 	
-	<static_weapon x="860" y="692" width="120" height="65">
+	<!--static_weapon x="860" y="692" width="120" height="65">
 		<text complex_mode="0" x="40" y="0" font="letterica16" r="255" g="255" b="255" a="130"/>
 		<texture>ui_hud_frame_patron</texture>
 	</static_weapon>
@@ -39,10 +61,23 @@
 	<static_ammo x="75" y="22" width="70" height="30">
 		<text align="c" complex_mode="0" font="graffiti32" r="238" g="155" b="23" a="255">Ammo</text>
 	</static_ammo>
-	
 	<static_wpn_icon x="0" y="13" width="80" height="42">
 		<text font="graffiti19" r="239" g="154" b="29" a="230"/>
-	</static_wpn_icon>
+	</static_wpn_icon-->
+	
+	<static_weapon x="856" y="468" width="200" height="300" stretch="1">
+          <text x="80" y="258" font="arial_14" color="ui_clr_1"/>
+          <texture>ui_hud_la_weapon_trans</texture>
+     </static_weapon>
+     <static_ammo x="80" y="269" width="70" height="30">
+          <text align="l" complex_mode="0" font="graffiti22" color="UI_orange">Ammo</text>
+     </static_ammo>
+     <static_wpn_firemode x="135" y="285" width="24" height="15">
+          <text align="c" complex_mode="0" font="arial_14" color="ui_clr_1">(A)</text>
+     </static_wpn_firemode>
+     <static_wpn_icon x="19" y="247" width="60" height="30" stretch="1">
+          <text font="graffiti19" r="239" g="154" b="29" a="230"/>
+     </static_wpn_icon>
 
 	<car_panel x="860" y="584" width="150" height="200"/>
 	

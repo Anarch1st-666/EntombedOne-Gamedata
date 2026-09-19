@@ -1,0 +1,98 @@
+<w>
+  <wpn_crosshair_pso x="0" y="0" width="1024" height="768">
+    <auto_static x="292" y="0" width="440" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_pso</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="731" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_pso>
+  
+  <wpn_crosshair_vss x="0" y="0" width="1024" height="768">
+    <auto_static x="292" y="0" width="440" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_vss</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="731" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_vss>
+
+  <wpn_crosshair_l85 x="0" y="0" width="1024" height="768">
+    <auto_static x="292" y="0" width="440" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_l85</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="731" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_l85>
+
+  <wpn_crosshair_acog x="0" y="0" width="1024" height="768">
+    <auto_static x="292" y="0" width="440" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_acog</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="731" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_acog>
+
+  <wpn_crosshair_g36 x="0" y="0" width="1024" height="768">
+    <auto_static x="292" y="0" width="440" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_g36</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="731" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_g36>
+
+  <wpn_crosshair_fn2000 x="0" y="0" width="1024" height="768">
+    <auto_static x="292" y="0" width="440" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_fn2000</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="731" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_fn2000>
+
+  <wpn_crosshair_gauss x="0" y="0" width="1024" height="768">
+    <auto_static x="292" y="0" width="440" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_gauss</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="731" y="0" width="294" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_gauss>
+
+  <wpn_crosshair_bino x="0" y="0" width="1024" height="768">
+    <auto_static x="128" y="0" width="768" height="768" stretch="1">
+      <texture>wpn\crosshairs\wpn_crosshair_bino</texture>
+    </auto_static>
+    <auto_static x="-1" y="0" width="130" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_l</texture>
+    </auto_static>
+    <auto_static x="895" y="0" width="130" height="768" stretch="1">
+      <texture>wpn\wpn_crosshair_add_r</texture>
+    </auto_static>
+  </wpn_crosshair_bino>
+</w>
+
