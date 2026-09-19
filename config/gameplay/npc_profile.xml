@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<xml>
+	<character id="actor">
+		<class>Actor</class>
+		<specific_character>actor</specific_character>
+	</character>
+	<character id="default">
+		<class>Stalker_general</class>
+	</character>
+</xml>

@@ -1,0 +1,69 @@
+--[[------------------------------------------------------------------------------------------------
+База данных живых онлайновых объектов, зон и рестрикторов, актёра
+Чугай Александр
+--------------------------------------------------------------------------------------------------]]
+
+actor               = nil
+trader				= nil
+zone_by_name        = {}
+storage             = {}
+sound               = {}
+heli                = {}
+camp_storage        = {}
+smart_terrain_by_id = {}
+info_restr          = {}
+strn_by_respawn     = {}
+
+
+function add_obj( obj )
+end
+function del_obj( obj )
+	storage   [obj:id()] = nil
+end
+
+
+function add_zone( zone )
+	zone_by_name[zone:name()] = zone
+	add_obj( zone )
+end
+function del_zone( zone )
+	zone_by_name[zone:name()] = nil
+	del_obj( zone )
+end
+
+
+function add_actor( obj )
+	actor = obj
+	add_obj( obj )
+end
+function del_actor()
+	del_obj( actor )
+	actor = nil
+end
+
+
+function add_heli(obj)	
+	heli[obj:id()] = obj
+end	
+function del_heli(obj)
+	heli[obj:id()] = nil
+end	
+
+
+function add_smart_terrain( obj )
+	smart_terrain_by_id[obj.id] = obj
+end
+function del_smart_terrain( obj )
+	smart_terrain_by_id[obj.id] = nil
+end
+
+
+--[[function add_sl( sl )
+	sl_by_name[sl:name()] = sl
+	add_obj( sl )
+end
+
+function del_sl( sl )
+	sl_by_name[sl:name()] = nil
+	del_obj( sl )
+end]]

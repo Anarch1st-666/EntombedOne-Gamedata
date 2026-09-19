@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding="windows-1251"?>
+<game_tasks_data>
+
+#include "gameplay\game_tasks_by_vendor.xml"
+
+</game_tasks_data>

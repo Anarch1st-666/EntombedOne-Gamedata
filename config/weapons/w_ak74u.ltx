@@ -1,0 +1,341 @@
+[wpn_ak74u]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+$spawn              	= "weapons\ak-74u"	; name and section in level editor
+$npc					= on				
+$prefetch 				= 8
+scheduled				= off               ;[] option for ALife Simulator
+cform               	= skeleton
+class               	= WP_LR300			; class of the weapon that corresponding to CPP class
+min_radius          	= 30				; [] for AI
+max_radius          	= 100				; [] for AI
+description				= enc_weapons1_wpn-ak74u
+	
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+;-----------------------------------------------------------------------------------
+holder_range_modifier	= 1.0		       ; во сколько раз увеличивается eye_range 
+holder_fov_modifier		= 0.7              ; во сколько раз увеличивается eye_fov
+;-----------------------------------------------------------------------------------
+
+
+cost					= 1000				; the price of the item
+weapon_class			= assault_rifle		; the type of the box that will be used in buy-menu in multiplayer mode	
+	
+ammo_limit				= 210				; obsolete
+ammo_elapsed			= 30				; obsolete
+	
+ammo_mag_size			= 30				; clip (magazine) size
+fire_modes				= 1, -1
+
+ammo_class				= ammo_5.45x39_fmj, ammo_5.45x39_ap   ; name of the ltx-section of used ammo 
+
+hand_dependence			= 1									; how many hands (1 or 2) we used to hold weapon in
+single_handed			= 0
+	
+slot 					= 2									; number of slot in inventory we put weapon in (1 - knife slot, 2 - pistol, 3 - rifle, 4 - grenade, 5 - apparatus)
+animation_slot			= 2									; type of the animation that will be used
+
+
+inv_name	        	= wpn-ak74u								; name in inventory	
+inv_name_short			= wpn-ak74u	
+inv_weight			= 2.7								; weight in inventory
+
+inv_grid_width			= 4	 ; position and size of the icon that will be used to display weapon in the inventory menu
+inv_grid_height			= 2	 ; all icons are on the texture ui_icon_equipment.dds,   
+inv_grid_x				= 0  ; position and size are in terms of 64x64 squares
+inv_grid_y				= 16
+
+kill_msg_x			= 0
+kill_msg_y			= 123
+kill_msg_width		= 69
+kill_msg_height		= 30
+
+;-----------------------------------------------------------------------------------
+; base dispersion
+;
+; === Setting of the weapon shooting dispersal parameter ===
+;Dispersal consists from to basic constituents - dispersal of the weapon (relatively small). In fact, this is a dispersal of a weapon griped in a vice; - dispersal of the weapon behavior in the hands of the host (if he running, or walking or shoots in single shots or in a burst) is another, more significant factor of dispersal. 
+;Dispersal of the weapon depends only from basic dispersal, basket case factor ant time of the ammo.
+;Dispersal of the way the host shooting (standing, running and etc.)
+;Two types of shooting modes can be defined: - usual mode and zoomed mode.  
+;Usual mode: - depends from the position of the player while shooting (standing, sitting, walking and running)
+;Zoomed mode - depends from the dispersal of the weapon and do NOT depends from the position of the shooter. In that mode, dispersal of the weapon &laquo switches to;&raquo;  sight swinging (created be effector). 
+;Weapon recoil in the game also created by recoil effector. 
+;
+;-----------------------------------------------------------------------------------
+;params of weapon recoil
+fire_dispersion_base			= 0.35		;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor			= 1.09f
+
+;отдача
+cam_relax_speed         		= 6;0.3		;скорость возврата в исходное положение
+cam_dispersion          		= 0.3		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.20;0.15		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispertion_frac			= 0.9		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 9.0		;максимальный угол отдачи
+cam_max_angle_horz			= 30.0		;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 1.25;1.1		;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor 	= 5		;увеличение дисперсии в процентах при максимальном износе 
+misfire_probability 		= 0.003	;вероятность осечки при максимальном износе 
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.0001	;увеличение износа при каждом выстреле
+;-----------------------------------------------------------------------------------
+
+fire_point             		=  0.0, 0.262, 0.447		; position (3rd person view) for particles of fire 
+;fire_point2            		=  0.0, 0.262, 0.547		; position (3rd person view) for particles of fire (when shooting with secondary fire)
+
+flame_particles				= weapons\generic_weapon05	; particles for shooting effects
+smoke_particles				= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+	
+shell_point		 			= 0.00, 0.262, 0.189			; position (3rd person view) for shell to throw out
+shell_particles	 			= weapons\generic_shells	; name of the particles for shells
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 			= 0.95
+PDM_disp_accel_factor 			= 0.95
+PDM_crouch	 			= 1.0
+PDM_crouch_no_acc 			= 1.0
+
+; ttc
+hit_power               = 0.32, 0.36, 0.39, 0.42		;size of damage by bullet
+hit_impulse		 		= 140		;size of physic impulse by bullet	
+hit_type 				= fire_wound 	;[] type of the wound
+
+fire_distance            		= 200 ;1000		;maximum fire distance that bullet can fly
+bullet_speed				= 790		;starting bullet speed
+rpm                      		= 600;735		;max round per minute
+
+use_aim_bullet				= true		;Поддерживается ли первая суппер пуля
+time_to_aim					= 1.0	
+
+silencer_hit_power       		= 0.32
+silencer_hit_impulse	 		= 120
+silencer_fire_distance   		= 250
+silencer_bullet_speed	 		= 600
+
+hud                      	= wpn_ak74u_hud				; name of the section of the hud
+
+position         	        = -0.026,-0.215,0			; position (offset) and orientation of the weapon in the hands of character
+orientation      	        = 0,0,0						; (3rd person view)
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+strap_position         		= -0.18,-0.45,0.2			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -10,-5,10					; (3rd person view in degrees)
+strap_bone0					= bip01_spine2
+strap_bone1					= bip01_spine1
+
+visual         		        = weapons\ak-74u\ak74u.ogf	; name of the model for 3rd person view
+
+light_color					= 0.6,0.5,0.3				; params for light during the fire
+light_range					= 5							; radius
+light_var_color				= 0.05						
+light_var_range				= 0.5
+light_time 					= 0.2						
+
+
+ph_mass						= 5							; physic mass (kg)
+
+
+;addons
+scope_status				= 0							; 0 - no addon
+silencer_status				= 0;2							; 1 - permanent
+grenade_launcher_status		= 0							; 2 - attachable
+
+zoom_enabled				= true						; (on,off)zoom mode (right mouse button)
+zoom_rotate_time                         = 0.25
+scope_zoom_factor	    	= 75						; fov for zoom mode
+
+;scope_name 				= wpn_addon_scope			; section name for the attachable scope
+;scope_x 					= 60						; offset in inventory icon
+;scope_y 					= -2
+silencer_name  			= wpn_addon_silencer			; section name for the attachable silencer
+silencer_x 				= 168							; offset in inventory icon
+silencer_y 				= -3					
+;grenade_launcher_name 		= wpn_addon_grenade_launcher; section name for the attachable grenade launcher
+;grenade_launcher_x 		= 112						; offset in inventory icon
+;grenade_launcher_y 		= 17
+
+;sounds (name of the sound, volume (0.0 - 1.0), delay (sec))
+snd_draw                					= weapons\ak74_draw
+snd_holster             					= weapons\generic_holster
+;snd_shoot               					= weapons\n_ak74u_shot
+snd_shoot									= weapons\ak74u_shot_0
+snd_shoot1									= weapons\ak74u_shot_1
+snd_shoot2									= weapons\ak74u_shot_2
+snd_shoot3									= weapons\ak74u_shot_3
+snd_silncer_shot        					= weapons\w_ak74_shot1
+snd_empty               					= weapons\gen_empty, 0.5
+snd_switch									= weapons\groza_switch
+
+snd_fire_modes								= weapons\groza_switch
+snd_reload				           			= weapons\aks74u\aks74u_reload
+snd_reload_empty				           	= weapons\aks74u\aks74u_reload_full
+snd_reload_jammed							= weapons\aks74u\aks74u_revival
+
+;params when silencer is attached 
+;similar to corresponding params without prefix silencer_
+
+
+;silencer_flame_particles 	= weapons\generic_weapon01
+silencer_smoke_particles 	= weapons\generic_shoot_00
+
+snd_silncer_shot			= weapons\w_ak74_shot1 
+
+silencer_light_color		= 0.6,0.5,0.3
+silencer_light_range		= 0.01
+silencer_light_var_color	= 0.05
+silencer_light_var_range	= 0.5
+silencer_light_time 		= 0.2
+
+
+;-----------------------------------------------------------------------------
+;-- HUD DESCRIPTION
+;-----------------------------------------------------------------------------
+ 
+[wpn_ak74u_hud]
+zoom_hide_crosshair                      	= true
+attach_place_idx                         	= 0
+item_visual                              	= dynamics\weapons\wpn_ak74u\wpn_ak74u_hud.ogf
+
+item_position                            	= 0, 0, 0
+item_orientation                         	= 0, 0, 0
+
+hands_position                   			= -0.012851, -0.005993, -0.039157
+hands_position_16x9              			= -0.012851, -0.005993, -0.039157
+hands_orientation                        	= 0.55, 2.39, 0.15
+hands_orientation_16x9                   	= 0.55, 2.39, 0.15
+
+aim_hud_offset_pos_16x9 = 0.026617,-0.002219,0.112064
+aim_hud_offset_rot_16x9 = 0.016719,0.009048,0.000000
+aim_hud_offset_pos = 0.026617,-0.002219,0.112064
+aim_hud_offset_rot = 0.016719,0.009048,0.000000
+
+lowered_hud_offset_pos           			= 0.129572, -0.004901, 0
+lowered_hud_offset_pos_16x9      			= 0.129572, -0.004901, 0
+
+gl_hud_offset_pos                        	= 0, 0, 0
+gl_hud_offset_pos_16x9                   	= 0, 0, 0
+gl_hud_offset_rot                        	= 0, 0, 0
+gl_hud_offset_rot_16x9                   	= 0, 0, 0
+
+lean_hud_offset_pos                      	= 0, 0, 0
+lean_hud_offset_rot                      	= 0, 0, 0
+;-----------------------------------------------------------------------------
+anm_show                                 	= owa_ak74u_draw
+anm_show_empty								= owa_ak74u_draw
+anm_show_jammed                        		= owa_ak74u_draw, idle_jammed
+
+anm_hide                                 	= owa_ak74u_hide
+anm_hide_empty                              = owa_ak74u_hide
+anm_hide_jammed                        		= owa_ak74u_hide, idle_jammed 
+
+anm_idle                                 	= owa_ak74u_idle, idle
+anm_idle_jammed                        		= owa_ak74u_idle, idle_jammed
+anm_idle_empty                      		= owa_ak74u_idle, idle
+anm_idle_slow                       		= owa_ak74u_idle, idle
+anm_idle_crouch                     		= owa_ak74u_idle, idle
+anm_idle_crouch_speed_k 					= 0.7
+anm_idle_crouch_slow                		= owa_ak74u_idle, idle
+anm_idle_crouch_slow_speed_k 				= 0.7
+anm_idle_slow_empty                 		= owa_ak74u_idle, idle
+anm_idle_crouch_empty               		= owa_ak74u_idle, idle
+anm_idle_crouch_empty_speed_k 				= 0.7
+anm_idle_crouch_slow_empty          		= owa_ak74u_idle, idle
+anm_idle_crouch_slow_empty_speed_k 			= 0.7
+anm_idle_slow_jammed                		= owa_ak74u_idle, idle_jammed
+anm_idle_crouch_jammed              		= owa_ak74u_idle, idle_jammed
+anm_idle_crouch_jammed_speed_k 				= 0.7
+anm_idle_crouch_slow_jammed         		= owa_ak74u_idle, idle_jammed
+anm_idle_crouch_slow_jammed_speed_k 		= 0.7
+
+anm_idle_moving 							= owa_ak74u_walk
+anm_idle_moving_jammed 						= owa_ak74u_walk, idle_jammed
+anm_idle_moving_empty						= owa_ak74u_walk
+anm_idle_moving_slow 						= owa_ak74u_walk
+anm_idle_moving_slow_jammed 				= owa_ak74u_walk, idle_jammed
+anm_idle_moving_slow_empty					= owa_ak74u_walk
+anm_idle_moving_crouch 						= owa_ak74u_walk
+anm_idle_moving_crouch_speed_k 				= 0.7
+anm_idle_moving_crouch_jammed 				= owa_ak74u_walk, idle_jammed
+anm_idle_moving_crouch_jammed_speed_k 		= 0.7
+anm_idle_moving_crouch_empty				= owa_ak74u_walk
+anm_idle_moving_crouch_empty_speed_k 		= 0.7
+anm_idle_moving_crouch_slow 				= owa_ak74u_walk
+anm_idle_moving_crouch_slow_speed_k 		= 0.7
+anm_idle_moving_crouch_slow_jammed 			= owa_ak74u_walk, idle_jammed
+anm_idle_moving_crouch_slow_jammed_speed_k 	= 0.7
+anm_idle_moving_crouch_slow_empty			= owa_ak74u_walk
+anm_idle_moving_crouch_slow_empty_speed_k 	= 0.7
+
+anm_idle_aim_moving                      	= owa_ak74u_walk, idle
+anm_idle_aim_moving_speed_k = 0.75
+anm_idle_aim_moving_empty                   = owa_ak74u_walk, idle
+anm_idle_aim_moving_empty_speed_k = 0.75
+anm_idle_aim_moving_jammed             		= owa_ak74u_walk, idle_jammed
+anm_idle_aim_moving_jammed_speed_k = 0.75
+
+anm_idle_aim                             	= owa_ak74u_aim, idle_aim
+anm_idle_aim_jammed                    		= owa_ak74u_aim, idle_jammed
+anm_idle_aim_empty                          = owa_ak74u_aim, idle_aim
+anm_idle_aim_start                       	= owa_ak74u_aim_start, owa_aks74u_aim_start
+anm_idle_aim_start_empty                    = owa_ak74u_aim_start, owa_aks74u_aim_start
+anm_idle_aim_start_jammed              		= owa_ak74u_aim_start, idle_jammed
+anm_idle_aim_end                         	= owa_ak74u_aim_end, owa_aks74u_aim_end
+anm_idle_aim_end_empty                      = owa_ak74u_aim_end, owa_aks74u_aim_end
+anm_idle_aim_end_jammed                		= owa_ak74u_aim_end, idle_jammed
+
+anm_idle_sprint_start             			= owa_ak74u_sprint_start, idle
+anm_idle_sprint_end               			= owa_ak74u_sprint_end, idle
+anm_idle_sprint_start_jammed      			= owa_ak74u_sprint_start, idle_jammed
+anm_idle_sprint_end_jammed        			= owa_ak74u_sprint_end, idle_jammed
+anm_idle_sprint_start_empty              	= owa_ak74u_sprint_start, idle
+anm_idle_sprint_end_empty                	= owa_ak74u_sprint_end, idle
+
+anm_idle_sprint                          	= owa_ak74u_sprint
+anm_idle_sprint_empty              			= owa_ak74u_sprint
+anm_idle_sprint_jammed                 		= owa_ak74u_sprint, idle_jammed
+
+anm_reload                               	= owa_ak74u_reload, owa_aks74u_reload
+anm_reload_empty                         	= owa_ak74u_reload_empty, owa_aks74u_reload_full
+anm_reload_jammed                       	= owa_ak74u_misfire, owa_aks74u_revival
+anm_reload_jammed_last						= owa_ak74u_misfire, owa_aks74u_revival
+
+anm_shoot                					= owa_ak74u_shoot, owa_aks74u_shoot
+anm_shoot_sil            					= owa_ak74u_shoot, owa_aks74u_shoot
+anm_shoot_jammed	 						= owa_ak74u_shoot, idle_jammed
+anm_shoot_jammed_sil	 					= owa_ak74u_shoot, idle_jammed
+anm_shoot_last           					= owa_ak74u_shoot, owa_aks74u_shoot
+anm_shoot_last_sil       					= owa_ak74u_shoot, owa_aks74u_shoot
+anm_shoot_aim            					= owa_ak74u_aim_shoot, owa_aks74u_aim_shoot
+anm_shoot_aim_sil        					= owa_ak74u_aim_shoot, owa_aks74u_aim_shoot
+anm_shoot_aim_jammed	 					= owa_ak74u_aim_shoot, idle_jammed
+anm_shoot_aim_jammed_sil 					= owa_ak74u_aim_shoot, idle_jammed
+anm_shoot_aim_last       					= owa_ak74u_aim_shoot, owa_aks74u_aim_shoot
+anm_shoot_aim_last_sil   					= owa_ak74u_aim_shoot, owa_aks74u_aim_shoot
+
+anm_fakeshoot_empty 		    			= owa_ak74u_shoot_fake, idle
+anm_fakeshoot_empty_stop_k 					= 0.05
+anm_fakeshoot_jammed 		    			= owa_ak74u_shoot_fake, idle_jammed
+anm_fakeshoot_jammed_stop_k 				= 0.05
+anm_fakeshoot_aim_empty         			= owa_ak74u_aim_shoot_fake, idle_aim
+anm_fakeshoot_aim_empty_stop_k 				= 0.05
+anm_fakeshoot_aim_jammed        			= owa_ak74u_aim_shoot_fake, idle_jammed
+anm_fakeshoot_aim_jammed_stop_k 			= 0.05
+
+;anm_changefiremode                         = owa_ak74u_fire_change
+;anm_changefiremode_empty                   = owa_ak74u_fire_change
+;anm_changefiremode_jammed                 	= owa_ak74u_fire_change, idle_jammed
+;-----------------------------------------------------------------------------
+shell_bone                               	= wpn_body
+shell_dir                                	= 0, 1, 0
+shell_point                              	= 200, 200, 200
+
+fire_bone                                	= wpn_body
+fire_bone2                               	= wpn_body
+fire_point                               	= 0.0, 0.0, 0.5
+fire_point2                              	= 0.0, 0.0, 0.5
+fire_direction                           	= 0.0, 0.0, 1

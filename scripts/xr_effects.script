@@ -1,0 +1,481 @@
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function disable_ui_elements(actor, npc, p)
+    local i, v = 0, 0
+    for i, v in pairs(p) do
+        if v == "all" then
+            db.actor:hide_weapon()
+            level.disable_input()
+            level.hide_indicators()
+            break
+        elseif v == "weapon" then
+            db.actor:hide_weapon()
+        elseif v == "input" then
+            level.disable_input()
+        elseif v == "hud" then
+            level.hide_indicators()
+        end
+    end
+    --printf("xr_effects <disable_ui_elements>")
+end
+
+function enable_ui_elements(actor, npc, p)
+    local i, v = 0, 0
+    for i, v in pairs(p) do
+        if v == "all" then
+            level.show_indicators()
+            level.enable_input()
+            db.actor:restore_weapon()
+            break
+        elseif v == "hud" then
+            level.show_indicators()
+        elseif v == "input" then
+            level.enable_input()
+        elseif v == "weapon" then
+            db.actor:restore_weapon()
+        end
+    end
+end
+
+function disable_ui(actor, npc)
+    db.actor:hide_weapon()
+    level.disable_input()
+    level.hide_indicators()
+    --printf("xr_effects <disable_ui>")
+end
+
+function enable_ui(actor, npc)
+    level.show_indicators()
+    level.enable_input()
+    db.actor:restore_weapon()
+    --printf("xr_effects <enable_ui>")
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function run_cam_effector(actor, npc, p)
+    if p[1] then
+        local loop, num = false, (1000 + math.random(100))
+        
+        if p[2] and type(p[2]) == "number" and p[2] > 0 then
+            num = p[2]
+        end
+
+        if p[3] and p[3] == "true" then
+            loop = true
+        end
+        
+        --level.add_pp_effector(p[1] .. ".ppe", num, loop)
+	    level.add_cam_effector("camera_effects\\" .. p[1] .. ".anm", num, loop, "")	                  
+    end
+end
+
+function stop_cam_effector(actor, npc, p)
+    if p[1] and type(p[1]) == "number" and p[1] > 0 then
+        level.remove_cam_effector(p[1])
+    end
+end
+
+function run_postprocess(actor, npc, p)
+    if p[1] then
+        local loop, num = false, (2000 + math.random(100))
+        
+        if p[2] and type(p[2]) == "number" and p[2] > 0 then
+            num = p[2]
+        end
+
+        if p[3] and p[3] == "true" then
+            loop = true
+        end
+        
+        level.add_pp_effector(p[1] .. ".ppe", num, loop)
+    end
+end
+
+function stop_postprocess(actor, npc, p)
+    if p[1] and type(p[1]) == "number" and p[1] > 0 then
+        level.remove_pp_effector(p[1])
+    end
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function run_tutorial(actor, npc, p)
+	game.start_tutorial(p[1])
+end
+
+function teleport_actor(actor, npc, p)
+	local point = patrol(p[1])
+	local look = patrol(p[2])
+	
+	db.actor:set_actor_position(point:point(0))
+	local dir = look:point(0):sub(point:point(0))
+	db.actor:set_actor_direction(-dir:getH())	
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function give_item(actor, npc, p)
+    if p[1] then
+        alife():create(p[1], npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id())
+    end
+end
+
+function give_items(actor, npc, p)
+    local pos, lv_id, gv_id, npc_id = npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id()
+	for i=1, #p, 2 do
+		local cnt = p[i+1] or 1
+		for j=1, cnt do
+			alife():create(p[i], pos, lv_id, gv_id, npc_id)
+		end
+    end
+end
+
+function got_item(actor, npc, p)
+    if p[1] then
+        alife():create(p[1], actor:position(), actor:level_vertex_id(), actor:game_vertex_id(), actor:id())
+    end
+end
+
+function got_items(actor, npc, p)
+    local pos, lv_id, gv_id, actor_id = actor:position(), actor:level_vertex_id(), actor:game_vertex_id(), actor:id()
+	for i=1, #p, 2 do
+		local cnt = p[i+1] or 1
+		for j=1, cnt do
+			alife():create(p[i], pos, lv_id, gv_id, actor_id)
+		end
+    end
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function respawner_spawn(actor, npc, p)
+    if p[1] then
+		se_respawn.spawn(p[1])
+    end
+end
+
+-- ---------------------------------------------------------------------------------------------------------------------
+--[[
+Дать сталкеру небольшой пинок. Например чтоб скинуть его с возвышения.
+параметры: actor, npc, p[direction,bone,power,impulse,reverse=false]
+    1. direction - если строка, то считается, что это имя пути и в сторону
+        первой точки производится толчек. Если же это число, то оно
+        рассматривается как story_id персонажа от которого должен поступить хит.
+    2. bone - строка. Имя кости, по которой наносится удар.
+    3. power - сила удара
+    4. impulse - импульс
+    5. reverse (true/false) - изменение направления удара. по умолчанию false
+--]]
+function hit_npc(actor, npc, p)
+	local h = hit()
+	local rev = p[5] and p[5] == 'true'
+	h.draftsman = npc
+	h.type = hit.wound
+	if type(p[1]) == 'number' then
+		local hitter = level_object_by_sid(p[1])
+		if not hitter then return end
+	    if rev then
+	        h.draftsman = hitter
+		    h.direction = hitter:position():sub(npc:position())
+	    else
+		    h.direction = npc:position():sub(hitter:position())
+	    end
+	else
+	    if rev then
+	        h.draftsman = nil
+		    h.direction = npc:position():sub(patrol(p[1]):point(0))
+	    else
+		    h.direction = patrol(p[1]):point(0):sub(npc:position())
+	    end
+	end
+	h:bone(p[2])
+	h.power = p[3]
+	h.impulse = p[4]
+	--printf("HIT EFFECT: (%s, %s,%d,%d) health(%s)", npc:name(), p[2], h.power, h.impulse, npc.health)
+	npc:hit(h)
+end
+
+--[[
+Дать обьекту, заданному story_id, хит.
+параметры: actor, npc, p[sid,bone,power,impulse,hit_src=npc:position()]
+    1. sid - story_id обьекта, по которому наносится хит.
+    2. bone - строка. Имя кости, по которой наносится удар.
+    3. power - сила удара
+    4. impulse - импульс
+    5. hit_src - если число, то рассматривается как story_id обьекта, со стороны
+        которого наносится хит (он же является и инициатором хита), иначе это
+        точка (waypoint), из которой по объекту наносится хит.
+        Если не задано, то берется позиция обьекта, из которого была вызвана
+        данная функция.
+--]]
+function hit_obj(actor, npc, p)
+	local h = hit()
+	local obj = level_object_by_sid(p[1])
+	local sid = nil
+
+	if not obj then
+--		abort("HIT_OBJ [%s]. Target object does not exist", npc:name())
+		return
+	end
+
+	h:bone(p[2])
+	h.power = p[3]
+	h.impulse = p[4]
+
+	if p[5] then
+	    sid = tonumber(p[5])
+	    if sid then
+	        sid = level_object_by_sid(sid)
+	        if sid then
+	            h.direction = vector():sub(sid:position(), obj:position())
+	        end
+	    end
+	    if not sid then
+	        h.direction = vector():sub(patrol(p[5]):point(0), obj:position())
+	    end
+	else
+	    h.direction = vector():sub(npc:position(), obj:position())
+	end
+
+	h.draftsman = sid or npc
+	h.type = hit.wound
+	obj:hit(h)
+end
+
+--[[
+Дать сталкеру небольшой пинок после смерти. Аналогично предыдущему, только направление хита теперь
+вычисляется через убийцу. Поэтому параметра direction нет.
+параметры: actor, npc, p[bone,power,impulse]
+FIXME: killer:position() isn't working
+--]]
+function hit_by_killer(actor, npc, p)
+	if not npc then return end
+	local t = db.storage[npc:id()].death
+	if t == nil or t.killer == -1 then return end
+	local killer = db.storage[t.killer]
+	if killer == nil then return end
+	local p1, p2
+	p1 = npc:position()
+	p2 = killer:position()
+	local h = hit()
+	h.draftsman = npc
+	h.type = hit.wound
+	h.direction = utils.vector_copy_by_val(p1):sub(p2)
+	h.bone = p[1]
+	h.power = p[2]
+	h.impulse = p[3]
+	npc:hit(h)
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+-- играть звук в голове актёра
+function play_snd(actor, npc, p)
+	if p[1] then
+		local snd_obj = xr_sound.get_safe_sound_object(p[1])
+		--snd_obj:play(actor, p[2] or 0, sound_object.s2d)
+		snd_obj:play_no_feedback(actor, sound_object.s2d, p[2] or 0, vector(), 1.0)
+	end
+end
+
+-- играть звук от указанного объекта
+function play_snd_from_obj(actor, npc, p)
+	if p[1] and p[2] then
+		local snd_obj = xr_sound.get_safe_sound_object(p[2])
+		local obj     = level_object_by_sid(p[1])
+        if obj ~= nil then
+			snd_obj:play_no_feedback(obj, sound_object.s3d, 0, obj:position(), 1.0)
+		end
+	end
+end
+
+-- играть звук от указанного объекта
+function play_snd_now(actor, npc, p)
+	xr_sound.set_sound_play(npc, p[1])
+end
+
+-- слелать актёра врагом персонажам, которые в онлайне под указанным смартом
+function set_gulag_enemy_actor( actor, npc, p )
+	if p[1] then
+		xr_gulag.setGulagEnemy(p[1], actor)
+	end
+end
+
+-- ---------------------------------------------------------------------------------------------------------------------
+
+-- постпроцесс и влияние удара в морду
+function actor_punch(npc)
+	if db.actor:position():distance_to_sqr(npc:position()) > 4 then
+		return
+	end
+
+	local active_slot = db.actor:active_slot()
+	if active_slot ~= 1 and
+	   active_slot ~= 2
+	then
+		return 
+	end
+
+	local active_item = db.actor:active_item()
+	if active_item then
+		db.actor:drop_item(active_item)
+	end
+	
+	set_inactivate_input_time(30)
+	local snd_obj = xr_sound.get_safe_sound_object([[affects\hit_fist]])
+	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+
+	level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")		
+end
+
+-- забывание обиды
+function clearAbuse(npc)
+	printf("CLEAR_ABUSE")
+	xr_abuse.clear_abuse(npc)
+end
+
+-- ---------------------------------------------------------------------------------------------------------------------
+---Выключение динамической лампочки (hanging_lamp)
+function turn_off(actor, npc, p)
+	local obj = level_object_by_sid(p[1])
+
+	if not obj then
+		abort("TURN_OFF [%s]. Target object does not exist", npc:name())
+		return
+	end
+	obj:get_hanging_lamp():turn_off()
+end
+function turn_off_object(actor, npc)
+	npc:get_hanging_lamp():turn_off()
+end
+
+---Включение динамической лампочки (hanging_lamp)
+function turn_on(actor, npc, p)
+	local obj = level_object_by_sid(p[1])
+
+	if not obj then
+		abort("TURN_ON [%s]. Target object does not exist", npc:name())
+		return
+	end
+	obj:get_hanging_lamp():turn_on()
+end
+function turn_on_object(actor, npc)
+	npc:get_hanging_lamp():turn_on()
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function actor_friend(actor, npc)
+	npc:set_relation(game_object.friend, actor)
+end
+
+function actor_neutral(actor, npc)
+	npc:set_relation(game_object.neutral, actor)
+end
+
+function actor_enemy(actor, npc)
+	npc:set_relation(game_object.enemy, actor)
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+-- Вызов этой функции отключит обработчик [combat] боя для персонажа.
+-- Используется в случаях, когда все необходимые действия, такие как переключение на другую секцию,
+-- уже выполнены, и повторно выполнять их во время боя нельзя (а условия секции [combat] проверяются на каждом
+-- апдейте, когда персонаж в бою, если, конечно, не отключены вызовом этой функции).
+function disable_combat_handler(actor, npc)
+	if db.storage[npc:id()].combat then
+		db.storage[npc:id()].combat.enabled = false
+	end
+	
+	if db.storage[npc:id()].mob_combat then
+		db.storage[npc:id()].mob_combat.enabled = false
+	end
+end
+-- Вызов этой функции отключит обработчик [combat_ignore] перехвата боя для персонажа.
+function disable_combat_ignore_handler(actor, npc)
+	if db.storage[npc:id()].combat_ignore then
+		db.storage[npc:id()].combat_ignore.enabled = false
+	end
+end
+
+function search_gulag_job(actor, npc)
+	xr_gulag.resetJob(npc)
+end
+
+function set_stalker_enemy (sid, draftsman)
+    local npc = level_object_by_sid (sid)
+    if npc == nil or npc:alive () == false then
+       return 
+    end    
+    local h = hit ()
+    h.power = 0
+    h.direction = vector():set( 1, 0, 0 )
+    h.impulse = 0
+    h.draftsman = draftsman
+    h.type = hit.strike
+    npc:hit (h)
+end
+
+-------------------------------------------------------------------------------------
+-- kill
+-------------------------------------------------------------------------------------
+function kill_actor(actor, npc)
+    npc:set_relation(game_object.enemy, actor)
+    --actor:give_info_portion ("mil_bodyguard_kill")
+end
+
+function kill(actor, npc)
+	npc:kill( npc )
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function heli_set_enemy_actor(actor, npc)
+	local st = db.storage[npc:id()]
+	if not st.combat.enemy_id and actor:alive() then
+		st.combat.enemy_id = actor:id()
+
+		heli_snd.play_snd( st, heli_snd.snd_see_enemy, 1 )
+	end 
+end
+
+function heli_set_enemy(actor, npc, p)
+	local st  = db.storage[npc:id()]
+	local obj = level_object_by_sid( p[1] )
+
+	if not st.combat.enemy_id and obj:alive() then
+		st.combat.enemy_id = obj:id()
+
+		heli_snd.play_snd( st, heli_snd.snd_see_enemy, 1 )
+	end
+end
+
+function heli_clear_enemy(actor, npc)
+    db.storage[npc:id()].combat:forget_enemy()
+end
+
+function heli_start_flame(actor, npc)
+	bind_heli.heli_start_flame( npc )
+end
+
+function heli_die(actor, npc)
+	bind_heli.heli_die( npc )
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function rad_psi_hit (actor, npc)
+	level.add_pp_effector ("radar_psi.ppe", 2006, false)
+end
+
+function game_over(actor, npc)
+	if db.gameover_credits_started ~= true then
+		return
+	end
+	local c = get_console()
+--	c:execute("disconnect")
+	printf("main_menu on console command is executed")
+	c:execute("main_menu on")
+end
+
+function on_tutor_gameover_stop()
+	local c = get_console()
+--	c:execute("disconnect")
+	printf("main_menu on console command is executed")
+	c:execute("main_menu on")
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+

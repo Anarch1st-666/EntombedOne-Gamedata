@@ -1,0 +1,295 @@
+[wpn_pkm]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+$spawn              	= "weapons\pkm"	; name and section in level editor
+$npc					= on				
+$prefetch 				= 8
+scheduled				= off               ;[] option for ALife Simulator
+cform               	= skeleton
+class               	= WP_VAL			; class of the weapon that corresponding to CPP class
+min_radius          	= 0				; [] for AI
+max_radius          	= 50				; [] for AI
+description				= enc_weapons1_wpn-pkm
+	
+ef_main_weapon_type		= 2
+ef_weapon_type			= 6
+
+;-----------------------------------------------------------------------------------
+holder_range_modifier	= 1.0		       ; во скьJБEБEраБEувеличиваетс€ eye_range 
+holder_fov_modifier		= 0.7              ; во скьJБEБEраБEувеличиваетс€ eye_fov
+;-----------------------------------------------------------------------------------
+
+
+cost					= 20000				; the price of the item
+weapon_class			= assault_rifle		; the type of the box that will be used in buy-menu in multiplayer mode	
+	
+ammo_limit			= 250				; obsolete
+ammo_elapsed			= 100				; obsolete
+	
+ammo_mag_size			= 100				; clip (magazine) size
+fire_modes			= -1
+
+ammo_class			= ammo_7.62x54_7h1, ammo_7.62x54_7h14, ammo_7.62x54_ap   ; name of the ltx-section of used ammo 
+
+hand_dependence			= 1									; how many hands (1 or 2) we used to hold weapon in
+single_handed			= 0
+	
+slot 					= 2									; number of slot in inventory we put weapon in (1 - knife slot, 2 - pistol, 3 - rifle, 4 - grenade, 5 - apparatus)
+animation_slot			= 8									; type of the animation that will be used
+
+
+inv_name	        	= wpn-pkm								; name in inventory	
+inv_name_short			= wpn-pkm	
+inv_weight			= 7.5							; weight in inventory
+
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 0
+inv_grid_y         = 39
+
+
+kill_msg_x		= 80
+kill_msg_y		= 59
+kill_msg_width		= 294
+kill_msg_height		= 83
+
+;params of weapon recoil
+fire_dispersion_base			= 0.32		;угьJ (БEградусах) базовоБEдисперсиБEъAужБE (ъAужБE зажатого БEтисках)
+control_inertion_factor			= 3.0f
+
+;ќтдача
+cam_relax_speed         		= 15	         ;скъAъBть возврата БEисходньD БEБEжеыGБE
+cam_dispersion          		= 0.33		;увеличенБE угБE (БEградусах) БEБEждым выстреБEБE
+cam_dispersion_inc			= 0.23		;увеличениe cam_dispersion БEБEждым выстреБEБE
+cam_dispertion_frac			= 1.0		;ствоБEбудеБEБEдыБEтьБE ъь cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
+cam_max_angle				= 10.0		;БEБEималБEый угьJ ъCдачи
+cam_max_angle_horz			= 50.0		;(degree) maximum shot horizontal degree 
+cam_step_angle_horz			= 1.65		;(degree) size of step camera moved in horizontal position while shooting
+
+fire_dispersion_condition_factor 	= 15		;увеличение дисперсиБEБEБEъGентаБEБEБEБEБEималБEьK изыMсе 
+misfire_probability 		        = 0.005	;веро€тнъBть ъBечБE БEБEБEБEималБEьK изыMсе 
+misfire_condition_k			= 0.05
+condition_shot_dec 			= 0.001	;увеличение изыMса БEБEБEждьK выстреБE
+;-----------------------------------------------------------------------------------
+
+fire_point              = 0.0, 0.158, 0.845 ;0.000000,0.137000,0.649000
+fire_point2             = 0.0, 0.097, 0.722
+
+flame_particles				= weapons\generic_weapon03	; particles for shooting effects
+smoke_particles				= weapons\generic_shoot_00
+grenade_flame_particles		= weapons\generic_weapon01
+	
+shell_point             = -0.020000,0.167000,0.082000
+shell_dir               = 0.0, 0.0, 0.4
+shell_particles         = weapons\generic_shells
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 			= 3.0
+PDM_disp_accel_factor 			= 3.0
+PDM_crouch	 			= 1.0
+PDM_crouch_no_acc 			= 1.0
+
+; ttc
+hit_power              = 0.5, 0.5, 0.5, 0.5
+hit_impulse            = 120
+hit_type               = fire_wound
+
+fire_distance            		= 150		;maximum fire distance that bullet can fly
+bullet_speed            = 600        ;начальная скорость пули
+rpm                     = 525
+sprint_allowed			        = true
+
+use_aim_bullet				= false		;ѕьCдерживаетс€ БE БEрвБE суБEер БEБE
+time_to_aim				= 0.7	
+
+silencer_hit_power      = 0.55, 0.55, 0.55, 0.55
+silencer_hit_impulse    = 120
+silencer_fire_distance  = 250
+silencer_bullet_speed   = 600
+
+hud                      	= wpn_pkm_hud				; name of the section of the hud
+
+position                = -0.027, -0.097, 0.042
+orientation             = 0, -2, 0
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+strap_position          = -0.26,-0.11,0.25                                ; position (offset) and orientation of the weapon when it is strapped
+strap_orientation       = -15,-9,110                                        ; (3rd person view in degrees)
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+visual         		        = weapons\pkm\wpn_pkm.ogf	; name of the model for 3rd person view
+
+light_color					= 0.6,0.5,0.3				; params for light during the fire
+light_range					= 5							; radius
+light_var_color				= 0.05						
+light_var_range				= 0.5
+light_time 					= 0.2						
+
+
+ph_mass						= 4							; physic mass (kg)
+
+
+;addons
+scope_status			= 0							; 0 - no addon
+silencer_status			= 0							; 1 - permanent
+grenade_launcher_status		= 0							; 2 - attachable
+
+zoom_enabled			= true						; (on,off)zoom mode (right mouse button)
+scope_zoom_factor	    	= 75						; fov for zoom mode
+
+snd_draw					= weapons\generic_draw
+snd_holster					= weapons\generic_holster
+snd_empty					= weapons\gen_empty, 0.5
+
+snd_shoot					= weapons\pkm\pkm_shot
+snd_reload					= weapons\pkm\pkm_reload
+snd_reload_empty			= weapons\pkm\pkm_reload_full
+snd_reload_jammed			= weapons\pkm\pkm_revival
+
+snd_switch					= weapons\groza_switch, 1.0, 0.5
+
+;-----------------------------------------------------------------------------
+;-- HUD DESCRIPTION
+;-----------------------------------------------------------------------------
+ 
+[wpn_pkm_hud]
+zoom_hide_crosshair        			= true
+attach_place_idx        			= 0
+item_visual                			= dynamics\weapons\wpn_pkm\wpn_pkm_hud
+
+item_position               		= 0, 0, 0
+item_orientation            		= 0, 0, 0
+		
+aim_hud_offset_pos_16x9 = 0.008211,0.000892,0.142534
+aim_hud_offset_rot_16x9 = -0.003439,-0.001517,0.009321
+aim_hud_offset_pos = 0.008211,0.000892,0.142534
+aim_hud_offset_rot = -0.003439,-0.001517,0.009321
+
+hands_position              		= -0.064, -0.18, 0.14        
+hands_orientation           		= 2, 2, 0
+hands_position_16x9					= -0.008400,-0.005340,0.025950
+hands_orientation_16x9				= 0.000000,0.000000,0.000000
+
+lowered_hud_offset_pos           	= 0.1, 0, 0
+lowered_hud_offset_pos_16x9      	= 0.1, 0, 0
+
+gl_hud_offset_pos           		= 0, 0, 0
+gl_hud_offset_pos_16x9      		= 0, 0, 0
+gl_hud_offset_rot           		= 0, 0, 0
+gl_hud_offset_rot_16x9      		= 0, 0, 0
+
+lean_hud_offset_pos         		= 0, 0, 0
+lean_hud_offset_rot         		= 0, 0, 0
+
+anm_show                                 	= wpn_hand_pkm_siber_in,               wpn_pkm_siber_in
+anm_show_empty								= wpn_hand_pkm_siber_in,               wpn_pkm_siber_idle_empty
+anm_show_jammed                        		= wpn_hand_pkm_siber_in,               wpn_pkm_siber_in
+
+anm_hide                                 	= wpn_hand_pkm_siber_out,              idle
+anm_hide_empty                              = wpn_hand_pkm_siber_out,              wpn_pkm_siber_idle_empty
+anm_hide_jammed                        		= wpn_hand_pkm_siber_out,              idle
+
+anm_idle                                 	= wpn_hand_pkm_siber_idle,             idle
+anm_idle_jammed                        		= wpn_hand_pkm_siber_idle,             idle
+anm_idle_empty                      		= wpn_hand_pkm_siber_idle,             wpn_pkm_siber_idle_empty
+anm_idle_slow                       		= wpn_hand_pkm_siber_idle,             idle
+anm_idle_crouch                     		= wpn_hand_pkm_siber_idle,             idle
+anm_idle_crouch_speed_k 					= 0.7
+anm_idle_crouch_slow                		= wpn_hand_pkm_siber_idle,             idle
+anm_idle_crouch_slow_speed_k 				= 0.7
+anm_idle_slow_empty                 		= wpn_hand_pkm_siber_idle,             wpn_pkm_siber_idle_empty
+anm_idle_crouch_empty               		= wpn_hand_pkm_siber_idle,             wpn_pkm_siber_idle_empty
+anm_idle_crouch_empty_speed_k 				= 0.7
+anm_idle_crouch_slow_empty          		= wpn_hand_pkm_siber_idle,             wpn_pkm_siber_idle_empty
+anm_idle_crouch_slow_empty_speed_k 			= 0.7
+anm_idle_slow_jammed                		= wpn_hand_pkm_siber_idle,             idle
+anm_idle_crouch_jammed              		= wpn_hand_pkm_siber_idle,             idle
+anm_idle_crouch_jammed_speed_k 				= 0.7
+anm_idle_crouch_slow_jammed         		= wpn_hand_pkm_siber_idle,             idle
+anm_idle_crouch_slow_jammed_speed_k 		= 0.7
+
+anm_idle_moving 							= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_jammed 						= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_empty						= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_idle_empty
+anm_idle_moving_slow 						= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_slow_jammed 				= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_slow_empty					= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_idle_empty
+anm_idle_moving_crouch 						= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_crouch_speed_k 				= 0.7
+anm_idle_moving_crouch_jammed 				= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_crouch_jammed_speed_k 		= 0.7
+anm_idle_moving_crouch_empty				= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_idle_empty
+anm_idle_moving_crouch_empty_speed_k 		= 0.7
+anm_idle_moving_crouch_slow 				= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_crouch_slow_speed_k 		= 0.7
+anm_idle_moving_crouch_slow_jammed 			= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_moving_crouch_slow_jammed_speed_k 	= 0.7
+anm_idle_moving_crouch_slow_empty			= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_idle_empty
+anm_idle_moving_crouch_slow_empty_speed_k 	= 0.7
+
+anm_idle_aim_moving                      	= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_aim_moving_speed_k = 0.75
+anm_idle_aim_moving_empty                   = wpn_hand_pkm_siber_walk,             wpn_pkm_siber_idle_empty
+anm_idle_aim_moving_empty_speed_k = 0.75
+anm_idle_aim_moving_jammed             		= wpn_hand_pkm_siber_walk,             wpn_pkm_siber_walk
+anm_idle_aim_moving_jammed_speed_k = 0.75
+
+anm_idle_aim                             	= wpn_hand_pkm_siber_idle_aim,         idle
+anm_idle_aim_jammed                    		= wpn_hand_pkm_siber_idle_aim,         idle
+anm_idle_aim_empty                          = wpn_hand_pkm_siber_idle_aim,         wpn_pkm_siber_idle_empty
+
+anm_idle_aim_start                       	= wpn_hand_pkm_siber_in_aim,           wpn_pkm_siber_in_aim
+anm_idle_aim_start_empty                    = wpn_hand_pkm_siber_in_aim,           wpn_pkm_siber_idle_empty
+anm_idle_aim_start_jammed              		= wpn_hand_pkm_siber_in_aim,           wpn_pkm_siber_in_aim
+
+anm_idle_aim_end                         	= wpn_hand_pkm_siber_out_aim,          wpn_pkm_siber_out_aim
+anm_idle_aim_end_empty                      = wpn_hand_pkm_siber_out_aim,          wpn_pkm_siber_idle_empty
+anm_idle_aim_end_jammed                		= wpn_hand_pkm_siber_out_aim,          wpn_pkm_siber_out_aim
+
+;anm_idle_sprint_start             			= 
+;anm_idle_sprint_end               			= 
+;anm_idle_sprint_start_jammed      			= 
+;anm_idle_sprint_end_jammed        			= 
+;anm_idle_sprint_start_empty              	= 
+;anm_idle_sprint_end_empty                	= 
+
+anm_idle_sprint                          	= wpn_hand_pkm_siber_run,              wpn_pkm_siber_run
+anm_idle_sprint_empty              			= wpn_hand_pkm_siber_run,              wpn_pkm_siber_idle_empty
+anm_idle_sprint_jammed                 		= wpn_hand_pkm_siber_run,              wpn_pkm_siber_run
+
+anm_reload                               	= wpn_hand_pkm_siber_reload,           wpn_pkm_siber_reload
+anm_reload_empty                         	= wpn_hand_pkm_siber_reload_empty,     wpn_pkm_siber_reload_empty
+anm_reload_jammed                       	= wpn_hand_pkm_siber_misfire,          wpn_pkm_siber_misfire
+anm_reload_jammed_last						= wpn_hand_pkm_siber_misfire,          wpn_pkm_siber_misfire
+
+anm_shoot                					= wpn_hand_pkm_siber_shoot,            wpn_pkm_siber_shoot
+anm_shoot_sil            					= wpn_hand_pkm_siber_shoot,            wpn_pkm_siber_shoot
+anm_shoot_jammed	 						= wpn_hand_pkm_siber_shoot, idle
+anm_shoot_jammed_sil	 					= wpn_hand_pkm_siber_shoot, idle
+anm_shoot_last           					= wpn_hand_pkm_siber_shoot,            wpn_pkm_siber_shoot_empty
+anm_shoot_last_sil       					= wpn_hand_pkm_siber_shoot,            wpn_pkm_siber_shoot_empty
+anm_shoot_aim            					= wpn_hand_pkm_siber_shoot_aim,        wpn_pkm_siber_shoot
+anm_shoot_aim_sil        					= wpn_hand_pkm_siber_shoot_aim,        wpn_pkm_siber_shoot
+anm_shoot_aim_jammed	 					= wpn_hand_pkm_siber_shoot_aim, idle
+anm_shoot_aim_jammed_sil 					= wpn_hand_pkm_siber_shoot_aim, idle
+anm_shoot_aim_last       					= wpn_hand_pkm_siber_shoot_aim,        wpn_pkm_siber_shoot_empty
+anm_shoot_aim_last_sil   					= wpn_hand_pkm_siber_shoot_aim,        wpn_pkm_siber_shoot_empty
+
+anm_fakeshoot_empty 		    			= wpn_hand_pkm_siber_shoot_fake, 		wpn_pkm_siber_idle_empty
+anm_fakeshoot_empty_stop_k 					= 0.05
+anm_fakeshoot_jammed 		    			= wpn_hand_pkm_siber_shoot_fake, 		idle
+anm_fakeshoot_jammed_stop_k 				= 0.05
+anm_fakeshoot_aim_empty         			= wpn_hand_pkm_siber_shoot_aim_fake, 	wpn_pkm_siber_idle_empty
+anm_fakeshoot_aim_empty_stop_k 				= 0.05
+anm_fakeshoot_aim_jammed        			= wpn_hand_pkm_siber_shoot_aim_fake,    idle
+anm_fakeshoot_aim_jammed_stop_k 			= 0.05
+
+shell_bone                  		= gilza
+shell_dir                   		= 0, 11, 0
+shell_point                 		= 0, 10, 0
+
+fire_bone                   		= muzzle
+fire_bone2                  		= wpn_body
+fire_point                  		= 0, 0, 0
+fire_point2                 		= 0, 0, 0

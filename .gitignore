@@ -1,0 +1,12 @@
+# Ignore everything
+/*
+
+# except...
+!.gitignore
+!.gitattributes
+!/scripts/
+!/config/
+!/shaders/
+!/scripts/**
+!/config/**
+!/shaders/**

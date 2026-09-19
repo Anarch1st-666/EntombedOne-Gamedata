@@ -1,0 +1,264 @@
+[sect_identity_immunities]
+burn_immunity			= 1.0
+strike_immunity			= 1.0
+shock_immunity			= 1.0
+wound_immunity			= 1.0		
+wound_2_immunity		= 1.0
+radiation_immunity		= 1.0
+telepatic_immunity		= 1.0
+chemical_burn_immunity	= 1.0
+explosion_immunity		= 1.0
+fire_wound_immunity		= 1.0
+
+[identity_immunities]
+immunities_sect				= sect_identity_immunities
+use_aim_bullet				= false
+hit_probability_gd_novice	= 0.20
+hit_probability_gd_stalker	= 0.30
+hit_probability_gd_veteran	= 0.40
+hit_probability_gd_master	= 0.50
+
+[base]:identity_immunities
+$prefetch               = 64
+GroupControlSection     = spawn_group
+discovery_dependency    = 
+cform                   = skeleton
+
+
+[common_ph_friction_params_on_npc_death] ;Параметры для задания изменения трения в момент смерти персонажа
+ph_skeleton_airr_lin_factor   = 2.0 ;550.0 (изменно из-за того, что убрано домножение коэффициент 0.002 из кода)
+ph_skeleton_airr_ang_factor   = 0.0 ;0.0 (изменно из-за того, что убрано домножение на коэффициент 0.3 из кода (0.0*0.3=0.0))
+ph_skeleton_hinger_factor1    = 1.0 ;1.0 (изменно из-за того, что убрано домножение на коэффициент 5.0 из кода)
+ph_skeleton_ddelay	     	  = 15.0 ;Время изменения значения трения в суставе с момента создания шелла, сек
+
+ph_skel_fatal_impulse_factor  = 6.0
+ph_after_death_velocity_factor= 0.75
+ph_skel_shot_up_factor        = 0.25
+
+ph_skeleton_skin_friction_start	= 0.0   ;Стартовое значение трения для оболочки
+ph_skeleton_skin_friction_end	= 2.0   ;Финальное значение трения для оболочки
+ph_skeleton_skin_ddelay			= 6.0		;Время изменения значения трения с момента создания шелла, сек.
+ph_skeleton_skin_ddelay_after_wound = 2.0 ;Время изменения значения трения с момента создания шелла, сек.(для персонажа после ранения)
+ph_pelvis_factor_low_pose_detect =0.3	;длинна луча на коллизию с землёй из центра пелвиса
+										;если коллизиться, то персонаж находиться в нижней позе(или ранен)(в этом случае для него задаються другие параметры 
+										;трения и отсутствует домножение импульса для первого хита)
+ph_character_have_wounded_state = false; имеет ли персонаж состояние раненый
+
+[monster_base]:common_ph_friction_params_on_npc_death
+actor_hit_effect = effector_monster_hit
+
+;===========================================================================================================
+
+[graph_point]
+class                = AI_GRAPH
+$spawn               = "ai\graph point"
+
+[lights_hanging_lamp]
+GroupControlSection	= spawn_group
+$spawn 				= "physics\hanging lamp"
+class				= O_HLAMP
+script_binding      = bind_physic_object.init
+
+[physic_object]
+GroupControlSection	= spawn_group
+$spawn 				= "physics\object"
+$prefetch 			= 8
+class				= O_PHYS_S
+remove_time			= 60; after this time  unbreaked removable bone will be removed
+script_binding      = bind_physic_object.init
+
+[physic_destroyable_object]
+GroupControlSection	= spawn_group
+$spawn 				= "physics\destroyable_object"
+;$prefetch 			= 8
+class				= P_DSTRBL
+remove_time			= 60; after this time  unbreaked removable bone will be removed
+script_binding      = bind_physic_object.init
+
+[search_light]
+GroupControlSection	= spawn_group
+$spawn 				= "physics\search light"
+class				= O_SEARCH
+cform				= skeleton
+visual				= equipments\projector.ogf
+script_binding      = bind_physic_object.init
+
+[document]
+GroupControlSection	= spawn_group
+;discovery_dependency = 
+$spawn 				= "documents\document 01"
+;$prefetch 			= 32
+class				= II_DOC
+cform				= skeleton
+visual				= equipments\item_document_01.ogf
+
+inv_name			= Document
+inv_name_short		= Document
+inv_weight			= 1	;0.2
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 0
+inv_grid_y			= 0
+cost				= 0
+
+[m_car]
+GroupControlSection	= spawn_group
+discovery_dependency = 
+$spawn 			= "vehicles\car"
+cform                   = skeleton
+class                   = SCRPTCAR
+
+inv_weight				= 1000
+cost					= 100000
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+script_binding  		= bind_physic_object.init
+
+[spawn_group_zone]
+GroupControlSection			= spawn_group_zone
+$spawn						= "ai\group zone"									; option for Level Editor
+class						= AI_SPGRP
+
+[spawn_group]
+GroupControlSection			= spawn_group
+$spawn						= "ai\spawn group"								; option for Level Editor
+class						= AI_SPGRP
+
+[level_changer]
+GroupControlSection	= 
+$spawn 			= "ai\level changer"
+;$prefetch 		= 4
+class			= LVL_CHNG
+
+[script_zone]
+GroupControlSection	= 
+$spawn 			= "ai\script zone"
+;$prefetch 		= 4
+class			= SCRIPTZN
+script_binding	= xr_zones.bind
+
+[script_object]
+GroupControlSection			= spawn_group
+$spawn						= "script\script object"						; option for Level Editor
+$npc						= on											; option for Level Editor
+; $prefetch 					= 32										;
+Scheduled					= on											; option for ALife Simulator
+Human		     			= off											; option for ALife Simulator
+cform                       = skeleton										; collision class
+class                       = SCRPTOBJ										; AI class
+
+[attachable_item]
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+$spawn					= "equipment\attachable_item"
+cform                   = skeleton
+class					= II_ATTCH
+cost					= 100
+inv_name				= "Attachable item"
+inv_name_short			= "Attachable item"
+inv_weight				= .5
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 16
+inv_grid_y				= 12
+attach_angle_offset		= 0, -3.14, 1.6
+attach_position_offset	= 0.105, 0.00, 0.085
+attach_bone_name		= bip01_head
+
+[new_attachable_item]
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+$spawn					= "equipment\new_attachable_item"
+cform                   = skeleton
+class					= II_BTTCH
+cost					= 100
+inv_name				= "Attachable item"
+inv_name_short			= "Attachable item"
+inv_weight				= .5
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 16
+inv_grid_y				= 12
+attach_angle_offset		= 0, -3.14, 1.6
+attach_position_offset	= 0.105, 0.00, 0.085
+attach_bone_name		= bip01_head
+
+[hand_radio]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+$spawn					= "equipment\hand_radio"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = equipments\item_fmradio.ogf
+cost					= 0
+inv_name				= "hand_radio"
+inv_name_short			= "hand_radio"
+inv_weight				= .5
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 16
+inv_grid_y				= 12
+attach_angle_offset		= -1.5708,0.1919,3.1416    ;устанавливается в радианах Angle*PI/180
+attach_position_offset	= 0.075, 0.066, 0.023
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[breakable_object]
+class						= O_BRKBL
+remove_time					= 10	    ;after remove_time seconds object will be removed after it is breaked
+hit_break_threthhold		= 0.	    ;weapon impact can stand breakable_object
+collision_break_threthhold	= 2000.f	;collision impact can stand breakable_object
+immunity_factor				= 1.3	    ;hit power multiplier
+
+[climable_object]
+class						= O_CLMBL
+
+[zone_team_base]
+$spawn 			= "network\team base"
+class			= Z_TEAMBS
+GroupControlSection	= spawn_group_zone
+
+[custom_script_object]
+GroupControlSection		= spawn_group
+discovery_dependency	= 
+$spawn					= "scripts\custom_object"
+cform                   = skeleton
+class					= NW_ATTCH
+visual                  = equipments\item_fmradio.ogf
+cost					= 0
+inv_name				= "custom_script_object"
+inv_name_short			= "custom_script_object"
+inv_weight				= .5
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 16
+inv_grid_y				= 12
+attach_angle_offset		= 0, 0, 0
+attach_position_offset	= 0.08, 0.04, 0.03
+attach_bone_name		= bip01_r_hand
+
+[ph_skeleton_object]
+class					= P_SKELET
+remove_time				= 120
+
+[space_restrictor]
+GroupControlSection		= spawn_group_restrictor
+$spawn					= "ai\space_restrictor"
+;$prefetch 				= 64
+class					= SPC_RS_S
+script_binding          = bind_restrictor.bind
+
+; ===============================================================
+;                               SELF MADE
+; ===============================================================
+; Патроны
+[AMMO]:base
+class				= AMMO
+impair				= 1		; коэффициент износа ствола от пули
+buck_shot			= 1		; кол-во составляющих в пуле, > 1 только для дроби
+tracer				= on
+tracer_color_ID		= 0
+explosive			= off
+

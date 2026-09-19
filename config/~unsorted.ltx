@@ -1,0 +1,244 @@
+
+[sound]
+occlusion_scale	= 0.4
+snd_collide_min_volume=0.1
+snd_collide_max_volume=200.
+
+;====================================================================
+;                   Возможно, секции худа?
+;====================================================================
+[demo_record]
+speed0		= 0.3
+speed1		= 3.0
+speed2		= 15.0
+speed3		= 60.0
+ang_speed0	= 0.1
+ang_speed1	= 0.5
+ang_speed2	= 7.0
+ang_speed3	= 2.0
+
+[inventory]
+take_dist		= 2
+max_weight		= 50
+max_ruck		= 56
+max_belt		= 9
+slots			= 11
+
+slot_persistent_1  = true		;knife
+slot_persistent_2  = false		;pistol
+slot_persistent_3  = false		;automatic
+slot_persistent_4  = true		;grenades
+slot_persistent_5  = true		;binocular
+slot_persistent_6  = true		;bolt
+slot_persistent_7  = false		;outfit
+slot_persistent_8  = true		;pda
+slot_persistent_9  = true		;detector
+slot_persistent_10  = true		;torch
+
+[hud_cursor]
+;все размеры в процентах от длины экрана
+cross_length		= 0.015					;длина "палочки" прицела
+min_radius			= 0.0					;минимальный радиус прицела (при нулевой дисперсии)
+max_radius			= 1.0					;максимальный радиус
+radius_lerp_speed	= 0.08					;скорость интерполяции положений прицела
+cross_color			= 0.7,0.7,0.7,1.0		;цвет прицела
+disp_scale			= 0.08					;масштаб прицела (относительно радиан)
+
+[hud_hitmark]
+hit_mark_texture = ui\ui_hud_hit_mark
+;ui\ui_hud_hit_mark
+;ui\ui_hud_hit_mark_01
+;ui\ui_hud_hit_mark_02
+;ui\ui_hud_hit_mark_03
+;ui\ui_hud_hit_mark_04
+;ui\ui_hud_hit_mark_05
+;ui\ui_hud_hit_mark_06
+;ui\ui_hud_hit_mark_07
+;ui\ui_hud_hit_mark_08
+;ui\ui_hud_hit_mark_09
+;ui\ui_hud_hit_mark_10
+;ui\ui_hud_hit_mark_11
+;ui\ui_hud_hit_mark_12
+;ui\ui_hud_hit_mark_13
+;ui\ui_hud_hit_mark_14
+;ui\ui_hud_hit_mark_15
+;ui\ui_hud_hit_mark_16
+;ui\ui_hud_hit_mark_17
+;ui\ui_hud_hit_mark_18
+
+[actor_firsteye_cam]
+lim_pitch                = -1.5, 1.5
+lim_yaw                  = 0, 0
+rot_speed                = 3.14, 3.14, 0
+
+[actor_ladder_cam]
+lim_pitch                = -1.5, 1.5
+lim_yaw                  = -1.0, 1.0
+rot_speed                = 3.14, 3.14, 0
+
+[actor_free_cam]
+;----------------
+lim_pitch                = -1.5, 1.5
+lim_yaw                  = 0, 0
+lim_zoom                 = 0.4, 10
+rot_speed                = 3.14, 1.0, 10
+ 
+[actor_look_cam]
+lim_pitch                = -0.7, 1
+lim_yaw                  = 0, 0
+lim_zoom                 = 1, 5
+rot_speed                = 3.14, 6.28, 10
+
+[actor_look_cam_psp]
+lim_pitch                = -0.7, 1
+lim_yaw                  = 0, 0
+lim_zoom                 = 1, 5
+rot_speed                = 2, 2, 2
+offset					= 0.4,0.2,-1.1
+autoaim_speed_y			= 0.5, 3.14    ;min,max speed
+autoaim_speed_x			= 0.5, 3.14
+
+[mounted_weapon_cam]
+lim_pitch                = -0.5, 0.5
+lim_yaw                  = -2.0, 2.0
+rot_speed                = 3.14, 1.0, 0
+
+[car_firsteye_cam]
+lim_pitch                = -0.5, 0.3
+lim_yaw                  = -2.0, 2.0
+rot_speed                = 3.14, 1.0, 0
+ 
+[car_free_cam]
+lim_pitch                = -1, 1.56 ;0, 1.56
+lim_yaw                  = 0, 0 ;0, 0
+lim_zoom                 = 1, 10 ;1, 7
+rot_speed                = 3.14, 1.0, 10 ;3.14, 1.0, 10
+
+[car_look_cam]
+lim_pitch                = 0, 1.56
+lim_yaw                  = 0	, 0
+lim_zoom                 = 1, 7
+rot_speed                = 25, 1.0, 10
+
+[heli_free_cam]
+lim_pitch                = -1.5, 1.5
+lim_yaw                  = 0, 0
+lim_zoom                 = 5, 25
+rot_speed                = 3.14, 1.0, 10
+ 
+[heli_front_cam]
+;lim_yaw		= -0.01,0.01
+lim_pitch                = -1.2, 1.2
+lim_yaw                  = -1.5, 1.5
+rot_speed                = 3.14, 1.5, 0
+ 
+[heli_look_cam]
+lim_pitch                = 0, 1.56
+lim_yaw                  = 0, 0
+lim_zoom                 = 5, 15
+rot_speed                = 3.14, 1.0, 10
+ 
+[interface]
+font_game                = font_game
+font_small               = font_small
+ 
+;====================================================================
+
+[explosion_marks]
+wallmarks			= wm\wm_grenade
+dist				= 0.5	;2.4	;
+size				= 0.6	;0.4	;
+max_count			= 5
+
+[bloody_marks]
+wallmarks			= wm\wm_blood_1,wm\wm_blood_2,wm\wm_blood_3
+dist				= 2.0	;2.4	;(м) max расстояние отлета крови
+max_size			= 0.4	;0.3	;(м)радиус пятна при хите силой nominal hit по большому объекту (по маленькому *0.5)
+min_size			= 0.06			;(м)минимальный радиус пятна
+nominal_hit			= 0.5			;величина номинального хита, при котором разлетается максимум крови (max_size)
+
+;капли крови
+
+blood_drops			= wm\wm_blood_drop_1,wm\wm_blood_drop_2,wm\wm_blood_drop_3,wm\wm_blood_drop_4
+start_blood_size	= 0.4			;размер раны чтоб начала капать кровь
+stop_blood_size		= 0.025			;размер раны чтоб кровь остановилась (должно быть меньше start_blood_size)
+
+blood_drop_time     = 0.1			;OBSOLETE
+blood_drop_time_min = 0.3			;
+blood_drop_time_max = 2.0			;
+blood_drop_size		= 0.1			;размер капли (м) крови, которая упала
+
+[details]
+swing_normal_amp1	= .1
+swing_normal_amp2	= .05
+swing_normal_rot1	= 30.0
+swing_normal_rot2	= 1.0
+swing_normal_speed	= 2.0
+// fast
+swing_fast_amp1		= 0.35;0.25
+swing_fast_amp2		= .20;0.15
+swing_fast_rot1		= 5
+swing_fast_rot2		= .5;0.75
+swing_fast_speed	= 0.5;1
+
+
+[entity_fire_particles]
+fire_particles = damage_fx\burn_creatures
+start_burn_size	= 0.0003		;размер ожега после которого начать играть партиклы огня
+stop_burn_size	= 0.0001		;размер ожега после которого остановить партиклы
+min_burn_time	= 10000		;минимальное время отыгрыша партиклов (даже если рана уже зажила)
+
+[spectator]
+ $player 				= on
+class                   = SPECT
+      
+[??tg_event]
+class 			 = EVENT
+
+[physics]
+object_damage_factor		= 1.2f
+
+[script]
+current_server_entity_version = 7
+
+[collision_damage]
+bonce_damage_factor_for_objects = 1.
+
+;параметры показывания входящих сообщений PDA в главном меню
+[maingame_ui]
+pda_msgs_max_show_time = 20000
+info_msgs_max_show_time = 10000
+snd_new_contact					= detectors\contact_1
+snd_new_contact1				= detectors\contact_8
+
+[multiplayer_skins]
+stalker_killer_head_1	= 0,380
+stalker_killer_antigas	= 128,380
+stalker_killer_head_3	= 256,380
+stalker_killer_mask		= 384,380
+stalker_killer_exoskeleton	= 512,380
+stalker_sci_killer		= 640,380
+stalker_killer_military = 768,380
+
+stalker_sv_balon_10		= 0,705
+stalker_sv_hood_9		= 128,705
+stalker_sv_rukzak_3		= 256,705
+stalker_sv_rukzak_2		= 384,705
+stalker_sv_exoskeleton	= 512,705
+stalker_sci_svoboda		= 640,705
+stalker_sv_military		= 768,705
+
+[main_ingame_indicators_thresholds]
+radiation				= 0.1,0.25,0.4,0.55,0.7
+wounds					= 0.01,0.2,0.4,0.6,0.8
+jammed					= 0.5,0.6,0.7,0.8,0.9
+starvation				= 0.5,0.6,0.7,0.8,0.9
+fatigue					= 0.3,0.6,0.7,0.8,0.9
+
+[squad_manager]
+schedule_min			=   1
+schedule_max			= 999
+
+[agent_manager]
+schedule_min			= 100
+schedule_max			= 1000
