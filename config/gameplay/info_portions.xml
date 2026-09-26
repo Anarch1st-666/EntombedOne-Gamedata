@@ -80,4 +80,23 @@
 		<disable>ui_car_body</disable>
     </info_portion>
 
+
+------------------------------------------------------------------------------------------
+--// Entombed One Info portions
+------------------------------------------------------------------------------------------
+    <info_portion id="agr_nii_alarm"/>
+
+	-- Подозрительная компания
+    <info_portion id="agr_eavesdropping_backoff"/>
+    <info_portion id="agr_factory_suspects_alarm"/>
+	
+	-- По следам
+    <info_portion id="agr_by_the_trace_ambush_spawn"/>
+    <info_portion id="agr_by_the_trace_ambush_fire"/>
+
+	-- Код "Сладкий"
+    <info_portion id="agr_swamp_sniper_spawn"/>
+    <info_portion id="agr_swamp_sniper_dead"/>
+	
+
 </game_information_portions>

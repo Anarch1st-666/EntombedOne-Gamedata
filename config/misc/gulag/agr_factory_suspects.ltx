@@ -1,0 +1,77 @@
+;=========================================================================================
+; Часовой
+;=========================================================================================
+[logic@agr_factory_suspects_guard_1]
+active = walker1@agr_factory_suspects_guard_1
+
+[walker1@agr_factory_suspects_guard_1]
+path_walk = guard_walk
+path_look = guard_look
+on_actor_dist_le = 5 | {-agr_eavesdropping_backoff} remark1@agr_factory_suspects_guard_1
+meet = no_meet
+
+[remark1@agr_factory_suspects_guard_1]
+anim = threat
+target = actor
+snd = factory_suspect_backoff
+on_signal = sound_end | walker1@agr_factory_suspects_guard_1 %+agr_eavesdropping_backoff%
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[logic@agr_factory_suspects_alarm_guard_1]
+active = camper1@agr_factory_suspects_alarm_guard_1
+
+[camper1@agr_factory_suspects_alarm_guard_1]
+path_walk = alarm_guard_walk
+path_look = alarm_guard_look
+def_state_moving = rush
+radius = 5.0
+meet = no_meet
+
+
+;=========================================================================================
+; У костра 1
+;=========================================================================================
+[logic@agr_factory_suspects_suspect_1]
+active = walker1@agr_factory_suspects_suspect_1
+
+[walker1@agr_factory_suspects_suspect_1]
+path_walk = suspect_1_walk
+path_look = suspect_1_look
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[logic@agr_factory_suspects_alarm_suspect_1]
+active = camper1@agr_factory_suspects_alarm_suspect_1
+
+[camper1@agr_factory_suspects_alarm_suspect_1]
+path_walk = alarm_suspect_1_walk
+path_look = alarm_suspect_1_look
+def_state_moving = rush
+radius = 5.0
+meet = no_meet
+
+
+;=========================================================================================
+; У костра 2
+;=========================================================================================
+[logic@agr_factory_suspects_suspect_2]
+active = walker1@agr_factory_suspects_suspect_2
+
+[walker1@agr_factory_suspects_suspect_2]
+path_walk = suspect_2_walk
+path_look = suspect_2_look
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[logic@agr_factory_suspects_alarm_suspect_2]
+active = camper1@agr_factory_suspects_alarm_suspect_2
+
+[camper1@agr_factory_suspects_alarm_suspect_2]
+path_walk = alarm_suspect_2_walk
+path_look = alarm_suspect_2_look
+def_state_moving = rush
+radius = 5.0
+meet = no_meet
+
+

@@ -1,0 +1,254 @@
+
+--'--------------------------------------------------------------------------
+--' AGROPROM
+--'--------------------------------------------------------------------------
+
+local t = {}
+
+function load_job( sj, gname, type, squad, groups )
+	------------------ НИИ Агропром. База военных ------------------------------------------
+	--// состояния: 0-день, 1-ночь, 2-пересменка, 3-тревога
+	----------------------------------------------------------------------------------------
+	if type == "agr_nii" then
+		-- Квестовики
+		t = { section = "logic@agr_nii_grechkin",
+			idle = 0,
+			prior = 15, state = {0},
+			in_rest = "agr_nii_sr_building", out_rest = "agr_nii_space_restrictor",
+			predicate = function(obj_info)
+			    return obj_info.profile_name == "grechkin"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_nii_trader",
+			idle = 0,
+			prior = 15, state = {0},
+			in_rest = "", out_rest = "agr_nii_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "nii_trader"
+			end
+		}
+		table.insert(sj, t)
+		
+		-- дневные патрули
+		for i=1,6 do
+			t = { section = "logic@agr_nii_day_patrol_walker" .. i,
+				idle = 0,
+				prior = 5, state = {0},
+				in_rest = "agr_nii_sr_building", out_rest = "agr_nii_space_restrictor"
+			}
+			table.insert(sj, t)
+		end
+		
+		-- снайперы
+		for i=1,4 do
+			t = { section = "logic@agr_nii_sniper" .. i,
+				idle = 0,
+				prior = 15, state = {0},
+				in_rest = "", out_rest = "agr_space_restrictor_tower" .. i,
+				predicate = function(obj_info)
+			            	return obj_info.profile_name == "nii_dolg_sniper"
+			            end
+			}
+			table.insert(sj, t)
+		end
+		
+		-- охрана, 3-й этаж
+		for i=1,3 do
+			t = { section = "logic@agr_nii_floor3_walker" .. i,
+				idle = 0,
+				prior = 5, state = {0},
+				in_rest = "", out_rest = "agr_nii_sr_building",
+			}
+			table.insert(sj, t)
+		end
+		
+		-- пост на восточных воротах
+		t = { section = "logic@agr_nii_east_gate_walker1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "agr_nii_sr_building", out_rest = "agr_nii_space_restrictor"
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_nii_east_gate_walker2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "agr_nii_sr_building", out_rest = "agr_nii_space_restrictor"
+		}
+		table.insert(sj, t)
+		
+		-- пост на западных воротах
+		t = { section = "logic@agr_nii_west_gate_walker1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "agr_nii_sr_building", out_rest = "agr_nii_space_restrictor"
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_nii_west_gate_walker2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "agr_nii_sr_building", out_rest = "agr_nii_space_restrictor"
+		}
+		table.insert(sj, t)
+		
+		-- Бар
+		for i=1,4 do
+			t = { section = "logic@agr_nii_bar_visitor" .. i,
+				idle = 0,
+				prior = 5, state = {0},
+				in_rest = "", out_rest = "agr_nii_space_restrictor",
+			}
+			table.insert(sj, t)
+		end
+		
+		-- Костры
+		for i=1,4 do
+			t = { section = "logic@agr_nii_kamp_1",
+				idle = 0,
+				prior = 5, state = {0},
+				in_rest = "", out_rest = "agr_nii_space_restrictor",
+			}
+			table.insert(sj, t)
+		end
+
+	elseif type == "agr_factory_suspects" then
+		-- Idle state
+		t = { section = "logic@agr_factory_suspects_guard_1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "agr_factory_suspects_door_restrictor", out_rest = "agr_factory_suspects_space_restrictor",
+			predicate = function(obj_info)
+			    return obj_info.profile_name == "factory_suspect_guard"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_factory_suspects_suspect_1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "agr_factory_suspects_door_restrictor", out_rest = "agr_factory_suspects_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "factory_suspect_1"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_factory_suspects_suspect_2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "agr_factory_suspects_door_restrictor", out_rest = "agr_factory_suspects_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "factory_suspect_2"
+			end
+		}
+		table.insert(sj, t)
+		
+		-- Alarm state
+		t = { section = "logic@agr_factory_suspects_alarm_guard_1",
+			idle = 0,
+			prior = 5, state = {2},
+			in_rest = "agr_factory_suspects_door_restrictor", out_rest = "agr_factory_suspects_space_restrictor",
+			predicate = function(obj_info)
+			    return obj_info.profile_name == "factory_suspect_guard"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_factory_suspects_alarm_suspect_1",
+			idle = 0,
+			prior = 5, state = {2},
+			in_rest = "agr_factory_suspects_door_restrictor", out_rest = "agr_factory_suspects_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "factory_suspect_1"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_factory_suspects_alarm_suspect_2",
+			idle = 0,
+			prior = 5, state = {2},
+			in_rest = "agr_factory_suspects_door_restrictor", out_rest = "agr_factory_suspects_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "factory_suspect_2"
+			end
+		}
+		table.insert(sj, t)
+
+	elseif type == "agr_tunnel_ambush" then
+		t = { section = "logic@agr_tunnel_ambush_camper_1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_tunnel_ambush_camper_2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_tunnel_ambush_camper_3",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "",
+		}
+		table.insert(sj, t)
+	end
+end
+
+function load_states( gname, type )
+	if type == "agr_nii" then
+		return function( gulag )
+			return 0			
+		end
+	end
+	
+	if type == "agr_factory_suspects" then
+		return function( gulag )
+			if has_alife_info("agr_factory_suspects_alarm") then
+				return 2
+			end
+			return 0			
+		end
+	end
+
+	if type == "agr_tunnel_ambush" then
+		return function( gulag )
+			return 0			
+		end
+	end
+	
+	if type == "agr_road_patrol1" then
+		return function( gulag )
+			return 0			
+		end
+	end
+
+	if type == "agr_road_patrol2" then
+		return function( gulag )
+			return 0			
+		end
+	end
+	return nil
+end
+
+--------------------------------------------------------------------------
+-- Dynamic ltx
+--------------------------------------------------------------------------
+function load_ltx(gname, type)
+	return nil
+end
+
+function checkStalker( npc_community, gulag_type )
+	if gulag_type == "agr_nii" then
+		return npc_community == "dolg"
+	end
+	if gulag_type == "agr_factory_suspects" then
+		return npc_community == "stalker" or npc_community == "bandit"
+	end
+	if gulag_type == "agr_tunnel_ambush" then
+		return npc_community == "killer"
+	end
+
+	return false
+end
+
+function checkMonster( npc_community, gulag_type )
+	return false
+end

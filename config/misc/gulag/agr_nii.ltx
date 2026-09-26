@@ -1,0 +1,220 @@
+;------------------ Квестовики -----------------------
+[logic@agr_nii_grechkin]
+active = walker1@agr_nii_grechkin
+
+[walker1@agr_nii_grechkin]
+path_walk = grechkin_walk
+path_look = grechkin_look
+
+
+[logic@agr_nii_trader]
+active = walker1@agr_nii_trader
+
+[walker1@agr_nii_trader]
+path_walk = barman_walk
+path_look = barman_look
+
+
+;------------------ дневные патрули -----------------------
+[logic@agr_nii_day_patrol_walker1]
+active = walker1@agr_nii_day_patrol
+
+[walker1@agr_nii_day_patrol]
+path_walk = day_patrol_walk1
+path_look = day_patrol_look1
+
+
+[logic@agr_nii_day_patrol_walker2]
+active = walker2@agr_nii_day_patrol
+
+[walker2@agr_nii_day_patrol]
+path_walk = day_patrol_walk2
+path_look = day_patrol_look2
+
+
+[logic@agr_nii_day_patrol_walker3]
+active = walker3@agr_nii_day_patrol
+
+[walker3@agr_nii_day_patrol]
+path_walk = day_patrol_walk3
+path_look = day_patrol_look3
+
+
+[logic@agr_nii_day_patrol_walker4]
+active = walker4@agr_nii_day_patrol
+
+[walker4@agr_nii_day_patrol]
+path_walk = day_patrol_walk4
+path_look = day_patrol_look4
+
+
+[logic@agr_nii_day_patrol_walker5]
+active = walker5@agr_nii_day_patrol
+
+[walker5@agr_nii_day_patrol]
+path_walk = day_patrol_walk5
+;path_look = day_patrol_look5
+
+
+[logic@agr_nii_day_patrol_walker6]
+active = walker6@agr_nii_day_patrol
+
+[walker6@agr_nii_day_patrol]
+path_walk = day_patrol_walk6
+path_look = day_patrol_look6
+meet = meet@agr_nii_day_patrol
+
+[meet@agr_nii_day_patrol]
+meet_state 		= 20| guard@wait| 4| guard
+meet_state_wpn 	= 20| guard@wait| 15| threat@threat_weap
+victim 			= 20| actor
+victim_wpn 		= 20| actor
+use = true
+use_wpn = false
+precond	= visibility
+
+
+;------------------ снайперы -----------------------
+[logic@agr_nii_sniper1]
+active = walker1@agr_nii_sniper1
+
+[walker1@agr_nii_sniper1]
+path_walk = tower1_walk
+path_look = tower1_look
+
+
+[logic@agr_nii_sniper2]
+active = walker1@agr_nii_sniper2
+
+[walker1@agr_nii_sniper2]
+path_walk = tower2_walk
+path_look = tower2_look
+
+
+[logic@agr_nii_sniper3]
+active = walker1@agr_nii_sniper3
+
+[walker1@agr_nii_sniper3]
+path_walk = tower3_walk
+path_look = tower3_look
+
+
+[logic@agr_nii_sniper4]
+active = walker1@agr_nii_sniper4
+
+[walker1@agr_nii_sniper4]
+path_walk = tower4_walk
+path_look = tower4_look
+
+
+;------------------ пост на восточных воротах -----------------------
+[logic@agr_nii_east_gate_walker1]
+active = walker1@agr_nii_east_gate
+
+[walker1@agr_nii_east_gate]
+path_walk = east_gate_walk1
+path_look = east_gate_look1
+
+
+[logic@agr_nii_east_gate_walker2]
+active = walker2@agr_nii_east_gate
+
+[walker2@agr_nii_east_gate]
+path_walk = east_gate_walk2
+path_look = east_gate_look2
+
+
+;------------------ пост на западных воротах -----------------------
+[logic@agr_nii_west_gate_walker1]
+active = walker1@agr_nii_west_gate
+
+[walker1@agr_nii_west_gate]
+path_walk = west_gate_walk1
+path_look = west_gate_look1
+
+
+[logic@agr_nii_west_gate_walker2]
+active = walker2@agr_nii_west_gate
+
+[walker2@agr_nii_west_gate]
+path_walk = west_gate_walk2
+path_look = west_gate_look2
+
+
+;------------------ 3-й этаж основного здания -----------------------
+[logic@agr_nii_floor3_walker1]
+active = walker1@agr_nii_floor3_walker1
+
+[walker1@agr_nii_floor3_walker1]
+path_walk = floor3_walk1
+path_look = floor3_look1
+
+
+[logic@agr_nii_floor3_walker2]
+active = walker1@agr_nii_floor3_walker2
+
+[walker1@agr_nii_floor3_walker2]
+path_walk = floor3_walk2
+path_look = floor3_look2
+
+
+[logic@agr_nii_floor3_walker3]
+active = walker1@agr_nii_floor3_walker3
+
+[walker1@agr_nii_floor3_walker3]
+path_walk = floor3_walk3
+;path_look = floor3_look3
+
+
+;------------------ Бар -----------------------
+[logic@agr_nii_bar_visitor1]
+active = walker1@agr_nii_bar_visitor1
+
+[walker1@agr_nii_bar_visitor1]
+path_walk = bar_1_walk
+path_look = bar_1_look
+
+
+[logic@agr_nii_bar_visitor2]
+active = walker1@agr_nii_bar_visitor2
+
+[walker1@agr_nii_bar_visitor2]
+path_walk = bar_2_walk
+path_look = bar_2_look
+
+
+[logic@agr_nii_bar_visitor3]
+active = walker1@agr_nii_bar_visitor3
+
+[walker1@agr_nii_bar_visitor3]
+path_walk = bar_3_walk
+path_look = bar_3_look
+meet = meet@agr_nii_bar_visitor3
+
+[meet@agr_nii_bar_visitor3]
+meet_state 		= 2 | bar_sleep@use_no_sleep
+meet_state_wpn  = 2 | bar_sleep@use_no_sleep
+victim 			= nil
+victim_wpn 		= nil
+use			    = false
+use_wpn		    = false
+abuse           = false
+
+
+[logic@agr_nii_bar_visitor4]
+active = walker1@agr_nii_bar_visitor4
+
+[walker1@agr_nii_bar_visitor4]
+path_walk = bar_4_walk
+path_look = bar_4_look
+
+
+;------------------ Костры -----------------------
+[logic@agr_nii_kamp_1]
+active = kamp@agr_nii_kamp_1
+
+[kamp@agr_nii_kamp_1]
+center_point = kamp_1
+radius = 2.0
+
+

@@ -1,0 +1,492 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+<!---------------------------dolg REGULAR----------------------->
+	<specific_character id="nii_dolg_regular1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_balon_1</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>310</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_balon_1</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_fort \n
+			ammo_9x18_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n			
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_mask</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>310</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_mask</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n			
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_balon_3</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>310</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_balon_3</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_fort \n
+			ammo_9x18_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n			
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_balon_4</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>310</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_balon_4</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n			
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_balon_5</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>310</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_balon_5</visual>
+		<snd_config>characters_voice\human_02\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_fort \n
+			ammo_9x18_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n			
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_mask_1</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>340</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_mask_1</visual>
+		<snd_config>characters_voice\human_02\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj \n
+			wpn_abakan \n
+			ammo_5.45x39_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n			
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_balon_7</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>310</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_balon_7</visual>
+		<snd_config>characters_voice\human_02\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_fort \n
+			ammo_9x18_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n			
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular8" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_balon_8</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="600" max="2000" infinitive="0"></money>
+		<rank>311</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_balon_8</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_wincheaster1300 \n
+			ammo_12x70_buck \n
+			device_torch \n
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular9" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_mask</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>370</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_mask</visual>
+		<snd_config>characters_voice\human_02\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj \n
+			wpn_abakan \n
+			ammo_5.45x39_fmj \n
+			device_torch \n			
+#include "gameplay\character_items.xml"\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_regular10" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_mask_1</icon>
+		<class>nii_dolg_regular</class>
+		<community>dolg</community>
+		<money min="200" max="600" infinitive="0"></money>
+		<rank>390</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_mask_1</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_fort \n
+			ammo_9x18_fmj \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n			
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+
+<!---------------------------dolg SNIPER---------------------->
+	<specific_character id="nii_dolg_sniper1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_balon_8</icon>
+		<class>nii_dolg_sniper</class>
+		<community>dolg</community>
+		<money min="600" max="2000" infinitive="0"></money>
+		<rank>352</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_balon_8</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj = 1 \n
+			wpn_vintorez \n
+			ammo_9x39_sp5 = 1 \n
+#include "gameplay\character_items.xml" \n	
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"				
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_sniper2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_mask_1</icon>
+		<class>nii_dolg_sniper</class>
+		<community>dolg</community>
+		<money min="600" max="2000" infinitive="0"></money>
+		<rank>421</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_mask_1</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj = 1 \n
+			wpn_svu = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
+#include "gameplay\character_items.xml"\n		
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"				
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_sniper3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_mask</icon>
+		<class>nii_dolg_sniper</class>
+		<community>dolg</community>
+		<money min="600" max="2000" infinitive="0"></money>
+		<rank>430</rank>
+		<reputation>20</reputation>
+		<visual>actors\dolg\stalker_do_mask</visual>
+		<snd_config>characters_voice\human_02\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj = 1 \n
+			wpn_svd = 1 \n
+			ammo_7.62x54_7h14 = 1 \n
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_6.xml"				
+#include "gameplay\character_dialogs.xml"
+		</specific_character>
+
+<!---------------------------dolg SPECNAZ---------------------->
+	<specific_character id="nii_dolg_veteran1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>nii_dolg_veteran</class>
+		<community>dolg</community>
+		<money min="600" max="2000" infinitive="0"></money>
+		<rank>580</rank>
+		<reputation>40</reputation>
+		<visual>actors\dolg\stalker_do_nauchniy</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_fmj \n
+			wpn_val \n
+			ammo_9x39_ap \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>		
+#include "gameplay\character_criticals_6.xml"			
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_veteran2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_antigas</icon>
+		<class>nii_dolg_veteran</class>
+		<community>dolg</community>
+		<money min="2000" max="5000" infinitive="0"></money>
+		<rank>624</rank>
+		<reputation>40</reputation>
+		<visual>actors\dolg\stalker_do_antigas</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_fmj \n
+			wpn_groza \n
+			ammo_9x39_ap \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>		
+#include "gameplay\character_criticals_6.xml"			
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_veteran3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_antigas</icon>
+		<class>nii_dolg_veteran</class>
+		<community>dolg</community>
+		<money min="2000" max="5000" infinitive="0"></money>
+		<rank>634</rank>
+		<reputation>40</reputation>
+		<visual>actors\dolg\stalker_dolg_heavy_antigas_01</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_fmj = 1 \n
+			wpn_groza \n
+			ammo_9x39_ap = 1 \n
+			ammo_9x39_sp5 = 1 \n
+			ammo_vog-25p = 1 \n
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>		
+#include "gameplay\character_criticals_6.xml"			
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_veteran4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_antigas</icon>
+		<class>nii_dolg_veteran</class>
+		<community>dolg</community>
+		<money min="2000" max="5000" infinitive="0"></money>
+		<rank>713</rank>
+		<reputation>40</reputation>
+		<visual>actors\dolg\stalker_dolg_heavy_helmet_01</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_fmj \n
+			wpn_val \n
+			ammo_9x39_ap \n	
+#include "gameplay\character_items.xml" \n	
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>		
+#include "gameplay\character_criticals_6.xml"			
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+	
+<!---------------------------dolg MASTER----------------------->
+	<specific_character id="nii_dolg_master1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_exoskeleton</icon>
+		<class>nii_dolg_master</class>
+		<community>dolg</community>
+		<money min="2000" max="5000" infinitive="0"></money>	
+		<rank>914</rank>
+		<reputation>60</reputation>
+		<visual>actors\dolg\stalker_do_exoskeleton</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pkm = 1 \n
+			ammo_7.62x54_7h1 = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>			
+#include "gameplay\character_criticals_2.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="nii_dolg_master2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>nii_dolg_master</class>
+		<community>dolg</community>
+		<money min="2000" max="5000" infinitive="0"></money>
+		<rank>820</rank>
+		<reputation>60</reputation>
+		<visual>actors\dolg\stalker_do_nauchniy</visual>
+		<snd_config>characters_voice\human_03\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_11.43x23_fmj \n		
+			wpn_groza \n
+			ammo_9x39_sp5 = 2 \n
+			ammo_vog-25p = 1 \n
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>	
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+</xml>

@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+<!----------------------KILLERS--------------------------------->
+
+<!----------------------------- KILLER NOVICE ------------------------->
+	<specific_character id="agr_killer_novice1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_bar_security</icon>
+		<class>agr_killer_novice</class>
+		<community>killer</community>
+		<rank>180</rank>
+		<reputation>-50</reputation>
+		<snd_config>characters_voice\human_01\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\neytral\stalker_bar_security</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pb = 1 \n
+			ammo_9x18_fmj = 1 \n
+			wpn_mp5 = 1 \n
+			ammo_9x19_fmj \n
+#include "gameplay\character_items.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!----------------------------- KILLER GENERAL ------------------------->
+	<specific_character id="agr_killer_general1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<class>agr_killer_general</class>
+		<community>killer</community>
+		<rank>321</rank>
+		<reputation>-63</reputation>
+		<snd_config>characters_voice\human_02\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\killer\stalker_ki_head_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_lr300 \n
+			ammo_5.56x45_ss190 \n
+#include "gameplay\character_items.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="agr_killer_general2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_mask</icon>
+		<class>agr_killer_general</class>
+		<community>killer</community>
+		<rank>369</rank>
+		<reputation>-76</reputation>
+		<snd_config>characters_voice\human_01\killer\</snd_config>
+		<crouch_type>-1</crouch_type>		
+		<visual>actors\killer\stalker_ki_mask</visual>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_lr300 \n
+			ammo_5.56x45_ap = 1 \n
+#include "gameplay\character_items.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!-----------------------------KILLER VETERAN ------------------------->
+	<specific_character id="agr_killer_veteran1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_antigas</icon>
+		<class>agr_killer_veteran</class>
+		<community>killer</community>
+		<rank>650</rank>
+		<reputation>-95</reputation>
+		<snd_config>characters_voice\human_02\killer\</snd_config>
+		<crouch_type>-1</crouch_type>		
+		<visual>actors\killer\stalker_ki_antigas</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_hydro \n
+			wpn_sig550 \n
+			ammo_5.56x45_ss190 = 1 \n
+#include "gameplay\character_items.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="agr_killer_veteran2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_nauchniy</icon>
+		<class>agr_killer_veteran</class>
+		<community>killer</community>
+		<rank>798</rank>
+		<reputation>-45</reputation>
+		<snd_config>characters_voice\human_01\killer\</snd_config>
+		<crouch_type>-1</crouch_type>		
+		<visual>actors\killer\stalker_ki_nauchniy</visual>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj = 1 \n
+			wpn_sig550 \n
+			ammo_5.56x45_ss190 = 1 \n
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+	
+<!------------------------------ KILLER MASTER ----------------------->
+	<specific_character id="agr_killer_master1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
+		<class>agr_killer_master</class>
+		<community>killer</community>
+		<rank>925</rank>
+		<reputation>-125</reputation>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
+		<crouch_type>0</crouch_type>		
+		<visual>actors\killer\stalker_ki_exoskeleton</visual>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 \n
+			ammo_11.43x23_hydro \n
+			wpn_g36 \n
+			ammo_5.56x45_ap = 1 \n
+			device_torch \n
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_2.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+</xml>

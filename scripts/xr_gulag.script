@@ -5,7 +5,7 @@
 
 --' в работах поле object хранит id объекта
 
-level_gulags = {gulag_general}
+level_gulags = {gulag_general, gulag_agroprom}
 
 level_groups = {}
 

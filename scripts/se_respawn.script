@@ -592,9 +592,16 @@ function create_ammo(section, position, lvi, gvi, pid, num)
 
 	local num_in_box = ini:r_u32(section, "box_size")
 
+	local tCreatedObjects = {}
+	
 	while num > num_in_box do
-		alife():create_ammo(section, position, lvi,	gvi, pid, num_in_box)
+		local se_object = alife():create_ammo(section, position, lvi, gvi, pid, num_in_box)
+		table.insert(tCreatedObjects, se_object)
 		num = num - num_in_box
 	end
-	alife():create_ammo(section, position, lvi,	gvi, pid, num)
+	
+	local se_object = alife():create_ammo(section, position, lvi,	gvi, pid, num)
+	table.insert(tCreatedObjects, se_object)
+	
+	return tCreatedObjects
 end

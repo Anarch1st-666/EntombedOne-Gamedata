@@ -175,3 +175,17 @@ blowout_wind_time_start     = 200
 blowout_wind_time_peak      = 600
 blowout_wind_time_end		= 901;899
 blowout_wind_power			= 0.5			;сила поднимаего ветра (от 0 до 1), в момент blowout_wind_time_peak 
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Одноразовая мина
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[zone_mine_field_disposable]:zone_mine_field
+$spawn 			= "zones\mine_field_disposable"
+
+idle_particles		= 
+DestroyAfterBlowout = true
+accamulate_time     = 3000
+min_start_power		= 1.00
+max_start_power		= 1.20

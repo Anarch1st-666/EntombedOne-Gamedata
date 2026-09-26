@@ -127,12 +127,11 @@ function create_items(obj, section, number, rnd)
 				position.z = obj:position().z + math.random(-30,30)/100
 				position.y = obj:position().y + math.random(30,50)/100
 
-				se_respawn.create_ammo(section,	
-					    position,
-						obj:level_vertex_id(),	
-						obj:game_vertex_id(),
-						65535,
-						number)
+				local tObjects = se_respawn.create_ammo(section,position,obj:level_vertex_id(),obj:game_vertex_id(),65535,number)
+				
+				for i,se_obj in ipairs(tObjects) do
+					alife():use_ai_locations(se_obj, false)
+				end
 			end
 		end
     else
@@ -144,10 +143,8 @@ function create_items(obj, section, number, rnd)
 				position.z = obj:position().z + math.random(-30,30)/100
 				position.y = obj:position().y + math.random(30,50)/100
 
-				alife():create(section,	
-					    position,
-						obj:level_vertex_id(),	
-						obj:game_vertex_id())
+				local se_obj = alife():create(section, position, obj:level_vertex_id(), obj:game_vertex_id())
+				alife():use_ai_locations(se_obj, false)
 			end
         end
     end    

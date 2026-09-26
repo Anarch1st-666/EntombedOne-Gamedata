@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding="UTF-8"?>
 
 <xml>
+-----------------------------------------------------------------------
+--// ACTOR
+-----------------------------------------------------------------------
 	<character id="actor">
 		<class>Actor</class>
 		<specific_character>actor</specific_character>
@@ -8,4 +11,73 @@
 	<character id="default">
 		<class>Stalker_general</class>
 	</character>
+	
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+--// UNIQUE
+-----------------------------------------------------------------------
+	<character id="grechkin">
+		<class>grechkin</class>
+	</character>
+	<character id="nii_trader">
+		<class>nii_trader</class>
+	</character>
+	<character id="agr_scout">
+		<class>agr_scout</class>
+	</character>
+	
+	<character id="factory_suspect_guard">
+		<class>factory_suspect_guard</class>
+	</character>
+	<character id="factory_suspect_1">
+		<class>factory_suspect_1</class>
+	</character>
+	<character id="factory_suspect_2">
+		<class>factory_suspect_2</class>
+	</character>
+	
+	<character id="virtuos">
+		<class>virtuos</class>
+	</character>
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+--// DUTY
+-----------------------------------------------------------------------
+	<character id="nii_dolg_regular">
+		<class>nii_dolg_regular</class>
+	</character>
+	<character id="nii_dolg_veteran">
+		<class>nii_dolg_veteran</class>
+	</character>
+	<character id="nii_dolg_master">
+		<class>nii_dolg_master</class>
+	</character>
+	<character id="nii_dolg_sniper">
+		<class>nii_dolg_sniper</class>
+	</character>
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+--// KILLER
+-----------------------------------------------------------------------
+	<character id="agr_killer_novice">
+		<class>agr_killer_novice</class>
+	</character>
+	<character id="agr_killer_general">
+		<class>agr_killer_general</class>
+	</character>
+	<character id="agr_killer_veteran">
+		<class>agr_killer_veteran</class>
+	</character>
+	<character id="agr_killer_master">
+		<class>agr_killer_master</class>
+	</character>
+-----------------------------------------------------------------------
+	
 </xml>

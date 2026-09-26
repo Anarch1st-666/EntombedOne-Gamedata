@@ -1,0 +1,63 @@
+;=========================================================================================
+
+[death@agr_tunnel_ambush]
+on_info = %+agr_by_the_trace_ambush_fire%
+
+[hit@agr_tunnel_ambush]
+on_info = %+agr_by_the_trace_ambush_fire%
+
+
+;=========================================================================================
+
+[logic@agr_tunnel_ambush_camper_1]
+active = camper1@agr_tunnel_ambush_camper_1
+on_death = death@agr_tunnel_ambush
+on_hit = hit@agr_tunnel_ambush
+
+[camper1@agr_tunnel_ambush_camper_1]
+path_walk = camper_1_walk
+path_look = camper_1_look
+radius = 5.0
+danger = danger_ignore
+on_info = {=see_actor} %+agr_by_the_trace_ambush_fire%
+
+
+;=========================================================================================
+
+[logic@agr_tunnel_ambush_camper_2]
+active = camper1@agr_tunnel_ambush_camper_2
+on_death = death@agr_tunnel_ambush
+on_hit = hit@agr_tunnel_ambush
+
+[camper1@agr_tunnel_ambush_camper_2]
+path_walk = camper_2_walk
+path_look = camper_2_look
+radius = 5.0
+danger = danger_ignore
+on_info = {=see_actor} %+agr_by_the_trace_ambush_fire%
+
+
+;=========================================================================================
+
+[logic@agr_tunnel_ambush_camper_3]
+active = camper1@agr_tunnel_ambush_waiter_3
+on_death = death@agr_tunnel_ambush
+on_hit = hit@agr_tunnel_ambush
+
+[camper1@agr_tunnel_ambush_waiter_3]
+path_walk = waiter_3_walk
+path_look = waiter_3_look
+radius = 10.0
+danger = danger_ignore
+on_info = {+agr_by_the_trace_ambush_fire} camper1@agr_tunnel_ambush_camper_3
+
+[camper1@agr_tunnel_ambush_camper_3]
+path_walk = camper_3_walk
+path_look = camper_3_look
+def_state_moving = sneak
+radius = 10.0
+danger = danger_ignore
+
+
+;=========================================================================================
+

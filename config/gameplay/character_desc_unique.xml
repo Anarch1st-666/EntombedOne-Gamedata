@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+------------------------------------------------------------------------------------------
+--// DUTY
+------------------------------------------------------------------------------------------
+	<!-- Полковник Гречник -->
+	<specific_character id="grechkin" team_default = "1">
+		<name>grechkin_name</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>grechkin</class>
+		<community>dolg</community>
+		<money min="5000" max="5000" infinitive="0"></money>
+		<rank>950</rank>
+		<reputation>200</reputation>
+		<visual>actors\dolg\stalker_dolg_uniq_grechkin</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_11.43x23_fmj \n
+			wpn_val = 1, scope \n
+			ammo_9x39_ap \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+	
+	<!-- Торговец Долга -->
+	<specific_character id="nii_trader" team_default = "1">
+		<name>nii_trader_name</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>nii_trader</class>
+		<community>dolg</community>
+		<money min="5000" max="5000" infinitive="0"></money>
+		<rank>450</rank>
+		<reputation>300</reputation>
+		<visual>actors\dolg\stalker_dolg_uniq_trader</visual>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_fort \n
+			ammo_9x18_fmj \n
+		</supplies>
+	</specific_character>
+	
+	<!-- Разведчик Долга -->
+	<specific_character id="agr_scout" team_default = "1">
+		<name>agr_scout_name</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>agr_scout</class>
+		<community>dolg</community>
+		<money min="5000" max="5000" infinitive="0"></money>
+		<rank>500</rank>
+		<reputation>120</reputation>
+		<visual>actors\dolg\stalker_dolg_uniq_scout</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_fmj \n
+			wpn_abakan = 1, scope \n
+			ammo_5.45x39_fmj \n
+			device_torch \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+
+------------------------------------------------------------------------------------------
+--// Квест. Подслушивание сталкеров
+------------------------------------------------------------------------------------------
+	<!-- Охранник -->
+	<specific_character id="factory_suspect_guard" team_default = "1">
+		<name>factory_suspect_guard_name</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>factory_suspect_guard</class>
+		<community>stalker</community>
+		<money min="1000" max="5000" infinitive="0"></money>
+		<rank>480</rank>
+		<reputation>0</reputation>
+		<visual>actors\neytral\stalker_neytral_rukzak_1</visual>
+		<snd_config>characters_voice\human_01\bandit\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_lr300 \n
+			ammo_5.56x45_ss190 \n
+			device_torch \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+	
+	<!-- Сталкер у костра 1 -->
+	<specific_character id="factory_suspect_1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>factory_suspect_1</class>
+		<community>stalker</community>
+		<money min="1000" max="5000" infinitive="0"></money>
+		<rank>360</rank>
+		<reputation>-70</reputation>
+		<visual>actors\neytral\stalker_neytral_hood_4</visual>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_lr300 \n
+			ammo_5.56x45_ss190 \n
+			device_torch \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+	
+	<!-- Сталкер у костра 2 -->
+	<specific_character id="factory_suspect_2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<class>factory_suspect_2</class>
+		<community>stalker</community>
+		<money min="1000" max="5000" infinitive="0"></money>
+		<rank>250</rank>
+		<reputation>0</reputation>
+		<visual>actors\neytral\stalker_neytral_rukzak_3</visual>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_lr300 \n
+			ammo_5.56x45_ss190 \n
+			device_torch \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+	
+------------------------------------------------------------------------------------------
+--// Наёмники
+------------------------------------------------------------------------------------------
+	<!-- Снайпер наёмников -->
+	<specific_character id="virtuos" team_default = "1">
+		<name>virtuos_name</name>
+		<icon>ui_npc_u_stalker_ki_head_5</icon>
+		<class>virtuos</class>
+		<community>killer</community>
+		<money min="1000" max="5000" infinitive="0"></money>
+		<rank>880</rank>
+		<reputation>-170</reputation>
+		<visual>actors\killer\stalker_ki_head_5</visual>
+		<snd_config>characters_voice\human_01\killer\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_sig220 = 1 \n
+			ammo_11.43x23_fmj \n
+			wpn_svu = 1 \n
+			ammo_7.62x54_7h14 \n
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+</xml>
