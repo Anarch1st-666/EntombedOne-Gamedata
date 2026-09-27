@@ -55,9 +55,6 @@
 	<!------- Защита ------>
 	 
      <outfit_info x="409" y="550" width="208" height="160" show_labels="0" show_hints="1">
-          <auto_static x="145" y="9999">
-               <text font="graffiti22" r="196" g="232" b="86" align="l" complex_mode="0">ui_st_params</text>
-          </auto_static>
           <scroll_view x="10" y="0" width="200" height="160" always_show_scroll="0"/>
           <static_burn_immunity x="0" y="0" width="230" height="20" complex_mode="1">
                <texture>ui_inv_icon_burn_immunity</texture>
@@ -115,31 +112,31 @@
                <background x="0" y="0">ui_la_blank</background>
           </progress>
      </progress_bar_health>
-     <progress_bar_armor x="389" y="277" height="222" width="14" horz="0" min="0" max="100" pos="0">
+     <progress_bar_armor x="389" y="277" height="222" width="18" horz="0" min="0" max="100" pos="0">
           <progress>
                <texture r="255" g="255" b="255">ui_la_progress_bar_vert_blue</texture>
                <background x="0" y="0">ui_la_blank</background>
           </progress>
      </progress_bar_armor>
-     <progress_bar_stamina x="419" y="277" height="222" width="14" horz="0" min="0" max="100" pos="0">
+     <progress_bar_stamina x="419" y="277" height="222" width="18" horz="0" min="0" max="100" pos="0">
           <progress>
                <texture r="255" g="255" b="0">ui_la_progress_bar_vert_green</texture>
                <background x="0" y="0">ui_la_blank</background>
           </progress>
      </progress_bar_stamina>
-     <progress_bar_radiation x="587" y="277" height="222" width="14" horz="0" min="0" max="100" pos="0">
+     <progress_bar_radiation x="587" y="277" height="222" width="18" horz="0" min="0" max="100" pos="0">
           <progress>
                <texture r="255" g="255" b="255">ui_la_progress_bar_vert_orange</texture>
                <background x="0" y="0">ui_la_blank</background>
           </progress>
      </progress_bar_radiation>
-     <progress_bar_hunger x="618" y="277" height="222" width="14" horz="0" min="0" max="100" pos="0">
+     <progress_bar_hunger x="618" y="277" height="222" width="18" horz="0" min="0" max="100" pos="0">
           <progress>
                <texture r="255" g="255" b="255">ui_la_progress_bar_vert_yellow</texture>
                <background x="0" y="0">ui_la_blank</background>
           </progress>
      </progress_bar_hunger>
-     <progress_bar_psy x="649" y="277" height="222" width="14" horz="0" min="0" max="100" pos="0">
+     <progress_bar_psy x="649" y="277" height="222" width="18" horz="0" min="0" max="100" pos="0">
           <progress>
                <texture r="255" g="255" b="255">ui_la_progress_bar_vert_black</texture>
                <background x="0" y="0">ui_la_blank</background>

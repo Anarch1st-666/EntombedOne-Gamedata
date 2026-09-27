@@ -5,13 +5,13 @@ additional_inventory_weight		= 0		; +max_walk_weight
 additional_inventory_weight2	= 0		;	+40 kg
 full_icon_name					= npc_icon_without_outfit
 
-player_hud_section			= actor_hud_05
+player_hud_section			= actor_hud_00
 
 [without_outfit]:outfit_base
 ;базовый костюм сталкера - костюм новичка. Обычная одежда туриста - штормовка+сапоги
 full_scale_icon		= 6,6
 
-player_hud_section			= actor_hud_05
+player_hud_section			= actor_hud_00
 
 
 ;---------------------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ cform           = skeleton
 visual          = equipments\novice_suit
 actor_visual	= actors\hero\stalker_novice.ogf
 
-player_hud_section			= actor_hud_05
+player_hud_section			= actor_hud_18
 
 ef_equipment_type	= 3
 
@@ -84,7 +84,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\bandit_suit
 actor_visual	= actors\hero\stalker_bandit.ogf
-player_hud_section			= actor_hud_01
+player_hud_section			= actor_hud_17
 
 ef_equipment_type	= 3
 
@@ -141,7 +141,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\stalker_killer_suit
 actor_visual	= actors\hero\stalker_killer.ogf
-player_hud_section			= actor_hud_12	
+player_hud_section			= actor_hud_14	
 
 ef_equipment_type	= 4
 
@@ -261,7 +261,7 @@ actor_visual	= actors\hero\stalker_specops.ogf
 
 ef_equipment_type	= 3
 
-player_hud_section	= actor_hud_06
+player_hud_section	= actor_hud_07
 
 inv_name			= specops_outfit_name
 inv_name_short		= specops_outfit_name
@@ -322,7 +322,7 @@ actor_visual	= actors\hero\stalker_commander.ogf
 
 ef_equipment_type	= 4
 
-player_hud_section		 	= actor_hud_14
+player_hud_section		 	= actor_hud_18
 
 inv_name			= military_outfit_name
 inv_name_short		= military_outfit_name
@@ -446,7 +446,7 @@ cform           = skeleton
 visual          = equipments\stalker_scient_suit	
 actor_visual	= actors\hero\stalker_scien.ogf
 
-player_hud_section	= actor_hud_07
+player_hud_section	= actor_hud_08
 
 ef_equipment_type	= 2
 
@@ -634,7 +634,7 @@ cform           = skeleton
 visual          = equipments\svoboda_heavy_suit
 actor_visual	= actors\hero\stalker_svoboda_light.ogf
 
-player_hud_section		 	= actor_hud_19
+player_hud_section		 	= actor_hud_10
 
 ef_equipment_type	= 3
 
@@ -755,7 +755,7 @@ cform           = skeleton
 visual          = equipments\stalker_dolg_nauchniy_suit
 actor_visual	= actors\dolg\stalker_do_nauchniy.ogf	
 
-player_hud_section	= actor_hud_07
+player_hud_section	= actor_hud_11
 
 ef_equipment_type	= 4
 
@@ -815,7 +815,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\ecolog_suit.ogf	
 actor_visual	= actors\hero\stalker_ecolog.ogf
-player_hud_section			= actor_hud_11
+player_hud_section			= actor_hud_12
 
 ef_equipment_type	= 2
 
@@ -876,7 +876,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\scientist_suit.ogf	
 actor_visual	= actors\hero\stalker_chemical.ogf
-player_hud_section			= actor_hud_10
+player_hud_section			= actor_hud_13
 
 
 ef_equipment_type	= 2
@@ -922,168 +922,3 @@ telepatic_immunity			= 0.00
 chemical_burn_immunity		= 0.005
 explosion_immunity			= 0.03
 fire_wound_immunity			= 0.01
-
-
-
-
-
-
-
-
-
-;---------------------------------------------------------------------------------------------
-;		УСТАРЕВШИЕ КОСТЮМЫ! НЕ ЮЗАТЬ
-;---------------------------------------------------------------------------------------------
-[military_stalker_outfit]:outfit_base
-GroupControlSection	= spawn_group
-discovery_dependency = 
-$spawn 			= "outfit\obsolete\military_stalker"
-$prefetch 		= 32
-class			= EQU_MLTR
-cform           = skeleton
-visual          = equipments\stalker_military_suit
-actor_visual	= actors\hero\stalker_military.ogf	
-
-ef_equipment_type	= 4
-
-inv_name			= "SKAT-9"
-inv_name_short		= "SKAT-9"
-description			= outfit_military_stalker
-inv_weight			= 10.0
-slot				= 6
-inv_grid_width		= 2
-inv_grid_height		= 3
-inv_grid_x			= 18
-inv_grid_y			= 17
-cost				= 0
-full_scale_icon		= 10,6		;иконка сталкера в костюме в полный рост
-
-immunities_sect			= sect_military_stalker_outfit_immunities
-
-; NO RESISTANCE
-burn_protection 				= 1.0
-strike_protection 			= 1.0
-shock_protection 				= 1.0
-wound_protection				= 1.0
-radiation_protection 			= 1.0
-telepatic_protection 			= 1.0
-chemical_burn_protection 		= 1.0
-explosion_protection 			= 1.0
-fire_wound_protection  		= 1.0
-
-bones_koeff_protection = kurtka_mask_damage
-
-[sect_military_stalker_outfit_immunities]
-burn_immunity				= 1.00				;коэффициенты иммунитета самого костюма
-strike_immunity				= 1.00
-shock_immunity				= 1.00
-wound_immunity				= 1.00
-radiation_immunity			= 1.00
-telepatic_immunity			= 1.00
-chemical_burn_immunity		= 1.00
-explosion_immunity			= 1.00
-fire_wound_immunity			= 1.00
-
-
-
-[military_commander_outfit]:outfit_base
-GroupControlSection	= spawn_group
-discovery_dependency = 
-$spawn 			= "outfit\obsolete\commander"
-;$prefetch 		= 32
-class			= EQU_MLTR
-cform           = skeleton
-visual          = equipments\stalker_comander_suit
-actor_visual	= actors\hero\stalker_commander.ogf	
-
-ef_equipment_type	= 4
-
-inv_name			= "SKAT-9M"
-inv_name_short		= "SKAT-9M"
-description			= outfit_military_commander
-inv_weight			= 10.0
-slot				= 6
-inv_grid_width		= 2
-inv_grid_height		= 3
-inv_grid_x			= 18
-inv_grid_y			= 17
-cost				= 12000
-full_scale_icon		= 10,6		;иконка сталкера в костюме в полный рост
-
-immunities_sect			= sect_military_commander_outfit_immunities
-
-; NO RESISTANCE
-burn_protection 				= 1.0
-strike_protection 			= 1.0
-shock_protection 				= 1.0
-wound_protection				= 1.0
-radiation_protection 			= 1.0
-telepatic_protection 			= 1.0
-chemical_burn_protection 		= 1.0
-explosion_protection 			= 1.0
-fire_wound_protection  		= 1.0
-
-bones_koeff_protection =	kurtka_mask_damage
-
-[sect_military_commander_outfit_immunities]
-burn_immunity				= 1.00				;коэффициенты иммунитета самого костюма
-strike_immunity				= 1.00
-shock_immunity				= 1.00
-wound_immunity				= 1.00
-radiation_immunity			= 1.00
-telepatic_immunity			= 1.00
-chemical_burn_immunity		= 1.00
-explosion_immunity			= 1.00
-fire_wound_immunity			= 1.00
-
-
-
-[soldier_outfit]:outfit_base
-GroupControlSection	= spawn_group
-discovery_dependency = 
-$spawn 			= "outfit\obsolete\soldier_outfit"
-;$prefetch 		= 32
-class			= E_STLK
-cform           = skeleton
-visual          = equipments\soldier_suit
-actor_visual	= actors\hero\stalker_soldier.ogf
-
-ef_equipment_type	= 3
-
-inv_name			= outfit_soldier_name
-inv_name_short		= outfit_soldier_name
-description			= outfit_soldier_description
-inv_weight			= 4.0
-inv_grid_width		= 2
-inv_grid_height		= 2
-inv_grid_x			= 0
-inv_grid_y			= 18
-cost				= 5000
-slot				= 6
-full_scale_icon		= 6,6		;иконка сталкера в костюме в полный рост
-
-immunities_sect			= sect_soldier_outfit_immunities
-
-; NO RESISTANCE
-burn_protection 				= 0.0
-strike_protection 				= 0.0
-shock_protection 				= 0.0
-wound_protection				= 0.3
-radiation_protection 			= 0.0
-telepatic_protection 			= 0.0
-chemical_burn_protection 		= 0.0
-explosion_protection 			= 0.0
-fire_wound_protection  			= 0.0
-
-bones_koeff_protection = gilet_mask_damage
-
-[sect_soldier_outfit_immunities]
-burn_immunity				= 0.00				;коэффициенты иммунитета самого костюма
-strike_immunity				= 0.00
-shock_immunity				= 0.00
-wound_immunity				= 0.00
-radiation_immunity			= 0.00
-telepatic_immunity			= 0.00
-chemical_burn_immunity		= 0.00
-explosion_immunity			= 0.00
-fire_wound_immunity			= 0.00
