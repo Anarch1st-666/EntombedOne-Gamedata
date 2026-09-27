@@ -31,14 +31,14 @@
 	<!-- Торговец Долга -->
 	<specific_character id="nii_trader" team_default = "1">
 		<name>nii_trader_name</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<icon>ui_npc_u_stalker_do_komandir</icon>
 		<class>nii_trader</class>
 		<community>dolg</community>
-		<money min="5000" max="5000" infinitive="0"></money>
+		<money min="1000000" max="1100000" infinitive="1"></money>
 		<rank>450</rank>
 		<reputation>300</reputation>
 		<visual>actors\dolg\stalker_dolg_uniq_trader</visual>
-		<crouch_type>0</crouch_type>
+		<crouch_type>-1</crouch_type>
 		<supplies>
 			[spawn] \n
 			wpn_fort \n

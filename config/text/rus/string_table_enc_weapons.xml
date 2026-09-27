@@ -3,124 +3,124 @@
 	<string id="Ammo">
 		<text>Боеприпасы</text>
 	</string>
-	<string id="ammo-11.43x23-fmj">
+	<string id="ammo_11.43x23_fmj">
 		<text>Патроны .45ACP</text>
 	</string>
-	<string id="ammo-11.43x23-fmj_s">
+	<string id="ammo_11.43x23_fmj_s">
 		<text>.45ACP</text>
 	</string>
-	<string id="ammo-11.43x23-hydro">
+	<string id="ammo_11.43x23_hydro">
 		<text>.45ACP Гидрошок</text>
 	</string>
-	<string id="ammo-11.43x23-hydro_s">
+	<string id="ammo_11.43x23_hydro_s">
 		<text>.45Гидро</text>
 	</string>
-	<string id="ammo-12x70-buck">
+	<string id="ammo_12x70_buck">
 		<text>Патроны 12х70 дробь</text>
 	</string>
-	<string id="ammo-12x70-buck_s">
+	<string id="ammo_12x70_buck_s">
 		<text>12х70 др.</text>
 	</string>
-	<string id="ammo-12x76-dart">
+	<string id="ammo_12x76_dart">
 		<text>Патроны 12x76 дротик</text>
 	</string>
-	<string id="ammo-12x76-dart_s">
+	<string id="ammo_12x76_dart_s">
 		<text>12x76 дт.</text>
 	</string>
-	<string id="ammo-12x76-zhekan">
+	<string id="ammo_12x76_zhekan">
 		<text>Патроны 12x76 жекан</text>
 	</string>
-	<string id="ammo-12x76-zhekan_s">
+	<string id="ammo_12x76_zhekan_s">
 		<text>12x76 жк.</text>
 	</string>
-	<string id="ammo-5.45x39-ap">
+	<string id="ammo_5.45x39_ap">
 		<text>Патроны 5,45x39 мм БП</text>
 	</string>
-	<string id="ammo-5.45x39-ap_s">
+	<string id="ammo_5.45x39_ap_s">
 		<text>5,45 БП</text>
 	</string>
-	<string id="ammo-5.45x39-fmj">
+	<string id="ammo_5.45x39_fmj">
 		<text>Патроны 5,45x39 мм</text>
 	</string>
-	<string id="ammo-5.45x39-fmj_s">
+	<string id="ammo_5.45x39_fmj_s">
 		<text>5.45x39</text>
 	</string>
-	<string id="ammo-5.56x45-ap">
+	<string id="ammo_5.56x45_ap">
 		<text>Патроны 5,56x45 мм AP</text>
 	</string>
-	<string id="ammo-5.56x45-ap_s">
+	<string id="ammo_5.56x45_ap_s">
 		<text>5,56 AP</text>
 	</string>
-	<string id="ammo-5.56x45-ss190">
+	<string id="ammo_5.56x45_ss190">
 		<text>5,56х45 мм SS109</text>
 	</string>
-	<string id="ammo-5.56x45-ss190_s">
+	<string id="ammo_5.56x45_ss190_s">
 		<text>5,56 SS</text>
 	</string>
-	<string id="ammo-7.62x54-7h1">
+	<string id="ammo_7.62x54_7h1">
 		<text>Патроны 7,62x54 мм 7H1</text>
 	</string>
-	<string id="ammo-7.62x54-7h1_s">
+	<string id="ammo_7.62x54_7h1_s">
 		<text>7,62 7H1</text>
 	</string>
-	<string id="ammo-7.62x54-7h14">
+	<string id="ammo_7.62x54_7h14">
 		<text>Патроны 7,62х54R 7Н14</text>
 	</string>
-	<string id="ammo-7.62x54-7h14_s">
+	<string id="ammo_7.62x54_7h14_s">
 		<text>7,62 7Н14</text>
 	</string>
-	<string id="ammo-7.62x54-ap">
+	<string id="ammo_7.62x54_ap">
 		<text>Патроны 7,62x54 мм БП</text>
 	</string>
-	<string id="ammo-7.62x54-ap_s">
+	<string id="ammo_7.62x54_ap_s">
 		<text>7,62 БП</text>
 	</string>
-	<string id="ammo-9x18-fmj">
+	<string id="ammo_9x18_fmj">
 		<text>Патроны 9х18 мм</text>
 	</string>
-	<string id="ammo-9x18-fmj_s">
+	<string id="ammo_9x18_fmj_s">
 		<text>9х18</text>
 	</string>
-	<string id="ammo-9x18-pmm">
+	<string id="ammo_9x18_pmm">
 		<text>Патроны 9х18 мм +P+</text>
 	</string>
-	<string id="ammo-9x18-pmm_s">
+	<string id="ammo_9x18_pmm_s">
 		<text>9х18 +P+</text>
 	</string>
-	<string id="ammo-9x19-fmj">
+	<string id="ammo_9x19_fmj">
 		<text>9х19mm ЦМО</text>
 	</string>
-	<string id="ammo-9x19-fmj_s">
+	<string id="ammo_9x19_fmj_s">
 		<text>9х19 ЦМО</text>
 	</string>
-	<string id="ammo-9x19-pbp">
+	<string id="ammo_9x19_pbp">
 		<text>Патроны 9x19mm PBP</text>
 	</string>
-	<string id="ammo-9x19-pbp_s">
+	<string id="ammo_9x19_pbp_s">
 		<text>9x19 PBP</text>
 	</string>
-	<string id="ammo-9x39-ap">
-		<text>Патроны 9x39 мм СП-6</text>
+	<string id="ammo_9x39_ap">
+		<text>Патроны 9x39 мм СП_6</text>
 	</string>
-	<string id="ammo-9x39-ap_s">
-		<text>9x39 СП-6</text>
+	<string id="ammo_9x39_ap_s">
+		<text>9x39 СП_6</text>
 	</string>
-	<string id="ammo-9x39-pab9">
-		<text>Патроны 9х39 мм ПАБ-9</text>
+	<string id="ammo_9x39_pab9">
+		<text>Патроны 9х39 мм ПАБ_9</text>
 	</string>
-	<string id="ammo-9x39-pab9_s">
+	<string id="ammo_9x39_pab9_s">
 		<text>9х39 ПАБ9</text>
 	</string>
-	<string id="ammo-9x39-sp5">
-		<text>Патроны 9х39 мм СП-5</text>
+	<string id="ammo_9x39_sp5">
+		<text>Патроны 9х39 мм СП_5</text>
 	</string>
-	<string id="ammo-9x39-sp5_s">
-		<text>9х39 СП-5</text>
+	<string id="ammo_9x39_sp5_s">
+		<text>9х39 СП_5</text>
 	</string>
-	<string id="ammo-gauss">
-		<text>Гаусс-патроны</text>
+	<string id="ammo_gauss">
+		<text>Гаусс_патроны</text>
 	</string>
-	<string id="ammo-gauss_s">
+	<string id="ammo_gauss_s">
 		<text>Гаусс</text>
 	</string>
 	<string id="ammo-m209">
@@ -147,64 +147,64 @@
 	<string id="ammo-vog-25p_s">
 		<text>ВОГ-25P</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-11.43x23-fmj">
+	<string id="ammo_11.43x23_fmj_desc">
 		<text>Базовый патрон для пистолетов Кора-919 и СиП-т М200. Простой сердечник, оболочечная пуля.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-11.43x23-hydro">
+	<string id="ammo_11.43x23_hydro_desc">
 		<text>Так называемый "Гидрошок" - патрон с улучшенными характеристиками для пистолетов Кора-919 и СиП-т М200. Экспансивная пуля, обладающая хорошим останавливающим действием.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-12x70-buck">
+	<string id="ammo_12x70_buck_desc">
 		<text>Обычный патрон 12-го калибра, снаряжённый 6-мм дробью. На близких дистанциях обладает огромным убойным действием. Предназначен для дробовиков ТоСТ 34, ВМ 17, Чейзер 13, СПСА14. Наиболее эффективен на дальностях до 30 метров.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-12x76-dart">
+	<string id="ammo_12x76_dart_desc">
 		<text>Оперённая пуля, стабилизирующаяся в полёте, что положительно сказывается на точности. Для дробовиков ТоСТ 34, ВМ 17, Чейзер 13, СПСА14. Увеличенные дальность и бронебойность - эффективен на дальностях до 150 метров.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-12x76-zhekan">
+	<string id="ammo_12x76_zhekan_desc">
 		<text>Патрон с тяжёлой безоболочечной пулей. Обычно используется для охоты на крупных животных, но подходит и для других целей. Его тяжёлая пуля не пробивает, а фактически продавливает бронежилеты. Предназначен для дробовиков ТоСТ 34, ВМ 17, Чейзер 13, СПСА14. Эффективен на дальностях до 100 метров.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-5.45x39-ap">
+	<string id="ammo_5.45x39_ap_desc">
 		<text>Бронебойный патрон для автоматов Aкм 74/2, Акм-74/2У, Обокан. Улучшенная бронебойная способность пули.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-5.45x39-fmj">
+	<string id="ammo_5.45x39_fmj_desc">
 		<text>Стандартный патрон для автоматов Aкм 74/2, Акм-74/2У, Обокан. Простой сердечник, оболочечная пуля.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-5.56x45-ap">
+	<string id="ammo_5.56x45_ap_desc">
 		<text>Патрон с бронебойной пулей для штурмовых винтовок ИЛ 86, ТРс 301, СГИ 5к, ГП 37, ФТ 200М.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-5.56x45-ss190">
+	<string id="ammo_5.56x45_ss190_desc">
 		<text>Стандартный натовский патрон, широко известный под бельгийским индексом SS109. Используется в штурмовых винтовках ИЛ 86, ТРс 301, СГИ 5к, ГП 37, ФТ 200М.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-7.62x54-7h1">
+	<string id="ammo_7.62x54_7h1_desc">
 		<text>Дешёвая в изготовлении модификация снайперского патрона для снайперских винтовок СВДм 2, СВУмк 2.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-7.62x54-7h14">
+	<string id="ammo_7.62x54_7h14_desc">
 		<text>Снайперский патрон для снайперских винтовок СВДм 2, СВУмк 2. Обладает улучшенными характеристиками по точности и дальности.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-7.62x54-ap">
+	<string id="ammo_7.62x54_ap_desc">
 		<text>Патрон с бронебойной пулей. Для снайперских винтовок СВДм 2, СВУмк 2.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-9x18-fmj">
+	<string id="ammo_9x18_fmj_desc">
 		<text>Базовый патрон для пистолетов ПМм, ПБ1с, Фора-12Мк2. Простой сердечник, оболочечная пуля. Слабое бронебойное действие.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-9x18-pmm">
+	<string id="ammo_9x18_pmm_desc">
 		<text>Патрон с улучшенными баллистическими характеристиками для пистолетов ПМм, ПБ1с, Фора-12Мк2. За счёт более высокой начальной скорости пули намного эффективнее обычного патрона. Более выраженный бронебойный эффект.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-9x19-fmj">
+	<string id="ammo_9x19_fmj_desc">
 		<text>Базовый патрон для пистолета Волкер Р9м и пистолета-пулемета Гадюка 5. Оболочечная пуля. Слабое бронебойное действие.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-9x19-pbp">
+	<string id="ammo_9x19_pbp_desc">
 		<text>Патрон с улучшенными характеристиками для пистолета Волкер Р9м и пистолета-пулемета Гадюка 5. Мощный патрон с экспансивной пулей и бронебойным сердечником.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-9x39-ap">
+	<string id="ammo_9x39_ap_desc">
 		<text>Бронебойный патрон для автоматов "Гром", "ВЛА" и специальной снайперской винтовки "Винтарь". Имеет дозвуковую скорость полёта, но за счёт пули особой конструкции пробивает большинство бронежилетов на дальностях до 400 метров.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-9x39-pab9">
+	<string id="ammo_9x39_pab9_desc">
 		<text>Патрон для автоматов "Гром", "ВЛА" и специальной снайперской винтовки "Винтарь". Более поздняя и дешёвая в изготовлении модификация бронебойного патрона. Имеет дозвуковую скорость полёта, но за счёт пули особой конструкции пробивает большинство бронежилетов на дальностях до 300 метров.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-9x39-sp5">
+	<string id="ammo_9x39_sp5_desc">
 		<text>Снайперский патрон для автоматов "Гром", "ВЛА" и специальной снайперской винтовки "Винтарь". Имеет дозвуковую скорость полета, но за счёт тяжёлой пули особой конструкции пробивает большинство бронежилетов на дальностях до 400 метров.</text>
 	</string>
-	<string id="enc_weapons1_ammo_ammo-gauss">
+	<string id="ammo_gauss_desc">
 		<text>Энергетические ёмкости с готовыми убойными элементами в магазине для гаусс-винтовки. Источником энергии является капсулированный фрагмент артефакта "Вспышка".</text>
 	</string>
 	<string id="enc_weapons1_ammo_ammo-m209">
@@ -399,6 +399,9 @@
 	<string id="enc_weapons1_wpn-wincheaster1300">
 		<text>Гладкоствольное помповое ружье американского производства, созданное для применения в самых неблагоприятных условиях и отличающееся высокой надёжностью. Все детали снабжены антикоррозийным покрытием.\n Боеприпасы:\n 12х70 дробь,\n 12x76 жекан,\n 12x76 дротик.</text>
 	</string>
+	<string id="enc_weapons1_wpn-pkm">
+		<text>РП-74 - радянський ручний кулемет. Він дуже потужний, скорострільний та має велику ємкість коробу для патронів. Але також в кулемета сильна віддача, мала точність і велика вага. Рідкісна зброя, яку використовують для боротьби із великою кількістю супротивників.</text>
+	</string>
 	<string id="grenade-f1">
 		<text>Граната Ф1</text>
 	</string>
@@ -578,5 +581,8 @@
 	</string>
 	<string id="wpn-wincheaster1300">
 		<text>Чейзер 13</text>
+	</string>
+	<string id="wpn-pkm">
+		<text>РП-74</text>
 	</string>
 </string_table>

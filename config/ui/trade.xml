@@ -33,11 +33,11 @@
      <static x="662" y="37" width="362" height="224" stretch="1">
           <texture>ui_la_blank</texture>
      </static>
-     <dragdrop_list x="11" y="0" width="331" height="175" cell_width="35" cell_height="35" rows_num="5" cols_num="9" group_similar="1" unlimited="1"/>
+     <dragdrop_list x="21" y="0" width="331" height="175" cell_width="35" cell_height="35" rows_num="5" cols_num="9" group_similar="1" unlimited="1"/>
      <static x="-10" y="37" width="362" height="224" stretch="1">
           <texture>ui_la_blank</texture>
      </static>
-     <dragdrop_list x="10" y="0" width="331" height="175" cell_width="35" cell_height="35" rows_num="5" cols_num="9" group_similar="1" unlimited="1"/>
+     <dragdrop_list x="20" y="0" width="331" height="175" cell_width="35" cell_height="35" rows_num="5" cols_num="9" group_similar="1" unlimited="1"/>
      <desc_frame_window x="350" y="22" width="320" height="230">
           <texture>ui_frame_03</texture>
      </desc_frame_window>

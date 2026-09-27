@@ -9,7 +9,7 @@
 			<text font="letterica16" color="ui_clr_2">ui_inv_damage</text>
 		</cap_damage>
 		<cap_rpm x="150" y="24" width="121" height="15">
-			<text font="letterica16" color="ui_clr_2">st_prop_recoil</text>
+			<text font="letterica16" color="ui_clr_2">ui_inv_rate_of_fire</text>
 		</cap_rpm>
 		<progress_accuracy x="0" y="15" width="134" height="7" horz="1">
 			<progress>
