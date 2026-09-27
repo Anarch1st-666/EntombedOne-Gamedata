@@ -14,7 +14,7 @@ class "actor_binder" (object_binder)
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:__init (obj) super(obj)
 	self.bCheckStart = false
-	self.weather_manager = level_weathers.WeatherManager()
+	self.weather_manager = level_weathers.get_weather_manager()
 	self.actor_detector = xr_detector.actor_detector()
 end
 ----------------------------------------------------------------------------------------------------------------------
@@ -36,6 +36,7 @@ function actor_binder:net_spawn(data)
 	end
 
 	self.weather_manager:reset()
+	sr_weather.get_weather_effector():reset()
 --	game_stats.initialize ()
 
 	if(actor_stats.add_to_ranking~=nil)then

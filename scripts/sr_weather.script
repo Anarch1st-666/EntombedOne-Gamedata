@@ -1,0 +1,91 @@
+--/------------------------------------------------------------------
+class "weather_effector"
+--/------------------------------------------------------------------
+function weather_effector:__init()
+	self.environment = level.environment()
+	self.zones_counter = 0
+end
+
+function weather_effector:on_zone_enter(zone_params)
+	self.zones_counter = self.zones_counter + 1
+	
+	self.environment:set_env_ambient(zone_params.sound_ambient)
+	self.environment:set_ambient_color_factor(zone_params.ambient_factor)
+	self.environment:set_fog_color_factor(zone_params.fog_factor)
+end
+
+function weather_effector:on_zone_exit()
+	self.zones_counter = self.zones_counter - 1
+	
+	if self.zones_counter <= 0 then
+		self:reset()
+	end
+end
+
+function weather_effector:reset()
+	self.environment:set_env_ambient("")
+	self.environment:set_ambient_color_factor(1.0)
+	self.environment:set_fog_color_factor(1.0)
+end
+
+--/------------------------------------------------------------------
+--/ INSTANCE
+--/------------------------------------------------------------------
+local _weather_effector = nil
+
+function get_weather_effector()
+	if not _weather_effector then
+		_weather_effector = weather_effector()
+	end
+	return _weather_effector
+end
+
+--/ -----------------------------------------------------------------------------------------------
+class "action_change_weather"
+--/ -----------------------------------------------------------------------------------------------
+function action_change_weather:__init(obj, st)
+	self.object = obj
+	self.st = st
+	self.actor_inside = false
+end
+--/------------------------------------------------------------------
+--/ RESET SCHEME
+--/------------------------------------------------------------------
+function action_change_weather:reset_scheme()
+end
+--/------------------------------------------------------------------
+--/ UPDATE
+--/------------------------------------------------------------------
+function action_change_weather:update(delta)
+	if not db.actor then return end --/>
+	if self.object:inside(db.actor:center()) then
+		if not self.actor_inside then
+			self.actor_inside = true
+			get_weather_effector():on_zone_enter(self.st)
+		end
+	elseif self.actor_inside then
+		self.actor_inside = false
+		get_weather_effector():on_zone_exit()
+	end
+	
+	xr_logic.try_switch_to_another_section(self.object, self.st, db.actor)
+end
+--/ -----------------------------------------------------------------------------------------------
+--/ BINDER
+--/ -----------------------------------------------------------------------------------------------
+function add_to_binder(obj, ini, scheme, section, st)
+	local new_action = this.action_change_weather(obj, st)
+	xr_logic.subscribe_action_for_events(obj, st, new_action)
+end
+--/------------------------------------------------------------------
+--/ SET SCHEME
+--/------------------------------------------------------------------
+function set_scheme(obj, ini, scheme, section, gulag_name)
+	local st = xr_logic.assign_storage_and_bind(obj, ini, scheme, section)
+	st.logic = xr_logic.cfg_get_switch_conditions(ini, section, obj)
+	
+	st.sound_ambient = utils.cfg_get_string(ini, section, "sound_ambient", obj, false, "", "indoor")
+	st.ambient_factor = utils.cfg_get_number(ini, section, "ambient_factor", obj, false, 0.0)
+	st.fog_factor = utils.cfg_get_number(ini, section, "fog_factor", obj, false, 0.0)
+end
+--/ -----------------------------------------------------------------------------------------------
