@@ -57,37 +57,37 @@
 	</quick_info>
 
 	
-	<icons_scroll_view  x="955" y="100" width="65" height="455" right_ident="2" always_show_scroll="0" vert_interval="18" inverse_dir="1" flip_vert="0"/>
+	<icons_scroll_view  x="970" y="100" width="50" height="455" right_ident="2" always_show_scroll="0" vert_interval="18" inverse_dir="1" flip_vert="0"/>
 
-	<weapon_jammed_static x="0" y="0" width="64" height="64">
+	<weapon_jammed_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_weapon</texture>
 	</weapon_jammed_static>
 
-	<radiation_static x="0" y="0" width="64" height="64">
+	<radiation_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_radiation</texture>
 	</radiation_static>
 
-	<wound_static x="0" y="0" width="64" height="64">
+	<wound_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_drop</texture>
 	</wound_static>
 
-	<starvation_static x="0" y="0" width="64" height="64">
+	<starvation_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_eat</texture>
 	</starvation_static>
 
-	<psy_health_static x="0" y="0" width="64" height="64">
+	<psy_health_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_psycho</texture>
 	</psy_health_static>
 
-	<invincible_static x="0" y="0" width="64" height="64">
+	<invincible_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_goodmode</texture>
 	</invincible_static>
 	
-	<can_sleep_static x="0" y="0" width="64" height="64" stretch="1">
+	<can_sleep_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_sleep</texture>
 	</can_sleep_static>
 
-	<artefact_static x="0" y="0" width="64" height="64">
+	<artefact_static x="0" y="0" width="48" height="48" stretch="1">
 		<texture>ui_hud_icon_artefact</texture>
 	</artefact_static>
 
@@ -101,6 +101,4 @@
 	<pick_up_item x="437" y="400" width="150" height="100"/>
 
 	<artefact_panel x="130" y="710" width="730" height="50" cell_width="50" cell_height="50" scale="0.75"/>
-	
-	<new_contact_snd>detectors\contact_1</new_contact_snd>	
 </window>

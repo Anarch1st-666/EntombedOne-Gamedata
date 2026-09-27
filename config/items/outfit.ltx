@@ -5,9 +5,13 @@ additional_inventory_weight		= 0		; +max_walk_weight
 additional_inventory_weight2	= 0		;	+40 kg
 full_icon_name					= npc_icon_without_outfit
 
+player_hud_section			= actor_hud_05
+
 [without_outfit]:outfit_base
 ;базовый костюм сталкера - костюм новичка. Обычная одежда туриста - штормовка+сапоги
 full_scale_icon		= 6,6
+
+player_hud_section			= actor_hud_05
 
 
 ;---------------------------------------------------------------------------------------------
@@ -22,6 +26,8 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\novice_suit
 actor_visual	= actors\hero\stalker_novice.ogf
+
+player_hud_section			= actor_hud_05
 
 ef_equipment_type	= 3
 
@@ -78,6 +84,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\bandit_suit
 actor_visual	= actors\hero\stalker_bandit.ogf
+player_hud_section			= actor_hud_01
 
 ef_equipment_type	= 3
 
@@ -133,7 +140,8 @@ $spawn 			= "outfit\killer_outfit"
 class			= E_STLK
 cform           = skeleton
 visual          = equipments\stalker_killer_suit
-actor_visual	= actors\hero\stalker_killer.ogf	
+actor_visual	= actors\hero\stalker_killer.ogf
+player_hud_section			= actor_hud_12	
 
 ef_equipment_type	= 4
 
@@ -192,6 +200,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\monolit_suit
 actor_visual	= actors\hero\stalker_monolit.ogf
+player_hud_section			= actor_hud_15
 
 ef_equipment_type	= 3
 
@@ -252,6 +261,8 @@ actor_visual	= actors\hero\stalker_specops.ogf
 
 ef_equipment_type	= 3
 
+player_hud_section	= actor_hud_06
+
 inv_name			= specops_outfit_name
 inv_name_short		= specops_outfit_name
 description			= specops_outfit_description
@@ -261,7 +272,7 @@ inv_grid_height		= 3
 inv_grid_x			= 10
 inv_grid_y			= 13
 full_icon_name		= npc_icon_specops_outfit
-nightvision_sect	= effector_nightvision_bad
+;nightvision_sect	= effector_nightvision_bad
 
 cost				= 12000
 slot				= 6
@@ -311,6 +322,8 @@ actor_visual	= actors\hero\stalker_commander.ogf
 
 ef_equipment_type	= 4
 
+player_hud_section		 	= actor_hud_14
+
 inv_name			= military_outfit_name
 inv_name_short		= military_outfit_name
 description			= military_outfit_description
@@ -321,7 +334,7 @@ inv_grid_height		= 3
 inv_grid_x			= 18
 inv_grid_y			= 17
 full_icon_name		= npc_icon_military_outfit
-nightvision_sect	= effector_nightvision_bad
+;nightvision_sect	= effector_nightvision_bad
 
 cost				= 40000
 full_scale_icon		= 10,6		;иконка сталкера в костюме в полный рост
@@ -367,8 +380,13 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\stalker_suit
 actor_visual	= actors\hero\stalker_hood.ogf
+player_hud_section			= actor_hud_05
 
 ef_equipment_type	= 3
+
+
+
+player_hud_section	= actor_hud_05
 
 inv_name			= stalker_outfit_name
 inv_name_short		= stalker_outfit_name
@@ -383,7 +401,7 @@ full_icon_name		= npc_icon_stalker_outfit
 cost				= 15000
 slot				= 6
 full_scale_icon		= 14,11			;иконка сталкера в костюме в полный рост
-nightvision_sect				= effector_nightvision_bad
+;nightvision_sect				= effector_nightvision_bad
 
 immunities_sect			= sect_stalker_outfit_immunities
 
@@ -428,6 +446,8 @@ cform           = skeleton
 visual          = equipments\stalker_scient_suit	
 actor_visual	= actors\hero\stalker_scien.ogf
 
+player_hud_section	= actor_hud_07
+
 ef_equipment_type	= 2
 
 inv_name			= scientific_outfit_name
@@ -440,7 +460,7 @@ inv_grid_height		= 3
 inv_grid_x			= 16
 inv_grid_y			= 13
 full_icon_name		= npc_icon_scientific_outfit
-nightvision_sect	= effector_nightvision_good
+;nightvision_sect	= effector_nightvision_good
 
 cost				= 30000
 full_scale_icon		= 12,11			;иконка сталкера в костюме в полный рост
@@ -487,6 +507,8 @@ cform           = skeleton
 visual          = equipments\exoskelet	
 actor_visual	= actors\hero\stalker_exoskeleton.ogf
 
+player_hud_section	= actor_hud_exo
+
 ef_equipment_type	= 5
 
 inv_name			= exo_outfit_name
@@ -499,7 +521,7 @@ inv_grid_height		= 3
 inv_grid_x			= 14
 inv_grid_y			= 13
 full_icon_name		= npc_icon_exo_outfit
-nightvision_sect	= effector_nightvision_bad
+;nightvision_sect	= effector_nightvision_bad
 
 cost				= 50000
 full_scale_icon		= 2,11			;иконка сталкера в костюме в полный рост
@@ -518,7 +540,7 @@ explosion_protection 			= 0.8
 fire_wound_protection  			= 0.60
 
 ;запрещение режима Sprint для Актера
-sprint_allowed					= false
+;sprint_allowed					= false
 bones_koeff_protection			= exo_helmet_damage
 additional_inventory_weight		= 20
 additional_inventory_weight2	= 20 ; 40+
@@ -549,6 +571,9 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\svoboda_light_suit
 actor_visual	= actors\hero\stalker_svoboda_light.ogf
+player_hud_section		 	= actor_hud_03
+
+player_hud_section	= actor_hud_03
 
 ef_equipment_type	= 3
 
@@ -609,6 +634,8 @@ cform           = skeleton
 visual          = equipments\svoboda_heavy_suit
 actor_visual	= actors\hero\stalker_svoboda_light.ogf
 
+player_hud_section		 	= actor_hud_19
+
 ef_equipment_type	= 3
 
 inv_name			= svoboda_heavy_outfit_name
@@ -620,7 +647,7 @@ inv_grid_height		= 3
 inv_grid_x			= 8
 inv_grid_y			= 15
 full_icon_name		= npc_icon_svoboda_heavy_outfit
-nightvision_sect	= effector_nightvision_bad
+;nightvision_sect	= effector_nightvision_bad
 
 cost				= 12500
 slot				= 6
@@ -667,6 +694,8 @@ cform           = skeleton
 visual          = equipments\dolg_suit
 actor_visual	= actors\hero\stalker_dolg.ogf
 
+player_hud_section	= actor_hud_02
+
 ef_equipment_type	= 3
 
 inv_name			= dolg_outfit_name
@@ -682,7 +711,7 @@ full_icon_name		= npc_icon_dolg_outfit
 cost				= 14000
 slot				= 6
 full_scale_icon		= 8,11			;иконка сталкера в костюме в полный рост
-nightvision_sect	= effector_nightvision_bad
+;nightvision_sect	= effector_nightvision_bad
 
 immunities_sect			= sect_dolg_outfit_immunities
 
@@ -726,6 +755,8 @@ cform           = skeleton
 visual          = equipments\stalker_dolg_nauchniy_suit
 actor_visual	= actors\dolg\stalker_do_nauchniy.ogf	
 
+player_hud_section	= actor_hud_07
+
 ef_equipment_type	= 4
 
 inv_name			= dolg_scientific_outfit_name
@@ -738,7 +769,7 @@ inv_grid_height		= 3
 inv_grid_x			= 16
 inv_grid_y			= 16
 full_icon_name		= npc_icon_dolg_scientific_outfit
-nightvision_sect	= effector_nightvision_good
+;nightvision_sect	= effector_nightvision_good
 
 cost				= 25000
 full_scale_icon		= 8,6		;иконка сталкера в костюме в полный рост
@@ -784,6 +815,7 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\ecolog_suit.ogf	
 actor_visual	= actors\hero\stalker_ecolog.ogf
+player_hud_section			= actor_hud_11
 
 ef_equipment_type	= 2
 
@@ -797,7 +829,7 @@ inv_grid_height		= 3
 inv_grid_x			= 18
 inv_grid_y			= 13
 full_icon_name		= npc_icon_ecolog_outfit
-nightvision_sect	= effector_nightvision_good
+;nightvision_sect	= effector_nightvision_good
 
 cost				= 15000
 full_scale_icon		= 14,6			;иконка сталкера в костюме в полный рост
@@ -844,6 +876,8 @@ class			= E_STLK
 cform           = skeleton
 visual          = equipments\scientist_suit.ogf	
 actor_visual	= actors\hero\stalker_chemical.ogf
+player_hud_section			= actor_hud_10
+
 
 ef_equipment_type	= 2
 
@@ -857,7 +891,7 @@ inv_grid_height		= 3
 inv_grid_x			= 14
 inv_grid_y			= 16
 full_icon_name		= npc_icon_protection_outfit
-nightvision_sect	= effector_nightvision_good
+;nightvision_sect	= effector_nightvision_good
 
 cost				= 24000
 full_scale_icon		= 12,6			;иконка сталкера в костюме в полный рост

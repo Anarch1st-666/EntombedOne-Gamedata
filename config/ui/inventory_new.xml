@@ -32,19 +32,14 @@
 	 
 	<!------- Оружие ------->
 	
-	 <dragdrop_automatic 		x="392" y="163" width="240" height="80" cell_width="40" cell_height="40" rows_num="2" cols_num="6" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
-	 <dragdrop_automatic 		x="390" y="18"  width="240" height="80" cell_width="40" cell_height="40" rows_num="2" cols_num="6" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
-	 <dragdrop_pistol 		    x="566" y="111" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="2" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
-	 <dragdrop_knife 			x="563" y="123" width="104" height="48" cell_width="45" cell_height="40" rows_num="1" cols_num="2" custom_placement="1" a="0"/>
+	 <dragdrop_automatic 		x="392" y="163" width="240" height="80" cell_width="40" cell_height="40" rows_num="2" cols_num="6" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/> -- Main weapon
+	 <dragdrop_pistol 		    x="390" y="18"  width="240" height="80" cell_width="40" cell_height="40" rows_num="2" cols_num="6" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/> -- Secondary weapon
+	 <dragdrop_binocular 	    x="566" y="111" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="2" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>  -- Pistol
+     <dragdrop_nv				x="472" y="111" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="2" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>  -- Binocular
+	 <dragdrop_knife 			x="378" y="111" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="2" custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>  -- Knife
 	 
-	<!------- Приборы ------>
-	 
-     <dragdrop_detecor 			x="324" y="12" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="1" custom_placement="1" a="0"/>
-	 <dragdrop_binocular		x="384" y="67" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="2" custom_placement="1" a="0"/>
-     <dragdrop_torch 			x="484" y="67" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="2" custom_placement="1" a="0"/>
-     <dragdrop_pnv 				x="581" y="67" width="80" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="2" custom_placement="1" a="0"/>
-     <dragdrop_anomaly_detector x="324" y="68" width="40" height="40" cell_width="40" cell_height="40" rows_num="1" cols_num="1" custom_placement="1" a="0"/>
-     
+	<!------- Персонаж ------>
+
 	 <money_static x="574" y="727" width="102" height="33" stretch="1">
           <text font="graffiti22" align="c" vert_align="c" color="UI_orange"/>
      </money_static>

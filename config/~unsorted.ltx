@@ -24,16 +24,17 @@ max_ruck		= 56
 max_belt		= 9
 slots			= 11
 
-slot_persistent_1  = true		;knife
+slot_persistent_1  = false		;knife
 slot_persistent_2  = false		;pistol
 slot_persistent_3  = false		;automatic
 slot_persistent_4  = true		;grenades
-slot_persistent_5  = true		;binocular
+slot_persistent_5  = false		;binocular
 slot_persistent_6  = true		;bolt
 slot_persistent_7  = false		;outfit
 slot_persistent_8  = true		;pda
 slot_persistent_9  = true		;detector
-slot_persistent_10  = true		;torch
+slot_persistent_10 = true		;torch
+slot_persistent_12 = false		;night vision
 
 [hud_cursor]
 ;все размеры в процентах от длины экрана
@@ -208,8 +209,7 @@ bonce_damage_factor_for_objects = 1.
 [maingame_ui]
 pda_msgs_max_show_time = 20000
 info_msgs_max_show_time = 10000
-snd_new_contact					= detectors\contact_1
-snd_new_contact1				= detectors\contact_8
+snd_new_contact					= monsters\biting\def_0 ;detectors\contact_1
 
 [multiplayer_skins]
 stalker_killer_head_1	= 0,380

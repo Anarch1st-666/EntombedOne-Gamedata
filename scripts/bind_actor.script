@@ -264,6 +264,7 @@ function actor_binder:update(delta)
 			end
 		
 			got("wpn_knife")
+			got("wpn_binoc")
 		
 			got("wpn_addon_scope")
 			got("wpn_addon_silencer")
@@ -310,6 +311,22 @@ function actor_binder:update(delta)
 --			got("grenade_gd-05")
 
 			got("af_electra_flash")
+			
+			got("novice_outfit")
+			got("bandit_outfit")
+			got("killer_outfit")
+			got("monolit_outfit")
+			got("specops_outfit")
+			got("military_outfit")
+			got("stalker_outfit")
+			got("scientific_outfit")
+			got("exo_outfit")
+			got("svoboda_light_outfit")
+			got("svoboda_heavy_outfit")
+			got("dolg_outfit")
+			got("dolg_scientific_outfit")
+			got("ecolog_outfit")
+			got("protection_outfit")
 		end
 
 		self.bCheckStart = false		
