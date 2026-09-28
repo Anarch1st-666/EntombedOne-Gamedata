@@ -4,10 +4,10 @@
 		<text font="letterica16" r="238" g="224" b="198"/>		
 	</speech_menu>
 
-     <static_health x="856" y="688" width="195" height="39" stretch="1">
+     <static_health x="928.00" y="688" width="111.43" height="39" stretch="1">
           <texture>ui_hud_la_bar_health</texture>
      </static_health>
-     <progress_bar_health x="35" y="12" width="114" height="14" horz="1" min="0" max="100" pos="0">
+     <progress_bar_health x=" 20.00" y="12" width=" 65.14" height="14" horz="1" min="0" max="100" pos="0">
           <progress>
                <texture tile="0" length="114">ui_hud_progress_bar_red</texture>
                <background>ui_la_blank</background>
@@ -24,27 +24,27 @@
           </progress>
      </progress_bar_armor>
 
-     <static_stamina x="858" y="665" width="195" height="30" stretch="1">
+     <static_stamina x="929.14" y="665" width="111.43" height="30" stretch="1">
           <texture>ui_hud_la_bar_stamina</texture>
      </static_stamina>
-     <progress_bar_stamina x="33" y="11" width="114" height="14" horz="1" min="0" max="100" pos="0">
+     <progress_bar_stamina x=" 18.86" y="11" width=" 65.14" height="14" horz="1" min="0" max="100" pos="0">
           <progress>
                <texture tile="0" length="114" a="255" r="248" g="163" b="30">ui_hud_progress_bar_green</texture>
                <background>ui_la_blank</background>
           </progress>
      </progress_bar_stamina>
 	
-	<static_weapon x="856" y="468" width="200" height="300" stretch="1">
-          <text x="80" y="258" font="arial_14" color="ui_clr_1"/>
+	<static_weapon x="928.00" y="468" width="114.29" height="300" stretch="1">
+          <text x="45" y="258" font="arial_14" color="ui_clr_1"/>
           <texture>ui_hud_la_weapon_trans</texture>
      </static_weapon>
-     <static_ammo x="80" y="269" width="70" height="30">
+     <static_ammo x="50" y="269" width="40.00" height="30">
           <text align="l" complex_mode="0" font="graffiti22" color="UI_orange">Ammo</text>
      </static_ammo>
-     <static_wpn_firemode x="135" y="285" width="24" height="15">
+     <static_wpn_firemode x="77.14" y="285" width="13.71" height="15">
           <text align="c" complex_mode="0" font="arial_14" color="ui_clr_1">(A)</text>
      </static_wpn_firemode>
-     <static_wpn_icon x="19" y="256" width="60" height="30" stretch="1">
+     <static_wpn_icon x="10.86" y="256" width=" 34.29" height="30" stretch="1">
           <text font="graffiti19" r="239" g="154" b="29" a="230"/>
      </static_wpn_icon>
 
@@ -61,37 +61,37 @@
 	</quick_info>
 
 	
-	<icons_scroll_view  x="970" y="100" width="50" height="455" right_ident="2" always_show_scroll="0" vert_interval="18" inverse_dir="1" flip_vert="0"/>
+	<icons_scroll_view  x="993.14" y="100" width="28.57" height="455" right_ident="2" always_show_scroll="0" vert_interval="18" inverse_dir="1" flip_vert="0"/>
 
-	<weapon_jammed_static x="0" y="0" width="48" height="48" stretch="1">
+	<weapon_jammed_static x="0" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_weapon</texture>
 	</weapon_jammed_static>
 
-	<radiation_static x="0" y="0" width="48" height="48" stretch="1">
+	<radiation_static x="  0.00" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_radiation</texture>
 	</radiation_static>
 
-	<wound_static x="0" y="0" width="48" height="48" stretch="1">
+	<wound_static x="0" y="0" width="48" height="27.43" stretch="1">
 		<texture>ui_hud_icon_drop</texture>
 	</wound_static>
 
-	<starvation_static x="0" y="0" width="48" height="48" stretch="1">
+	<starvation_static x="0" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_eat</texture>
 	</starvation_static>
 
-	<psy_health_static x="0" y="0" width="48" height="48" stretch="1">
+	<psy_health_static x="0" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_psycho</texture>
 	</psy_health_static>
 
-	<invincible_static x="0" y="0" width="48" height="48" stretch="1">
+	<invincible_static x="0" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_goodmode</texture>
 	</invincible_static>
 	
-	<can_sleep_static x="0" y="0" width="48" height="48" stretch="1">
+	<can_sleep_static x="0" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_sleep</texture>
 	</can_sleep_static>
 
-	<artefact_static x="0" y="0" width="48" height="48" stretch="1">
+	<artefact_static x="0" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_artefact</texture>
 	</artefact_static>
 
@@ -104,5 +104,5 @@
 
 	<pick_up_item x="437" y="400" width="150" height="100"/>
 
-	<artefact_panel x="12" y="720" width="1000" height="50" cell_width="50" cell_height="50" scale="0.5" icons_align="c"/>
+	<artefact_panel x="  6.86" y="720" width="571.43" height="50" cell_width="50" cell_height="50" scale="0.5" icons_align="c"/>
 </window>
