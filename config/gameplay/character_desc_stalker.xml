@@ -1,5 +1,103 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <xml>
-
+<!---------------------------STALKER NOVICE----------------------->
+	<specific_character id="agr_stalker_novice2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_2</icon>
+		<class>agr_stalker_novice</class>
+		<community>stalker</community>
+		<rank>140</rank>
+		<reputation>12</reputation>
+		<money min="200" max="1000" infinitive="0"/>
+		<snd_config>characters_voice\human_01\newbie\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\novice\green_stalker_2</visual>
+		<supplies>
+			[spawn] \n
+			wpn_mp5 \n
+			ammo_9x19_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>
+#include "gameplay\character_criticals_3.xml"
+		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!------------------------------------------------------------------------------------------>
+	<specific_character id="agr_stalker_novice3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_3</icon>
+		<class>agr_stalker_novice</class>
+		<community>stalker</community>
+		<rank>214</rank>
+		<reputation>9</reputation>
+		<money min="500" max="2000" infinitive="0"/>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\novice\green_stalker_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			wpn_bm16 \n
+			ammo_12x70_buck \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>
+#include "gameplay\character_criticals_3.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!------------------------------------------------------------------------------------------>
+	<specific_character id="agr_stalker_novice4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_4</icon>
+		<class>agr_stalker_novice</class>
+		<community>stalker</community>
+		<rank>268</rank>
+		<reputation>-10</reputation>
+		<money min="1000" max="3000" infinitive="0"/>
+		<snd_config>characters_voice\human_02\newbie\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\novice\green_stalker_4</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			wpn_toz34 \n
+			ammo_12x70_buck \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>
+#include "gameplay\character_criticals_3.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!------------------------------------------------------------------------------------------>
+	<specific_character id="agr_stalker_novice5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_green_stalker_5</icon>
+		<class>agr_stalker_novice</class>
+		<community>stalker</community>
+		<rank>224</rank>
+		<reputation>18</reputation>
+		<money min="1000" max="4000" infinitive="0"/>
+		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\novice\green_stalker_5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml"
+		</supplies>
+#include "gameplay\character_criticals_3.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!------------------------------------------------------------------------------------------>
 </xml>

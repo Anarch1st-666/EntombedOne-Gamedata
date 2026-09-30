@@ -18,6 +18,10 @@
 -----------------------------------------------------------------------
 --// UNIQUE
 -----------------------------------------------------------------------
+	<character id="crashed_helicopter_soldier">
+		<class>crashed_helicopter_soldier</class>
+	</character>
+
 	<character id="grechkin">
 		<class>grechkin</class>
 	</character>
@@ -38,8 +42,12 @@
 		<class>factory_suspect_2</class>
 	</character>
 	
-	<character id="virtuos">
-		<class>virtuos</class>
+	<character id="rogue">
+		<class>rogue</class>
+	</character>
+
+	<character id="agr_freedom_saboteur">
+		<class>agr_freedom_saboteur</class>
 	</character>
 
 -----------------------------------------------------------------------
@@ -77,6 +85,15 @@
 	</character>
 	<character id="agr_killer_master">
 		<class>agr_killer_master</class>
+	</character>
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+--// STALKER
+-----------------------------------------------------------------------
+	<character id="agr_stalker_novice">
+		<class>agr_stalker_novice</class>
 	</character>
 -----------------------------------------------------------------------
 	

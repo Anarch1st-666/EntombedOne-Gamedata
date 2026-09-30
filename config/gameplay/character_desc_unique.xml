@@ -2,6 +2,34 @@
 
 <xml>
 ------------------------------------------------------------------------------------------
+--// Военный у вертолёта
+------------------------------------------------------------------------------------------
+	<specific_character id="crashed_helicopter_soldier" team_default = "1">
+		<name>GENERATE_NAME_lieutenant</name>
+		<icon>ui_npc_u_soldier_spetsnaz</icon>
+		<class>crashed_helicopter_soldier</class>
+		<community>military</community>
+		<money min="2000" max="5000" infinitive="0"></money>
+		<rank>764</rank>
+		<reputation>0</reputation>
+		<visual>actors\soldier\soldier_spetsnaz</visual>		
+		<snd_config>characters_voice\human_01\military\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n
+#include "gameplay\character_drugs.xml"
+#include "gameplay\character_food.xml"
+		</supplies>		
+#include "gameplay\character_criticals_6.xml"
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+	
+------------------------------------------------------------------------------------------
 --// DUTY
 ------------------------------------------------------------------------------------------
 	<!-- Полковник Гречник -->
@@ -153,10 +181,10 @@
 --// Наёмники
 ------------------------------------------------------------------------------------------
 	<!-- Снайпер наёмников -->
-	<specific_character id="virtuos" team_default = "1">
-		<name>virtuos_name</name>
+	<specific_character id="rogue" team_default = "1">
+		<name>rogue_name</name>
 		<icon>ui_npc_u_stalker_ki_head_5</icon>
-		<class>virtuos</class>
+		<class>rogue</class>
 		<community>killer</community>
 		<money min="1000" max="5000" infinitive="0"></money>
 		<rank>880</rank>

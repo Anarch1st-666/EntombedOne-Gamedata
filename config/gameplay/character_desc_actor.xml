@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>
+	<specific_character id="actor" no_random = "1">
+		<name>actor_name</name>
+		<icon>ui_npc_u_actor</icon>
+		<team>Actor</team>
+		<supplies>
+			[spawn] \n
+			device_torch \n
+		</supplies>
+		<class>actor</class>
+		<community>actor</community>
+		<rank>0</rank>
+		<reputation>0</reputation>
+		<visual>actors\hero\stalker_novice</visual>
+	</specific_character>
+</xml>

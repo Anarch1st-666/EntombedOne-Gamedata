@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>	
+<!---------------------------SVOBODA REGULAR----------------------->
+	<specific_character id="agr_freedom_regular1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_sv_rukzak_1_1</icon>
+        <snd_config>characters_voice\human_01\freedom\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<class>agr_freedom_regular</class>
+		<community>freedom</community>
+		<rank>368</rank>
+		<reputation>-75</reputation>
+		<visual>actors\svoboda\stalker_sv_rukzak_1_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml" \n		
+		</supplies>
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="agr_freedom_regular2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_sv_rukzak_3</icon>
+        <snd_config>characters_voice\human_02\freedom\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<class>agr_freedom_regular</class>
+		<community>freedom</community>
+		<rank>896</rank>
+		<reputation>139</reputation>
+		<visual>actors\svoboda\stalker_sv_rukzak_3</visual>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml" \n		
+		</supplies>
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"		
+	</specific_character>
+<!---------------------------SVOBODA VETERAN---------------------->
+	<specific_character id="agr_freedom_veteran1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_sv_rukzak_3_1</icon>
+        <snd_config>characters_voice\human_01\freedom\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<class>agr_freedom_veteran</class>
+		<community>freedom</community>
+		<rank>560</rank>
+		<reputation>81</reputation>
+		<visual>actors\svoboda\stalker_sv_rukzak_3_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_hydro = 1 \n
+			wpn_ak74 = 1, scope \n
+			ammo_5.45x39_fmj \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml" \n
+		</supplies>
+#include "gameplay\character_criticals_5.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------SVOBODA SABOUTER----------------------->
+	<specific_character id="agr_freedom_saboteur" team_default = "1">
+		<name>mil_Svoboda_trader_name</name>
+		<icon>ui_npc_u_stalker_sv_balon_1</icon>
+		<class>agr_freedom_saboteur</class>
+		<community>freedom</community>
+        <snd_config>characters_voice\human_02\freedom\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<rank>730</rank>
+		<reputation>96</reputation>
+		<visual>actors\svoboda\stalker_sv_balon_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			device_torch \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+#include "gameplay\character_food.xml" \n
+		</supplies>
+#include "gameplay\character_criticals_5.xml"
+		<start_dialog>mil_trader_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+</xml>
