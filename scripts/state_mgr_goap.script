@@ -77,6 +77,8 @@ function goap_graph(st, npc)
 	st.properties["animation_none"]              = 85	
 	st.properties["animation_none_now"]          = 86
 	st.properties["animation_reset"]             = 87
+	st.properties["animstate_sit_cop_short"]           = 88 --/#+#
+	st.properties["animstate_sit_cop_short_now"]       = 89 --/#+#
 	
 	st.planner:add_evaluator(st.properties["end"],                         state_mgr.eva_state_mgr_end("state_mgr_end", st))
 	st.planner:add_evaluator(st.properties["locked"],                      state_mgr.eva_state_mgr_locked("state_mgr_locked", st))
@@ -133,6 +135,8 @@ function goap_graph(st, npc)
 	st.planner:add_evaluator(st.properties["animstate_wounded_now"],       state_mgr_animstate.eva_state_mgr_animstate_wounded_now("state_mgr_animstate_wounded_now", st))
 	st.planner:add_evaluator(st.properties["animstate_wounded_heavy"],     state_mgr_animstate.eva_state_mgr_animstate_wounded_heavy("state_mgr_animstate_wounded_heavy", st))
 	st.planner:add_evaluator(st.properties["animstate_wounded_heavy_now"], state_mgr_animstate.eva_state_mgr_animstate_wounded_heavy_now("state_mgr_animstate_wounded_heavy_now", st))
+	st.planner:add_evaluator(st.properties["animstate_sit_cop_short"],           state_mgr_animstate.eva_state_mgr_animstate_sit_cop_short          ("eva_state_mgr_animstate_sit_cop_short", st, st))
+	st.planner:add_evaluator(st.properties["animstate_sit_cop_short_now"],       state_mgr_animstate.eva_state_mgr_animstate_sit_cop_short_now      ("eva_state_mgr_animstate_sit_cop_short_now", st))
 
 	st.animation = state_mgr_animation.animation(npc, st)
 	st.npc:set_callback(callback.script_animation , st.animation.anim_callback, st.animation)
@@ -184,6 +188,8 @@ function goap_graph(st, npc)
 	st.operators["animation_stop"]           = 72
 	st.operators["animation_reset"]          = 73
 	st.operators["animation_clear_anim"]     = 74
+	--/ COP
+	st.operators["animstate_2sit_cop_short"] = 75 --/#+#
 	
 
 
@@ -345,6 +351,19 @@ function goap_graph(st, npc)
 	action:add_precondition    (world_property(st.properties["animstate_sit"],      true))
 	action:add_effect    (world_property(st.properties["animstate"],		    	true))
 	st.planner:add_action(st.operators["animstate_2sit"], action)
+
+	action = state_mgr_animstate.act_state_mgr_animstate_2sit_cop_short("state_mgr_animstate_2sit_cop_short", st)
+	action:add_precondition    (world_property(st.properties["locked"],                 false))
+--	action:add_precondition    (world_property(st.properties["locked_external"],        false)) --/#+#
+	action:add_precondition    (world_property(st.properties["animstate"],              false))
+	action:add_precondition    (world_property(st.properties["animation_none_now"],     true ))
+	action:add_precondition    (world_property(st.properties["direction"],              true ))
+	action:add_precondition    (world_property(st.properties["mental"],                 true ))
+	action:add_precondition    (world_property(st.properties["weapon"],                 true ))
+	action:add_precondition    (world_property(st.properties["movement"],               true ))
+	action:add_precondition    (world_property(st.properties["animstate_sit_cop_short"],      true ))
+	action:add_effect (world_property(st.properties["animstate"], true))
+	st.planner:add_action(st.operators["animstate_2sit_cop_short"], action)
 
 	action = state_mgr_animstate.act_state_mgr_animstate_2sit_knee("state_mgr_animstate_2sit_knee", st)
 	action:add_precondition    (world_property(st.properties["locked"],                 false))

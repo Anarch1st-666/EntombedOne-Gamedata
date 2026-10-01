@@ -1,0 +1,107 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[danger@agr_freedom_spies]
+ignore_distance = 0
+
+[combat_ignore@agr_freedom_spies]
+
+[death@agr_freedom_spies]
+
+[hit@agr_freedom_spies]
+
+[meet@agr_freedom_spies_guard]
+meet_state = 5 | threat
+meet_state_wpn = 15 | backoff@threat_weap
+victim = 5 | actor
+victim_wpn = 15 | actor
+use	= false
+use_wpn = false
+
+[meet@agr_freedom_spies_no_meet]
+meet_state = nil
+meet_state_wpn = nil
+victim = nil
+victim_wpn = nil
+use	= false
+use_wpn = false
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_freedom_spies_leader]
+active = walker1@agr_freedom_spies_leader
+on_hit = hit@agr_freedom_spies
+on_death = death@agr_freedom_spies
+
+[walker1@agr_freedom_spies_leader]
+path_walk = leader_walk
+path_look = leader_look
+show_spot = false
+def_state_standing = sit_cop
+;combat_ignore_cond = always
+meet = meet@agr_freedom_spies_leader
+
+[meet@agr_freedom_spies_leader]
+meet_state = nil
+meet_state_wpn = nil
+victim = nil
+victim_wpn = nil
+use = true
+use_wpn = true
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_freedom_spies_bodyguard_1]
+active = walker1@agr_freedom_spies_bodyguard_1
+on_hit = hit@agr_freedom_spies
+on_death = death@agr_freedom_spies
+
+[walker1@agr_freedom_spies_bodyguard_1]
+path_walk = bodyguard_1_walk
+path_look = bodyguard_1_look
+show_spot = false
+meet = meet@agr_freedom_spies_guard
+danger = danger@agr_freedom_spies
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_freedom_spies_bodyguard_2]
+active = walker1@agr_freedom_spies_bodyguard_2
+on_hit = hit@agr_freedom_spies
+on_death = death@agr_freedom_spies
+
+[walker1@agr_freedom_spies_bodyguard_2]
+path_walk = bodyguard_2_walk1
+path_look = bodyguard_2_look1
+show_spot = false
+meet = meet@agr_freedom_spies_no_meet
+danger = danger@agr_freedom_spies
+on_info = {=actor_in_zone(agr_sr_saboteur_meet)} walker2@agr_freedom_spies_bodyguard_2
+
+[walker2@agr_freedom_spies_bodyguard_2]
+path_walk = bodyguard_2_walk2
+path_look = bodyguard_2_look2
+show_spot = false
+meet = meet@agr_freedom_spies_guard
+danger = danger@agr_freedom_spies
+on_info = {!actor_in_zone(agr_sr_saboteur_meet)} walker1@agr_freedom_spies_bodyguard_2
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_freedom_spies_sniper]
+active = walker1@agr_freedom_spies_sniper
+on_hit = hit@agr_freedom_spies
+on_death = death@agr_freedom_spies
+
+[walker1@agr_freedom_spies_sniper]
+path_walk = sniper_walk
+path_look = sniper_look
+show_spot = false
+meet = meet@agr_freedom_spies_no_meet
+danger = danger@agr_freedom_spies
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

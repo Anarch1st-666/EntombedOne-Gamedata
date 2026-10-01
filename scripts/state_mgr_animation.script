@@ -524,6 +524,9 @@ function animation:play_rnd(state, must_play)
 		if anima == nil then			
 			return
 		end
+		if type(anima) == "string" then
+			anima = {anima}
+		end
 		
 		local r
 		if table.getn(anima) > 1 then			

@@ -96,5 +96,17 @@
 		<class>agr_stalker_novice</class>
 	</character>
 -----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+--// FREEDOM
+-----------------------------------------------------------------------
+	<character id="agr_freedom_regular">
+		<class>agr_freedom_regular</class>
+	</character>
+	<character id="agr_freedom_veteran">
+		<class>agr_freedom_veteran</class>
+	</character>
+-----------------------------------------------------------------------
 	
 </xml>

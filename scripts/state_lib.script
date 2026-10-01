@@ -766,5 +766,51 @@ states = {
 				bodystate = move.standing,
 				animstate = "stand",
 				animation = "oso_flying"
-			}
+			},
+	--/#+# barin start
+	sit_cop = {
+		weapon = "none",
+		movement = move.stand,
+		mental = anim.free,
+		bodystate = move.standing,
+		animstate = "sit_cop_short",
+		animation = "sit_cop",
+		reset = false
+	},
+	sit_cop_short = {
+		weapon = "none",
+		movement = move.stand,
+		mental = anim.free,
+		bodystate = move.standing,
+		animstate = "sit_cop",
+		animation = "sit_cop_short",
+		reset = false
+	},
+	sit_cop_sleep = {
+		weapon = "none",
+		movement = move.stand,
+		mental = anim.free,
+		bodystate = move.standing,
+		animstate = "stand",
+		animation = "sit_cop_sleep",
+		reset = false
+	},
+	clear_wpn = {
+		weapon = "unstrapped",
+		movement = move.stand,
+		mental = anim.free,
+		bodystate = move.standing,
+		animstate = "stand",
+		animation = "clear_wpn",
+		reset = false
+	},
+	stand_wait = {
+		weapon = "strapped",
+		movement = move.stand,
+		mental = anim.free,
+		bodystate = move.standing,
+		animstate = "stand",
+		animation = "stand_wait",
+		reset = false
+	},
 }

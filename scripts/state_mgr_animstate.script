@@ -87,6 +87,28 @@ function eva_state_mgr_animstate_sit_ass_now:evaluate()
 	return self.st.animstate:state() == "sit_ass"
 end
 
+--/ Нужно ли нам сидеть на стуле
+--/ ------------------------------------------------------------------
+class "eva_state_mgr_animstate_sit_cop_short" (property_evaluator)
+--/ ------------------------------------------------------------------
+function eva_state_mgr_animstate_sit_cop_short:__init(name, st) super (nil, name)
+	self.st = st
+end
+function eva_state_mgr_animstate_sit_cop_short:evaluate()
+	return state_lib.states[self.st.target_state].animstate == "sit_cop_short"
+end
+
+--/ Сидим ли мы на стуле
+--/ ------------------------------------------------------------------
+class "eva_state_mgr_animstate_sit_cop_short_now" (property_evaluator)
+--/ ------------------------------------------------------------------
+function eva_state_mgr_animstate_sit_cop_short_now:__init(name, st) super (nil, name)
+	self.st = st
+end
+function eva_state_mgr_animstate_sit_cop_short_now:evaluate()
+	return self.st.animstate:state() == "sit_cop_short"
+end
+
 --' Нужно ли нам спать
 class "eva_state_mgr_animstate_sleep" (property_evaluator)
 function eva_state_mgr_animstate_sleep:__init(name, st) super (nil, name)
@@ -151,6 +173,23 @@ function act_state_mgr_animstate_2sit:execute()
 	action_base.execute(self)
 end
 function act_state_mgr_animstate_2sit:finalize()
+	action_base.finalize(self)
+end
+--/ Садимся на стул
+--/ ------------------------------------------------------------------
+class "act_state_mgr_animstate_2sit_cop_short" (action_base)
+--/ ------------------------------------------------------------------
+function act_state_mgr_animstate_2sit_cop_short:__init(name, st) super (nil, name)
+	self.st = st
+end
+function act_state_mgr_animstate_2sit_cop_short:initialize()
+	action_base.initialize(self)
+	self.st.animstate:set_state("sit_cop_short")
+end
+function act_state_mgr_animstate_2sit_cop_short:execute()
+	action_base.execute(self)
+end
+function act_state_mgr_animstate_2sit_cop_short:finalize()
 	action_base.finalize(self)
 end
 --' Садимся на колено

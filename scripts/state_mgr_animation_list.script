@@ -769,6 +769,52 @@ animations = {
 									[4]	= {"cr_raciya_4_talk_0"},
 									[8]	= {"cr_raciya_8_talk_0"},
 									[9]	= {"cr_raciya_9_talk_0"},
-									[10]= {"cr_raciya_10_talk_0"} } }
+									[10]= {"cr_raciya_10_talk_0"} } },
+									
+--/#+# barin start -------------------------------
+	sit_cop = {
+		prop = { maxidle = 5, sumidle = 3, rnd = 100 },
+		into = { [0] = "sit_sit_down_0" },
+		out  = { [0] = "sit_stand_up_0" },
+		idle = { [0] = "sit_idle_0" },
+		rnd  = { [0] = "sit_idle_0",
+				 [1] = "sit_idle_0"}
+	},
+	sit_cop_short = {
+		prop = { maxidle = 5, sumidle = 3, rnd = 80 },
+		into = { [0] = "sit_idle_0" },
+		out  = { [0] = "sit_idle_0" },
+		idle = { [0] = "sit_idle_0" },
+		rnd  = { [0] = "sit_idle_0" }
+	},
+	sit_cop_sleep = {
+		prop = { maxidle = 1, sumidle = 1, rnd = 100 },
+		into = { [0] = "sit_sleep_in_0" },
+		out  = { [0] = "sit_sleep_out_0" },
+		idle = { [0] = "sit_sleep_idle_0" },
+		rnd  = { [0] = "sit_sleep_idle_0"}
+	},
+	sit_take_item = {
+		prop = { maxidle = 1, sumidle = 1, rnd = 100 },
+		into = { [0] = "sit_idle_mechanic_0", {a="hand_radio"} },
+		out  = { [0] = "sit_idle_mechanic_2", {d="hand_radio"} },
+		idle = { [0] = "sit_idle_mechanic_1" },
+		rnd  = nil
+	},
+	clear_wpn = {
+		prop = { maxidle = 1, sumidle = 1, rnd = 100 },
+		into = { [0] = "sit_sit_down_0" },
+		out  = { [0] = "stul_podyem" },
+		idle = { [0] = "stul" },
+		rnd  = nil
+	},
+	stand_wait = {
+		prop = { maxidle = 1, sumidle = 1, rnd = 100 },
+		into = nil,
+		out  = nil,
+		idle = { [0] = "stend" },
+		rnd  = nil
+	},
+--/< barin end
 
 	}

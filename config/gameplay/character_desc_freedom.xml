@@ -98,7 +98,6 @@
 #include "gameplay\character_food.xml" \n
 		</supplies>
 #include "gameplay\character_criticals_5.xml"
-		<start_dialog>mil_trader_dialog</start_dialog>
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 </xml>

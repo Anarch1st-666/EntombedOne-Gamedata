@@ -189,6 +189,35 @@ function load_job( sj, gname, type, squad, groups )
 			in_rest = "", out_rest = "",
 		}
 		table.insert(sj, t)
+
+	elseif type == "agr_freedom_spies" then
+		t = { section = "logic@agr_freedom_spies_bodyguard_1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_freedom_spies_space_restrictor",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_freedom_spies_bodyguard_2",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_freedom_spies_space_restrictor",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_freedom_spies_sniper",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_freedom_spies_space_restrictor",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_freedom_spies_leader",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_freedom_spies_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "agr_freedom_saboteur"
+			end
+		}
+		table.insert(sj, t)
 	end
 end
 
@@ -209,6 +238,12 @@ function load_states( gname, type )
 	end
 
 	if type == "agr_tunnel_ambush" then
+		return function( gulag )
+			return 0			
+		end
+	end
+
+	if type == "agr_freedom_spies" then
 		return function( gulag )
 			return 0			
 		end
@@ -244,6 +279,9 @@ function checkStalker( npc_community, gulag_type )
 	end
 	if gulag_type == "agr_tunnel_ambush" then
 		return npc_community == "killer"
+	end
+	if gulag_type == "agr_freedom_spies" then
+		return npc_community == "freedom"
 	end
 
 	return false
