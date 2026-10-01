@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<game_information_portions>
+--/ Упавший вертолёт
+    <info_portion id="agr_crashcopter_start"></info_portion>
+    <info_portion id="agr_crashcopter_reach"></info_portion>
+    <info_portion id="agr_crashcopter_inspect"></info_portion>
+    <info_portion id="agr_crashcopter_case_got"></info_portion>
+    <info_portion id="agr_crashcopter_fail"></info_portion>
+
+--/ Помощь Долга
+	<info_portion id="agr_seek_duty_support_start"></info_portion>
+	<info_portion id="agr_seek_duty_support_talk_to_grechkin"></info_portion>
+	<info_portion id="agr_seek_duty_support_talk_to_scout"></info_portion>
+	<info_portion id="agr_seek_duty_support_complete"></info_portion>
+	<info_portion id="agr_seek_duty_support_ask_north"/>
+	<info_portion id="agr_seek_duty_support_ask_south"/>
+	<info_portion id="agr_seek_duty_support_ask_east"/>
+	<info_portion id="agr_seek_duty_support_ask_west"/>
+
+--/ Подозрительные сталкеры
+	<info_portion id="agr_eavesdropping_start"></info_portion>
+	<info_portion id="agr_eavesdropping_backoff"></info_portion>
+	<info_portion id="agr_eavesdropping_threaten"></info_portion>
+	<info_portion id="agr_eavesdropping_cutscene1"></info_portion>
+	<info_portion id="agr_eavesdropping_cutscene2"></info_portion>
+	<info_portion id="agr_eavesdropping_cutscene3"></info_portion>
+	<info_portion id="agr_eavesdropping_cutscene4"></info_portion>
+	<info_portion id="agr_eavesdropping_alarm"></info_portion>
+	<info_portion id="agr_eavesdropping_kill_suspects"></info_portion>
+	<info_portion id="agr_eavesdropping_complete"></info_portion>
+
+--/ Золотые часы
+	<info_portion id="agr_gold_clocks_start"></info_portion>
+	<info_portion id="agr_gold_clocks_talk_to_duty"></info_portion>
+	<info_portion id="agr_gold_clocks_find_bandits"></info_portion>
+	<info_portion id="agr_gold_clocks_clocks_got"></info_portion>
+	<info_portion id="agr_gold_clocks_complete"></info_portion>
+	<info_portion id="agr_gold_clocks_fail"></info_portion>
+
+--/ По следам
+	<info_portion id="agr_by_the_trace_start"></info_portion>
+	<info_portion id="agr_by_the_trace_scout_stop"></info_portion>
+	<info_portion id="agr_by_the_trace_follow_scout"></info_portion>
+	<info_portion id="agr_by_the_trace_check_tower"></info_portion>
+	<info_portion id="agr_by_the_trace_check_tunnel"></info_portion>
+	<info_portion id="agr_by_the_trace_killer_seen_actor"/>
+	<info_portion id="agr_by_the_trace_complete"></info_portion>
+	
+--/ Пленник
+	<info_portion id="agr_prisoner_start"></info_portion>
+	<info_portion id="agr_prisoner_giant_dead"></info_portion>
+	<info_portion id="agr_prisoner_complete"></info_portion>
+	<info_portion id="agr_prisoner_fail"></info_portion>
+	<info_portion id="agr_freedom_spies_can_attack_actor"></info_portion>
+	<info_portion id="agr_freedom_spies_can_attack_prisoner"></info_portion>
+
+--/ Код "Сладкий"
+    <info_portion id="agr_code_sweet_start"></info_portion>
+    <info_portion id="agr_code_sweet_sniper_spawn"/>
+    <info_portion id="agr_code_sweet_sniper_dead"/>
+    <info_portion id="agr_code_sweet_sniper_complete"/>
+	
+--/ Верхние катакомбы
+    <info_portion id="agr_explore_catacombs_start"></info_portion>
+    <info_portion id="agr_explore_catacombs_location1"></info_portion>
+    <info_portion id="agr_explore_catacombs_location2"></info_portion>
+    <info_portion id="agr_explore_catacombs_location3"></info_portion>
+    <info_portion id="agr_explore_catacombs_location4"></info_portion>
+    <info_portion id="agr_explore_catacombs_complete"></info_portion>
+	<!-- Раненый наёмник -->
+    <info_portion id="agr_catacombs_wounded_ask_bloodsucker"></info_portion>
+    <info_portion id="agr_catacombs_wounded_ask_client"></info_portion>
+    <info_portion id="agr_catacombs_wounded_ask_enemies_quantity"></info_portion>
+    <info_portion id="agr_catacombs_wounded_ask_useless"></info_portion>
+    <info_portion id="agr_catacombs_wounded_ask_code_sweet"></info_portion>
+	<!-- Сцена с дешифратором -->
+    <info_portion id="agr_catacombs_decoder_cutscene_killer_speaks">
+		<disable>agr_catacombs_decoder_cutscene_engineer_speaks</disable>
+	</info_portion>
+    <info_portion id="agr_catacombs_decoder_cutscene_engineer_speaks">
+		<disable>agr_catacombs_decoder_cutscene_killer_speaks</disable>
+	</info_portion>
+    <info_portion id="agr_catacombs_decoder_cutscene_end"></info_portion>
+	
+--/ Ремонт дешифратора
+    <info_portion id="agr_decoder_repair_start"></info_portion>
+    <info_portion id="agr_decoder_repair_find_technician"></info_portion>
+    <info_portion id="agr_decoder_repair_need_go_for_vodka"></info_portion>
+    <info_portion id="agr_decoder_repair_got_vodka"></info_portion>
+    <info_portion id="agr_decoder_repair_talk_to_silent"></info_portion>
+    <info_portion id="agr_decoder_repair_complete"></info_portion>
+	
+--/ Нижние катакомбы
+    <info_portion id="agr_deep_catacombs_start"></info_portion>
+    <info_portion id="agr_deep_catacombs_door_open"></info_portion>
+    <info_portion id="agr_deep_catacombs_case_got"></info_portion> --duplicate?
+    <info_portion id="agr_deep_catacombs_complete"></info_portion>
+	
+--/ Месть
+    <info_portion id="agr_nii_alarm"/>
+	
+
+</game_information_portions>
+
