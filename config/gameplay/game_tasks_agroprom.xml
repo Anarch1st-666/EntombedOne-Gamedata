@@ -1,0 +1,338 @@
+--/ Икар-1
+	<game_task id="agr_crashcopter" prio="500">
+		<title>agr_crashcopter_0</title>
+		<objective>
+			<text>agr_crashcopter_0</text>
+			<!--article>agr_crashcopter</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_crashcopter_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_crashcopter_1</text>
+			<map_location_type hint="agr_crashcopter_1_hint">green_location</map_location_type>
+			<object_story_id>crashcopter</object_story_id>
+			<infoportion_complete>agr_crashcopter_reach</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_crashcopter_2</text>
+			<map_location_type hint="agr_crashcopter_2_hint">crlc_big</map_location_type>
+			<object_story_id>crashcopter</object_story_id>
+			<infoportion_visible>agr_crashcopter_reach</infoportion_visible>
+			<infoportion_complete>agr_crashcopter_inspect</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_crashcopter_3</text>
+			<infoportion_visible>agr_crashcopter_inspect</infoportion_visible>
+			<infoportion_complete>agr_crashcopter_case_got</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_crashcopter_4</text>
+			<map_location_type hint="agr_crashcopter_4_hint">green_location</map_location_type>
+			<object_story_id>agroprom_exit</object_story_id>
+			<infoportion_visible>agr_crashcopter_case_got</infoportion_visible>
+			<infoportion_complete>agr_crashcopter_case_got</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Помощь Долга
+	<game_task id="agr_seek_duty_support" prio="600">
+		<title>agr_seek_duty_support_0</title>
+		<objective>
+			<text>agr_seek_duty_support_0</text>
+			<!--article>agr_seek_duty_support</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_seek_duty_support_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_seek_duty_support_1</text>
+			<map_location_type hint="grechkin_name">green_location</map_location_type>
+			<object_story_id>grechkin</object_story_id>
+			<infoportion_complete>agr_seek_duty_support_talk_to_grechkin</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_seek_duty_support_2</text>
+			<map_location_type hint="agr_scout_name">green_location</map_location_type>
+			<object_story_id>agr_scout</object_story_id>
+			<infoportion_visible>agr_seek_duty_support_talk_to_grechkin</infoportion_visible>
+			<infoportion_complete>agr_seek_duty_support_talk_to_scout</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Подозрительные сталкеры
+	<game_task id="agr_eavesdropping" prio="590">
+		<title>agr_eavesdropping_0</title>
+		<objective>
+			<text>agr_eavesdropping_0</text>
+			<!--article>agr_eavesdropping</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_eavesdropping_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_eavesdropping_1</text>
+			<map_location_type hint="agr_eavesdropping_1_hint">green_location</map_location_type>
+			<object_story_id>agr_suspect_3</object_story_id>
+			<infoportion_complete>agr_eavesdropping_backoff</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_eavesdropping_2</text>
+			<map_location_type hint="agr_eavesdropping_2_hint">green_location</map_location_type>
+			<object_story_id>agr_suspects_roof</object_story_id>
+			<infoportion_visible>agr_eavesdropping_backoff</infoportion_visible>
+			<infoportion_complete>agr_eavesdropping_cine_end</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_eavesdropping_3</text>
+			<map_location_type hint="agr_eavesdropping_3_hint">crlc_mdl</map_location_type>
+			<object_story_id>agr_factory_suspects</object_story_id>
+			<infoportion_visible>agr_eavesdropping_cine_end</infoportion_visible>
+			<infoportion_complete>agr_eavesdropping_kill_suspects</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_eavesdropping_4</text>
+			<map_location_type hint="agr_scout_name">green_location</map_location_type>
+			<object_story_id>agr_scout</object_story_id>
+			<infoportion_visible>agr_eavesdropping_kill_suspects</infoportion_visible>
+			<infoportion_complete>agr_eavesdropping_complete</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ По следам
+	<game_task id="agr_by_the_trace" prio="580">
+		<title>agr_by_the_trace_0</title>
+		<objective>
+			<text>agr_by_the_trace_0</text>
+			<!--article>agr_by_the_trace</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_by_the_trace_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_by_the_trace_1</text>
+			<map_location_type hint="agr_scout_name">green_location</map_location_type>
+			<object_story_id>agr_scout</object_story_id>
+			<infoportion_complete>agr_by_the_trace_follow_scout</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_by_the_trace_2</text>
+			<map_location_type hint="agr_by_the_trace_2_hint">green_location</map_location_type>
+			<object_story_id>agr_sniper_tower</object_story_id>
+			<infoportion_visible>agr_by_the_trace_follow_scout</infoportion_visible>
+			<infoportion_complete>agr_by_the_trace_check_tower</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_by_the_trace_3</text>
+			<map_location_type hint="agr_by_the_trace_3_hint">green_location</map_location_type>
+			<object_story_id>agr_sniper_note</object_story_id>
+			<infoportion_visible>agr_by_the_trace_check_tower</infoportion_visible>
+			<infoportion_complete>agr_by_the_trace_check_tunnel</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_by_the_trace_4</text>
+			<map_location_type hint="agr_scout_name">green_location</map_location_type>
+			<object_story_id>agr_scout</object_story_id>
+			<infoportion_visible>agr_by_the_trace_check_tunnel</infoportion_visible>
+			<infoportion_complete>agr_by_the_trace_complete</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Золотые часы
+	<game_task id="agr_gold_clocks" prio="577">
+		<title>agr_gold_clocks_0</title>
+		<objective>
+			<text>agr_gold_clocks_0</text>
+			<!--article>agr_gold_clocks</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_gold_clocks_complete</infoportion_complete>
+			<infoportion_fail>agr_gold_clocks_fail</infoportion_fail>
+		</objective>
+		<objective>
+			<text>agr_gold_clocks_1</text>
+			<map_location_type hint="agr_gold_clocks_1_hint">green_location</map_location_type>
+			<object_story_id>agr_garbage_road</object_story_id>
+			<infoportion_visible>agr_gold_clocks_talk_to_duty</infoportion_visible>
+			<infoportion_complete>agr_gold_clocks_find_bandits</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_gold_clocks_2</text>
+			<map_location_type hint="agr_gold_clocks_2_hint">green_location</map_location_type>
+			<object_story_id>agr_hydronode</object_story_id>
+			<infoportion_complete>agr_gold_clocks_clocks_got</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_gold_clocks_3</text>
+			<map_location_type hint="gold_clocks_owner">green_location</map_location_type>
+			<object_story_id>gold_clocks_owner</object_story_id>
+			<infoportion_visible>agr_gold_clocks_alarm</infoportion_visible>
+			<infoportion_complete>agr_gold_clocks_complete</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Пленник
+	<game_task id="agr_prisoner" prio="573">
+		<title>agr_prisoner_0</title>
+		<objective>
+			<text>agr_prisoner_0</text>
+			<!--article>agr_prisoner</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_prisoner_complete</infoportion_complete>
+			<infoportion_fail>agr_prisoner_fail</infoportion_fail>
+		</objective>
+		<objective>
+			<text>agr_prisoner_1</text>
+			<map_location_type hint="agr_prisoner_1_hint">green_location</map_location_type>
+			<object_story_id>agr_giant_lair</object_story_id>
+			<infoportion_complete>agr_prisoner_giant_dead</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_prisoner_2</text>
+			<map_location_type hint="agr_prisoner_2_hint">green_location</map_location_type>
+			<object_story_id>agr_freedom_spies</object_story_id>
+			<infoportion_visible>agr_prisoner_giant_dead</infoportion_visible>
+			<infoportion_complete>agr_prisoner_complete</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Код "Сладкий"
+	<game_task id="agr_code_sweet" prio="570">
+		<title>agr_code_sweet_0</title>
+		<objective>
+			<text>agr_code_sweet_0</text>
+			<!--article>agr_code_sweet</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_code_sweet_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_code_sweet_1</text>
+			<map_location_type hint="agr_code_sweet_1_hint">crlc_big</map_location_type>
+			<object_story_id>agr_swamp</object_story_id>
+			<infoportion_complete>agr_code_sweet_follow_scout</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_code_sweet_2</text>
+			<map_location_type hint="agr_code_sweet_2_hint">green_location</map_location_type>
+			<object_story_id>rogue</object_story_id>
+			<infoportion_visible>agr_code_sweet_follow_scout</infoportion_visible>
+			<infoportion_complete>agr_code_sweet_check_tower</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Верхние катакомбы
+	<game_task id="agr_explore_catacombs" prio="560">
+		<title>agr_explore_catacombs_0</title>
+		<objective>
+			<text>agr_explore_catacombs_0</text>
+			<!--article>agr_explore_catacombs</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_explore_catacombs_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_explore_catacombs_1</text>
+			<map_location_type hint="agr_explore_catacombs_1">green_location</map_location_type>
+			<object_story_id>agr_catacombs_location1</object_story_id>
+			<infoportion_complete>agr_explore_catacombs_follow_scout</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_explore_catacombs_2</text>
+			<map_location_type hint="agr_explore_catacombs_2">green_location</map_location_type>
+			<object_story_id>agr_catacombs_location2</object_story_id>
+			<infoportion_visible>agr_explore_catacombs_follow_scout</infoportion_visible>
+			<infoportion_complete>agr_explore_catacombs_check_tower</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_explore_catacombs_3</text>
+			<map_location_type hint="agr_explore_catacombs_3">green_location</map_location_type>
+			<object_story_id>agr_catacombs_location3</object_story_id>
+			<infoportion_visible>agr_explore_catacombs_check_tower</infoportion_visible>
+			<infoportion_complete>agr_explore_catacombs_check_tunnel</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_explore_catacombs_4</text>
+			<map_location_type hint="agr_explore_catacombs_4">green_location</map_location_type>
+			<object_story_id>agr_catacombs_location4</object_story_id>
+			<infoportion_visible>agr_explore_catacombs_location_all</infoportion_visible>
+			<infoportion_complete>agr_explore_catacombs_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_explore_catacombs_5</text>
+			<infoportion_visible>agr_explore_catacombs_location_all</infoportion_visible>
+			<infoportion_complete>agr_explore_catacombs_complete</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Ремонт дешифратора
+	<game_task id="agr_decoder_repair" prio="550">
+		<title>agr_decoder_repair_0</title>
+		<objective>
+			<text>agr_decoder_repair_0</text>
+			<!--article>agr_decoder_repair</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_decoder_repair_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_decoder_repair_1</text>
+			<map_location_type hint="bratskov_name">green_location</map_location_type>
+			<object_story_id>bratskov</object_story_id>
+			<infoportion_complete>agr_decoder_repair_find_technician</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_decoder_repair_2</text>
+			<infoportion_visible>agr_decoder_repair_need_go_for_vodka</infoportion_visible>
+			<infoportion_complete>agr_decoder_repair_got_vodka</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_decoder_repair_3</text>
+			<map_location_type hint="silent_name">green_location</map_location_type>
+			<object_story_id>silent</object_story_id>
+			<infoportion_visible>agr_decoder_repair_find_technician</infoportion_visible>
+			<infoportion_complete>agr_decoder_repair_talk_to_silent</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_decoder_repair_4</text>
+			<map_location_type hint="bratskov_name">green_location</map_location_type>
+			<object_story_id>bratskov</object_story_id>
+			<infoportion_visible>agr_decoder_repair_find_technician</infoportion_visible>
+			<infoportion_complete>agr_decoder_repair_complete</infoportion_complete>
+		</objective>
+	</game_task>
+
+--/ Нижние катакомбы
+	<game_task id="agr_deep_catacombs" prio="540">
+		<title>agr_deep_catacombs_0</title>
+		<objective>
+			<text>agr_deep_catacombs_0</text>
+			<!--article>agr_deep_catacombs</article-->
+			<icon>ui_iconsTotal_grouping</icon>
+			<infoportion_complete>agr_deep_catacombs_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_deep_catacombs_1</text>
+			<map_location_type hint="agr_deep_catacombs_1_hint">green_location</map_location_type>
+			<object_story_id>agr_catacombs_location2</object_story_id>
+			<infoportion_complete>agr_deep_catacombs_door_open</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_deep_catacombs_2</text>
+			<map_location_type hint="agr_deep_catacombs_2">green_location</map_location_type>
+			<object_story_id>agr_deep_catacombs_location</object_story_id>
+			<infoportion_visible>agr_deep_catacombs_door_open</infoportion_visible>
+			<infoportion_complete>agr_deep_catacombs_case_got</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_deep_catacombs_3</text>
+			<map_location_type hint="agr_deep_catacombs_3">green_location</map_location_type>
+			<object_story_id>agr_deep_catacombs_exit</object_story_id>
+			<infoportion_visible>agr_deep_catacombs_case_got</infoportion_visible>
+			<infoportion_complete>agr_deep_catacombs_complete</infoportion_complete>
+		</objective>
+	</game_task>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -102,21 +102,29 @@ end
 ----------------------------------------------------------------------------------------------------
 
 function action_cutscene:zone_enter()
+	if self.st.condition then
+		local result = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.condition.condlist)
+		-- Нельзя переключать схему. Просто проверяем, что условие выполнилось
+		if not result then
+			return false
+		end
+	end
 
 	self.state = state_inside
 	--' тут нужно запустить сцену
 
     --' телепорт в выбранную точку
-    xr_effects.teleport_actor(db.actor, nil, {self.st.point, self.st.look})
+	if self.st.point ~= "nil" then
+		xr_effects.teleport_actor(db.actor, nil, {self.st.point, self.st.look})
+	end
     level.add_pp_effector (self.st.pp_effector, 234, false)
     
 	level.add_cam_effector2(self.st.cam_effector, 123, false, "sr_cutscene.effector_callback")
     xr_effects.disable_ui(db.actor, nil)
     self.ui_disabled = true
 	cutscene_finished = false
-  
-
-
+	
+	return true
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -148,12 +156,12 @@ function set_scheme(obj, ini, scheme, section, gulag_name)
 	local st = xr_logic.assign_storage_and_bind(obj, ini, scheme, section)
 	st.logic = xr_logic.cfg_get_switch_conditions(ini, section, obj)
 	
-	st.point = utils.cfg_get_string(ini, section, "point", obj, true, "", "none")
-	st.look = utils.cfg_get_string(ini, section, "look", obj, true, "", "none")
+	st.point = utils.cfg_get_string(ini, section, "point", obj, false, "", "nil")
+	st.look = utils.cfg_get_string(ini, section, "look", obj, st.point~="nil", "", "nil")
 	st.pp_effector = utils.cfg_get_string(ini, section, "pp_effector", obj, false, "", "blink") .. ".ppe"
     st.cam_effector = utils.cfg_get_string(ini, section, "cam_effector", obj, true, "") .. ".anm"
     st.cam_effector = "camera_effects\\" .. st.cam_effector
-
+	st.condition = xr_logic.cfg_get_condlist(ini, section, "condition", obj)
 end
 
 ----------------------------------------------------------------------------------------------------

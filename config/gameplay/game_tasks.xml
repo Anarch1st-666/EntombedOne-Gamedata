@@ -3,4 +3,6 @@
 
 #include "gameplay\game_tasks_by_vendor.xml"
 
+#include "gameplay\game_tasks_agroprom.xml"
+
 </game_tasks_data>

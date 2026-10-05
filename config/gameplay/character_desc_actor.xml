@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <xml>
-	<specific_character id="actor" no_random = "1">
+	<!-- Главный герой -->
+	<specific_character id="actor" no_random="1">
 		<name>actor_name</name>
 		<icon>ui_npc_u_actor</icon>
 		<team>Actor</team>
@@ -11,8 +12,28 @@
 		</supplies>
 		<class>actor</class>
 		<community>actor</community>
-		<rank>0</rank>
+		<rank>400</rank>
 		<reputation>0</reputation>
 		<visual>actors\hero\stalker_novice</visual>
 	</specific_character>
+	
+	<!-- Сцена: осмотр вертолёта -->
+	<specific_character id="actor_cine_stalker" team_default="1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_actor</icon>
+		<class>actor_cine_stalker</class>
+		<community>stalker</community>
+		<money min="1000" max="5000" infinitive="0"></money>
+		<rank>0</rank>
+		<reputation>0</reputation>
+		<visual>actors\hero\stalker_hood</visual>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj \n
+			hand_radio \n
+		</supplies>
+	</specific_character>
+	
 </xml>

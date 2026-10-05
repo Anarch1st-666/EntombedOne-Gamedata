@@ -230,7 +230,7 @@ function load_states( gname, type )
 	
 	if type == "agr_factory_suspects" then
 		return function( gulag )
-			if has_alife_info("agr_factory_suspects_alarm") then
+			if has_alife_info("agr_eavesdropping_alarm") then
 				return 2
 			end
 			return 0			

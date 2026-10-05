@@ -4,12 +4,17 @@
 -----------------------------------------------------------------------
 --// ACTOR
 -----------------------------------------------------------------------
+	<character id="default">
+		<class>Stalker_general</class>
+	</character>
+
 	<character id="actor">
 		<class>Actor</class>
 		<specific_character>actor</specific_character>
 	</character>
-	<character id="default">
-		<class>Stalker_general</class>
+
+	<character id="actor_cine_stalker">
+		<class>actor_cine_stalker</class>
 	</character>
 	
 -----------------------------------------------------------------------

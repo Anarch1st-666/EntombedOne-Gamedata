@@ -4,18 +4,46 @@
 [logic@agr_factory_suspects_guard_1]
 active = walker1@agr_factory_suspects_guard_1
 
+[meet@agr_factory_suspects_guard_1]
+meet_state = 5 | guard
+meet_state_wpn = 5 | backoff@threat_weap
+victim = 5 | actor
+victim_wpn = 5 | actor
+use	= {+agr_eavesdropping_threaten} true, false
+use_wpn = false
+;start_dialog
+
+;-- Стоит охраняет
 [walker1@agr_factory_suspects_guard_1]
 path_walk = guard_walk
 path_look = guard_look
-on_actor_dist_le = 5 | {-agr_eavesdropping_backoff} remark1@agr_factory_suspects_guard_1
-meet = no_meet
+on_actor_dist_le = 15 | {-agr_eavesdropping_threaten} remark1@agr_factory_suspects_guard_1
+on_info = {+agr_eavesdropping_backoff} walker2@agr_factory_suspects_guard_1
+meet = meet@agr_factory_suspects_guard_1
 
+;-- Угрожает
 [remark1@agr_factory_suspects_guard_1]
 anim = threat
 target = actor
 snd = factory_suspect_backoff
-on_signal = sound_end | walker1@agr_factory_suspects_guard_1 %+agr_eavesdropping_backoff%
+on_signal = sound_end | walker1@agr_factory_suspects_guard_1 %+agr_eavesdropping_threaten +agr_eavesdropping_backoff%
 meet = no_meet
+
+;-- Больше не разговариавает
+[walker2@agr_factory_suspects_guard_1]
+path_walk = guard_walk
+path_look = guard_look
+on_actor_dist_le = 5 | {-agr_eavesdropping_threaten} remark1@agr_factory_suspects_guard_1
+on_info = {+agr_eavesdropping_cine_begin} remark2@agr_factory_suspects_guard_1
+meet = no_meet
+
+;-- Катсцена
+[remark2@agr_factory_suspects_guard_1]
+anim 				= guard_rac
+target				= agr_factory_suspects_guard_look, 0
+meet				= no_meet
+combat_ignore_cond	= {+agr_eavesdropping_cine_begin} true
+on_info = {+agr_eavesdropping_alarm} walker2@agr_factory_suspects_guard_1
 
 ;-----------------------------------------------------------------------------------------
 [logic@agr_factory_suspects_alarm_guard_1]
@@ -25,7 +53,7 @@ active = camper1@agr_factory_suspects_alarm_guard_1
 path_walk = alarm_guard_walk
 path_look = alarm_guard_look
 def_state_moving = rush
-radius = 5.0
+radius = 10.0
 meet = no_meet
 
 
@@ -39,6 +67,7 @@ active = walker1@agr_factory_suspects_suspect_1
 path_walk = suspect_1_walk
 path_look = suspect_1_look
 meet = no_meet
+combat_ignore_cond = {+agr_eavesdropping_cine_begin} true
 
 ;-----------------------------------------------------------------------------------------
 [logic@agr_factory_suspects_alarm_suspect_1]
@@ -48,7 +77,7 @@ active = camper1@agr_factory_suspects_alarm_suspect_1
 path_walk = alarm_suspect_1_walk
 path_look = alarm_suspect_1_look
 def_state_moving = rush
-radius = 5.0
+radius = 10.0
 meet = no_meet
 
 
@@ -62,6 +91,7 @@ active = walker1@agr_factory_suspects_suspect_2
 path_walk = suspect_2_walk
 path_look = suspect_2_look
 meet = no_meet
+combat_ignore_cond = {+agr_eavesdropping_cine_begin} true
 
 ;-----------------------------------------------------------------------------------------
 [logic@agr_factory_suspects_alarm_suspect_2]
@@ -71,7 +101,7 @@ active = camper1@agr_factory_suspects_alarm_suspect_2
 path_walk = alarm_suspect_2_walk
 path_look = alarm_suspect_2_look
 def_state_moving = rush
-radius = 5.0
+radius = 10.0
 meet = no_meet
 
 

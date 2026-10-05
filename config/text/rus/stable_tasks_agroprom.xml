@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<string_table>
+	<string id="agr_crashcopter_desc">
+		<text>Военный вертолёт потерпел крушение на территории Агропрома. Необходимо выяснить причину крушения и эвакуировать КЕЙС — груз особой важности.</text>
+	</string>
+	<string id="agr_crashcopter_0">
+		<text>Икар-1</text>
+	</string>
+	<string id="agr_crashcopter_1">
+		<text>Добраться до места крушения</text>
+	</string>
+	<string id="agr_crashcopter_2">
+		<text>Обследовать вертолёт</text>
+	</string>
+	<string id="agr_crashcopter_3">
+		<text>Найти КЕЙС</text>
+	</string>
+	<string id="agr_crashcopter_4">
+		<text>Доставить КЕЙС</text>
+	</string>
+	<string id="agr_crashcopter_1_hint">
+		<text>Икар-1</text>
+	</string>
+	<string id="agr_crashcopter_2_hint">
+		<text>Место крушения</text>
+	</string>
+	<string id="agr_crashcopter_4_hint">
+		<text>Выход</text>
+	</string>
+	<string id="agr_seek_duty_support_desc">
+		<text>На НИИ Агропром находится крупная база Долга. Лучше них никто не знает, что творится в округе. Негласно Долг помогает военным. Пора выяснить, насколько эти слухи верны.</text>
+	</string>
+	<string id="agr_seek_duty_support_0">
+		<text>Помощь Долга</text>
+	</string>	
+	<string id="agr_seek_duty_support_1">
+		<text>Поговорить с полковником Гречкиным</text>
+	</string>
+	<string id="agr_seek_duty_support_2">
+		<text>Поговорить с разведчиком Долга</text>
+	</string>
+	<string id="agr_eavesdropping_desc">
+		<text>Калейник доложил, что группа сталкеров, обосновавшаяся на заводе ведёт подозрительную деятельность и может быть связана с крушением Икара-1. Необходимо подтвердить или развеять данные опасения.</text>
+	</string>
+	<string id="agr_eavesdropping_0">
+		<text>Подозрения</text>
+	</string>
+	<string id="agr_eavesdropping_1">
+		<text>Поговорить со сталкерами</text>
+	</string>
+	<string id="agr_eavesdropping_2">
+		<text>Подслушать разговоры сталкеров</text>
+	</string>
+	<string id="agr_eavesdropping_3">
+		<text>Убить сталкеров</text>
+	</string>
+	<string id="agr_eavesdropping_4">
+		<text>Поговорить с Калейником</text>
+	</string>
+	<string id="agr_eavesdropping_1_hint">
+		<text>Подозрительный сталкер</text>
+	</string>
+	<string id="agr_eavesdropping_2_hint">
+		<text>Лаз на крышу</text>
+	</string>
+	<string id="agr_eavesdropping_3_hint">
+		<text>Враждебные сталкеры</text>
+	</string>
+	<string id="agr_by_the_trace_desc">
+		<text>Необходимо понять, кто наблюдал за сталкерами. Возможно, он и за мной ведёт слежку.</text>
+	</string>
+	<string id="agr_by_the_trace_0">
+		<text>Новый след</text>
+	</string>
+	<string id="agr_by_the_trace_1">
+		<text>Следовать за Келейником</text>
+	</string>
+	<string id="agr_by_the_trace_2">
+		<text>Проверить вышку</text>
+	</string>
+	<string id="agr_by_the_trace_3">
+		<text>Проверить тоннель</text>
+	</string>
+	<string id="agr_by_the_trace_4">
+		<text>Поговорить с Калейником</text>
+	</string>
+	<string id="agr_by_the_trace_2_hint">
+		<text>Вышка</text>
+	</string>
+	<string id="agr_by_the_trace_3_hint">
+		<text>Тоннель</text>
+	</string>
+	<string id="agr_gold_clocks_desc">
+		<text>Один непутёвый сталкер с завода Агропром просит тряхнуть бандитов, укравших его карманные золотые часы.</text>
+	</string>
+	<string id="agr_gold_clocks_0">
+		<text>Золотые часы</text>
+	</string>
+	<string id="agr_gold_clocks_1">
+		<text>Найти бандита со карманными золотыми часами</text>
+	</string>
+	<string id="agr_gold_clocks_2">
+		<text>Изъять часы у бандита</text>
+	</string>
+	<string id="agr_gold_clocks_3">
+		<text>Вернуть часы сталкеру</text>
+	</string>
+	<string id="agr_gold_clocks_1_hint">
+		<text>Место, где обчистили сталкера</text>
+	</string>
+	<string id="agr_gold_clocks_2_hint">
+		<text>Бандит может быть где-то здесь</text>
+	</string>
+	<string id="agr_prisoner_desc">
+		<text>Калейник угодил в плен свободовцев. Чтобы вызволить товарища, необходимо завалить огромное чудище, блокирующее тропку за Агропром.</text>
+	</string>
+	<string id="agr_prisoner_0">
+		<text>Пленник</text>
+	</string>
+	<string id="agr_prisoner_1">
+		<text>Завалить чудище</text>
+	</string>
+	<string id="agr_prisoner_2">
+		<text>Вернуться за Калейником</text>
+	</string>
+	<string id="agr_prisoner_1_hint">
+		<text>Логово чудища</text>
+	</string>
+	<string id="agr_prisoner_2_hint">
+		<text>Калейник и свободовцы</text>
+	</string>
+	<string id="agr_code_sweet_desc">
+		<text>Внутри тоннеля лежала записка с упоминанием тайника на дне болота. Необходимо проверить место.</text>
+	</string>
+	<string id="agr_code_sweet_0">
+		<text>Код “Сладкий”</text>
+	</string>
+	<string id="agr_code_sweet_1">
+		<text>Найти схрон, спрятанный на дне болота</text>
+	</string>
+	<string id="agr_code_sweet_2">
+		<text>Обыскать снайпера</text>
+	</string>
+	<string id="agr_code_sweet_1_hint">
+		<text>Болото</text>
+	</string>
+	<string id="agr_code_sweet_2_hint">
+		<text>Труп снайпера</text>
+	</string>
+	<string id="agr_explore_catacombs_desc">
+		<text>Необходимо узнать, что наёмники делают в катакомбах.</text>
+	</string>
+	<string id="agr_explore_catacombs_0">
+		<text>Чернобыльский спелеолог</text>
+	</string>
+	<string id="agr_explore_catacombs_1">
+		<text>Исследовать катакомбы 1</text>
+	</string>
+	<string id="agr_explore_catacombs_2">
+		<text>Исследовать катакомбы 2</text>
+	</string>
+	<string id="agr_explore_catacombs_3">
+		<text>Исследовать катакомбы 3</text>
+	</string>
+	<string id="agr_explore_catacombs_4">
+		<text>Исследовать катакомбы 4</text>
+	</string>
+	<string id="agr_explore_catacombs_5">
+		<text>Выбраться из катакомб</text>
+	</string>
+	<string id="agr_decoder_repair_desc">
+		<text>Необходимо починить дешифратор наёмников, чтобы попасть в нижнюю часть катакомб.</text>
+	</string>
+	<string id="agr_decoder_repair_0">
+		<text>Дело техники</text>
+	</string>
+	<string id="agr_decoder_repair_1">
+		<text>Найти электронщика на базе Долга</text>
+	</string>
+	<string id="agr_decoder_repair_2">
+		<text>Добыть две бутылки водки</text>
+	</string>
+	<string id="agr_decoder_repair_3">
+		<text>Дождаться починки дешифратора</text>
+	</string>
+	<string id="agr_decoder_repair_4">
+		<text>Забрать дешифратор</text>
+	</string>
+	<string id="agr_deep_catacombs_desc">
+		<text>Последний след ведёт в катакомбы. Если я не найду КЕЙС сейчас, то успех моей операции под большим вопросом.</text>
+	</string>
+	<string id="agr_deep_catacombs_0">
+		<text>Погружение</text>
+	</string>
+	<string id="agr_deep_catacombs_1">
+		<text>Открыть гермодверь в нижние катакомбы</text>
+	</string>
+	<string id="agr_deep_catacombs_2">
+		<text>Исследовать нижние катакомбы</text>
+	</string>
+	<string id="agr_deep_catacombs_3">
+		<text>Выбраться из подземелья</text>
+	</string>
+	<string id="agr_deep_catacombs_1_hint">
+		<text>Гермодверь в катакомбах</text>
+	</string>
+	<string id="agr_deep_catacombs_3_hint">
+		<text>Выход</text>
+	</string>
+</string_table>
+
+

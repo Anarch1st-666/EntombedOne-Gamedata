@@ -1,0 +1,14 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_actor_inside = sr_idle@fade_in %=run_postprocess(fade_in_out:7911) =disable_ui%
+
+[sr_idle@fade_in]
+on_timer = 500 | sr_cutscene %+agr_crashcopter_cine_hero_spawn%
+
+[sr_cutscene]
+;point			= agr_cine_crashcopter_walk
+;look			= agr_cine_crashcopter_look
+cam_effector	= agr_cine_crashcopter
+on_signal		= cameff_end | nil %=stop_postprocess(7911) =enable_ui%

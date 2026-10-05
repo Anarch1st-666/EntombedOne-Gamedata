@@ -1,0 +1,10 @@
+;===================================================================================================
+[logic]
+active = sr_cutscene
+
+[sr_cutscene]
+cam_effector	= agr_cine_suspects
+condition		= {-agr_eavesdropping_cine_begin +agr_eavesdropping_backoff} %+agr_eavesdropping_cine_begin%
+on_signal		= cameff_end | nil %+agr_eavesdropping_cine_end =set_gulag_enemy_actor(agr_factory_suspects)%
+
+;===================================================================================================

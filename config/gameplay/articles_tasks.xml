@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<encyclopedia>
+
+--/ Agroprom
+	<article id="agr_crashcopter" name="agr_crashcopter_0" article_type="task">
+		<text>agr_crashcopter_desc</text>
+	</article>
+
+	<article id="agr_seek_duty_support" name="agr_seek_duty_support_0" article_type="task">
+		<text>agr_seek_duty_support_desc</text>
+	</article>
+
+	<article id="agr_eavesdropping" name="agr_eavesdropping_0" article_type="task">
+		<text>agr_eavesdropping_desc</text>
+	</article>
+
+	<article id="agr_by_the_trace" name="agr_by_the_trace_0" article_type="task">
+		<text>agr_by_the_trace_desc</text>
+	</article>
+
+	<article id="agr_gold_clocks" name="agr_gold_clocks_0" article_type="task">
+		<text>agr_gold_clocks_desc</text>
+	</article>
+
+	<article id="agr_prisoner" name="agr_prisoner_0" article_type="task">
+		<text>agr_prisoner_desc</text>
+	</article>
+
+	<article id="agr_code_sweet" name="agr_code_sweet_0" article_type="task">
+		<text>agr_code_sweet_desc</text>
+	</article>
+
+	<article id="agr_explore_catacombs" name="agr_explore_catacombs_0" article_type="task">
+		<text>agr_explore_catacombs_desc</text>
+	</article>
+
+	<article id="agr_decoder_repair" name="agr_decoder_repair_0" article_type="task">
+		<text>agr_decoder_repair_desc</text>
+	</article>
+
+	<article id="agr_deep_catacombs" name="agr_deep_catacombs_0" article_type="task">
+		<text>agr_deep_catacombs_desc</text>
+	</article>
+
+
+</encyclopedia>

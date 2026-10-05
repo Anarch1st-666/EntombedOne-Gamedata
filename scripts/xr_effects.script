@@ -274,20 +274,34 @@ function play_snd(actor, npc, p)
 	end
 end
 
+-- играть звук от НПС
+-- p1: sound
+-- p2: delay
+function play_snd_from_object(actor, npc, p)
+	if p[1] then
+		local snd_obj = xr_sound.get_safe_sound_object(p[1])
+        if npc ~= nil then
+			snd_obj:play_no_feedback(npc, sound_object.s3d, p[2] or 0, npc.center and npc:center() or npc:position(), 1.0)
+		end
+	end
+end
+
 -- играть звук от указанного объекта
-function play_snd_from_obj(actor, npc, p)
+function play_snd_from_story_object(actor, npc, p)
 	if p[1] and p[2] then
-		local snd_obj = xr_sound.get_safe_sound_object(p[2])
-		local obj     = level_object_by_sid(p[1])
+		local snd_obj = xr_sound.get_safe_sound_object(p[1])
+		local obj     = level_object_by_sid(p[2])
         if obj ~= nil then
 			snd_obj:play_no_feedback(obj, sound_object.s3d, 0, obj:position(), 1.0)
 		end
 	end
 end
 
--- играть звук от указанного объекта
-function play_snd_now(actor, npc, p)
-	xr_sound.set_sound_play(npc, p[1])
+-- играть звук от указанного НПС
+function play_snd_from_npc(actor, obj, p)
+	local speech, sid = unpack(p)
+	local npc = sid and level_object_by_sid(sid) or obj
+	xr_sound.set_sound_play(npc, speech)
 end
 
 -- слелать актёра врагом персонажам, которые в онлайне под указанным смартом
@@ -421,6 +435,13 @@ end
 
 function kill(actor, npc)
 	npc:kill( npc )
+end
+
+function release_object(actor, npc)
+	local sobj = alife():object(npc:id())
+	if sobj then
+		alife():release(sobj)
+	end
 end
 -- ---------------------------------------------------------------------------------------------------------------------
 

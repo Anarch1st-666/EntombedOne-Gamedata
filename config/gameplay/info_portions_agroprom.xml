@@ -7,6 +7,10 @@
     <info_portion id="agr_crashcopter_inspect"></info_portion>
     <info_portion id="agr_crashcopter_case_got"></info_portion>
     <info_portion id="agr_crashcopter_fail"></info_portion>
+	<!-- Cцена осмтора вертолёта -->
+    <info_portion id="agr_crashcopter_cine_hero_spawn"/>
+    <info_portion id="agr_crashcopter_cine_begin"/>
+    <info_portion id="agr_crashcopter_cine_end"/>
 
 --/ Помощь Долга
 	<info_portion id="agr_seek_duty_support_start"></info_portion>
@@ -20,12 +24,10 @@
 
 --/ Подозрительные сталкеры
 	<info_portion id="agr_eavesdropping_start"></info_portion>
-	<info_portion id="agr_eavesdropping_backoff"></info_portion>
 	<info_portion id="agr_eavesdropping_threaten"></info_portion>
-	<info_portion id="agr_eavesdropping_cutscene1"></info_portion>
-	<info_portion id="agr_eavesdropping_cutscene2"></info_portion>
-	<info_portion id="agr_eavesdropping_cutscene3"></info_portion>
-	<info_portion id="agr_eavesdropping_cutscene4"></info_portion>
+	<info_portion id="agr_eavesdropping_backoff"></info_portion>
+	<info_portion id="agr_eavesdropping_cine_begin"/>
+	<info_portion id="agr_eavesdropping_cine_end"/>
 	<info_portion id="agr_eavesdropping_alarm"></info_portion>
 	<info_portion id="agr_eavesdropping_kill_suspects"></info_portion>
 	<info_portion id="agr_eavesdropping_complete"></info_portion>

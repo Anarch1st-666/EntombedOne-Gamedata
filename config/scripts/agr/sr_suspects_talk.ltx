@@ -1,0 +1,32 @@
+;===================================================================================================
+[logic]
+active = sr_idle
+
+;===================================================================================================
+;	126 = "agr_suspect_1"
+;	127 = "agr_suspect_2"
+;	128 = "agr_suspect_3"
+;===================================================================================================
+
+[sr_idle]
+on_info = {+agr_eavesdropping_cine_begin} sr_idle@cine_1
+
+[sr_idle@cine_1]
+on_timer = 1500 | sr_idle@cine_2 %=play_snd_from_npc(suspects_cine_suspect1:126)%
+
+[sr_idle@cine_2]
+on_timer = 3000 | sr_idle@cine_3 %=play_snd_from_npc(suspects_cine_suspect2:127)%
+
+[sr_idle@cine_3]
+on_timer = 5000 | sr_idle@cine_4 %=play_snd_from_npc(suspects_cine_suspect1:126)%
+
+[sr_idle@cine_4]
+on_timer = 4500 | sr_idle@cine_5 %=play_snd_from_npc(suspects_cine_suspect3:128)%
+
+[sr_idle@cine_5]
+on_timer = 2000 | sr_idle@cine_6 %=play_snd_from_story_object(characters_voice\scenario\agroprom\suspects_cine_5:128)%
+
+[sr_idle@cine_6]
+on_timer = 4000 | nil %=play_snd_from_npc(suspects_cine_suspect3:128) +agr_eavesdropping_alarm%
+
+;===================================================================================================
