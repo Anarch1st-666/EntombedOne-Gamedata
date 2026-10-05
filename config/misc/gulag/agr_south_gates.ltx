@@ -1,0 +1,26 @@
+;------------------ Охранник -----------------------
+[logic@agr_south_gates_walker_1]
+active = walker@agr_south_gates_walker_1
+
+[walker@agr_south_gates_walker_1]
+path_walk = walker_1_walk
+path_look = walker_1_look
+meet = meet@agr_south_gates_walker_1
+
+[meet@agr_south_gates_walker_1]
+meet_state		= 15 | {-agr_south_gates_talk_to_guard -agr_crashcopter_reach} hello_wpn, guard
+meet_state_wpn	= 15 | guard
+victim		= 15 | actor
+victim_wpn	= 15 | actor
+use			= true
+use_wpn		= false
+;meet_dialog = {-agr_south_gates_talk_to_guard -agr_crashcopter_reach}
+
+;------------------ Костёр -----------------------
+[logic@agr_south_gates_kamp_1]
+active = kamp@agr_south_gates_kamp_1
+
+[kamp@agr_south_gates_kamp_1]
+center_point = kamp_1
+radius = 2.0
+

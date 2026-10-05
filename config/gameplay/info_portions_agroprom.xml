@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <game_information_portions>
+--/ Южные ворота
+    <info_portion id="agr_south_gates_talk_to_guard"/>
+
 --/ Упавший вертолёт
     <info_portion id="agr_crashcopter_start"></info_portion>
     <info_portion id="agr_crashcopter_reach"></info_portion>

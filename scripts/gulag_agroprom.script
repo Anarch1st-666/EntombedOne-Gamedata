@@ -218,6 +218,25 @@ function load_job( sj, gname, type, squad, groups )
 			end
 		}
 		table.insert(sj, t)
+	elseif type == "agr_south_gates" then
+		t = { section = "logic@agr_south_gates_walker_1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_south_gates_space_restrictor",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_south_gates_kamp_1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_south_gates_space_restrictor",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_south_gates_kamp_1",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_south_gates_space_restrictor",
+		}
+		table.insert(sj, t)
 	end
 end
 
@@ -248,18 +267,13 @@ function load_states( gname, type )
 			return 0			
 		end
 	end
-	
-	if type == "agr_road_patrol1" then
+
+	if type == "agr_south_gates" then
 		return function( gulag )
 			return 0			
 		end
 	end
 
-	if type == "agr_road_patrol2" then
-		return function( gulag )
-			return 0			
-		end
-	end
 	return nil
 end
 
@@ -282,6 +296,9 @@ function checkStalker( npc_community, gulag_type )
 	end
 	if gulag_type == "agr_freedom_spies" then
 		return npc_community == "freedom"
+	end
+	if gulag_type == "agr_south_gates" then
+		return npc_community == "dolg"
 	end
 
 	return false
