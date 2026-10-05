@@ -1,8 +1,15 @@
 ;=========================================================================================
+; Common
+;=========================================================================================
+[hit@agr_factory_suspects]
+damage_ignore_cond = {-agr_eavesdropping_alarm} true
+
+;=========================================================================================
 ; Часовой
 ;=========================================================================================
 [logic@agr_factory_suspects_guard_1]
 active = walker1@agr_factory_suspects_guard_1
+on_hit = hit@agr_factory_suspects
 
 [meet@agr_factory_suspects_guard_1]
 meet_state = 5 | guard
@@ -62,6 +69,7 @@ meet = no_meet
 ;=========================================================================================
 [logic@agr_factory_suspects_suspect_1]
 active = walker1@agr_factory_suspects_suspect_1
+on_hit = hit@agr_factory_suspects
 
 [walker1@agr_factory_suspects_suspect_1]
 path_walk = suspect_1_walk
@@ -86,6 +94,7 @@ meet = no_meet
 ;=========================================================================================
 [logic@agr_factory_suspects_suspect_2]
 active = walker1@agr_factory_suspects_suspect_2
+on_hit = hit@agr_factory_suspects
 
 [walker1@agr_factory_suspects_suspect_2]
 path_walk = suspect_2_walk

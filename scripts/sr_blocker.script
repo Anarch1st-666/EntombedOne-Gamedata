@@ -1,0 +1,80 @@
+--[[-----------------------------------------------------------------------------------------------
+ File       : sr_blocker.script
+ Description: "Запретные зоны"
+ Copyright  : 2011 © GSC LA-team
+ Author     : Gr1ph00n
+ Editors    : Gr1ph00n(24.09.2012), vintar(26.11.2012), lox(12.02.2013)
+ Last edit  : 20.03.2013 [...]
+--]]-----------------------------------------------------------------------------------------------
+
+--/------------------------------------------------------------------
+--/ VARIABLEs
+--/------------------------------------------------------------------
+local DEFAULT_MESSAGE = "cant_reach_area_warning"
+--/ -----------------------------------------------------------------
+--/ CONSTRUCTION SCHEME
+--/ -----------------------------------------------------------------------------------------------
+class "action_blocker"
+--/ -----------------------------------------------------------------------------------------------
+function action_blocker:__init(obj, st)
+	self.object = obj
+	self.st     = st
+end
+--/------------------------------------------------------------------
+--/ RESET SCHEME
+--/------------------------------------------------------------------
+function action_blocker:reset_scheme()
+	self.path_if_reject = self.st.path_if_reject and patrol(self.st.path_if_reject)
+end
+--/------------------------------------------------------------------
+--/ UPDATE
+--/------------------------------------------------------------------
+function action_blocker:update(delta)
+	if xr_logic.try_switch_to_another_section(self.object, self.st, db.actor) then
+		return --/>
+	elseif xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.condlist.condlist) == nil then
+		return --/>
+	end
+	if self.object:inside( db.actor:position() ) then
+		local pos = self.path_if_reject:point(0)
+		local dir = self.path_if_reject:point(1):sub(pos)
+
+		self:teleport(pos, dir, self.path_if_reject:level_vertex_id(0))
+
+		local hud = get_hud()
+		hud:AddCustomStatic("main_task", true)
+		hud:GetCustomStatic("main_task"):wnd():SetTextST(self:get_message())
+		hud:GetCustomStatic("main_task").m_endTime = time_global() / 1000 + 5
+	end
+end
+
+function action_blocker:teleport(pos, dir, lvid)
+	db.actor:set_actor_position(pos)
+	db.actor:set_actor_direction(-dir:getH())
+end
+
+function action_blocker:get_message()
+	return game.translate_string(self.st.hint)
+end
+
+--/ -----------------------------------------------------------------------------------------------
+--/ BINDER
+--/ -----------------------------------------------------------------------------------------------
+function add_to_binder(obj, ini, scheme, section, st)
+--	log("add_to_binder:Obj=[%s],scheme=[%s],section=[%s]:[%s]", obj:name(), scheme, section, ">") --/#~#
+	local oNewAction = this.action_blocker(obj, st)
+	--/ регистрация 'action', для вызова метода 'reset_scheme' при изменении настроек схемы:
+	xr_logic.subscribe_action_for_events(obj, st, oNewAction)
+end
+--/------------------------------------------------------------------
+--/ SET SCHEME
+--/------------------------------------------------------------------
+function set_scheme(obj, ini, scheme, section, gulag_name)
+	local st = xr_logic.assign_storage_and_bind(obj, ini, scheme, section)
+	st.logic = xr_logic.cfg_get_switch_conditions(ini, section, obj)
+	
+	st.path_if_reject = utils.cfg_get_string(ini, section, "path_if_reject", obj, true, "", "")
+	st.hint = utils.cfg_get_string(ini, section, "hint", obj, false, "", DEFAULT_MESSAGE)
+	st.condlist = xr_logic.cfg_get_condlist(ini, section, "block_condition", obj)
+end
+--/ -----------------------------------------------------------------------------------------------

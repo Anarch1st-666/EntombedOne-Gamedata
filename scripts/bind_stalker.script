@@ -72,6 +72,7 @@ function stalker_binder:net_spawn(sobject)
 
 	-- Все CALLBACK-и ставить здесь:
 	self.object:set_patrol_extrapolate_callback(stalker_binder.extrapolate_callback, self)
+	self.object:set_callback(callback.entity_alive_before_hit, stalker_binder.before_hit_callback, self)
 	self.object:set_callback(callback.hit, stalker_binder.hit_callback, self)
 	self.object:set_callback(callback.death, stalker_binder.death_callback, self)
 	self.object:set_callback(callback.use_object, stalker_binder.use_callback, self)
@@ -115,8 +116,15 @@ end
 
 function stalker_binder:clear_callbacks()
 	self.object:set_patrol_extrapolate_callback(nil)
+	self.object:set_callback(callback.entity_alive_before_hit, nil)
 	self.object:set_callback(callback.hit, nil)
 	self.object:set_callback(callback.death, nil)
+end
+
+function stalker_binder:before_hit_callback(oHit)
+	if self.st.hit then
+		xr_logic.issue_event(self.object, self.st.hit, "before_hit_callback", oHit)
+	end
 end
 
 function stalker_binder:hit_callback(obj, amount, local_direction, who, bone_index)

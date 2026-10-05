@@ -88,3 +88,4 @@ load_scheme("sr_timer",       "sr_timer",       stype_restrictor)
 load_scheme("sr_psy_antenna", "sr_psy_antenna", stype_restrictor)
 load_scheme("sr_cutscene",    "sr_cutscene",    stype_restrictor)
 load_scheme("sr_weather",     "sr_weather",     stype_restrictor) --/#+#
+load_scheme("sr_blocker",     "sr_blocker",     stype_restrictor) --/#+#

@@ -5,6 +5,14 @@ function action_process_hit:__init(obj, storage)
 	self.st = storage
 end
 
+function action_process_hit:before_hit_callback(oHit)
+	local ignore = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.damage_ignore_cond.condlist)
+	if ignore ~= nil then
+		oHit.ignore_hit = true
+	end
+--	log3("before_hit_callback [%s | ignore = %s]", self.object:name(), ignore ~= nil)
+end
+
 function action_process_hit:hit_callback(obj, amount, local_direction, who, bone_index)
 	if amount == 0 then
 		-- FIXME if_then_else
@@ -31,6 +39,8 @@ end
 function add_to_binder(npc, ini, scheme, section, storage) 	
  	local new_action = this.action_process_hit(npc, storage)
 	storage.action = new_action
+	
+	storage.damage_ignore_cond = xr_logic.cfg_get_condlist(ini, section, "damage_ignore_cond", obj)
 end
 
 function set_hit_checker(npc, ini, scheme, section)
