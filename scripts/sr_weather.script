@@ -1,24 +1,100 @@
+--/ -----------------------------------------------------------------------------------------------
+--/ Класс-интерполятор
+--/ -----------------------------------------------------------------------------------------------
+class "env_factor"
+
+function env_factor:__init(setter)
+	self.setter  = setter	   -- function(value)
+	self.current = 1.0
+	self.target  = 1.0
+end
+
+function env_factor:set_target(v)
+	self.target = v
+end
+
+function env_factor:update(max_step)
+	if self.current == self.target then return end
+
+	local diff = self.target - self.current
+	if math.abs(diff) <= max_step then
+		self.current = self.target
+	else
+		self.current = self.current + (diff > 0 and max_step or -max_step)
+	end
+	self.setter(self.current)
+end
+
+-- Жёстко выставить и текущее, и целевое
+function env_factor:snap(v)
+	if v then
+		self.target = v
+	end
+	self.current = self.target
+	self.setter(self.target)
+end
+
 --/------------------------------------------------------------------
 class "weather_effector"
 --/------------------------------------------------------------------
 function weather_effector:__init()
 	self.environment = level.environment()
+
 	self.zones_counter = 0
+
+	self.current_ambient = 1.0
+	self.current_fog = 1.0
+	
+	self.factors = {
+		ambient = env_factor(
+			function(v)
+				level.environment():set_ambient_color_factor(v)
+			end
+		),
+		fog = env_factor(
+			function(v)
+				level.environment():set_fog_color_factor(v)
+			end
+		),
+	}
+
+	self.transition_duration = 1500
+	self:subscribe_on_update()
+end
+
+function weather_effector:subscribe_on_update()
+	level.add_call(
+		function()
+			local delta = device().f_time_delta * 1000
+			get_weather_effector():update(delta)
+			return false  -- not (db.actor and db.actor:alive())
+		end,
+		function() end
+	)
+end
+
+function weather_effector:update(delta)
+	local max_step = delta / self.transition_duration
+	self.factors.ambient:update(max_step)
+	self.factors.fog:update(max_step)
 end
 
 function weather_effector:on_zone_enter(zone_params)
 	self.zones_counter = self.zones_counter + 1
-	
-	self.environment:set_env_ambient(zone_params.sound_ambient)
-	self.environment:set_ambient_color_factor(zone_params.ambient_factor)
-	self.environment:set_fog_color_factor(zone_params.fog_factor)
+--	log3("Enter zone [%s] [%s|%s]", self.zones_counter, zone_params.ambient_factor, zone_params.fog_factor)
+
+	self.factors.ambient:set_target(zone_params.ambient_factor)
+	self.factors.fog:set_target(zone_params.fog_factor)
 end
 
 function weather_effector:on_zone_exit()
 	self.zones_counter = self.zones_counter - 1
 	
 	if self.zones_counter <= 0 then
-		self:reset()
+		self.zones_counter = 0
+		self.factors.ambient:set_target(1.0)
+		self.factors.fog:set_target(1.0)
+		self.environment:set_env_ambient("")
 	end
 end
 
@@ -89,3 +165,4 @@ function set_scheme(obj, ini, scheme, section, gulag_name)
 	st.fog_factor = utils.cfg_get_number(ini, section, "fog_factor", obj, false, 0.0)
 end
 --/ -----------------------------------------------------------------------------------------------
+
