@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+  <string id="del">
+    <text>DELETE ME</text>
+  </string>
+  <string id="grechkin_crashcopter_0">
+    <text>Хм… А ты не очень-то похож на военного.</text>
+  </string>
+  <string id="saboteur_dealing_1">
+    <text>Не, мужики, делайте с ним, что душе угодно. Я вольный — в ваши тёрки лезть не хочу.</text>
+  </string>
+  <string id="grechkin_crashcopter_2">
+    <text>Здравия желаю! Полковник, сегодня ночью на вашей территории был сбит военный вертолёт. Помогите мне найти и покарать виновных.</text>
+  </string>
+  <string id="grechkin_crashcopter_3">
+    <text>Знаю, мне сообщили о тебе. Так значит не сам упал? Интересно-интересно… Наш разведчик, сержант Калейник, под утро наблюдал группу сталкеров. Единственные подозрения падают в их сторону. Обратись к нему за деталями.</text>
+  </string>
+  <string id="grechkin_crashcopter_4">
+    <text>И это всё?</text>
+  </string>
+  <string id="grechkin_crashcopter_5">
+    <text>На данный момент — да. Это единственный доклад за ту ночь. Кроме новости о самом вертолёте. На случай новых сведений, оставайся на связи. Мой позывной “Центр”.</text>
+  </string>
+  <string id="grechkin_crashcopter_6">
+    <text>Почему вы не отправили своих людей к месту крушения? Там были раненые, вы ещё могли их спасти.</text>
+  </string>
+  <string id="grechkin_crashcopter_7">
+    <text>Мы с военными на короткой ноге. И нам запретили выходить на контакт пока нет нужного разрешения или сигнала бедствия. Ни того, ни другого не было.</text>
+  </string>
+  <string id="grechkin_crashcopter_8">
+    <text>Я думал, Долг никому не подчиняется.</text>
+  </string>
+  <string id="grechkin_crashcopter_9">
+    <text>ЭТО НЕ… К-хм… Это не подчинение, это сотрудничество. По хорошему послать бы тебя, да и твоё начальство восвояси. Но стратегический мотив не позволяет.</text>
+  </string>
+  <string id="grechkin_crashcopter_10">
+    <text>Понял. Держите курсе.</text>
+  </string>
+  <string id="agr_scout_suspects_0">
+    <text>Привет! Ты Феникс?</text>
+  </string>
+  <string id="agr_scout_suspects_2">
+    <text>Я. Что известно о группе сталкеров?</text>
+  </string>
+  <string id="agr_scout_suspects_3">
+    <text>Заприметил их ещё ночью, аккурат после крушения. До самого утра они бродили по Агропрому. Причём скрытно так, боялись лишний раз фонарик включить. В итоге уселись они в одном из зданий завода.\nВроде сталкеры, как сталкеры. Только больно осмотрительные. Вечно караулит кто-то.</text>
+  </string>
+  <string id="agr_scout_suspects_4">
+    <text>Жди здесь. Я пойду проверю, что к чему.</text>
+  </string>
+  <string id="agr_scout_suspects_5">
+    <text>Давай. Чуть что, я готов прикрыть.</text>
+  </string>
+  <string id="agr_scout_suspects_6">
+    <text>Ок.</text>
+  </string>
+  <string id="supspect_threats_0">
+    <text>Ты чё тут мельтешишь?! Я те сказал, проваливай!</text>
+  </string>
+  <string id="supspect_threats_1">
+    <text>Ладно.</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_0">
+    <text>Диалог не заладился?</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_1">
+    <text>Не заладился. Поэтому я попытался подслушать их разговоры с крыши, но меня кто-то выдал.</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_2">
+    <text>Да я так и понял. Мне кажется, я даже знаю откуда. Пойдём покажу, тут недалеко.</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_3">
+    <text>Идём.</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_4">
+    <text>Погоди, я хочу осмотреться тут.</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_delayed_0">
+    <text>Ну как, осмотрелся? Ты смотри, упустить же можем.</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_delayed_1">
+    <text>Да, идём.</text>
+  </string>
+  <string id="agr_scout_after_eavesdropping_delayed_2">
+    <text>Ещё чутка, и можем идти.</text>
+  </string>
+  <string id="agr_scout_on_trace_near_tower_0">
+    <text>Вот, смотри. С этой вышки просматривается крыша, ну которую ты лазил.</text>
+  </string>
+  <string id="agr_scout_on_trace_near_tower_1">
+    <text>Её видно много откуда. Почему именно здесь?</text>
+  </string>
+  <string id="agr_scout_on_trace_near_tower_2">
+    <text>Если бы за тобой с холмов следили, я бы увидел. А тут не знаю, надо проверить.</text>
+  </string>
+  <string id="agr_scout_on_trace_near_tower_3">
+    <text>Хорошо. Я наверх. Действуем по той же схеме.</text>
+  </string>
+  <string id="saboteur_dealing_0">
+    <text>Стой. Не дёргайся. У нас твой... коллега. Долговец. Если ты не за ним — уходи.</text>
+  </string>
+  <string id="saboteur_dealing_2">
+    <text>Я за ним. Какого чёрта тут происходит?</text>
+  </string>
+  <string id="saboteur_dealing_3">
+    <text>Мы в полной жопе — вот, что тут происходит. Твой дружок теперь — либо брат по несчастью, либо наш билет на свободу. Но это как ты рассудишь.</text>
+  </string>
+  <string id="saboteur_dealing_4">
+    <text>Не понимаю.</text>
+  </string>
+  <string id="saboteur_dealing_5">
+    <text>Короче, долговцы усилили охрану по всему Агропрому. А нам надо незаметно отсюда выбраться. Так тут ещё этот нарисовался. Если поможешь нам, мы его отпустим. Один фиг, ему трибунал светит.</text>
+  </string>
+  <string id="saboteur_dealing_6">
+    <text>Почему трибунал?</text>
+  </string>
+  <string id="saboteur_dealing_7">
+    <text>Рассуди сам: как главный разведчик может попасть в плен и выбраться невредимым? Только если запоет, как соловей. Что, впрочем, недалеко от правды.</text>
+  </string>
+  <string id="saboteur_dealing_8">
+    <text>Ладно. И как вам помочь?</text>
+  </string>
+  <string id="saboteur_dealing_9">
+    <text>Есть старая тропинка на север — идеальный путь на свободу. Один напряг — огромное чудище, что там обитает. Разберись с ним — и твой дружок свободен.</text>
+  </string>
+  <string id="saboteur_dealing_12">
+    <text>Если этот разведчик так важен, почему бы просто не договориться с начальством Долга? Вы им — разведчика, они вам — дорогу уступят.</text>
+  </string>
+  <string id="saboteur_dealing_13">
+    <text>Сделка с врагом? Никогда в жизни! Я скорее контролёру доверюсь, нежели какому-то долгарю в погонах!</text>
+  </string>
+  <string id="saboteur_dealing_14">
+    <text>Я разберусь с чудищем.</text>
+  </string>
+  <string id="saboteur_dealing_15">
+    <text>Ну поглядим… Только уясним кое-что: если я решишь подмогу вызвать — сделки не будет. Понял?</text>
+  </string>
+  <string id="saboteur_dealing_16">
+    <text>Не боись. Мне проще зверя завалить, чем до их базы топать.</text>
+  </string>
+  <string id="saboteur_dealing_17">
+    <text>Я уже был там — псевдогигант мёртв.</text>
+  </string>
+  <string id="saboteur_dealing_18">
+    <text>В натуре? Ёпть, а чё мы тут тухнем тогда? Братва, собирайтесь! Мы домой.\nДолгаря в расход.</text>
+  </string>
+  <string id="saboteur_dealing_19">
+    <text>(...)</text>
+  </string>
+  <string id="saboteur_dealing_21">
+    <text>Мы так не договаривались.</text>
+  </string>
+  <string id="saboteur_dealing_22">
+    <text>Так было надо, он слишком много знал. И горевать по нему не стоит — я же вижу, вы без пяти минут час знакомы. А тебе полагается награда.</text>
+  </string>
+  <string id="saboteur_dealing_23">
+    <text>Ладно, давай.</text>
+  </string>
+  <string id="grechkin_saboteur_pda_0">
+    <text>Товарищ полковник, на территории завода я наткнулся на отряд свободовцев. Вот КПК их предводителя. Отряд полностью уничтожен.</text>
+  </string>
+  <string id="grechkin_saboteur_pda_1">
+    <text>Феникс! Ты даже не представляешь, как ты нам помог! Мы уже целую неделю пытаемся выловить этих крыс. А ты просто взял, и вырезал проблему на корню. Молодец! Прими награду.</text>
+  </string>
+  <string id="grechkin_saboteur_pda_2">
+    <text>Они также взяли в плен вашего разведчика, Калейника. Мне не удалось его освободить.</text>
+  </string>
+  <string id="grechkin_saboteur_pda_3">
+    <text>Жалко парня. Но на войне не без жертв.</text>
+  </string>
+  <string id="grechkin_saboteur_pda_4">
+    <text>Они также взяли в плен вашего разведчика, Калейника. К счастью, он теперь тоже в безопасности.</text>
+  </string>
+  <string id="grechkin_saboteur_pda_5">
+    <text>Вот же ж безмозглый малый. Поверить не могу, что он так попался… Ладно. Всё равно рад, что с ним всё обошлось.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_3">
+    <text>Ох-ты, кого занесло… Сталкер, лучше сматывайся отсюда подобру-поздорову, бо тут смерть кругом.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_4">
+    <text>Ну. Ещё чего?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_5">
+    <text>Ничего.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_6">
+    <text>Так я по вашу душу. Где груз, который вы спёрли из вертолёта?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_7">
+    <text>Уверен?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_8">
+    <text>У военных всегда с логикой туго… Объясняю: если бы груз был у нас, мы б давно свалили отсюда. Следовательно, что? Правильно — его мы и ищем.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_9">
+    <text>Что ты тут делаешь?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_10">
+    <text>Меня кровосос чуть не выпотрошил. Сижу, оклематься пытаюсь… Тут знаешь ли, не безопасно.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_11">
+    <text>Кто ваш заказчик?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_12">
+    <text>Есть посредник. Некий Плут. Кстати, увидишь его — передай: “рот я его шатал за такие задания”. Эти ебучие катакомбы хуже Афгана…</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_13">
+    <text>Считай, уже передал.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_14">
+    <text>С чего вы взяли, что груз в подземельях?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_15">
+    <text>Методом исключения. Раз ты до сих пор его ищешь — значит он где-то рядом.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_16">
+    <text>Сколько ещё ваших в подземельях?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_17">
+    <text>Суммарно пятнадцать человек. Минусуй меня и Коржика — получается скока? Тринадцать, кажись.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_18">
+    <text>Больно легко ты своих сдаёшь…</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_19">
+    <text>В этой клетке не ты главный хищник.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_20">
+    <text>Почему ты отбился от остальной группы?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_21">
+    <text>А нафига я им нужен теперь? Только обузой буду.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_22">
+    <text>Что значит "код сладкий"?</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_23">
+    <text>Это обозначение для своих: "не влезай — убьёт". Забавная шутка. По твоему лицу вижу, что сработала.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_24">
+    <text>Почти.</text>
+  </string>
+  <string id="agr_catacombs_wounded_main_29">
+    <text>Это всё. Не делай глупостей — и останешься жить.</text>
+  </string>
+</string_table>

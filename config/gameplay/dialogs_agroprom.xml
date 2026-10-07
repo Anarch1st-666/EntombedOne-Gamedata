@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<game_dialogs>
+  <dialog id="grechkin_crashcopter">
+    <phrase_list>
+      <phrase id="0">
+        <text>grechkin_crashcopter_0</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>grechkin_crashcopter_2</text>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>grechkin_crashcopter_3</text>
+        <next>4</next>
+      </phrase>
+      <phrase id="4">
+        <text>grechkin_crashcopter_4</text>
+        <next>5</next>
+      </phrase>
+      <phrase id="5">
+        <text>grechkin_crashcopter_5</text>
+        <give_info>agr_seek_duty_support_talk_to_grechkin</give_info>
+        <next>6</next>
+        <next>10</next>
+      </phrase>
+      <phrase id="6">
+        <text>grechkin_crashcopter_6</text>
+        <next>7</next>
+      </phrase>
+      <phrase id="7">
+        <text>grechkin_crashcopter_7</text>
+        <next>8</next>
+        <next>10</next>
+      </phrase>
+      <phrase id="8">
+        <text>grechkin_crashcopter_8</text>
+        <next>9</next>
+      </phrase>
+      <phrase id="9">
+        <text>grechkin_crashcopter_9</text>
+        <next>10</next>
+      </phrase>
+      <phrase id="10">
+        <text>grechkin_crashcopter_10</text>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="agr_scout_suspects">
+    <phrase_list>
+      <phrase id="0">
+        <text>agr_scout_suspects_0</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_scout_suspects_2</text>
+        <give_info>agr_seek_duty_support_complete</give_info>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_scout_suspects_3</text>
+        <next>4</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_scout_suspects_4</text>
+        <give_info>agr_eavesdropping_start</give_info>
+        <next>5</next>
+      </phrase>
+      <phrase id="5">
+        <text>agr_scout_suspects_5</text>
+        <next>6</next>
+      </phrase>
+      <phrase id="6">
+        <text>agr_scout_suspects_6</text>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="supspect_threats">
+    <phrase_list>
+      <phrase id="0">
+        <text>supspect_threats_0</text>
+        <give_info>agr_eavesdropping_backoff</give_info>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text>supspect_threats_1</text>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="agr_scout_after_eavesdropping">
+    <phrase_list>
+      <phrase id="0">
+        <text>agr_scout_after_eavesdropping_0</text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text>agr_scout_after_eavesdropping_1</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_scout_after_eavesdropping_2</text>
+        <give_info>agr_eavesdropping_complete</give_info>
+        <next>3</next>
+        <next>4</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_scout_after_eavesdropping_3</text>
+        <give_info>agr_by_the_trace_start</give_info>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+      <phrase id="4">
+        <text>agr_scout_after_eavesdropping_4</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="agr_scout_after_eavesdropping_delayed">
+    <phrase_list>
+      <phrase id="0">
+        <text>agr_scout_after_eavesdropping_delayed_0</text>
+        <next>1</next>
+        <next>2</next>
+      </phrase>
+      <phrase id="1">
+        <text>agr_scout_after_eavesdropping_delayed_1</text>
+        <give_info>agr_by_the_trace_start</give_info>
+      </phrase>
+      <phrase id="2">
+        <text>agr_scout_after_eavesdropping_delayed_2</text>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="agr_scout_on_trace_near_tower">
+    <phrase_list>
+      <phrase id="0">
+        <text>agr_scout_on_trace_near_tower_0</text>
+        <next>1</next>
+        <next>3</next>
+      </phrase>
+      <phrase id="1">
+        <text>agr_scout_on_trace_near_tower_1</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_scout_on_trace_near_tower_2</text>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_scout_on_trace_near_tower_3</text>
+        <give_info>agr_by_the_trace_follow_scout</give_info>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="saboteur_dealing">
+    <phrase_list>
+      <phrase id="0">
+        <text>saboteur_dealing_0</text>
+        <next>1</next>
+        <give_info>agr_by_the_trace_complete</give_info>
+        <next>2</next>
+      </phrase>
+      <phrase id="1">
+        <text>saboteur_dealing_1</text>
+      </phrase>
+      <phrase id="2">
+        <text>saboteur_dealing_2</text>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>saboteur_dealing_3</text>
+        <next>4</next>
+      </phrase>
+      <phrase id="4">
+        <text>saboteur_dealing_4</text>
+        <next>5</next>
+      </phrase>
+      <phrase id="5">
+        <text>saboteur_dealing_5</text>
+        <next>6</next>
+        <next>8</next>
+      </phrase>
+      <phrase id="6">
+        <text>saboteur_dealing_6</text>
+        <next>7</next>
+      </phrase>
+      <phrase id="7">
+        <text>saboteur_dealing_7</text>
+        <next>8</next>
+      </phrase>
+      <phrase id="8">
+        <text>saboteur_dealing_8</text>
+        <next>9</next>
+      </phrase>
+      <phrase id="9">
+        <text>saboteur_dealing_9</text>
+        <next>10</next>
+      </phrase>
+      <phrase id="10">
+        <text></text>
+        <next>11</next>
+      </phrase>
+      <phrase id="11">
+        <text></text>
+        <next>12</next>
+        <next>14</next>
+        <next>17</next>
+      </phrase>
+      <phrase id="12">
+        <text>saboteur_dealing_12</text>
+        <dont_has_info>agr_prisoner_ask_duty_deal</dont_has_info>
+        <give_info>agr_prisoner_ask_duty_deal</give_info>
+        <next>13</next>
+      </phrase>
+      <phrase id="13">
+        <text>saboteur_dealing_13</text>
+        <next>10</next>
+      </phrase>
+      <phrase id="14">
+        <text>saboteur_dealing_14</text>
+        <dont_has_info>agr_prisoner_giant_dead</dont_has_info>
+        <give_info>agr_prisoner_start</give_info>
+        <next>15</next>
+      </phrase>
+      <phrase id="15">
+        <text>saboteur_dealing_15</text>
+        <next>16</next>
+      </phrase>
+      <phrase id="16">
+        <text>saboteur_dealing_16</text>
+      </phrase>
+      <phrase id="17">
+        <text>saboteur_dealing_17</text>
+        <give_info>agr_prisoner_giant_dead</give_info>
+        <next>18</next>
+      </phrase>
+      <phrase id="18">
+        <text>saboteur_dealing_18</text>
+        <next>19</next>
+      </phrase>
+      <phrase id="19">
+        <text>saboteur_dealing_19</text>
+        <give_info>agr_freedom_spies_can_attack_prisoner</give_info>
+        <next>20</next>
+      </phrase>
+      <phrase id="20">
+        <text></text>
+        <next>21</next>
+      </phrase>
+      <phrase id="21">
+        <text>saboteur_dealing_21</text>
+        <next>22</next>
+      </phrase>
+      <phrase id="22">
+        <text>saboteur_dealing_22</text>
+        <next>23</next>
+      </phrase>
+      <phrase id="23">
+        <text>saboteur_dealing_23</text>
+        <give_info>agr_prisoner_complete</give_info>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="grechkin_saboteur_pda">
+    <precondition>dialog_agroprom.has_pda_saboteur</precondition>
+    <phrase_list>
+      <phrase id="0">
+        <text>grechkin_saboteur_pda_0</text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text>grechkin_saboteur_pda_1</text>
+        <action>dialog_agroprom.recieve_pda_saboteur_reward</action>
+        <next>2</next>
+        <next>4</next>
+      </phrase>
+      <phrase id="2">
+        <text>grechkin_saboteur_pda_2</text>
+        <has_info>agr_prisoner_scout_dead</has_info>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>grechkin_saboteur_pda_3</text>
+      </phrase>
+      <phrase id="4">
+        <text>grechkin_saboteur_pda_4</text>
+        <dont_has_info>agr_prisoner_scout_dead</dont_has_info>
+        <next>5</next>
+      </phrase>
+      <phrase id="5">
+        <text>grechkin_saboteur_pda_5</text>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="agr_catacombs_wounded_main">
+    <phrase_list>
+      <phrase id="0">
+        <text></text>
+        <next>1</next>
+        <next>2</next>
+      </phrase>
+      <phrase id="1">
+        <text></text>
+        <dont_has_info>agr_explore_catacombs_location1</dont_has_info>
+        <next>4</next>
+      </phrase>
+      <phrase id="2">
+        <text></text>
+        <has_info>agr_explore_catacombs_location1</has_info>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_catacombs_wounded_main_3</text>
+        <next>6</next>
+        <next>9</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_catacombs_wounded_main_4</text>
+        <next>5</next>
+        <next>9</next>
+        <next>11</next>
+        <next>14</next>
+        <next>16</next>
+        <next>20</next>
+        <next>22</next>
+      </phrase>
+      <phrase id="5">
+        <text>agr_catacombs_wounded_main_5</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+      <phrase id="6">
+        <text>agr_catacombs_wounded_main_6</text>
+        <next>7</next>
+      </phrase>
+      <phrase id="7">
+        <text>agr_catacombs_wounded_main_7</text>
+        <action>dialog_agroprom.unhide_weapon_in_dialog</action>
+        <next>8</next>
+      </phrase>
+      <phrase id="8">
+        <text>agr_catacombs_wounded_main_8</text>
+        <next>25</next>
+      </phrase>
+      <phrase id="9">
+        <text>agr_catacombs_wounded_main_9</text>
+        <dont_has_info>agr_catacombs_wounded_ask_bloodsucker</dont_has_info>
+        <give_info>agr_catacombs_wounded_ask_bloodsucker</give_info>
+        <next>10</next>
+      </phrase>
+      <phrase id="10">
+        <text>agr_catacombs_wounded_main_10</text>
+        <next>27</next>
+        <next>28</next>
+      </phrase>
+      <phrase id="11">
+        <text>agr_catacombs_wounded_main_11</text>
+        <dont_has_info>agr_catacombs_wounded_ask_client</dont_has_info>
+        <give_info>agr_catacombs_wounded_ask_client</give_info>
+        <next>12</next>
+      </phrase>
+      <phrase id="12">
+        <text>agr_catacombs_wounded_main_12</text>
+        <next>13</next>
+      </phrase>
+      <phrase id="13">
+        <text>agr_catacombs_wounded_main_13</text>
+        <next>26</next>
+      </phrase>
+      <phrase id="14">
+        <text>agr_catacombs_wounded_main_14</text>
+        <dont_has_info>agr_catacombs_wounded_ask_why_here</dont_has_info>
+        <give_info>agr_catacombs_wounded_ask_why_here</give_info>
+        <next>15</next>
+      </phrase>
+      <phrase id="15">
+        <text>agr_catacombs_wounded_main_15</text>
+        <next>25</next>
+      </phrase>
+      <phrase id="16">
+        <text>agr_catacombs_wounded_main_16</text>
+        <dont_has_info>agr_catacombs_wounded_ask_enemies_number</dont_has_info>
+        <give_info>agr_catacombs_wounded_ask_enemies_number</give_info>
+        <next>17</next>
+      </phrase>
+      <phrase id="17">
+        <text>agr_catacombs_wounded_main_17</text>
+        <next>18</next>
+      </phrase>
+      <phrase id="18">
+        <text>agr_catacombs_wounded_main_18</text>
+        <next>19</next>
+      </phrase>
+      <phrase id="19">
+        <text>agr_catacombs_wounded_main_19</text>
+        <next>25</next>
+      </phrase>
+      <phrase id="20">
+        <text>agr_catacombs_wounded_main_20</text>
+        <dont_has_info>agr_catacombs_wounded_ask_useless</dont_has_info>
+        <give_info>agr_catacombs_wounded_ask_useless</give_info>
+        <next>21</next>
+      </phrase>
+      <phrase id="21">
+        <text>agr_catacombs_wounded_main_21</text>
+        <next>25</next>
+      </phrase>
+      <phrase id="22">
+        <text>agr_catacombs_wounded_main_22</text>
+        <dont_has_info>agr_catacombs_wounded_ask_code_sweet</dont_has_info>
+        <give_info>agr_catacombs_wounded_ask_code_sweet</give_info>
+        <next>23</next>
+      </phrase>
+      <phrase id="23">
+        <text>agr_catacombs_wounded_main_23</text>
+        <next>24</next>
+      </phrase>
+      <phrase id="24">
+        <text>agr_catacombs_wounded_main_24</text>
+        <next>26</next>
+      </phrase>
+      <phrase id="25">
+        <text></text>
+        <next>26</next>
+      </phrase>
+      <phrase id="26">
+        <text></text>
+        <next>9</next>
+        <next>11</next>
+        <next>14</next>
+        <next>16</next>
+        <next>20</next>
+        <next>22</next>
+        <next>29</next>
+      </phrase>
+      <phrase id="27">
+        <text></text>
+        <dont_has_info>agr_explore_catacombs_location1</dont_has_info>
+        <next>30</next>
+      </phrase>
+      <phrase id="28">
+        <text></text>
+        <has_info>agr_explore_catacombs_location1</has_info>
+        <next>26</next>
+      </phrase>
+      <phrase id="29">
+        <text>agr_catacombs_wounded_main_29</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+      <phrase id="30">
+        <text></text>
+        <next>6</next>
+      </phrase>
+    </phrase_list>
+  </dialog>
+</game_dialogs>
