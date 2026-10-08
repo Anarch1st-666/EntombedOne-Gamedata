@@ -1,9 +1,9 @@
 --/ Икар-1
-	<game_task id="agr_crashcopter" prio="500">
+	<game_task id="agr_crashcopter" prio="600">
 		<title>agr_crashcopter_0</title>
 		<objective>
 			<text>agr_crashcopter_0</text>
-			<!--article>agr_crashcopter</article-->
+			<article>agr_crashcopter</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_crashcopter_complete</infoportion_complete>
 		</objective>
@@ -35,11 +35,11 @@
 	</game_task>
 
 --/ Помощь Долга
-	<game_task id="agr_seek_duty_support" prio="600">
+	<game_task id="agr_seek_duty_support" prio="500">
 		<title>agr_seek_duty_support_0</title>
 		<objective>
 			<text>agr_seek_duty_support_0</text>
-			<!--article>agr_seek_duty_support</article-->
+			<article>agr_seek_duty_support</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_seek_duty_support_complete</infoportion_complete>
 		</objective>
@@ -63,7 +63,7 @@
 		<title>agr_eavesdropping_0</title>
 		<objective>
 			<text>agr_eavesdropping_0</text>
-			<!--article>agr_eavesdropping</article-->
+			<article>agr_eavesdropping</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_eavesdropping_complete</infoportion_complete>
 		</objective>
@@ -101,7 +101,7 @@
 		<title>agr_by_the_trace_0</title>
 		<objective>
 			<text>agr_by_the_trace_0</text>
-			<!--article>agr_by_the_trace</article-->
+			<article>agr_by_the_trace</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_by_the_trace_complete</infoportion_complete>
 		</objective>
@@ -139,7 +139,7 @@
 		<title>agr_gold_clocks_0</title>
 		<objective>
 			<text>agr_gold_clocks_0</text>
-			<!--article>agr_gold_clocks</article-->
+			<article>agr_gold_clocks</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_gold_clocks_complete</infoportion_complete>
 			<infoportion_fail>agr_gold_clocks_fail</infoportion_fail>
@@ -171,7 +171,7 @@
 		<title>agr_prisoner_0</title>
 		<objective>
 			<text>agr_prisoner_0</text>
-			<!--article>agr_prisoner</article-->
+			<article>agr_prisoner</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_prisoner_complete</infoportion_complete>
 			<infoportion_fail>agr_prisoner_fail</infoportion_fail>
@@ -196,7 +196,7 @@
 		<title>agr_code_sweet_0</title>
 		<objective>
 			<text>agr_code_sweet_0</text>
-			<!--article>agr_code_sweet</article-->
+			<article>agr_code_sweet</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_code_sweet_complete</infoportion_complete>
 		</objective>
@@ -220,7 +220,7 @@
 		<title>agr_explore_catacombs_0</title>
 		<objective>
 			<text>agr_explore_catacombs_0</text>
-			<!--article>agr_explore_catacombs</article-->
+			<article>agr_explore_catacombs</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_explore_catacombs_complete</infoportion_complete>
 		</objective>
@@ -263,7 +263,7 @@
 		<title>agr_decoder_repair_0</title>
 		<objective>
 			<text>agr_decoder_repair_0</text>
-			<!--article>agr_decoder_repair</article-->
+			<article>agr_decoder_repair</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_decoder_repair_complete</infoportion_complete>
 		</objective>
@@ -299,7 +299,7 @@
 		<title>agr_deep_catacombs_0</title>
 		<objective>
 			<text>agr_deep_catacombs_0</text>
-			<!--article>agr_deep_catacombs</article-->
+			<article>agr_deep_catacombs</article>
 			<icon>ui_iconsTotal_grouping</icon>
 			<infoportion_complete>agr_deep_catacombs_complete</infoportion_complete>
 		</objective>

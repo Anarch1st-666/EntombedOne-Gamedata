@@ -65,7 +65,7 @@
 		<text>Лаз на крышу</text>
 	</string>
 	<string id="agr_eavesdropping_3_hint">
-		<text>Враждебные сталкеры</text>
+		<text>Лагерь подозрительных сталкеров</text>
 	</string>
 	<string id="agr_by_the_trace_desc">
 		<text>Необходимо понять, кто наблюдал за сталкерами. Возможно, он и за мной ведёт слежку.</text>
@@ -74,7 +74,7 @@
 		<text>Новый след</text>
 	</string>
 	<string id="agr_by_the_trace_1">
-		<text>Следовать за Келейником</text>
+		<text>Следовать за Калейником</text>
 	</string>
 	<string id="agr_by_the_trace_2">
 		<text>Проверить вышку</text>

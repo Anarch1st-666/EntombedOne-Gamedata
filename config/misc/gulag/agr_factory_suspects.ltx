@@ -16,9 +16,9 @@ meet_state = 5 | guard
 meet_state_wpn = 5 | backoff@threat_weap
 victim = 5 | actor
 victim_wpn = 5 | actor
-use	= {+agr_eavesdropping_threaten} true, false
+use	= {+agr_eavesdropping_start +agr_eavesdropping_threaten} true, false
 use_wpn = false
-;start_dialog
+meet_dialog = {-agr_eavesdropping_backoff} supspect_threats
 
 ;-- Стоит охраняет
 [walker1@agr_factory_suspects_guard_1]
@@ -33,14 +33,13 @@ meet = meet@agr_factory_suspects_guard_1
 anim = threat
 target = actor
 snd = factory_suspect_backoff
-on_signal = sound_end | walker1@agr_factory_suspects_guard_1 %+agr_eavesdropping_threaten +agr_eavesdropping_backoff%
+on_signal = sound_end | walker1@agr_factory_suspects_guard_1 %+agr_eavesdropping_threaten%
 meet = no_meet
 
 ;-- Больше не разговариавает
 [walker2@agr_factory_suspects_guard_1]
 path_walk = guard_walk
 path_look = guard_look
-on_actor_dist_le = 5 | {-agr_eavesdropping_threaten} remark1@agr_factory_suspects_guard_1
 on_info = {+agr_eavesdropping_cine_begin} remark2@agr_factory_suspects_guard_1
 meet = no_meet
 

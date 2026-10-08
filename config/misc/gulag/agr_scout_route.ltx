@@ -1,0 +1,93 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[hit@agr_scout]
+damage_ignore_cond = always
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_scout]
+active = walker@agr_scout_sit_camp
+on_hit = hit@agr_scout
+combat_ignore = combat_ignore
+
+[walker@agr_scout_sit_camp]
+path_walk = camp_walk
+path_look = camp_look
+def_state_standing = binocular
+danger = danger_ignore
+combat_ignore_cond = {=fighting_dist_ge(40)}
+meet = meet@agr_scout_sit_camp
+on_info = {+agr_eavesdropping_start} walker@agr_scout_watch_suspects
+
+[meet@agr_scout_sit_camp]
+use = true
+use_wpn = true
+meet_dialog = {-agr_eavesdropping_start} agr_scout_suspects
+
+;-----------------------------------------------------------------------------------------
+
+[walker@agr_scout_watch_suspects]
+path_walk = cover_factory_walk
+path_look = camp_look
+def_state_standing = hide
+danger = danger_ignore
+combat_ignore_cond = {=fighting_dist_ge(40)}
+meet = no_meet
+on_info = {+agr_eavesdropping_alarm} walker@agr_scout_go_factory, {+agr_eavesdropping_kill_suspects} walker@agr_scout_stay_factory
+
+[walker@agr_scout_go_factory]
+path_walk = go_factory_walk
+path_look = go_factory_look
+danger = danger_ignore
+meet = no_meet
+on_info = {+agr_eavesdropping_kill_suspects} walker@agr_scout_stay_factory
+
+[walker@agr_scout_stay_factory]
+path_walk = stay_factory_walk
+path_look = stay_factory_look
+danger = danger_ignore
+combat_ignore_cond = {=fighting_dist_ge(40)}
+meet = meet@agr_scout_stay_factory
+on_info = {+agr_by_the_trace_start} walker@agr_scout_lead_tower
+
+[meet@agr_scout_stay_factory]
+use = true
+use_wpn = true
+meet_dialog = {-agr_eavesdropping_complete -agr_by_the_trace_start} agr_scout_after_eavesdropping, {+agr_eavesdropping_complete -agr_by_the_trace_start} agr_scout_after_eavesdropping_delayed
+
+;-----------------------------------------------------------------------------------------
+
+[walker@agr_scout_lead_tower]
+path_walk = lead_tower_walk
+path_look = lead_tower_look
+danger = danger_ignore
+combat_ignore_cond = {=fighting_dist_ge(40)}
+meet = no_meet
+on_signal = arrived | walker@agr_scout_near_tower
+
+[walker@agr_scout_near_tower]
+path_walk = stay_entrance_walk
+path_look = stay_entrance_look
+danger = danger_ignore
+combat_ignore_cond = {=fighting_dist_ge(40)}
+meet = meet@agr_scout_near_tower
+on_info = {+agr_by_the_trace_follow_scout} walker@agr_scout_cover_tower
+
+[meet@agr_scout_near_tower]
+use = true
+use_wpn = true
+meet_dialog = {-agr_by_the_trace_follow_scout} agr_scout_on_trace_near_tower
+
+;-----------------------------------------------------------------------------------------
+
+[walker@agr_scout_cover_tower]
+path_walk = cover_tower_walk
+path_look = cover_tower_look
+danger = danger_ignore
+combat_ignore_cond = {=fighting_dist_ge(40)}
+meet = no_meet
+on_info = {+agr_by_the_trace_check_tunnel} nil %=release_object%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+

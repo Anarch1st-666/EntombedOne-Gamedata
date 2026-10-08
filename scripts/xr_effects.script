@@ -500,3 +500,13 @@ function on_tutor_gameover_stop()
 end
 -- ---------------------------------------------------------------------------------------------------------------------
 
+function set_actor_cine_visual(actor, object, p)
+	local sid = p[1]
+	local actor_visual_name = actor:get_visual_name()
+	local st_obj = alife():story_object(sid)
+	if st_obj then
+		st_obj.visual_name = actor_visual_name
+	end
+end
+
+

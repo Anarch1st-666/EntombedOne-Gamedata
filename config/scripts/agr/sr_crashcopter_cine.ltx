@@ -1,14 +1,26 @@
 [logic]
-active = sr_idle
+active = sr_idle@on_start
 
-[sr_idle]
-on_actor_inside = sr_idle@fade_in %=run_postprocess(fade_in_out:7911) =disable_ui%
+[sr_idle@on_start]
+on_timer = 1000 | sr_idle@far %+agr_crashcopter_start%
+
+[sr_idle@far]
+on_actor_inside = sr_idle@near %+agr_crashcopter_reach%
+
+[sr_idle@near]
+on_info = {+agr_crashcopter_box_opened} sr_idle@box_checking
+
+[sr_idle@box_checking]
+on_info = {=no_dialog_opend} sr_idle@heli_inspected %+agr_crashcopter_inspect%
+
+[sr_idle@heli_inspected]
+on_timer = 500 | sr_idle@fade_in %=run_postprocess(fade_in_out:7911) =disable_ui%
 
 [sr_idle@fade_in]
-on_timer = 500 | sr_cutscene %+agr_crashcopter_cine_hero_spawn%
+on_timer = 500 | sr_cutscene %=set_actor_cine_visual(105) +agr_crashcopter_cine_hero_spawn%
 
 [sr_cutscene]
 ;point			= agr_cine_crashcopter_walk
 ;look			= agr_cine_crashcopter_look
 cam_effector	= agr_cine_crashcopter
-on_signal		= cameff_end | nil %=stop_postprocess(7911) =enable_ui%
+on_signal		= cameff_end | nil %=stop_postprocess(7911) =enable_ui +agr_seek_duty_support_start%

@@ -791,3 +791,19 @@ function can_send_tutorial(actor, npc, p)
 	end
 	return true
 end
+
+function no_dialog_opend(actor, npc, p)
+	if db.actor:is_talking() then
+		return false
+	end
+	if db.actor:has_info("ui_inventory") then
+		return false
+	end
+	if db.actor:has_info("ui_car_body") then
+		return false
+	end
+	if db.actor:has_info("ui_pda") then
+		return false
+	end
+	return true
+end

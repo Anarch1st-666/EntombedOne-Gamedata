@@ -63,7 +63,6 @@
       </phrase>
       <phrase id="4">
         <text>agr_scout_suspects_4</text>
-        <give_info>agr_eavesdropping_start</give_info>
         <next>5</next>
       </phrase>
       <phrase id="5">
@@ -72,6 +71,8 @@
       </phrase>
       <phrase id="6">
         <text>agr_scout_suspects_6</text>
+        <action>dialogs.break_dialog</action>
+        <give_info>agr_eavesdropping_start</give_info>
       </phrase>
     </phrase_list>
   </dialog>
@@ -79,11 +80,12 @@
     <phrase_list>
       <phrase id="0">
         <text>supspect_threats_0</text>
-        <give_info>agr_eavesdropping_backoff</give_info>
         <next>1</next>
       </phrase>
       <phrase id="1">
         <text>supspect_threats_1</text>
+        <action>dialogs.break_dialog</action>
+        <give_info>agr_eavesdropping_backoff</give_info>
       </phrase>
     </phrase_list>
   </dialog>
@@ -105,8 +107,8 @@
       </phrase>
       <phrase id="3">
         <text>agr_scout_after_eavesdropping_3</text>
-        <give_info>agr_by_the_trace_start</give_info>
         <action>dialogs.break_dialog</action>
+        <give_info>agr_by_the_trace_start</give_info>
       </phrase>
       <phrase id="4">
         <text>agr_scout_after_eavesdropping_4</text>
@@ -123,10 +125,12 @@
       </phrase>
       <phrase id="1">
         <text>agr_scout_after_eavesdropping_delayed_1</text>
+        <action>dialogs.break_dialog</action>
         <give_info>agr_by_the_trace_start</give_info>
       </phrase>
       <phrase id="2">
         <text>agr_scout_after_eavesdropping_delayed_2</text>
+        <action>dialogs.break_dialog</action>
       </phrase>
     </phrase_list>
   </dialog>
@@ -147,6 +151,7 @@
       </phrase>
       <phrase id="3">
         <text>agr_scout_on_trace_near_tower_3</text>
+        <action>dialogs.break_dialog</action>
         <give_info>agr_by_the_trace_follow_scout</give_info>
       </phrase>
     </phrase_list>
@@ -451,4 +456,408 @@
       </phrase>
     </phrase_list>
   </dialog>
+  
+  <dialog id="agr_technician_bring_decoder">
+    <dont_has_info>agr_decoder_repair_find_technician</dont_has_info>
+    <has_info>agr_decoder_repair_start</has_info>
+    <precondition>agroprom_dialog.has_decoder_parts</precondition>
+    <phrase_list>
+      <phrase id="0">
+        <text>agr_technician_bring_decoder_0</text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text>agr_technician_bring_decoder_1</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_technician_bring_decoder_2</text>
+        <give_info>agr_decoder_repair_find_technician</give_info>
+        <action>agroprom_dialog.give_decoder_parts</action>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_technician_bring_decoder_3</text>
+        <next>4</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_technician_bring_decoder_4</text>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="agr_technician_take_decoder">
+    <dont_has_info>agr_decoder_repair_complete</dont_has_info>
+    <has_info>agr_decoder_repair_talk_to_silent</has_info>
+    <phrase_list>
+      <phrase id="0">
+        <text>agr_technician_take_decoder_0</text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text>agr_technician_take_decoder_1</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_technician_take_decoder_2</text>
+        <give_info>agr_decoder_repair_complete</give_info>
+        <action>agroprom_dialog.got_decoder</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+
+  <dialog id="agr_nii_base">
+    <phrase_list>
+      <phrase id="0">
+        <text></text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text></text>
+        <next>2</next>
+        <next>3</next>
+        <next>4</next>
+        <next>5</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_nii_hello_2</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_nii_hello_3</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_nii_hello_4</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="5">
+        <text>agr_nii_hello_5</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="6">
+        <text></text>
+        <has_info>agr_seek_duty_support_nobody_to_ask</has_info>
+      </phrase>
+      <phrase id="7">
+        <text>agr_nii_crashcoper_common_0</text>
+        <dont_has_info>agr_seek_duty_support_nobody_to_ask</dont_has_info>
+        <next>8</next>
+      </phrase>
+      <phrase id="8">
+        <text>agr_nii_crashcoper_common_1</text>
+      </phrase>
+      <phrase id="99">
+        <text>actor_break_dialog_0</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+
+  <dialog id="agr_nii_north">
+    <phrase_list>
+      <phrase id="0">
+        <text></text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text></text>
+        <next>2</next>
+        <next>3</next>
+        <next>4</next>
+        <next>5</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_nii_hello_2</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_nii_hello_3</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_nii_hello_4</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="5">
+        <text>agr_nii_hello_5</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="6">
+        <text></text>
+        <has_info>agr_seek_duty_support_ask_north</has_info>
+      </phrase>
+      <phrase id="7">
+        <text>agr_nii_crashcoper_common_0</text>
+        <dont_has_info>agr_seek_duty_support_ask_north</dont_has_info>
+        <next>11</next>
+      </phrase>
+      <phrase id="11">
+        <text>agr_nii_crashcoper_north_11</text>
+        <next>12</next>
+      </phrase>
+      <phrase id="12">
+        <text>agr_nii_crashcoper_north_12</text>
+        <next>13</next>
+      </phrase>
+      <phrase id="13">
+        <text>agr_nii_crashcoper_north_13</text>
+        <give_info>agr_seek_duty_support_ask_north</give_info>
+        <next>14</next>
+      </phrase>
+      <phrase id="14">
+        <text>agr_nii_crashcoper_north_14</text>
+      </phrase>
+      <phrase id="99">
+        <text>actor_break_dialog_0</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+
+  <dialog id="agr_nii_west">
+    <phrase_list>
+      <phrase id="0">
+        <text></text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text></text>
+        <next>2</next>
+        <next>3</next>
+        <next>4</next>
+        <next>5</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_nii_hello_2</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_nii_hello_3</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_nii_hello_4</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="5">
+        <text>agr_nii_hello_5</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="6">
+        <text></text>
+        <has_info>agr_seek_duty_support_ask_west</has_info>
+      </phrase>
+      <phrase id="7">
+        <text>agr_nii_crashcoper_common_0</text>
+        <dont_has_info>agr_seek_duty_support_ask_west</dont_has_info>
+        <next>11</next>
+      </phrase>
+      <phrase id="11">
+        <text>agr_nii_crashcoper_west_11</text>
+        <give_info>agr_seek_duty_support_ask_west</give_info>
+      </phrase>
+      <phrase id="99">
+        <text>actor_break_dialog_0</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+
+  <dialog id="agr_nii_south">
+    <phrase_list>
+      <phrase id="0">
+        <text></text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text></text>
+        <next>2</next>
+        <next>3</next>
+        <next>4</next>
+        <next>5</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_nii_hello_2</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_nii_hello_3</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_nii_hello_4</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="5">
+        <text>agr_nii_hello_5</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="6">
+        <text></text>
+        <has_info>agr_seek_duty_support_ask_south</has_info>
+      </phrase>
+      <phrase id="7">
+        <text>agr_nii_crashcoper_common_0</text>
+        <dont_has_info>agr_seek_duty_support_ask_south</dont_has_info>
+        <next>11</next>
+      </phrase>
+      <phrase id="11">
+        <text>agr_nii_crashcoper_south_11</text>
+        <next>12</next>
+      </phrase>
+      <phrase id="12">
+        <text>agr_nii_crashcoper_south_12</text>
+        <next>13</next>
+      </phrase>
+      <phrase id="13">
+        <text>agr_nii_crashcoper_south_13</text>
+        <give_info>agr_seek_duty_support_ask_south</give_info>
+        <next>14</next>
+      </phrase>
+      <phrase id="14">
+        <text>agr_nii_crashcoper_south_14</text>
+      </phrase>
+      <phrase id="99">
+        <text>actor_break_dialog_0</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+
+  <dialog id="agr_nii_east">
+    <phrase_list>
+      <phrase id="0">
+        <text></text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text></text>
+        <next>2</next>
+        <next>3</next>
+        <next>4</next>
+        <next>5</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_nii_hello_2</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_nii_hello_3</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_nii_hello_4</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="5">
+        <text>agr_nii_hello_5</text>
+        <next>6</next>
+        <next>7</next>
+        <next>99</next>
+      </phrase>
+      <phrase id="6">
+        <text></text>
+        <has_info>agr_seek_duty_support_ask_east</has_info>
+      </phrase>
+      <phrase id="7">
+        <text>agr_nii_crashcoper_common_0</text>
+        <dont_has_info>agr_seek_duty_support_ask_east</dont_has_info>
+        <next>11</next>
+      </phrase>
+      <phrase id="11">
+        <text>agr_nii_crashcoper_east_11</text>
+        <next>12</next>
+      </phrase>
+      <phrase id="12">
+        <text>agr_nii_crashcoper_east_12</text>
+        <next>13</next>
+      </phrase>
+      <phrase id="13">
+        <text>agr_nii_crashcoper_east_13</text>
+        <next>14</next>
+      </phrase>
+      <phrase id="14">
+        <text>agr_nii_crashcoper_east_14</text>
+        <next>15</next>
+      </phrase>
+      <phrase id="15">
+        <text>agr_nii_crashcoper_east_15</text>
+        <give_info>agr_seek_duty_support_ask_east</give_info>
+        <next>16</next>
+      </phrase>
+      <phrase id="16">
+        <text>agr_nii_crashcoper_east_16</text>
+      </phrase>
+      <phrase id="99">
+        <text>actor_break_dialog_0</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="agr_scout_released">
+    <dont_has_info>agr_decoder_repair_find_technician</dont_has_info>
+    <has_info>agr_decoder_repair_start</has_info>
+    <precondition>agroprom_dialog.has_decoder_parts</precondition>
+    <phrase_list>
+      <phrase id="0">
+        <text>agr_scout_released_0</text>
+        <next>1</next>
+      </phrase>
+      <phrase id="1">
+        <text>agr_scout_released_1</text>
+        <next>2</next>
+      </phrase>
+      <phrase id="2">
+        <text>agr_scout_released_2</text>
+        <next>3</next>
+      </phrase>
+      <phrase id="3">
+        <text>agr_scout_released_3</text>
+        <next>4</next>
+      </phrase>
+      <phrase id="4">
+        <text>agr_scout_released_4</text>
+        <give_info>agr_prisoner_complete</give_info>
+      </phrase>
+    </phrase_list>
+  </dialog>
+
 </game_dialogs>

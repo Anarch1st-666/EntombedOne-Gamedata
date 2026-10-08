@@ -1,11 +1,13 @@
-local level_scripts = {}
+local level_scripts = {
+	_G.task_agroprom
+}
 
-function proceed()
+function proceed(item)
 	if db.actor == nil then
 		return
 	end
-	for k, v in pairs( level_scripts ) do
-		v.proceed()
+	for k, v in ipairs( level_scripts ) do
+		v.proceed(item)
 	end
 end
 
@@ -13,7 +15,7 @@ function process_info_portion(info_id)
 	if db.actor == nil then
 		return
 	end
-	for k, v in pairs( level_scripts ) do
+	for k, v in ipairs( level_scripts ) do
 		if v.process_info_portion(info_id) then
 			return
 		end
@@ -75,4 +77,15 @@ function set_task_state(id_state, id_task, id_subtask)
 end
 
 function notify_new_task()
+end
+
+--/#+# Проверка наличия всех инфопоршней из таблицы или кортежа
+function has_info_portions(arg, ...)
+	local tInfos = type(arg) == 'table' and arg or {arg, ...}
+	for _,v in pairs(tInfos) do
+		if not db.actor:has_info(v) then
+			return false
+		end
+	end
+	return true
 end

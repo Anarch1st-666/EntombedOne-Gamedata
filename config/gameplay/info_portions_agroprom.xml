@@ -5,8 +5,11 @@
     <info_portion id="agr_south_gates_talk_to_guard"/>
 
 --/ Упавший вертолёт
-    <info_portion id="agr_crashcopter_start"></info_portion>
+    <info_portion id="agr_crashcopter_start">
+		<task>agr_crashcopter</task>
+	</info_portion>
     <info_portion id="agr_crashcopter_reach"></info_portion>
+    <info_portion id="agr_crashcopter_box_opened"/>
     <info_portion id="agr_crashcopter_inspect"></info_portion>
     <info_portion id="agr_crashcopter_case_got"></info_portion>
     <info_portion id="agr_crashcopter_fail"></info_portion>
@@ -16,16 +19,21 @@
     <info_portion id="agr_crashcopter_cine_end"/>
 
 --/ Помощь Долга
-	<info_portion id="agr_seek_duty_support_start"></info_portion>
+	<info_portion id="agr_seek_duty_support_start">
+		<task>agr_seek_duty_support</task>
+	</info_portion>
 	<info_portion id="agr_seek_duty_support_talk_to_grechkin"></info_portion>
 	<info_portion id="agr_seek_duty_support_complete"></info_portion>
 	<info_portion id="agr_seek_duty_support_ask_north"/>
 	<info_portion id="agr_seek_duty_support_ask_south"/>
 	<info_portion id="agr_seek_duty_support_ask_east"/>
 	<info_portion id="agr_seek_duty_support_ask_west"/>
+	<info_portion id="agr_seek_duty_support_nobody_to_ask"/>
 
 --/ Подозрительные сталкеры
-	<info_portion id="agr_eavesdropping_start"></info_portion>
+	<info_portion id="agr_eavesdropping_start">
+		<task>agr_eavesdropping</task>
+	</info_portion>
 	<info_portion id="agr_eavesdropping_threaten"></info_portion>
 	<info_portion id="agr_eavesdropping_backoff"></info_portion>
 	<info_portion id="agr_eavesdropping_cine_begin"/>
@@ -43,8 +51,9 @@
 	<info_portion id="agr_gold_clocks_fail"></info_portion>
 
 --/ По следам
-	<info_portion id="agr_by_the_trace_start"></info_portion>
-	<info_portion id="agr_by_the_trace_scout_stop"></info_portion>
+	<info_portion id="agr_by_the_trace_start">
+		<task>agr_by_the_trace</task>
+	</info_portion>
 	<info_portion id="agr_by_the_trace_follow_scout"></info_portion>
 	<info_portion id="agr_by_the_trace_check_tower"></info_portion>
 	<info_portion id="agr_by_the_trace_check_tunnel"></info_portion>
@@ -106,6 +115,7 @@
 	
 --/ Месть
     <info_portion id="agr_nii_alarm"/>
+    <info_portion id="agr_revenge_start"/>
 	
 
 </game_information_portions>

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
-  <string id="del">
-    <text>DELETE ME</text>
-  </string>
   <string id="grechkin_crashcopter_0">
     <text>Хм… А ты не очень-то похож на военного.</text>
   </string>
@@ -25,13 +22,13 @@
     <text>Почему вы не отправили своих людей к месту крушения? Там были раненые, вы ещё могли их спасти.</text>
   </string>
   <string id="grechkin_crashcopter_7">
-    <text>Мы с военными на короткой ноге. И нам запретили выходить на контакт пока нет нужного разрешения или сигнала бедствия. Ни того, ни другого не было.</text>
+    <text>Мы с военными на короткой ноге. И нам запретили выходить на контакт, пока нет нужного разрешения или сигнала бедствия. Ни того, ни другого не было.</text>
   </string>
   <string id="grechkin_crashcopter_8">
     <text>Я думал, Долг никому не подчиняется.</text>
   </string>
   <string id="grechkin_crashcopter_9">
-    <text>ЭТО НЕ… К-хм… Это не подчинение, это сотрудничество. По хорошему послать бы тебя, да и твоё начальство восвояси. Но стратегический мотив не позволяет.</text>
+    <text>ЭТО НЕ… К-хм… Это не подчинение, это — сотрудничество. По хорошему послать бы тебя, да и твоё начальство восвояси. Но стратегический мотив не позволяет.</text>
   </string>
   <string id="grechkin_crashcopter_10">
     <text>Понял. Держите курсе.</text>
@@ -64,10 +61,10 @@
     <text>Диалог не заладился?</text>
   </string>
   <string id="agr_scout_after_eavesdropping_1">
-    <text>Не заладился. Поэтому я попытался подслушать их разговоры с крыши, но меня кто-то выдал.</text>
+    <text>Не заладился. Я попытался подслушать их разговоры с крыши. Но меня кто-то выдал.</text>
   </string>
   <string id="agr_scout_after_eavesdropping_2">
-    <text>Да я так и понял. Мне кажется, я даже знаю откуда. Пойдём покажу, тут недалеко.</text>
+    <text>Мне кажется, я даже знаю откуда. Пойдём покажу, тут недалеко.</text>
   </string>
   <string id="agr_scout_after_eavesdropping_3">
     <text>Идём.</text>
@@ -85,10 +82,10 @@
     <text>Ещё чутка, и можем идти.</text>
   </string>
   <string id="agr_scout_on_trace_near_tower_0">
-    <text>Вот, смотри. С этой вышки просматривается крыша, ну которую ты лазил.</text>
+    <text>Понял, да? С этой вышки просматривается крыша, ну которую ты лазил.</text>
   </string>
   <string id="agr_scout_on_trace_near_tower_1">
-    <text>Её видно много откуда. Почему именно здесь?</text>
+    <text>Крышу много откуда видно. Почему именно с вышки?</text>
   </string>
   <string id="agr_scout_on_trace_near_tower_2">
     <text>Если бы за тобой с холмов следили, я бы увидел. А тут не знаю, надо проверить.</text>
@@ -160,7 +157,7 @@
     <text>Товарищ полковник, на территории завода я наткнулся на отряд свободовцев. Вот КПК их предводителя. Отряд полностью уничтожен.</text>
   </string>
   <string id="grechkin_saboteur_pda_1">
-    <text>Феникс! Ты даже не представляешь, как ты нам помог! Мы уже целую неделю пытаемся выловить этих крыс. А ты просто взял, и вырезал проблему на корню. Молодец! Прими награду.</text>
+    <text>Феникс! Ты даже не представляешь, как ты нам помог! Мы уже целую неделю пытаемся выловить этих крыс. А ты просто взял, и вырезал проблему на корню. Я всегда считал военных закончеными идиотами. Признаю — я ошибался. Прими награду.</text>
   </string>
   <string id="grechkin_saboteur_pda_2">
     <text>Они также взяли в плен вашего разведчика, Калейника. Мне не удалось его освободить.</text>
@@ -242,5 +239,107 @@
   </string>
   <string id="agr_catacombs_wounded_main_29">
     <text>Это всё. Не делай глупостей — и останешься жить.</text>
+  </string>
+  <string id="agr_technician_bring_decoder_0">
+    <text>Ты, говорят, электронщик ушлый. Надо починить одну штуку. Дело особой важности.</text>
+  </string>
+  <string id="agr_technician_bring_decoder_1">
+    <text>Дай посмотреть… Дешифратор? Скверно. Если чип накрылся, то помочь не смогу.</text>
+  </string>
+  <string id="agr_technician_bring_decoder_2">
+    <text>Чип рабочий. На тебе всё остальное. Как будет готово, дай знать.</text>
+  </string>
+  <string id="agr_technician_bring_decoder_3">
+    <text>Если так, то хорошо. Час–другой — и будет готово. Ты пока погуляй где-нибудь — в тишине мне лучше работается.</text>
+  </string>
+  <string id="agr_technician_bring_decoder_4">
+    <text>Мне как раз отдохнуть не помешает. А то с самого утра тут метаюсь. Работай.</text>
+  </string>
+  <string id="agr_technician_take_decoder_0">
+    <text>Готов дешифратор?</text>
+  </string>
+  <string id="agr_technician_take_decoder_1">
+    <text>Готов. Пользоваться, знаешь как?</text>
+  </string>
+  <string id="agr_technician_take_decoder_2">
+    <text>Разберусь. Спасибо за помощь.</text>
+  </string>
+  <string id="agr_nii_hello_2">
+    <text>Здравия желаю!</text>
+  </string>
+  <string id="agr_nii_hello_3">
+    <text>День добрый!</text>
+  </string>
+  <string id="agr_nii_hello_4">
+    <text>Привет!</text>
+  </string>
+  <string id="agr_nii_hello_5">
+    <text>Слушаю.</text>
+  </string>
+  <string id="agr_nii_crashcoper_common_0">
+    <text>Этой ночью был сбит вертолёт. Ты замечал что-нибудь подозрительное?</text>
+  </string>
+  <string id="agr_nii_crashcoper_common_1">
+    <text>Поспрашивай лучше у караульных: на вышках, на блокпостах.</text>
+  </string>
+  <string id="agr_nii_crashcoper_north_11">
+    <text>Вот! Я же говорил им, это не несчастный случай! Когда двигатель отказывает или винт сносит — это одно. А когда у него борт горит — это ж совсем другое.</text>
+  </string>
+  <string id="agr_nii_crashcoper_north_12">
+    <text>Что значит “борт горит”?</text>
+  </string>
+  <string id="agr_nii_crashcoper_north_13">
+    <text>Вертолёт не просто упал. Кто-то пульнул в него чем-то тяжёлым. Это ещё чудо, что вылавировал чуть ли не до нашей базы.</text>
+  </string>
+  <string id="agr_nii_crashcoper_north_14">
+    <text>Да это и так понятно было…</text>
+  </string>
+  <string id="agr_nii_crashcoper_west_11">
+    <text>Было темно и нихрена не видно. Так что не знаю.</text>
+  </string>
+  <string id="agr_nii_crashcoper_south_11">
+    <text>Да, кое-что видел. Вертолёт упал. Совсем близко, во-он тут.</text>
+  </string>
+  <string id="agr_nii_crashcoper_south_12">
+    <text>Так я и спрашиваю: обстоятельства крушения известны?</text>
+  </string>
+  <string id="agr_nii_crashcoper_south_13">
+    <text>Ост… Отсто… Бляха… Короче нет, об-сто-ятельства не известны.</text>
+  </string>
+  <string id="agr_nii_crashcoper_south_14">
+    <text>Я тебя понял.</text>
+  </string>
+  <string id="agr_nii_crashcoper_east_11">
+    <text>Так его сбили? А я думал, сам упал…</text>
+  </string>
+  <string id="agr_nii_crashcoper_east_12">
+    <text>Ну. Так видел что необычное?</text>
+  </string>
+  <string id="agr_nii_crashcoper_east_13">
+    <text>Видел немного. По дороге вперёд вагончик стоит — там под утро, рядом в кустах, какой-то сталкерок копошился. К делу вряд ли относится, но мало ли…</text>
+  </string>
+  <string id="agr_nii_crashcoper_east_14">
+    <text>Как раз напротив. Почему не доложил полковнику?</text>
+  </string>
+  <string id="agr_nii_crashcoper_east_15">
+    <text>Так а что тут такого? Ходит себе, и пусть ходит. Он же не трогал никого.</text>
+  </string>
+  <string id="agr_nii_crashcoper_east_16">
+    <text>Ясно.</text>
+  </string>
+  <string id="agr_scout_released_0">
+    <text>Феникс! Спасибо! Я твой должник!</text>
+  </string>  
+  <string id="agr_scout_released_1">
+    <text>Как тебя угораздило вообще?</text>
+  </string>  
+  <string id="agr_scout_released_2">
+    <text>Э-э… ну ты сказал, что в тоннель идёшь, и я подумал — дай ближе подберусь, чтоб получше видеть. Только я с завода вышел, как меня хвать за горло… и потащили сюда. Эти утырки давно здесь. Мне сперва и поручили их выследить, пока ты не явился. А они вот какие хитрые оказались — тут поджидали.</text>
+  </string>  
+  <string id="agr_scout_released_3">
+    <text>Что будешь дальше делать?</text>
+  </string>  
+  <string id="agr_scout_released_4">
+    <text>Отсидеться надо. А то бока мне крепко намяли, болит всё. Кстати! Обязательно отнеси свободовский КПК полковнику Гречкину. Он тебя хорошо наградит.</text>
   </string>
 </string_table>

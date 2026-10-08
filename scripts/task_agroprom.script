@@ -1,0 +1,64 @@
+--/ Обработка различных событий на локаиции
+
+--/---------------------------------------------------------------------------------------
+--/ Item take
+--/---------------------------------------------------------------------------------------
+
+local tItemSectionToFunc = {
+	["gold_clocks"] = function()
+		db.actor:give_info_portion("agr_gold_clocks_clocks_got")
+	end,
+	["catacombs_decoder_plate"] = function()
+		if db.actor:object("catacombs_decoder_shell") then
+			db.actor:give_info_portion("agr_explore_catacombs_location4")
+		end
+	end,
+	["catacombs_decoder_shell"] = function()
+		if db.actor:object("catacombs_decoder_plate") then
+			db.actor:give_info_portion("agr_explore_catacombs_location4")
+		end
+	end,
+}
+
+function proceed(item)
+	local item_section = item and item:section() or ""
+	
+	local func = tItemSectionToFunc[item_section]
+	if func then
+		func(item)
+	end
+end
+--/---------------------------------------------------------------------------------------
+
+--/---------------------------------------------------------------------------------------
+--/ Info portion
+--/---------------------------------------------------------------------------------------
+
+function process_info_portion(info_id)
+	if string.find(info_id, "^agr_explore_catacombs_location") then
+		if level_tasks.has_info_portions {
+			"agr_explore_catacombs_location1",
+			"agr_explore_catacombs_location2",
+			"agr_explore_catacombs_location3",
+			"agr_explore_catacombs_location4",
+		} then
+			db.actor:give_info_portion("agr_explore_catacombs_location_all")
+		end
+		return true
+	end
+	
+	if string.find(info_id, "^agr_seek_duty_support_ask") then
+		if level_tasks.has_info_portions {
+			"agr_seek_duty_support_ask_north",
+			"agr_seek_duty_support_ask_south",
+			"agr_seek_duty_support_ask_east",
+			"agr_seek_duty_support_ask_west",
+		} then
+			db.actor:give_info_portion("agr_seek_duty_support_nobody_to_ask")
+		end
+		return true
+	end
+
+	return false
+end
+--/---------------------------------------------------------------------------------------

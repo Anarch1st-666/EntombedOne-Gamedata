@@ -27,6 +27,9 @@ on_timer = 4500 | sr_idle@cine_5 %=play_snd_from_npc(suspects_cine_suspect3:128)
 on_timer = 2000 | sr_idle@cine_6 %=play_snd_from_story_object(characters_voice\scenario\agroprom\suspects_cine_5:128)%
 
 [sr_idle@cine_6]
-on_timer = 4000 | nil %=play_snd_from_npc(suspects_cine_suspect3:128) +agr_eavesdropping_alarm%
+on_timer = 4000 | sr_idle@combat %=play_snd_from_npc(suspects_cine_suspect3:128) +agr_eavesdropping_alarm%
+
+[sr_idle@combat]
+on_info = {=gulag_empty(agr_factory_suspects)} nil %+agr_eavesdropping_kill_suspects%
 
 ;===================================================================================================

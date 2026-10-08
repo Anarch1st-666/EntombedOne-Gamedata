@@ -1,14 +1,46 @@
+;------------------ Common sections -----------------------
+[hit@agr_nii_quest_person]
+damage_ignore_cond = {-agr_revenge_start}
+
+[meet@agr_nii_patrol]
+meet_dialog = agr_nii_base
+
+[meet@agr_nii_north]
+meet_dialog = agr_nii_north
+
+[meet@agr_nii_west]
+meet_dialog = agr_nii_west
+
+[meet@agr_nii_south]
+meet_dialog = agr_nii_south
+
+[meet@agr_nii_east]
+meet_dialog = agr_nii_east
+
+
 ;------------------ Квестовики -----------------------
 [logic@agr_nii_grechkin]
 active = walker1@agr_nii_grechkin
+on_hit = hit@agr_nii_quest_person
 
 [walker1@agr_nii_grechkin]
 path_walk = grechkin_walk
 path_look = grechkin_look
+meet = meet@agr_nii_grechkin
+
+[meet@agr_nii_grechkin]
+meet_state = 5|wait
+meet_state_wpn = 5|wait
+victim = 5|actor
+victim_wpn = 5|actor
+use = true
+use_wpn = true
+meet_dialog = {+agr_seek_duty_support_start -agr_seek_duty_support_talk_to_grechkin} grechkin_crashcopter
 
 
 [logic@agr_nii_trader]
 active = walker1@agr_nii_trader
+on_hit = hit@agr_nii_quest_person
 trade = misc\trade_dolg.ltx
 inv_max_weight = 10000
 
@@ -38,6 +70,7 @@ active = walker1@agr_nii_day_patrol
 [walker1@agr_nii_day_patrol]
 path_walk = day_patrol_walk1
 path_look = day_patrol_look1
+meet = meet@agr_nii_patrol
 
 
 [logic@agr_nii_day_patrol_walker2]
@@ -46,6 +79,7 @@ active = walker2@agr_nii_day_patrol
 [walker2@agr_nii_day_patrol]
 path_walk = day_patrol_walk2
 path_look = day_patrol_look2
+meet = meet@agr_nii_patrol
 
 
 [logic@agr_nii_day_patrol_walker3]
@@ -54,6 +88,7 @@ active = walker3@agr_nii_day_patrol
 [walker3@agr_nii_day_patrol]
 path_walk = day_patrol_walk3
 path_look = day_patrol_look3
+meet = meet@agr_nii_patrol
 
 
 [logic@agr_nii_day_patrol_walker4]
@@ -62,6 +97,7 @@ active = walker4@agr_nii_day_patrol
 [walker4@agr_nii_day_patrol]
 path_walk = day_patrol_walk4
 path_look = day_patrol_look4
+meet = meet@agr_nii_patrol
 
 
 [logic@agr_nii_day_patrol_walker5]
@@ -70,6 +106,7 @@ active = walker5@agr_nii_day_patrol
 [walker5@agr_nii_day_patrol]
 path_walk = day_patrol_walk5
 ;path_look = day_patrol_look5
+meet = meet@agr_nii_patrol
 
 
 [logic@agr_nii_day_patrol_walker6]
@@ -78,9 +115,9 @@ active = walker6@agr_nii_day_patrol
 [walker6@agr_nii_day_patrol]
 path_walk = day_patrol_walk6
 path_look = day_patrol_look6
-meet = meet@agr_nii_day_patrol
+meet = meet@agr_nii_main_building
 
-[meet@agr_nii_day_patrol]
+[meet@agr_nii_main_building]
 meet_state 		= 20| guard@wait| 4| guard
 meet_state_wpn 	= 20| guard@wait| 15| backoff@threat_weap
 victim 			= 20| actor
@@ -88,6 +125,7 @@ victim_wpn 		= 20| actor
 use = true
 use_wpn = false
 precond	= visibility
+meet_dialog = agr_nii_base
 
 
 ;------------------ снайперы -----------------------
@@ -97,6 +135,7 @@ active = walker1@agr_nii_sniper1
 [walker1@agr_nii_sniper1]
 path_walk = tower1_walk
 path_look = tower1_look
+meet = meet@agr_nii_north
 
 
 [logic@agr_nii_sniper2]
@@ -105,6 +144,7 @@ active = walker1@agr_nii_sniper2
 [walker1@agr_nii_sniper2]
 path_walk = tower2_walk
 path_look = tower2_look
+meet = meet@agr_nii_south
 
 
 [logic@agr_nii_sniper3]
@@ -113,6 +153,7 @@ active = walker1@agr_nii_sniper3
 [walker1@agr_nii_sniper3]
 path_walk = tower3_walk
 path_look = tower3_look
+meet = meet@agr_nii_south
 
 
 [logic@agr_nii_sniper4]
@@ -121,6 +162,7 @@ active = walker1@agr_nii_sniper4
 [walker1@agr_nii_sniper4]
 path_walk = tower4_walk
 path_look = tower4_look
+meet = meet@agr_nii_east
 
 
 ;------------------ пост на восточных воротах -----------------------
@@ -130,6 +172,7 @@ active = walker1@agr_nii_east_gate
 [walker1@agr_nii_east_gate]
 path_walk = east_gate_walk1
 path_look = east_gate_look1
+meet = meet@agr_nii_east
 
 
 [logic@agr_nii_east_gate_walker2]
@@ -138,6 +181,7 @@ active = walker2@agr_nii_east_gate
 [walker2@agr_nii_east_gate]
 path_walk = east_gate_walk2
 path_look = east_gate_look2
+meet = meet@agr_nii_east
 
 
 ;------------------ пост на западных воротах -----------------------
@@ -147,6 +191,7 @@ active = walker1@agr_nii_west_gate
 [walker1@agr_nii_west_gate]
 path_walk = west_gate_walk1
 path_look = west_gate_look1
+meet = meet@agr_nii_west
 
 
 [logic@agr_nii_west_gate_walker2]
@@ -155,6 +200,7 @@ active = walker2@agr_nii_west_gate
 [walker2@agr_nii_west_gate]
 path_walk = west_gate_walk2
 path_look = west_gate_look2
+meet = meet@agr_nii_west
 
 
 ;------------------ 3-й этаж основного здания -----------------------
