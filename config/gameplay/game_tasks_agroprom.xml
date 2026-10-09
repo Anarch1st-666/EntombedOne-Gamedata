@@ -59,7 +59,7 @@
 	</game_task>
 
 --/ Подозрительные сталкеры
-	<game_task id="agr_eavesdropping" prio="590">
+	<game_task id="agr_eavesdropping" prio="510">
 		<title>agr_eavesdropping_0</title>
 		<objective>
 			<text>agr_eavesdropping_0</text>
@@ -97,7 +97,7 @@
 	</game_task>
 
 --/ По следам
-	<game_task id="agr_by_the_trace" prio="580">
+	<game_task id="agr_by_the_trace" prio="520">
 		<title>agr_by_the_trace_0</title>
 		<objective>
 			<text>agr_by_the_trace_0</text>
@@ -135,7 +135,7 @@
 	</game_task>
 
 --/ Золотые часы
-	<game_task id="agr_gold_clocks" prio="577">
+	<game_task id="agr_gold_clocks" prio="523">
 		<title>agr_gold_clocks_0</title>
 		<objective>
 			<text>agr_gold_clocks_0</text>
@@ -167,7 +167,7 @@
 	</game_task>
 
 --/ Пленник
-	<game_task id="agr_prisoner" prio="573">
+	<game_task id="agr_prisoner" prio="527">
 		<title>agr_prisoner_0</title>
 		<objective>
 			<text>agr_prisoner_0</text>
@@ -192,7 +192,7 @@
 	</game_task>
 
 --/ Код "Сладкий"
-	<game_task id="agr_code_sweet" prio="570">
+	<game_task id="agr_code_sweet" prio="530">
 		<title>agr_code_sweet_0</title>
 		<objective>
 			<text>agr_code_sweet_0</text>
@@ -216,7 +216,7 @@
 	</game_task>
 
 --/ Верхние катакомбы
-	<game_task id="agr_explore_catacombs" prio="560">
+	<game_task id="agr_explore_catacombs" prio="540">
 		<title>agr_explore_catacombs_0</title>
 		<objective>
 			<text>agr_explore_catacombs_0</text>
@@ -295,7 +295,7 @@
 	</game_task>
 
 --/ Нижние катакомбы
-	<game_task id="agr_deep_catacombs" prio="540">
+	<game_task id="agr_deep_catacombs" prio="560">
 		<title>agr_deep_catacombs_0</title>
 		<objective>
 			<text>agr_deep_catacombs_0</text>
