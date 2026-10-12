@@ -94,7 +94,7 @@
     <text>Хорошо. Я наверх. Действуем по той же схеме.</text>
   </string>
   <string id="saboteur_dealing_0">
-    <text>Стой. Не дёргайся. У нас твой... коллега. Долговец. Если ты не за ним — уходи.</text>
+    <text>Стой. Не дёргайся. У нас твой… коллега. Долговец. Если ты не за ним — уходи.</text>
   </string>
   <string id="saboteur_dealing_2">
     <text>Я за ним. Какого чёрта тут происходит?</text>
@@ -115,7 +115,7 @@
     <text>Рассуди сам: как главный разведчик может попасть в плен и выбраться невредимым? Только если запоет, как соловей. Что, впрочем, недалеко от правды.</text>
   </string>
   <string id="saboteur_dealing_8">
-    <text>Ладно. И как вам помочь?</text>
+    <text>Ладно. И какие видишь варианты?</text>
   </string>
   <string id="saboteur_dealing_9">
     <text>Есть старая тропинка на север — идеальный путь на свободу. Один напряг — огромное чудище, что там обитает. Разберись с ним — и твой дружок свободен.</text>
@@ -133,7 +133,7 @@
     <text>Ну поглядим… Только уясним кое-что: если я решишь подмогу вызвать — сделки не будет. Понял?</text>
   </string>
   <string id="saboteur_dealing_16">
-    <text>Не боись. Мне проще зверя завалить, чем до их базы топать.</text>
+    <text>Не боись. Мне проще самому всё сделать, чтоб шума не поднимать.</text>
   </string>
   <string id="saboteur_dealing_17">
     <text>Я уже был там — псевдогигант мёртв.</text>
@@ -142,7 +142,7 @@
     <text>Благодарю за содействие.</text>
   </string>
   <string id="saboteur_dealing_19">
-    <text>(...)</text>
+    <text>(…)</text>
   </string>
   <string id="saboteur_dealing_21">
     <text>Мы так не договаривались.</text>
@@ -151,7 +151,19 @@
     <text>Горевать по нему не стоит. Я же вижу — вы без пяти минут час знакомы. А тебе полагается награда.</text>
   </string>
   <string id="saboteur_dealing_23">
+    <text>Что ж, пойдёт и так.</text>
+  </string>
+  <string id="saboteur_dealing_24">
+    <text>Боюсь, так не делается.</text>
+  </string>
+  <string id="saboteur_dealing_25">
+    <text>Но-но! Что за дурной тон? Бери эту "взятку" или я сочту тебя… нежелательным свидетелем.</text>
+  </string>
+  <string id="saboteur_dealing_26">
     <text>Ладно, давай.</text>
+  </string>
+  <string id="saboteur_dealing_27">
+    <text>Хер тебе в рыло.</text>
   </string>
   <string id="grechkin_saboteur_pda_0">
     <text>Товарищ полковник, на территории завода я наткнулся на отряд свободовцев. Вот КПК их предводителя. Отряд полностью уничтожен.</text>
@@ -172,7 +184,7 @@
     <text>Вот же ж безмозглый малый. Поверить не могу, что он так попался… Ладно. Всё равно рад, что с ним всё обошлось.</text>
   </string>
   <string id="agr_catacombs_wounded_main_3">
-    <text>Ох-ты, кого занесло… Сталкер, лучше сматывайся отсюда подобру-поздорову, бо тут смерть кругом.</text>
+    <text>Ох-ты, кого занесло… Сталкер, лучше сматывайся отсюда подобру-поздорову. Бо смерть тут кругом.</text>
   </string>
   <string id="agr_catacombs_wounded_main_4">
     <text>Ну. Ещё чего?</text>
@@ -183,8 +195,11 @@
   <string id="agr_catacombs_wounded_main_6">
     <text>Так я по вашу душу. Где груз, который вы спёрли из вертолёта?</text>
   </string>
+  <string id="agr_catacombs_wounded_main_61">
+    <text>Понятия не имею.</text>
+  </string>
   <string id="agr_catacombs_wounded_main_7">
-    <text>Уверен?</text>
+    <text>Все вы так говорите. До первого сломанного пальца.</text>
   </string>
   <string id="agr_catacombs_wounded_main_8">
     <text>У военных всегда с логикой туго… Объясняю: если бы груз был у нас, мы б давно свалили отсюда. Следовательно, что? Правильно — его мы и ищем.</text>
@@ -193,7 +208,7 @@
     <text>Что ты тут делаешь?</text>
   </string>
   <string id="agr_catacombs_wounded_main_10">
-    <text>Меня кровосос чуть не выпотрошил. Сижу, оклематься пытаюсь… Тут знаешь ли, не безопасно.</text>
+    <text>Меня кровосос чуть не выпотрошил. Сижу, оклематься пытаюсь…</text>
   </string>
   <string id="agr_catacombs_wounded_main_11">
     <text>Кто ваш заказчик?</text>
@@ -328,7 +343,7 @@
     <text>Ясно.</text>
   </string>
   <string id="agr_scout_released_0">
-    <text>Феникс! Спасибо! Я твой должник!</text>
+    <text>Феникс, спасибо огромное! Я твой должник!</text>
   </string>  
   <string id="agr_scout_released_1">
     <text>Как тебя угораздило вообще?</text>
@@ -341,5 +356,38 @@
   </string>  
   <string id="agr_scout_released_4">
     <text>Отсидеться надо. А то бока мне крепко намяли, болит всё. Кстати! Обязательно отнеси свободовский КПК полковнику Гречкину. Он тебя хорошо наградит.</text>
+  </string>
+  <string id="saboteur_giant_3">
+    <text>Ты почему ещё здесь? Зверя испугался?</text>
+  </string>
+  <string id="saboteur_giant_4">
+    <text>Уже иду.</text>
+  </string>
+  <string id="saboteur_giant_5">
+    <text>Ну как. Победил чудище?</text>
+  </string>
+  <string id="saboteur_giant_6">
+    <text>Наш снайпер говорит, ты справился.</text>
+  </string>
+  <string id="saboteur_giant_7">
+    <text>О, Феникс! Тут такое дело…</text>
+  </string>
+  <string id="saboteur_giant_8">
+    <text>Не понял. Что с Калейником?</text>
+  </string>
+  <string id="saboteur_giant_9">
+    <text>У твоего брательника нервы сдали — пришлось усыпить. Видать, не поверил в тебя.</text>
+  </string>
+  <string id="saboteur_giant_10">
+    <text>Мы так не договаривались.</text>
+  </string>
+  <string id="saboteur_giant_11">
+    <text>Ой, да ладно тебе. Вы ж без пяти минут час знакомы. Давай так: мы, как и обещали, уходим; а тебе полагается награда. И куда большая, чем жизнь того бедолаги.</text>
+  </string>
+  <string id="saboteur_giant_12">
+    <text>Ладно, давай.</text>
+  </string>
+  <string id="saboteur_giant_13">
+    <text>За жизнь придётся платить смертью… Твоей смертью!</text>
   </string>
 </string_table>

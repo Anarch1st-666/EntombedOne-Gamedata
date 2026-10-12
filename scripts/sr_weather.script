@@ -85,6 +85,7 @@ function weather_effector:on_zone_enter(zone_params)
 
 	self.factors.ambient:set_target(zone_params.ambient_factor)
 	self.factors.fog:set_target(zone_params.fog_factor)
+	self.environment:set_env_ambient(zone_params.sound_ambient)
 end
 
 function weather_effector:on_zone_exit()

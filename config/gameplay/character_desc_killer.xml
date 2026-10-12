@@ -85,7 +85,7 @@
 		<community>killer</community>
 		<rank>650</rank>
 		<reputation>-95</reputation>
-		<snd_config>characters_voice\human_02\killer\</snd_config>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
 		<crouch_type>-1</crouch_type>		
 		<visual>actors\killer\stalker_ki_antigas</visual>
 		<supplies>
@@ -109,7 +109,7 @@
 		<community>killer</community>
 		<rank>798</rank>
 		<reputation>-45</reputation>
-		<snd_config>characters_voice\human_01\killer\</snd_config>
+		<snd_config>characters_voice\human_03\killer\</snd_config>
 		<crouch_type>-1</crouch_type>		
 		<visual>actors\killer\stalker_ki_nauchniy</visual>
 		<supplies>

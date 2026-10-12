@@ -70,7 +70,9 @@
 	<info_portion id="agr_prisoner_complete"></info_portion>
 	<info_portion id="agr_prisoner_fail"></info_portion>
 	<info_portion id="agr_prisoner_scout_dead"></info_portion>
-	<info_portion id="agr_freedom_spies_can_attack_actor"></info_portion>
+	<info_portion id="agr_freedom_spies_can_attack_actor">
+		<action>dialog_agroprom.make_freedom_enemy</action>
+	</info_portion>
 	<info_portion id="agr_freedom_spies_can_attack_prisoner"></info_portion>
 
 --/ Код "Сладкий"
@@ -82,12 +84,16 @@
     <info_portion id="agr_code_sweet_sniper_complete"/>
 	
 --/ Верхние катакомбы
-    <info_portion id="agr_explore_catacombs_start"></info_portion>
+    <info_portion id="agr_explore_catacombs_start">
+		<task>agr_explore_catacombs</task>
+	</info_portion>
     <info_portion id="agr_explore_catacombs_location1"></info_portion>
     <info_portion id="agr_explore_catacombs_location2"></info_portion>
     <info_portion id="agr_explore_catacombs_location3"></info_portion>
     <info_portion id="agr_explore_catacombs_location4"></info_portion>
     <info_portion id="agr_explore_catacombs_complete"></info_portion>
+	<!-- Тоннель с кровососами -->
+    <info_portion id="agr_catacombs_tunnel_bloodsucker_attack"></info_portion>
 	<!-- Раненый наёмник -->
     <info_portion id="agr_catacombs_wounded_ask_bloodsucker"></info_portion>
     <info_portion id="agr_catacombs_wounded_ask_client"></info_portion>
@@ -95,6 +101,7 @@
     <info_portion id="agr_catacombs_wounded_ask_enemies_number"></info_portion>
     <info_portion id="agr_catacombs_wounded_ask_useless"></info_portion>
     <info_portion id="agr_catacombs_wounded_ask_code_sweet"></info_portion>
+    <info_portion id="agr_catacombs_wounded_attacked"></info_portion>
 	<!-- Сцена с дешифратором -->
     <info_portion id="agr_catacombs_decoder_cutscene_killer_speaks">
 		<disable>agr_catacombs_decoder_cutscene_engineer_speaks</disable>

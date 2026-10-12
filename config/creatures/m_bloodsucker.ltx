@@ -476,7 +476,8 @@ ce_power			= 3.0 ;0.7 ; power
 
 [bloodsucker_weak]:m_bloodsucker_e
 $spawn				= "monsters\bloodsuckers\bloodsucker_01_weak"
-visual				= monsters\krovosos\krovosos
+visual				= monsters\krovosos\krovosos_1.ogf
+Predator_Visual		= monsters\krovosos\krovosos_1_invis.ogf
 icon				= ui_npc_monster_krovosos
 panic_threshold		= 0.5
 rank				= 0
@@ -489,12 +490,12 @@ community			= bloodsucker
 burn_immunity			= 1.0
 strike_immunity			= 1.0
 shock_immunity			= 1.0
-wound_immunity			= 0.1	;0.50
+wound_immunity			= 0.1
 radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
-explosion_immunity		= 0.7
-fire_wound_immunity		= 0.18
+explosion_immunity		= 0.4
+fire_wound_immunity		= 0.12
 
 ;*********************************************************************************
 ; WEAK PROFILE
@@ -520,7 +521,8 @@ value2			= 0.60,		0.2,		    200,        0.0, 0.5, 1.50,		  -1.2, 1.2, -1.2, 1.2,
 
 [bloodsucker_normal]:m_bloodsucker_e
 $spawn				= "monsters\bloodsuckers\bloodsucker_02_normal"
-visual				= monsters\krovosos\krovosos
+visual				= monsters\krovosos\krovosos_2.ogf
+Predator_Visual		= monsters\krovosos\krovosos_2_invis.ogf
 icon				= ui_npc_monster_krovosos
 panic_threshold		= 0.2
 rank				= 401
@@ -533,12 +535,12 @@ community			= bloodsucker
 burn_immunity			= 1.0
 strike_immunity			= 1.0
 shock_immunity			= 1.0
-wound_immunity			= 0.1
+wound_immunity			= 0.10
 radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
-explosion_immunity		= 0.5
-fire_wound_immunity		= 0.12
+explosion_immunity		= 0.3
+fire_wound_immunity		= 0.09
 
 ;*********************************************************************************
 ; NORMAL PROFILE
@@ -565,9 +567,9 @@ value2			= 0.60,		0.4,		    300,        0.0, 0.5, 3.00,		  -1.2, 1.2, -1.2, 1.2,
 
 [bloodsucker_strong]:m_bloodsucker_e
 $spawn				= "monsters\bloodsuckers\bloodsucker_03_strong"
-visual				= monsters\krovosos\krovosos_strong
+visual				= monsters\krovosos\krovosos_3.ogf
 icon				= ui_npc_monster_krovosos_strong
-Predator_Visual		= monsters\krovosos\krovosos_strong_xray
+Predator_Visual		= monsters\krovosos\krovosos_3_invis.ogf
 panic_threshold		= 0.05
 rank				= 401
 immunities_sect		= bloodsucker_immunities_strong
@@ -584,8 +586,8 @@ wound_immunity			= 0.10
 radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
-explosion_immunity		= 0.3
-fire_wound_immunity		= 0.09
+explosion_immunity		= 0.2
+fire_wound_immunity		= 0.06
 
 ;*********************************************************************************
 ; STRONG PROFILE
@@ -614,20 +616,7 @@ value2			= 0.60,		0.8,		    400,        0.0, 0.5, 4.50,		  -1.2, 1.2, -1.2, 1.2,
 ; CUSTOM PROFILES
 ;*********************************************************************************
 
-;-------------------------------------------------------------------------------------------
-; FIX IT: 
-;   - use custom immunities section to set custom immunity params
-;-------------------------------------------------------------------------------------------
-[bloodsucker_arena]:bloodsucker_strong
-$spawn				= "monsters\bloodsuckers\arena\bloodsucker_arena"
-visual				= monsters\krovosos\krovosos
-icon				= ui_npc_monster_krovosos
-panic_threshold		= 0.05
-species				= arena_monstr
-
-
-[bloodsucker_mil]:bloodsucker_strong
-$spawn				= "monsters\military\bloodsucker_mil"
-visual				= monsters\krovosos\krovosos
-icon				= ui_npc_monster_krovosos
-panic_threshold		= 0.05
+[bloodsucker_underworld]:m_bloodsucker_e
+$spawn				= "monsters\bloodsuckers\bloodsucker_04_underworld"
+visual				= monsters\krovosos\krovosos_4.ogf
+Predator_Visual		= monsters\krovosos\krovosos_4_invis.ogf

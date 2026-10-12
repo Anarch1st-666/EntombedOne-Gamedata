@@ -59,6 +59,16 @@ function process_info_portion(info_id)
 		return true
 	end
 
+	if info_id == "agr_prisoner_giant_dead" then
+		if db.actor:has_info("agr_prisoner_start") then
+			local sobj = alife():story_object(story_ids.agr_scout_prisoner)
+			if sobj and sobj:alive() then
+				sobj:on_death()
+				db.actor:give_info_portion("agr_prisoner_scout_dead")
+			end
+		end
+	end
+
 	return false
 end
 --/---------------------------------------------------------------------------------------

@@ -198,20 +198,20 @@
 			<text>agr_code_sweet_0</text>
 			<article>agr_code_sweet</article>
 			<icon>ui_iconsTotal_grouping</icon>
-			<infoportion_complete>agr_code_sweet_complete</infoportion_complete>
+			<infoportion_complete>agr_code_sweet_sniper_complete</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_code_sweet_1</text>
 			<map_location_type hint="agr_code_sweet_1_hint">crlc_big</map_location_type>
 			<object_story_id>agr_swamp</object_story_id>
-			<infoportion_complete>agr_code_sweet_follow_scout</infoportion_complete>
+			<infoportion_complete>agr_code_sweet_sniper_dead</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_code_sweet_2</text>
 			<map_location_type hint="agr_code_sweet_2_hint">green_location</map_location_type>
 			<object_story_id>rogue</object_story_id>
-			<infoportion_visible>agr_code_sweet_follow_scout</infoportion_visible>
-			<infoportion_complete>agr_code_sweet_check_tower</infoportion_complete>
+			<infoportion_visible>agr_code_sweet_sniper_dead</infoportion_visible>
+			<infoportion_complete>agr_code_sweet_sniper_complete</infoportion_complete>
 		</objective>
 	</game_task>
 
@@ -228,28 +228,25 @@
 			<text>agr_explore_catacombs_1</text>
 			<map_location_type hint="agr_explore_catacombs_1">green_location</map_location_type>
 			<object_story_id>agr_catacombs_location1</object_story_id>
-			<infoportion_complete>agr_explore_catacombs_follow_scout</infoportion_complete>
+			<infoportion_complete>agr_explore_catacombs_location1</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_explore_catacombs_2</text>
 			<map_location_type hint="agr_explore_catacombs_2">green_location</map_location_type>
 			<object_story_id>agr_catacombs_location2</object_story_id>
-			<infoportion_visible>agr_explore_catacombs_follow_scout</infoportion_visible>
-			<infoportion_complete>agr_explore_catacombs_check_tower</infoportion_complete>
+			<infoportion_complete>agr_explore_catacombs_location2</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_explore_catacombs_3</text>
 			<map_location_type hint="agr_explore_catacombs_3">green_location</map_location_type>
 			<object_story_id>agr_catacombs_location3</object_story_id>
-			<infoportion_visible>agr_explore_catacombs_check_tower</infoportion_visible>
-			<infoportion_complete>agr_explore_catacombs_check_tunnel</infoportion_complete>
+			<infoportion_complete>agr_explore_catacombs_location3</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_explore_catacombs_4</text>
 			<map_location_type hint="agr_explore_catacombs_4">green_location</map_location_type>
 			<object_story_id>agr_catacombs_location4</object_story_id>
-			<infoportion_visible>agr_explore_catacombs_location_all</infoportion_visible>
-			<infoportion_complete>agr_explore_catacombs_complete</infoportion_complete>
+			<infoportion_complete>agr_explore_catacombs_location4</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_explore_catacombs_5</text>

@@ -31,7 +31,11 @@ function saboteur_reward()
 	dialogs.relocate_money(db.actor:get_talk_partner(), 8000, "in")
 end
 
+function make_freedom_enemy()
+--	relation_registry.set_community_goodwill ("freedom", "actor", -1000)
+	xr_effects.set_gulag_enemy_actor(db.actor, nil, {"agr_freedom_spies"})
+end
+
 --' Пригрозить оружием в диалоге
 function unhide_weapon_in_dialog()
-
 end

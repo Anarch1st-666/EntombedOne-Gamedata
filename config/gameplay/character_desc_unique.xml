@@ -204,4 +204,29 @@
 #include "gameplay\character_drugs.xml"
 		</supplies>
 	</specific_character>
+	
+	<!-- Наёмник, убитый кровососом -->
+	<specific_character id="korzhik" team_default = "1">
+		<name>korzhik_name</name>
+		<icon>ui_npc_u_stalker_ki_head_1</icon>
+		<class>korzhik</class>
+		<community>killer</community>
+		<rank>390</rank>
+		<reputation>-120</reputation>
+		<snd_config>characters_voice\human_02\killer\</snd_config>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\killer\stalker_ki_head_1</visual>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj \n
+			wpn_l85 \n
+			ammo_5.56x45_ss190 \n
+#include "gameplay\character_items.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs.xml"
+		</supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
 </xml>

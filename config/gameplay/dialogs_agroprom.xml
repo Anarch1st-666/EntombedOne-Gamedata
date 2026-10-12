@@ -260,11 +260,101 @@
       <phrase id="22">
         <text>saboteur_dealing_22</text>
         <next>23</next>
+        <next>24</next>
       </phrase>
       <phrase id="23">
         <text>saboteur_dealing_23</text>
         <give_info>agr_prisoner_complete</give_info>
         <action>dialog_agroprom.saboteur_reward</action>
+      </phrase>
+      <phrase id="24">
+        <text>saboteur_dealing_24</text>
+        <next>25</next>
+      </phrase>
+      <phrase id="25">
+        <text>saboteur_dealing_25</text>
+        <next>26</next>
+        <next>27</next>
+      </phrase>
+      <phrase id="26">
+        <text>saboteur_dealing_26</text>
+        <give_info>agr_prisoner_complete</give_info>
+        <action>dialog_agroprom.saboteur_reward</action>
+      </phrase>
+      <phrase id="27">
+        <text>saboteur_dealing_27</text>
+        <action>dialogs.break_dialog</action>
+        <give_info>agr_prisoner_complete</give_info>
+        <give_info>agr_freedom_spies_can_attack_actor</give_info>
+      </phrase>
+    </phrase_list>
+  </dialog>
+  <dialog id="saboteur_giant">
+    <phrase_list>
+      <phrase id="0">
+        <text></text>
+        <next>1</next>
+        <next>2</next>
+      </phrase>
+      <phrase id="1">
+        <text></text>
+        <dont_has_info>agr_prisoner_giant_dead</dont_has_info>
+        <next>3</next>
+      </phrase>
+      <phrase id="2">
+        <text></text>
+        <has_info>agr_prisoner_giant_dead</has_info>
+        <next>5</next>
+        <next>6</next>
+        <next>7</next>
+      </phrase>
+      <phrase id="3">
+        <text>saboteur_giant_3</text>
+        <next>4</next>
+      </phrase>
+      <phrase id="4">
+        <text>saboteur_giant_4</text>
+        <action>dialogs.break_dialog</action>
+      </phrase>
+      <phrase id="5">
+        <text>saboteur_giant_5</text>
+        <next>8</next>
+      </phrase>
+      <phrase id="6">
+        <text>saboteur_giant_6</text>
+        <next>8</next>
+      </phrase>
+      <phrase id="7">
+        <text>saboteur_giant_7</text>
+        <next>8</next>
+      </phrase>
+      <phrase id="8">
+        <text>saboteur_giant_8</text>
+        <next>9</next>
+      </phrase>
+      <phrase id="9">
+        <text>saboteur_giant_9</text>
+        <next>10</next>
+      </phrase>
+      <phrase id="10">
+        <text>saboteur_giant_10</text>
+        <next>11</next>
+      </phrase>
+      <phrase id="11">
+        <text>saboteur_giant_11</text>
+        <next>12</next>
+        <next>13</next>
+      </phrase>
+      <phrase id="12">
+        <text>saboteur_giant_12</text>
+        <action>dialog_agroprom.saboteur_reward</action>
+        <give_info>agr_prisoner_complete</give_info>
+      </phrase>
+      <phrase id="13">
+        <text>saboteur_giant_13</text>
+        <action>dialogs.break_dialog</action>
+        <give_info>agr_prisoner_complete</give_info>
+        <give_info>agr_freedom_spies_can_attack_actor</give_info>
       </phrase>
     </phrase_list>
   </dialog>
@@ -308,12 +398,12 @@
       </phrase>
       <phrase id="1">
         <text></text>
-        <dont_has_info>agr_explore_catacombs_location1</dont_has_info>
+        <has_info>agr_explore_catacombs_location1</has_info>
         <next>4</next>
       </phrase>
       <phrase id="2">
         <text></text>
-        <has_info>agr_explore_catacombs_location1</has_info>
+        <dont_has_info>agr_explore_catacombs_location1</dont_has_info>
         <next>3</next>
       </phrase>
       <phrase id="3">
@@ -323,13 +413,13 @@
       </phrase>
       <phrase id="4">
         <text>agr_catacombs_wounded_main_4</text>
-        <next>5</next>
-        <next>9</next>
         <next>11</next>
         <next>14</next>
         <next>16</next>
+        <next>9</next>
         <next>20</next>
         <next>22</next>
+        <next>5</next>
       </phrase>
       <phrase id="5">
         <text>agr_catacombs_wounded_main_5</text>
@@ -337,6 +427,10 @@
       </phrase>
       <phrase id="6">
         <text>agr_catacombs_wounded_main_6</text>
+        <next>61</next>
+      </phrase>
+      <phrase id="61">
+        <text>agr_catacombs_wounded_main_61</text>
         <next>7</next>
       </phrase>
       <phrase id="7">
@@ -346,6 +440,7 @@
       </phrase>
       <phrase id="8">
         <text>agr_catacombs_wounded_main_8</text>
+        <give_info>agr_explore_catacombs_location1</give_info>
         <next>25</next>
       </phrase>
       <phrase id="9">
@@ -404,6 +499,7 @@
       <phrase id="20">
         <text>agr_catacombs_wounded_main_20</text>
         <dont_has_info>agr_catacombs_wounded_ask_useless</dont_has_info>
+        <has_info>agr_catacombs_wounded_ask_bloodsucker</has_info>
         <give_info>agr_catacombs_wounded_ask_useless</give_info>
         <next>21</next>
       </phrase>
@@ -431,10 +527,10 @@
       </phrase>
       <phrase id="26">
         <text></text>
-        <next>9</next>
         <next>11</next>
         <next>14</next>
         <next>16</next>
+        <next>9</next>
         <next>20</next>
         <next>22</next>
         <next>29</next>
@@ -836,9 +932,6 @@
     </phrase_list>
   </dialog>
   <dialog id="agr_scout_released">
-    <dont_has_info>agr_decoder_repair_find_technician</dont_has_info>
-    <has_info>agr_decoder_repair_start</has_info>
-    <precondition>agroprom_dialog.has_decoder_parts</precondition>
     <phrase_list>
       <phrase id="0">
         <text>agr_scout_released_0</text>
