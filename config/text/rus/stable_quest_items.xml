@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+  <string id="gold_clocks">
+    <text>Старинные серебряные часы</text>
+  </string>
+  <string id="gold_clocks_desc">
+    <text>Карманные часы. До сих пор работают.</text>
+  </string>
+  <string id="road_vagon_key">
+    <text>Ключ от вагончика</text>
+  </string>
+  <string id="road_vagon_key_desc">
+    <text>Ключ о двери вагона, стоящего по дороге на восток от НИИ Агропром. Вероятно, внутри что-то ценное.</text>
+  </string>
+  <string id="catacombs_secret_room_key">
+    <text>Ключ от тайника в катакомбах</text>
+  </string>
+  <string id="catacombs_secret_room_key_desc">
+    <text>Ключ, выигранный в карты у ветерана с Ростка.</text>
+  </string>
+  <string id="catacombs_radio_note">
+    <text>Результаты радиоразведки</text>
+  </string>
+  <string id="catacombs_radio_note_desc">
+    <text>300 кГц – 500 кГц: нет сигнала;\n500 кГц – 800 кГц: нет сигнала;\n800 кГц – 1200 кГц: неизвестный радиоперехват;\n1200 кГц – 1800 кГц: н/д;\n1800 кГц – 3000 кГц: н/д;</text>
+  </string>
+  <string id="catacombs_decoder_plate">
+    <text>Плата дешифратора</text>
+  </string>
+  <string id="catacombs_decoder_plate_desc">
+    <text>Кусок текстолита с набором непонятных микросхем.</text>
+  </string>
+  <string id="catacombs_decoder_shell">
+    <text>Корпус дешифратора</text>
+  </string>
+  <string id="catacombs_decoder_shell_desc">
+    <text>Стальной короб с крепёжными отверстиями.</text>
+  </string>
+  <string id="catacombs_decoder">
+    <text>Дешифратор</text>
+  </string>
+  <string id="catacombs_decoder_desc">
+    <text>Устройство для взлома электронных замков. Должен подойти к гермодвери в катакомбах.</text>
+  </string>
+  <string id="crashcopter_case">
+    <text>C.A.S.E.</text>
+  </string>
+  <string id="crashcopter_case_desc">
+    <text>Ударопрочный огнеупорный контейнер. Надпись на лицевой стороне: “Cryogenic Anomalous Sample Entity”.</text>
+  </string>
+  <string id="pda_grechkin">
+    <text>КПК Полковника Гречкина</text>
+  </string>
+  <string id="pda_grechkin_desc">
+    <text>КПК Полковника Гречкина.</text>
+  </string>
+  <string id="pda_saboteur">
+    <text>КПК свободовца-лазутчика</text>
+  </string>
+  <string id="pda_saboteur_desc">
+    <text>КПК лидера отряда свободовцев с Агропрома. Может заинтересовать полковника Гречкина.</text>
+  </string>
+</string_table>

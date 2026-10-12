@@ -85,11 +85,21 @@ end
 
 --' Use this function instead.
 function relocate_item_section(victim, section, type)
-	if db.actor and victim then
+	local sim = alife()
+	if db.actor then
 		if type == "in" then
-			alife():create(section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			sim:create(section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
 		elseif type == "out" then
-			db.actor:transfer_item(db.actor:object(section), victim)
+			local item = db.actor:object(section)
+			if not item then
+				log3("! relocate_item_section : item [%s] not found", section)
+				return
+			end
+			if victim then
+				db.actor:transfer_item(item, victim)
+			else
+				sim:release(sim:object(item:id()))
+			end
 		end
 		news_manager.relocate_item(db.actor, type, section)
 	end

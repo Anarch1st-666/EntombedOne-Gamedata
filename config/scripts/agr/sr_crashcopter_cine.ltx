@@ -11,7 +11,7 @@ on_actor_inside = sr_idle@near %+agr_crashcopter_reach%
 on_info = {+agr_crashcopter_box_opened} sr_idle@box_checking
 
 [sr_idle@box_checking]
-on_info = {=no_dialog_opend} sr_idle@heli_inspected %+agr_crashcopter_inspect%
+on_info = {!dialog_opened} sr_idle@heli_inspected %+agr_crashcopter_inspect%
 
 [sr_idle@heli_inspected]
 on_timer = 500 | sr_idle@fade_in %=run_postprocess(fade_in_out:7911) =disable_ui%

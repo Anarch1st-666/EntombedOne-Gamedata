@@ -1,10 +1,11 @@
 [logic]
-active = ph_door@close
+active = ph_door@locked
 
 [ph_door@locked]
 locked = true
 closed = true
 snd_open_start = metal_small_locked
+on_info = {=gulag_empty(agr_freedom_spies)} ph_door@open, {+agr_prisoner_complete} ph_door@close, {+agr_prisoner_fail} ph_door@close
 
 [ph_door@close]
 locked = false

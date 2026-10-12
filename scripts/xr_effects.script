@@ -509,4 +509,17 @@ function set_actor_cine_visual(actor, object, p)
 	end
 end
 
+function open_document(actor, object, p)
+	ui_document.init(p[1], p[2])
+end
+
+--' Калейник убит, вернуть управление
+function show_saboteur_dialog_window(actor, object)
+	local dialog_wnd = level.main_input_receiver()
+	if dialog_wnd ~= nil then
+		dialog_wnd:Show(true)
+	end
+	level.enable_input()
+end
+
 

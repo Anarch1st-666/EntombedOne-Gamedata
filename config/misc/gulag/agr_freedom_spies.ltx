@@ -6,8 +6,10 @@ ignore_distance = 0
 [combat_ignore@agr_freedom_spies]
 
 [death@agr_freedom_spies]
+on_info = %+agr_freedom_spies_can_attack_actor%
 
 [hit@agr_freedom_spies]
+on_info = {=hit_by_actor} %+agr_freedom_spies_can_attack_actor%
 
 [meet@agr_freedom_spies_guard]
 meet_state = 5 | threat
@@ -32,13 +34,15 @@ use_wpn = false
 active = walker1@agr_freedom_spies_leader
 on_hit = hit@agr_freedom_spies
 on_death = death@agr_freedom_spies
+combat_ignore = combat_ignore@agr_freedom_spies
 
 [walker1@agr_freedom_spies_leader]
 path_walk = leader_walk
 path_look = leader_look
 show_spot = false
 def_state_standing = sit_cop
-;combat_ignore_cond = always
+danger = danger@agr_freedom_spies
+combat_ignore_cond = {=fighting_actor -agr_freedom_spies_can_attack_actor}, {=check_fighting(110) -agr_freedom_spies_can_attack_actor}
 meet = meet@agr_freedom_spies_leader
 
 [meet@agr_freedom_spies_leader]
@@ -48,6 +52,7 @@ victim = nil
 victim_wpn = nil
 use = true
 use_wpn = true
+meet_dialog = {-agr_prisoner_start} saboteur_dealing
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -56,13 +61,24 @@ use_wpn = true
 active = walker1@agr_freedom_spies_bodyguard_1
 on_hit = hit@agr_freedom_spies
 on_death = death@agr_freedom_spies
+combat_ignore = combat_ignore@agr_freedom_spies
 
 [walker1@agr_freedom_spies_bodyguard_1]
 path_walk = bodyguard_1_walk
 path_look = bodyguard_1_look
 show_spot = false
-meet = meet@agr_freedom_spies_guard
 danger = danger@agr_freedom_spies
+combat_ignore_cond = {=fighting_actor -agr_freedom_spies_can_attack_actor}, {=check_fighting(110) -agr_freedom_spies_can_attack_actor}
+meet = meet@agr_freedom_spies_guard
+on_info = {+agr_freedom_spies_can_attack_prisoner -agr_prisoner_scout_dead} remark@agr_freedom_spies_bodyguard_1
+
+[remark@agr_freedom_spies_bodyguard_1]
+target = 110
+anim = hide_fire
+danger = danger@agr_freedom_spies
+combat_ignore_cond = {=fighting_actor -agr_freedom_spies_can_attack_actor}, {=check_fighting(110) -agr_freedom_spies_can_attack_actor}
+meet = no_meet
+on_info = {+agr_prisoner_scout_dead} walker1@agr_freedom_spies_bodyguard_1
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -71,21 +87,24 @@ danger = danger@agr_freedom_spies
 active = walker1@agr_freedom_spies_bodyguard_2
 on_hit = hit@agr_freedom_spies
 on_death = death@agr_freedom_spies
+combat_ignore = combat_ignore@agr_freedom_spies
 
 [walker1@agr_freedom_spies_bodyguard_2]
 path_walk = bodyguard_2_walk1
 path_look = bodyguard_2_look1
 show_spot = false
-meet = meet@agr_freedom_spies_no_meet
 danger = danger@agr_freedom_spies
+combat_ignore_cond = {=fighting_actor -agr_freedom_spies_can_attack_actor}, {=check_fighting(110) -agr_freedom_spies_can_attack_actor}
+meet = meet@agr_freedom_spies_no_meet
 on_info = {=actor_in_zone(agr_sr_saboteur_meet)} walker2@agr_freedom_spies_bodyguard_2
 
 [walker2@agr_freedom_spies_bodyguard_2]
 path_walk = bodyguard_2_walk2
 path_look = bodyguard_2_look2
 show_spot = false
-meet = meet@agr_freedom_spies_guard
 danger = danger@agr_freedom_spies
+combat_ignore_cond = {=fighting_actor -agr_freedom_spies_can_attack_actor}, {=check_fighting(110) -agr_freedom_spies_can_attack_actor}
+meet = meet@agr_freedom_spies_guard
 on_info = {!actor_in_zone(agr_sr_saboteur_meet)} walker1@agr_freedom_spies_bodyguard_2
 
 
@@ -95,13 +114,15 @@ on_info = {!actor_in_zone(agr_sr_saboteur_meet)} walker1@agr_freedom_spies_bodyg
 active = walker1@agr_freedom_spies_sniper
 on_hit = hit@agr_freedom_spies
 on_death = death@agr_freedom_spies
+combat_ignore = combat_ignore@agr_freedom_spies
 
 [walker1@agr_freedom_spies_sniper]
 path_walk = sniper_walk
 path_look = sniper_look
 show_spot = false
-meet = meet@agr_freedom_spies_no_meet
 danger = danger@agr_freedom_spies
+combat_ignore_cond = {=fighting_actor -agr_freedom_spies_can_attack_actor}, {=check_fighting(110) -agr_freedom_spies_can_attack_actor}
+meet = meet@agr_freedom_spies_no_meet
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

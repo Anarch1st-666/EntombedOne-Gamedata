@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+  <string id="st_exit">
+    <text>Выйти</text>
+  </string>
+  <string id="st_read_note">
+    <text>Прочесть записку</text>
+  </string>
+  <string id="code_sweet_note">
+    <text>Код “сладкий”. Спрятал на дне болота</text>
+  </string>
+</string_table>

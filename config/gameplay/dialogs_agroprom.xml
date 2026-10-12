@@ -166,6 +166,7 @@
       </phrase>
       <phrase id="1">
         <text>saboteur_dealing_1</text>
+        <action>dialogs.break_dialog</action>
       </phrase>
       <phrase id="2">
         <text>saboteur_dealing_2</text>
@@ -235,22 +236,23 @@
       </phrase>
       <phrase id="17">
         <text>saboteur_dealing_17</text>
-        <give_info>agr_prisoner_giant_dead</give_info>
+        <has_info>agr_prisoner_giant_dead</has_info>
+        <give_info>agr_freedom_spies_can_attack_prisoner</give_info>
+        <action>dialog_agroprom.hide_saboteur_dialog_window</action>
         <next>18</next>
       </phrase>
       <phrase id="18">
         <text>saboteur_dealing_18</text>
-        <next>19</next>
+        <next>21</next>
       </phrase>
-      <phrase id="19">
+      <!--phrase id="19">
         <text>saboteur_dealing_19</text>
-        <give_info>agr_freedom_spies_can_attack_prisoner</give_info>
         <next>20</next>
       </phrase>
       <phrase id="20">
         <text></text>
         <next>21</next>
-      </phrase>
+      </phrase-->
       <phrase id="21">
         <text>saboteur_dealing_21</text>
         <next>22</next>
@@ -262,6 +264,7 @@
       <phrase id="23">
         <text>saboteur_dealing_23</text>
         <give_info>agr_prisoner_complete</give_info>
+        <action>dialog_agroprom.saboteur_reward</action>
       </phrase>
     </phrase_list>
   </dialog>

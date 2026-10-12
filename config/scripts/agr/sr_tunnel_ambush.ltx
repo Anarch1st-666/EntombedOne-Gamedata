@@ -1,0 +1,12 @@
+[logic]
+active = sr_idle@before_ambush
+
+[sr_idle@before_ambush]
+on_info = {+agr_by_the_trace_check_tunnel} sr_idle@on_ambush
+
+[sr_idle@on_ambush]
+on_actor_outside = sr_idle@after_ambush
+on_info = {=gulag_empty(agr_tunnel_ambush)} sr_idle@after_ambush
+
+[sr_idle@after_ambush]
+on_timer = 1000 | nil %+agr_code_sweet_start%

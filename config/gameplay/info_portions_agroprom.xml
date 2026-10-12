@@ -55,13 +55,16 @@
 		<task>agr_by_the_trace</task>
 	</info_portion>
 	<info_portion id="agr_by_the_trace_follow_scout"></info_portion>
+	<info_portion id="agr_by_the_trace_open_tower_cache"></info_portion>
 	<info_portion id="agr_by_the_trace_check_tower"></info_portion>
 	<info_portion id="agr_by_the_trace_check_tunnel"></info_portion>
 	<info_portion id="agr_by_the_trace_killer_seen_actor"/>
 	<info_portion id="agr_by_the_trace_complete"></info_portion>
 	
 --/ Пленник
-	<info_portion id="agr_prisoner_start"></info_portion>
+	<info_portion id="agr_prisoner_start">
+		<task>agr_prisoner</task>
+	</info_portion>
 	<info_portion id="agr_prisoner_ask_duty_deal"></info_portion>
 	<info_portion id="agr_prisoner_giant_dead"></info_portion>
 	<info_portion id="agr_prisoner_complete"></info_portion>
@@ -71,7 +74,9 @@
 	<info_portion id="agr_freedom_spies_can_attack_prisoner"></info_portion>
 
 --/ Код "Сладкий"
-    <info_portion id="agr_code_sweet_start"></info_portion>
+    <info_portion id="agr_code_sweet_start">
+		<task>agr_code_sweet</task>
+	</info_portion>
     <info_portion id="agr_code_sweet_sniper_spawn"/>
     <info_portion id="agr_code_sweet_sniper_dead"/>
     <info_portion id="agr_code_sweet_sniper_complete"/>

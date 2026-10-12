@@ -24,6 +24,7 @@ meet_dialog = {-agr_eavesdropping_backoff} supspect_threats
 [walker1@agr_factory_suspects_guard_1]
 path_walk = guard_walk
 path_look = guard_look
+danger = danger_ignore
 on_actor_dist_le = 15 | {-agr_eavesdropping_threaten} remark1@agr_factory_suspects_guard_1
 on_info = {+agr_eavesdropping_backoff} walker2@agr_factory_suspects_guard_1
 meet = meet@agr_factory_suspects_guard_1
@@ -34,12 +35,14 @@ anim = threat
 target = actor
 snd = factory_suspect_backoff
 on_signal = sound_end | walker1@agr_factory_suspects_guard_1 %+agr_eavesdropping_threaten%
+danger = danger_ignore
 meet = no_meet
 
 ;-- Больше не разговариавает
 [walker2@agr_factory_suspects_guard_1]
 path_walk = guard_walk
 path_look = guard_look
+danger = danger_ignore
 on_info = {+agr_eavesdropping_cine_begin} remark2@agr_factory_suspects_guard_1
 meet = no_meet
 
@@ -48,6 +51,7 @@ meet = no_meet
 anim 				= guard_rac
 target				= agr_factory_suspects_guard_look, 0
 meet				= no_meet
+danger				= danger_ignore
 combat_ignore_cond	= {+agr_eavesdropping_cine_begin} true
 on_info = {+agr_eavesdropping_alarm} walker2@agr_factory_suspects_guard_1
 

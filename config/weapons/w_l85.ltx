@@ -56,13 +56,13 @@ kill_msg_height			= 30
 
 ;-----------------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base		= 0.25; 0.16	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+fire_dispersion_base		= 0.15; 0.16	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
 ;;control_inertion_factor		= 1.35f
 
 ;отдача
 cam_relax_speed         	= 5; 0.15		;скорость возврата в исходное положение
-cam_dispersion          	= 0.15		;увеличения угла (в градусах) с каждым выстрелом
-cam_dispersion_inc			= 0.3		;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion          	= 0.10		;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc			= 0.20		;увеличениe cam_dispersion с каждым выстрелом
 cam_dispertion_frac			= 0.9		;ствол будет подыматься на cam_dispersion*cam_dispertion_frac +- cam_dispersion*(1-cam_dispertion_frac)
 cam_max_angle				= 10.0	    	;максимальный угол отдачи
 cam_max_angle_horz			= 20.0		;(degree) maximum shot horizontal degree 
@@ -95,7 +95,7 @@ shell_particles	 			= weapons\generic_shells
 rpm_empty_click 	 		= 200
 
 ; ttc
-hit_power                	= 0.4, 0.44, 0.47, 0.50
+hit_power                	= 0.47, 0.51, 0.55, 0.59
 hit_impulse		 			= 140
 hit_type 					= fire_wound 	
 

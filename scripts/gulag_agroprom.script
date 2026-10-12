@@ -115,7 +115,7 @@ function load_job( sj, gname, type, squad, groups )
 		t = { section = "logic@agr_scout",
 			idle = 0,
 			prior = 5, state = {0},
-			in_rest = "", out_rest = "",
+			in_rest = "", out_rest = "agr_scout_route_space_restrictor",
 			predicate = function(obj_info)
 				return obj_info.story_id == story_ids.agr_scout
 			end
@@ -248,6 +248,19 @@ function load_job( sj, gname, type, squad, groups )
 			in_rest = "", out_rest = "agr_south_gates_space_restrictor",
 		}
 		table.insert(sj, t)
+	elseif type == "agr_factory_prisoner" then
+		t = { section = "logic@agr_scout_prisoner",
+			idle = 0,
+			prior = 5, state = {0},
+			in_rest = "", out_rest = "agr_factory_prisoner_restrictor",
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_scout_factory_sleep",
+			idle = 0,
+			prior = 5, state = {2},
+			in_rest = "", out_rest = "agr_freedom_spies_space_restrictor",
+		}
+		table.insert(sj, t)
 	end
 end
 
@@ -290,6 +303,15 @@ function load_states( gname, type )
 			return 0			
 		end
 	end
+	
+	if type == "agr_factory_prisoner" then
+		return function( gulag )
+			if has_alife_info("agr_prisoner_complete") then
+				return 2
+			end
+			return 0			
+		end
+	end
 
 	return nil
 end
@@ -318,6 +340,9 @@ function checkStalker( npc_community, gulag_type )
 		return npc_community == "freedom"
 	end
 	if gulag_type == "agr_south_gates" then
+		return npc_community == "dolg"
+	end
+	if gulag_type == "agr_factory_prisoner" then
 		return npc_community == "dolg"
 	end
 	return false

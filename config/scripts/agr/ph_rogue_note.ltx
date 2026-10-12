@@ -1,0 +1,9 @@
+[logic]
+active = ph_idle@before_task
+
+[ph_idle@before_task]
+on_info = {+agr_by_the_trace_follow_scout} ph_idle@on_task
+
+[ph_idle@on_task]
+on_use = %=open_document(agr_scout_released_2:agr_by_the_trace_check_tunnel)%
+tips = st_read_note

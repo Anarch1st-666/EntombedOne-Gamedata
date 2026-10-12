@@ -1,0 +1,49 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[death@agr_scout_prisoner]
+on_info = %+agr_prisoner_scout_dead%
+
+[hit@agr_scout_prisoner]
+damage_ignore_cond = {-agr_freedom_spies_can_attack_actor -agr_freedom_spies_can_attack_prisoner}
+on_info = {+agr_freedom_spies_can_attack_prisoner -agr_prisoner_scout_dead} %=kill%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_scout_prisoner]
+active = walker1@agr_scout_prisoner
+on_hit = hit@agr_scout_prisoner
+on_death = death@agr_scout_prisoner
+combat_ignore = combat_ignore
+
+[walker1@agr_scout_prisoner]
+path_walk = prison_walk
+path_look = prison_look
+combat_ignore_cond = always
+danger = danger_ignore
+meet = no_meet
+on_info = {+agr_freedom_spies_can_attack_actor} walker2@agr_scout_prisoner
+
+[walker2@agr_scout_prisoner]
+path_walk = hide_walk
+path_look = hide_look
+combat_ignore_cond = always
+danger = danger_ignore
+meet = meet@agr_scout_prisoner
+
+[meet@agr_scout_prisoner]
+meet_state = 5 | wait
+meet_state_wpn = 5 | wait
+victim = 5 | actor
+victim_wpn = 5 | actor
+use = {=gulag_empty(agr_freedom_spies)} true, false
+use_wpn = {=gulag_empty(agr_freedom_spies)} true, false
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_scout_factory_sleep]
+active = sleeper@agr_scout_factory_sleep
+
+[sleeper@agr_scout_factory_sleep]
+path_main = sleep
+wakebale = false

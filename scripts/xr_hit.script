@@ -6,6 +6,10 @@ function action_process_hit:__init(obj, storage)
 end
 
 function action_process_hit:before_hit_callback(oHit)
+	if not self.st.damage_ignore_cond then
+		return
+	end
+	
 	local ignore = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.damage_ignore_cond.condlist)
 	if ignore ~= nil then
 		oHit.ignore_hit = true

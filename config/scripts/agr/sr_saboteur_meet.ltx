@@ -1,0 +1,9 @@
+[logic]
+active = sr_idle@dialog
+
+[sr_idle@dialog]
+on_info = {+agr_prisoner_scout_dead +agr_freedom_spies_can_attack_prisoner} sr_idle@dialog_hold
+on_info2 = {+agr_prisoner_complete} nil, {+agr_prisoner_fail} nil
+
+[sr_idle@dialog_hold]
+on_timer = 1000 | nil %=show_saboteur_dialog_window%

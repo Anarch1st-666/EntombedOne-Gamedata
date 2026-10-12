@@ -1,0 +1,44 @@
+--/---------------------------------------------------------------------------------------
+--/ Initializtion
+--/---------------------------------------------------------------------------------------
+function init(text, known_info)
+	local dv = UIDocument(text, known_info)
+	level.start_stop_menu(dv, true)
+end
+
+--/---------------------------------------------------------------------------------------
+class "UIDocument" (CUIScriptWnd)
+--/---------------------------------------------------------------------------------------
+function UIDocument:__init(text, known_info) super()
+	self.known_info = known_info
+	self:Init(0,0,1024,768)
+
+	local xml = CScriptXmlInit()
+	xml:ParseFile("document.xml")
+	
+	local canvas = xml:InitStatic("main_dialog:canvas", self)
+
+	local letter = xml:InitStatic("main_dialog:canvas:letter", canvas)
+	letter:SetTextST(text)
+	
+	local btn_quit = xml:Init3tButton("main_dialog:btn_quit", self)
+	self:Register(btn_quit, "btn_quit")
+	self:AddCallback("btn_quit", ui_events.BUTTON_CLICKED, self.Quit, self)
+end
+
+function UIDocument:OnKeyboard(dik, keyboard_action)  
+	CUIScriptWnd.OnKeyboard(self, dik, keyboard_action)
+	if keyboard_action == ui_events.WINDOW_KEY_PRESSED then
+		if (dik == DIK_keys.DIK_ESCAPE) then 
+			self:Quit()
+		end
+	end
+	return true
+end
+
+function UIDocument:Quit()
+	level.start_stop_menu(self, true)
+	if self.known_info then
+		db.actor:give_info_portion(self.known_info)
+	end
+end

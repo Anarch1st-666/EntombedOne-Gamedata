@@ -327,6 +327,16 @@ function actor_binder:update(delta)
 			got("dolg_scientific_outfit")
 			got("ecolog_outfit")
 			got("protection_outfit")
+			
+--			got("gold_clocks")
+--			got("road_vagon_key")
+--			got("catacombs_secret_room_key")
+--			got("catacombs_decoder_plate")
+--			got("catacombs_decoder_shell")
+--			got("catacombs_decoder")
+--			got("crashcopter_case")
+--			got("pda_grechkin")
+--			got("pda_saboteur")
 		end
 
 		self.bCheckStart = false		

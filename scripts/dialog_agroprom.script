@@ -1,11 +1,10 @@
 --' "Долгаря в расход", игрок стоит ждёт
 function hide_saboteur_dialog_window()
-
-end
-
---' Калейник убит, вернуть управление
-function show_saboteur_dialog_window()
-
+	level.disable_input()
+	local dialog_wnd = level.main_input_receiver()
+	if dialog_wnd ~= nil then
+		dialog_wnd:Show(false)
+	end
 end
 
 --'
@@ -15,7 +14,21 @@ end
 
 --'
 function recieve_pda_saboteur_reward()
-	
+	dialogs.relocate_item_section(nil, "pda_saboteur", "out")
+	dialogs.relocate_item_section(nil, "wpn_val", "in")
+	dialogs.relocate_item_section(nil, "ammo_9x39_sp5", "in")
+	dialogs.relocate_item_section(nil, "ammo_9x39_sp5", "in")
+end
+
+--' Награда свободовцев
+function saboteur_reward()
+	dialogs.relocate_item_section(nil, "ammo_m209", "in")
+	dialogs.relocate_item_section(nil, "ammo_m209", "in")
+	dialogs.relocate_item_section(nil, "ammo_m209", "in")
+	dialogs.relocate_item_section(nil, "ammo_m209", "in")
+	dialogs.relocate_item_section(nil, "ammo_m209", "in")
+	dialogs.relocate_item_section(nil, "wpn_addon_grenade_launcher_m203", "in")
+	dialogs.relocate_money(db.actor:get_talk_partner(), 8000, "in")
 end
 
 --' Пригрозить оружием в диалоге
