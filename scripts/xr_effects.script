@@ -287,6 +287,8 @@ function play_snd_from_object(actor, npc, p)
 end
 
 -- играть звук от указанного объекта
+-- p1: sound
+-- p2: story id
 function play_snd_from_story_object(actor, npc, p)
 	if p[1] and p[2] then
 		local snd_obj = xr_sound.get_safe_sound_object(p[1])
