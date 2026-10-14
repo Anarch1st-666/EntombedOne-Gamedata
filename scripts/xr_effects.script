@@ -502,6 +502,11 @@ function on_tutor_gameover_stop()
 end
 -- ---------------------------------------------------------------------------------------------------------------------
 
+function send_tip(actor, object, p)
+	tips_manager.send(p[1])
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
 function set_actor_cine_visual(actor, object, p)
 	local sid = p[1]
 	local actor_visual_name = actor:get_visual_name()

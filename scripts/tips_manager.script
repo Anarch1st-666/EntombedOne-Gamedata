@@ -1,0 +1,99 @@
+--/ --------------------------------------------------------------------------------------
+--/ VARIABLEs
+--/ --------------------------------------------------------------------------------------
+local DEF_ICON = "ui_iconsTotal_grouping"
+local DEF_SOUND = xr_sound.get_safe_sound_object([[device\pda\pda_tip]])
+--/ --------------------------------------------------------------------------------------
+local INI = ini_file("misc\\tips.ltx")
+local tTips = {}
+--/ --------------------------------------------------------------------------------------
+
+--/ --------------------------------------------------------------------------------------
+class "CTip"
+--/ --------------------------------------------------------------------------------------
+function CTip:__init()
+	self.texture_name = nil
+	self.rect = nil
+	self.text = nil
+	self.sound = nil
+	self.showtime = nil
+
+	self.initialized = false
+end
+
+function CTip:initText(sName, sText)
+	self.text = "%c[255,160,160,160]"..game.translate_string(sName).."\\n".."%c[default]"..game.translate_string(sText)
+end
+
+function CTip:initIcon(sIcon)
+	local t_filename, t_rect = get_texture_info(sIcon, DEF_ICON)
+	self.texture_name = t_filename
+	self.rect = t_rect
+end
+
+function CTip:initSound(sSound)
+	if sSound and sSound ~= "" then
+		self.sound = xr_sound.get_safe_sound_object(sSound)
+	else
+		self.sound = DEF_SOUND
+	end
+end
+
+function CTip:initShowtime(iShowtime)
+	ASSERT(self.sound ~= nil)
+
+	if self.sound:length() < iShowtime then
+		self.showtime = iShowtime
+	else
+		self.showtime = self.sound:length()
+	end
+end
+
+function CTip:init_from_section(section)
+	ASSERT(INI:section_exist(section))
+	
+	local sName		= INI:r_string(section, "name")
+	local sText		= INI:r_string(section, "text")
+	local sIcon		= INI:r_string(section, "icon")	
+	local sSound	= INI:r_string(section, "sound")
+	local iShowtime	= INI:r_u32(section, "showtime")
+
+	self:initText(sName, sText)
+	self:initIcon(sIcon)
+	self:initSound(sSound)
+	self:initShowtime(iShowtime)
+	
+	self.initialized = true
+	return self
+end
+
+function CTip:send()
+	ASSERT(self.initialized == true)
+	db.actor:give_game_news(self.text, self.texture_name, self.rect, 0, self.showtime)
+	self.sound:play(db.actor, 0, sound_object.s2d)
+end
+
+--/ --------------------------------------------------------------------------------------
+
+--/ --------------------------------------------------------------------------------------
+--/ Module FUNCTIONs
+--/ --------------------------------------------------------------------------------------
+function prefetch()
+	INI:iterate_sections(function(sect)
+		tTips[sect] = CTip():init_from_section(sect)
+		log3("* Tip [%s] prefetched", sect)
+	end)
+end
+
+function send(sTip)
+	local oTip = tTips[sTip]
+	
+	if not oTip then
+		oTip = CTip():init_from_section(sTip)
+	end
+	
+	oTip:send()
+end
+--/ --------------------------------------------------------------------------------------
+
+

@@ -130,6 +130,13 @@
 			<map_location_type hint="agr_scout_name">green_location</map_location_type>
 			<object_story_id>agr_scout</object_story_id>
 			<infoportion_visible>agr_by_the_trace_check_tunnel</infoportion_visible>
+			<infoportion_fail>agr_by_the_trace_scout_on_factory</infoportion_fail>
+		</objective>
+		<objective>
+			<text>agr_by_the_trace_5</text>
+			<map_location_type hint="agr_scout_name">green_location</map_location_type>
+			<object_story_id>agr_scout_prisoner</object_story_id>
+			<infoportion_visible>agr_by_the_trace_scout_on_factory</infoportion_visible>
 			<infoportion_complete>agr_by_the_trace_complete</infoportion_complete>
 		</objective>
 	</game_task>

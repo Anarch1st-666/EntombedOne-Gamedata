@@ -35,6 +35,7 @@ function actor_binder:net_spawn(data)
 		level.enable_input()
 	end
 
+	tips_manager.prefetch()
 	self.weather_manager:reset()
 	sr_weather.get_weather_effector():reset()
 --	game_stats.initialize ()

@@ -130,13 +130,14 @@ function action_remark_activity:update()
       xr_sound.set_sound_play(self.object, self.st.snd, 50)
     end
     --' Нужно выдать связанный типс.
-    if self.st.tips_id ~= nil then
-      self.tips_sound = news_manager.send_tip_nosound(db.actor, self.st.tips_id, self.st.sender)
-      if self.tips_sound ~= nil then
-        --' Играем звук забитый
-        self.tips_sound:play(db.actor, 0, sound_object.s2d)
-      end
-    end
+	--/ #-# Не нужно.
+--  if self.st.tips_id ~= nil then
+--    self.tips_sound = news_manager.send_tip_nosound(db.actor, self.st.tips_id, self.st.sender)
+--    if self.tips_sound ~= nil then
+--      --' Играем звук забитый
+--      self.tips_sound:play(db.actor, 0, sound_object.s2d)
+--    end
+--  end
 
   
     self.state = state_finish

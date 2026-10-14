@@ -59,6 +59,7 @@
 	<info_portion id="agr_by_the_trace_check_tower"></info_portion>
 	<info_portion id="agr_by_the_trace_check_tunnel"></info_portion>
 	<info_portion id="agr_by_the_trace_killer_seen_actor"/>
+	<info_portion id="agr_by_the_trace_scout_on_factory"></info_portion>
 	<info_portion id="agr_by_the_trace_complete"></info_portion>
 	
 --/ Пленник

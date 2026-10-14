@@ -9,4 +9,16 @@ on_actor_outside = sr_idle@after_ambush
 on_info = {=gulag_empty(agr_tunnel_ambush)} sr_idle@after_ambush
 
 [sr_idle@after_ambush]
-on_timer = 1000 | nil %+agr_code_sweet_start%
+on_timer = 1000 | sr_idle1 %+agr_code_sweet_start%
+
+[sr_idle1]
+on_timer = 1000 | sr_idle2 %=send_tip(agr_scout_lost_1)%
+
+[sr_idle2]
+on_timer = 6000 | sr_idle3 %=send_tip(agr_scout_lost_2)%
+
+[sr_idle3]
+on_timer = 5000 | sr_idle@give_prisoner_task %=send_tip(agr_scout_lost_3)%
+
+[sr_idle@give_prisoner_task]
+on_timer = 2000 | nil %+agr_by_the_trace_scout_on_factory%
