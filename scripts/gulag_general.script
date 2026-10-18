@@ -25,10 +25,10 @@ function load_job(sj, gname, type, squad, groups, st)
 	-- УНИВЕРСАЛЬНЫЙ ЛАГЕРЬ СТАЛКЕРОВ
 	if type == "general_lager" then
 		-- #+# Рестриктор гулага
-		local restrictor_name = gname .. "_space_restrictor"
+		local restrictor_name = "" --[[gname .. "_space_restrictor"
 		if not alife():object(restrictor_name) then
 			restrictor_name = ""
-		end
+		end]]
 		-- Проверяем наличие кампов.
 		local it = 1
 		while level.patrol_path_exists(gname.."_kamp_"..it) do

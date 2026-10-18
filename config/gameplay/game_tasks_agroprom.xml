@@ -273,14 +273,20 @@
 		</objective>
 		<objective>
 			<text>agr_decoder_repair_1</text>
-			<map_location_type hint="bratskov_name">green_location</map_location_type>
-			<object_story_id>bratskov</object_story_id>
+			<map_location_type hint="freon_name">green_location</map_location_type>
+			<object_story_id>freon</object_story_id>
 			<infoportion_complete>agr_decoder_repair_find_technician</infoportion_complete>
+		</objective>
+		<objective>
+			<text>nil</text>
+			<infoportion_visible>nil</infoportion_visible>
+			<infoportion_complete>agr_decoder_repair_need_go_for_vodka</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_decoder_repair_2</text>
 			<infoportion_visible>agr_decoder_repair_need_go_for_vodka</infoportion_visible>
-			<infoportion_complete>agr_decoder_repair_got_vodka</infoportion_complete>
+			<function_complete>dialog_agroprom.has_vodka_for_silent</function_complete>
+			<infoportion_set_complete>agr_decoder_repair_got_vodka</infoportion_set_complete>
 		</objective>
 		<objective>
 			<text>agr_decoder_repair_3</text>
@@ -291,8 +297,8 @@
 		</objective>
 		<objective>
 			<text>agr_decoder_repair_4</text>
-			<map_location_type hint="bratskov_name">green_location</map_location_type>
-			<object_story_id>bratskov</object_story_id>
+			<map_location_type hint="freon_name">green_location</map_location_type>
+			<object_story_id>freon</object_story_id>
 			<infoportion_visible>agr_decoder_repair_find_technician</infoportion_visible>
 			<infoportion_complete>agr_decoder_repair_complete</infoportion_complete>
 		</objective>
@@ -310,7 +316,7 @@
 		<objective>
 			<text>agr_deep_catacombs_1</text>
 			<map_location_type hint="agr_deep_catacombs_1_hint">green_location</map_location_type>
-			<object_story_id>agr_catacombs_location2</object_story_id>
+			<object_story_id>catacombs_keypad</object_story_id>
 			<infoportion_complete>agr_deep_catacombs_door_open</infoportion_complete>
 		</objective>
 		<objective>

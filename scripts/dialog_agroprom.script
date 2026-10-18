@@ -39,3 +39,54 @@ end
 --' Пригрозить оружием в диалоге
 function unhide_weapon_in_dialog()
 end
+
+-- Есть части декодера
+function has_decoder_parts()
+	return xr_conditions.actor_has_items(db.actor, nil, {
+		"catacombs_decoder_plate", 1,
+		"catacombs_decoder_shell", 1,
+	})
+end
+
+--' Отдаём технику части декодера
+function give_decoder_parts()
+	dialogs.relocate_item_section(nil, "catacombs_decoder_plate", "out")
+	dialogs.relocate_item_section(nil, "catacombs_decoder_shell", "out")
+end
+
+--' Забираем декодер у техника
+function got_decoder()
+	dialogs.relocate_item_section(nil, "catacombs_decoder", "in")
+end
+
+function has_vodka_for_silent()
+	return xr_conditions.actor_has_items(db.actor, nil, {"vodka", "2"})
+end
+
+function dont_has_vodka_for_silent()
+	return not has_vodka_for_silent()
+end
+
+function need_go_for_vodka()
+end
+
+function give_vodka_to_silent()
+	local npc = db.actor:get_talk_partner()
+	dialogs.relocate_item_section(npc, "vodka", "out")
+	dialogs.relocate_item_section(nil, "vodka", "out")
+--	alife():create("vodka_a",vector(),0,npc:game_vertex_id(),npc:id())
+end
+
+function silent_drink_vodka(first_speaker, second_speaker)
+--	local oItem = db.actor:object("vodka")
+--	if oItem then
+--		db.actor:eat(oItem)
+--	else
+--		local vodka_snd = sound_object("interface\\item_usage\\vodka_use")
+--		vodka_snd:play(db.actor, 0, sound_object.s2d)
+--		level.add_cam_effector("camera_effects\\weapon\\vodka_hands_eat_invtrans.anm",8020,false,"")
+--		log3("script vodka")
+--	end
+	db.actor:give_info_portion("agr_decoder_repair_drinking_vodka")
+--	this.hide_saboteur_dialog_window()
+end

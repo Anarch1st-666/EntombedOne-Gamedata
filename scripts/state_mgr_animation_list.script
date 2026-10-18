@@ -430,6 +430,15 @@ animations = {
 						rnd		= { [0]	= {	"komandir_0",
 											"komandir_1",
 											"komandir_2" } }},
+		inspecting 	= {	prop	= { maxidle = 3,
+									sumidle = 3,
+									rnd = 80 },
+						into	= nil,
+						out		= nil,
+						idle	= nil,
+						rnd		= { [0]	= {	"komandir_1",
+										    "komandir_0",
+											"poisk_0_idle_0" } }},
 		press		= {	prop	= { maxidle = 8,
 									sumidle = 10,
 									rnd = 80 },
@@ -771,7 +780,7 @@ animations = {
 									[9]	= {"cr_raciya_9_talk_0"},
 									[10]= {"cr_raciya_10_talk_0"} } },
 									
---/#+# barin start -------------------------------
+--/#+# la start -------------------------------
 	sit_cop = {
 		prop = { maxidle = 5, sumidle = 3, rnd = 100 },
 		into = { [0] = "sit_sit_down_0" },
@@ -815,6 +824,20 @@ animations = {
 		idle = { [0] = "stend" },
 		rnd  = nil
 	},
---/< barin end
+	drink_vodka = {
+		prop = { maxidle = 5, sumidle = 10, rnd = 100 },
+		into = { [0] = {"drink_stand_0", {a="vodka_a"}, "drink_stand_1"} },
+		out  = nil,
+		idle = { [0] = "drink_stand_2" },
+		rnd  = nil
+	},
+	drink_vodka_out = {
+		prop = { maxidle = 5, sumidle = 10, rnd = 100 },
+		into = { [0] = {"drink_stand_3", {d="vodka_a"}, "drink_stand_0"} },
+		out  = nil,
+		idle = nil,
+		rnd  = nil
+	},
+--/< la end
 
 	}

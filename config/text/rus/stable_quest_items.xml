@@ -21,9 +21,6 @@
   <string id="catacombs_radio_note">
     <text>–езультаты радиоразведки</text>
   </string>
-  <string id="catacombs_radio_note_desc">
-    <text>300 к√ц Ц 500 к√ц: нет сигнала;\n500 к√ц Ц 800 к√ц: нет сигнала;\n800 к√ц Ц 1200 к√ц: неизвестный радиоперехват;\n1200 к√ц Ц 1800 к√ц: н/д;\n1800 к√ц Ц 3000 к√ц: н/д;</text>
-  </string>
   <string id="catacombs_decoder_plate">
     <text>ѕлата дешифратора</text>
   </string>

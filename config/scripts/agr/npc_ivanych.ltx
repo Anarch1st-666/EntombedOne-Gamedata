@@ -1,0 +1,87 @@
+[combat_ignore]
+
+[danger_ignore]
+ignore_distance = 0
+
+[hit]
+damage_ignore_cond = {-agr_catacombs_decoder_cine_end}
+
+[logic]
+combat_ignore = combat_ignore
+on_hit = hit
+active = {-agr_catacombs_decoder_cine_end} walker@idle, {+agr_catacombs_decoder_cine_end} walker@guard
+
+;-----------------------------------------------------------------------------------------
+[walker@idle]
+path_walk = agr_ivanych_walk
+path_look = agr_ivanych_look
+def_state_standing = wait
+danger = danger_ignore
+combat_ignore_cond = {-agr_catacombs_decoder_cine_end}
+on_info = {+agr_catacombs_decoder_cine_begin} remark@listen1
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[remark@listen1]
+target = agr_ivanych_look, 0
+anim = inspect
+;snd = nil
+danger = danger_ignore
+combat_ignore_cond = {-agr_catacombs_decoder_cine_end}
+on_info = {+agr_catacombs_decoder_cine_ivanych_speaks} remark@speak1
+on_info2 = {!object_on_path(agr_ivanych_walk)} %=teleport_npc(agr_ivanych_walk)%
+meet = no_meet
+
+[remark@speak1]
+target = agr_ivanych_look, 0
+anim = inspect
+snd = decoder_cine_ivanych
+danger = danger_ignore
+combat_ignore_cond = {-agr_catacombs_decoder_cine_end}
+on_signal = sound_end | remark@listen2 %+agr_catacombs_decoder_cine_decoder_owner_speaks%
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[remark@listen2]
+target = agr_ivanych_look, 0
+anim = inspect
+;snd = nil
+danger = danger_ignore
+combat_ignore_cond = {-agr_catacombs_decoder_cine_end}
+on_info = {+agr_catacombs_decoder_cine_ivanych_speaks} remark@speak2
+meet = no_meet
+
+[remark@speak2]
+target = 132
+anim = refuse
+snd = decoder_cine_ivanych
+;snd_anim_sync = true
+danger = danger_ignore
+combat_ignore_cond = {-agr_catacombs_decoder_cine_end}
+on_signal = sound_end | remark@listen3 %+agr_catacombs_decoder_cine_decoder_owner_speaks%
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[remark@listen3]
+target = agr_ivanych_look, 0
+anim = inspect
+;snd = nil
+danger = danger_ignore
+combat_ignore_cond = {-agr_catacombs_decoder_cine_end}
+on_info = {+agr_catacombs_decoder_cine_ivanych_speaks} remark@speak3
+meet = no_meet
+
+[remark@speak3]
+target = agr_ivanych_look, 0
+anim = inspect
+snd = decoder_cine_ivanych
+danger = danger_ignore
+combat_ignore_cond = {-agr_catacombs_decoder_cine_end}
+on_signal = sound_end | walker@guard %-agr_catacombs_decoder_cine_ivanych_speaks%
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[walker@guard]
+path_walk = agr_ivanych_walk
+path_look = agr_ivanych_look
+def_state_standing = inspect

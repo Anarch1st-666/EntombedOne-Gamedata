@@ -1,0 +1,12 @@
+[logic]
+active = ph_idle@before_task
+
+[ph_idle@before_task]
+on_info = {+agr_explore_catacombs_start} ph_idle@on_task
+
+[ph_idle@on_task]
+on_use = ph_idle@on_play %=shmail_radio_play%
+tips = st_use_radio
+
+[ph_idle@on_play]
+on_timer = 1000 | ph_idle@on_task %+agr_explore_catacombs_location3_2%

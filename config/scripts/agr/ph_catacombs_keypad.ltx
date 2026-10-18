@@ -1,0 +1,10 @@
+[logic]
+active = ph_idle@decoder_unknown
+
+[ph_idle@decoder_unknown]
+on_info = {+agr_decoder_repair_complete} ph_idle@decoder_known
+tips = st_keypad_locked
+
+[ph_idle@decoder_known]
+on_use = nil %+agr_deep_catacombs_door_open =lost_item(catacombs_decoder)%
+tips = st_keypad_has_decoder

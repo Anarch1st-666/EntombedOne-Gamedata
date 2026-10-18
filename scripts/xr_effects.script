@@ -110,6 +110,11 @@ function teleport_actor(actor, npc, p)
 	local dir = look:point(0):sub(point:point(0))
 	db.actor:set_actor_direction(-dir:getH())	
 end
+
+function teleport_npc(actor, npc, p)
+	local point = patrol(p[1])
+	npc:set_npc_position(point:point(0))	
+end
 -- ---------------------------------------------------------------------------------------------------------------------
 
 function give_item(actor, npc, p)
@@ -142,6 +147,10 @@ function got_items(actor, npc, p)
 			alife():create(p[i], pos, lv_id, gv_id, actor_id)
 		end
     end
+end
+
+function lost_item(actor, npc, p)
+	dialogs.relocate_item_section(nil, p[1], "out")
 end
 -- ---------------------------------------------------------------------------------------------------------------------
 
@@ -529,4 +538,32 @@ function show_saboteur_dialog_window(actor, object)
 	level.enable_input()
 end
 
+local shamil_radio_snd = nil
+function shmail_radio_play(actor, object)
+	if not shamil_radio_snd then
+		shamil_radio_snd = sound_object([[characters_voice\scenario\agroprom\shamil_radio]])
+	end
+	
+	if shamil_radio_snd:playing() == true then
+		shamil_radio_snd:stop()
+	end
+	
+	shamil_radio_snd:play_at_pos(object, object:position())
+end
+
+function eat_vodka_free(actor, npc)
+	local sobj = alife():create("vodka",vector(),0,actor:game_vertex_id(),actor:id())
+	level.client_spawn_manager():add(sobj.id,65535,
+		function (id, item)
+			level.add_call(
+				function()
+					return true
+				end,
+				function()
+					actor:eat(item)
+				end
+			)
+		end
+	)
+end
 

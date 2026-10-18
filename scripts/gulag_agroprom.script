@@ -29,6 +29,24 @@ function load_job( sj, gname, type, squad, groups )
 			end
 		}
 		table.insert(sj, t)
+		t = { section = "logic@agr_silent",
+			idle = 0,
+			prior = 15, state = {0},
+			in_rest = "", out_rest = "agr_nii_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "silent"
+			end
+		}
+		table.insert(sj, t)
+		t = { section = "logic@agr_freon",
+			idle = 0,
+			prior = 15, state = {0},
+			in_rest = "", out_rest = "agr_nii_space_restrictor",
+			predicate = function(obj_info)
+				return obj_info.profile_name == "freon"
+			end
+		}
+		table.insert(sj, t)
 		
 		-- дневные патрули
 		for i=1,6 do

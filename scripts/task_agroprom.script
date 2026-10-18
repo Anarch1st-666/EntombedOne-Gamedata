@@ -35,18 +35,7 @@ end
 --/---------------------------------------------------------------------------------------
 
 function process_info_portion(info_id)
-	if string.find(info_id, "^agr_explore_catacombs_location") then
-		if level_tasks.has_info_portions {
-			"agr_explore_catacombs_location1",
-			"agr_explore_catacombs_location2",
-			"agr_explore_catacombs_location3",
-			"agr_explore_catacombs_location4",
-		} then
-			db.actor:give_info_portion("agr_explore_catacombs_location_all")
-		end
-		return true
-	end
-	
+	-- Опросник на НИИ
 	if string.find(info_id, "^agr_seek_duty_support_ask") then
 		if level_tasks.has_info_portions {
 			"agr_seek_duty_support_ask_north",
@@ -56,7 +45,24 @@ function process_info_portion(info_id)
 		} then
 			db.actor:give_info_portion("agr_seek_duty_support_nobody_to_ask")
 		end
-		return true
+	end
+	
+	-- Исследование катакомб
+	if string.find(info_id, "^agr_explore_catacombs_location") then
+		if level_tasks.has_info_portions {
+			"agr_explore_catacombs_location1",
+			"agr_explore_catacombs_location2",
+			"agr_explore_catacombs_location3",
+			"agr_explore_catacombs_location4",
+		} then
+			db.actor:give_info_portion("agr_explore_catacombs_location_all")
+
+		elseif level_tasks.has_info_portions {
+			"agr_explore_catacombs_location3_1",
+			"agr_explore_catacombs_location3_2",
+		} then
+			db.actor:give_info_portion("agr_explore_catacombs_location3")
+		end
 	end
 
 	if info_id == "agr_prisoner_giant_dead" then

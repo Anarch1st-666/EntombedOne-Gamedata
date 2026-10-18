@@ -92,9 +92,13 @@
     <info_portion id="agr_explore_catacombs_location2"></info_portion>
     <info_portion id="agr_explore_catacombs_location3"></info_portion>
     <info_portion id="agr_explore_catacombs_location4"></info_portion>
+    <info_portion id="agr_explore_catacombs_location_all"></info_portion>
     <info_portion id="agr_explore_catacombs_complete"></info_portion>
 	<!-- Тоннель с кровососами -->
     <info_portion id="agr_catacombs_tunnel_bloodsucker_attack"></info_portion>
+	<!-- "Радиолюбители" -->
+    <info_portion id="agr_explore_catacombs_location3_1"></info_portion>
+    <info_portion id="agr_explore_catacombs_location3_2"></info_portion>
 	<!-- Раненый наёмник -->
     <info_portion id="agr_catacombs_wounded_ask_bloodsucker"></info_portion>
     <info_portion id="agr_catacombs_wounded_ask_client"></info_portion>
@@ -104,24 +108,33 @@
     <info_portion id="agr_catacombs_wounded_ask_code_sweet"></info_portion>
     <info_portion id="agr_catacombs_wounded_attacked"></info_portion>
 	<!-- Сцена с дешифратором -->
-    <info_portion id="agr_catacombs_decoder_cutscene_killer_speaks">
-		<disable>agr_catacombs_decoder_cutscene_engineer_speaks</disable>
+    <info_portion id="agr_catacombs_decoder_cine_ivanych_speaks">
+		<disable>agr_catacombs_decoder_cine_decoder_owner_speaks</disable>
 	</info_portion>
-    <info_portion id="agr_catacombs_decoder_cutscene_engineer_speaks">
-		<disable>agr_catacombs_decoder_cutscene_killer_speaks</disable>
+    <info_portion id="agr_catacombs_decoder_cine_decoder_owner_speaks">
+		<disable>agr_catacombs_decoder_cine_ivanych_speaks</disable>
 	</info_portion>
-    <info_portion id="agr_catacombs_decoder_cutscene_end"></info_portion>
+    <info_portion id="agr_catacombs_decoder_cine_begin"></info_portion>
+    <info_portion id="agr_catacombs_decoder_cine_end"></info_portion>
 	
 --/ Ремонт дешифратора
-    <info_portion id="agr_decoder_repair_start"></info_portion>
+    <info_portion id="agr_decoder_repair_start">
+		<task>agr_decoder_repair</task>
+	</info_portion>
     <info_portion id="agr_decoder_repair_find_technician"></info_portion>
-    <info_portion id="agr_decoder_repair_need_go_for_vodka"></info_portion>
+    <info_portion id="agr_decoder_repair_technician_work"></info_portion>
+    <info_portion id="agr_decoder_repair_need_go_for_vodka">
+		<action>dialog_agroprom.need_go_for_vodka</action>
+	</info_portion>
     <info_portion id="agr_decoder_repair_got_vodka"></info_portion>
+    <info_portion id="agr_decoder_repair_drinking_vodka"></info_portion>
     <info_portion id="agr_decoder_repair_talk_to_silent"></info_portion>
     <info_portion id="agr_decoder_repair_complete"></info_portion>
 	
 --/ Нижние катакомбы
-    <info_portion id="agr_deep_catacombs_start"></info_portion>
+    <info_portion id="agr_deep_catacombs_start">
+		<task>agr_deep_catacombs</task>
+	</info_portion>
     <info_portion id="agr_deep_catacombs_door_open"></info_portion>
     <info_portion id="agr_deep_catacombs_case_got"></info_portion> --duplicate?
     <info_portion id="agr_deep_catacombs_complete"></info_portion>

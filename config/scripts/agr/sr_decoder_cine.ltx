@@ -1,0 +1,10 @@
+[logic]
+active = sr_cutscene
+
+;[sr_idle]
+;on_actor_inside = sr_cutscene %+agr_catacombs_decoder_cine_begin%
+
+[sr_cutscene]
+cam_effector	= agr_cine_decoder
+condition		= {+agr_explore_catacombs_start} %+agr_catacombs_decoder_cine_begin%
+on_signal		= cameff_end | nil %+agr_catacombs_decoder_cine_end%

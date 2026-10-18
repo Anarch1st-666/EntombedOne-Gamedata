@@ -63,6 +63,84 @@ use = true
 use_wpn = true
 
 
+[logic@agr_silent]
+active = walker1@agr_silent
+on_hit = hit@agr_nii_quest_person
+
+[walker1@agr_silent]
+path_walk = bar_silent_walk
+path_look = bar_silent_look
+meet = meet@agr_silent
+danger = danger_ignore
+on_info = {+agr_decoder_repair_talk_to_silent} walker2@agr_silent
+on_info2 = {+agr_decoder_repair_drinking_vodka} remark@agr_silent_drink_vodka; %=disable_ui%
+
+[remark@agr_silent_drink_vodka]
+anim = drink_vodka
+target = actor
+meet = meet@agr_silent
+;on_timer = 3000 | remark@agr_silent_stop_vodka %=eat_vodka_free%
+on_signal = anim_end |  walker1@agr_silent %=eat_vodka_free -agr_decoder_repair_drinking_vodka%
+
+[remark@agr_silent_stop_vodka]
+anim = drink_vodka_out
+target = actor
+meet = meet@agr_silent
+on_signal = anim_end | walker1@agr_silent %-agr_decoder_repair_drinking_vodka%; =enable_ui%
+
+[walker2@agr_silent]
+path_walk = bar_silent_walk
+path_look = bar_silent_look
+meet = no_meet
+
+[meet@agr_silent]
+meet_state = nil; 5|wait_trade
+meet_state_wpn = nil; 5|wait_trade
+victim = nil; 5|actor
+victim_wpn = nil; 5|actor
+use = true
+use_wpn = true
+allow_break = false
+meet_dialog = {+agr_decoder_repair_find_technician -agr_decoder_repair_talk_to_silent} silent_drinking
+
+
+[logic@agr_freon]
+active = walker1@agr_freon_sit
+on_hit = hit@agr_nii_quest_person
+
+[walker1@agr_freon_sit]
+path_walk = freon_sit_walk
+path_look = freon_sit_look
+def_state_moving1 = walk
+def_state_moving2 = walk
+meet = meet@agr_freon_sit
+on_info = {+agr_decoder_repair_technician_work} walker1@agr_freon_work
+
+[meet@agr_freon_sit]
+meet_state = nil
+meet_state_wpn = nil
+victim = nil
+victim_wpn = nil
+use = true
+use_wpn = true
+
+[walker1@agr_freon_work]
+path_walk = freon_work_walk
+path_look = freon_work_look
+def_state_standing = choose
+def_state_moving1 = walk
+def_state_moving2 = walk
+meet = meet@agr_freon_work
+on_info = {-agr_decoder_repair_technician_work} walker1@agr_freon_sit
+
+[meet@agr_freon_work]
+meet_state = 5|wait_trade
+meet_state_wpn = 5|wait_trade
+victim = 5|actor
+victim_wpn = 5|actor
+use = true
+use_wpn = true
+
 ;------------------ дневные патрули -----------------------
 [logic@agr_nii_day_patrol_walker1]
 active = walker1@agr_nii_day_patrol

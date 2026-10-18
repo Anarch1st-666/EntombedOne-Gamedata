@@ -5,10 +5,4 @@ active = sr_idle1
 on_actor_inside = {+agr_code_sweet_start} sr_idle2 %+agr_code_sweet_sniper_spawn%
 
 [sr_idle2]
-on_info = {=gulag_empty(agr_swamp_sniper)} sr_idle3 %+agr_code_sweet_sniper_dead%
-
-[sr_idle3]
-on_info = {=actor_distance_to_obj_le(120:2.5)} sr_idle4 %+agr_code_sweet_sniper_complete%
-
-[sr_idle4]
-on_timer = 3000 | nil %+agr_explore_catacombs_start%
+on_info = {=gulag_empty(agr_swamp_sniper)} nil %+agr_code_sweet_sniper_dead%

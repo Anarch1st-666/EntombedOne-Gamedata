@@ -36,6 +36,12 @@
 	<character id="agr_scout">
 		<class>agr_scout</class>
 	</character>
+	<character id="silent">
+		<class>silent</class>
+	</character>
+	<character id="freon">
+		<class>freon</class>
+	</character>
 	
 	<character id="factory_suspect_guard">
 		<class>factory_suspect_guard</class>
@@ -53,6 +59,13 @@
 	<character id="korzhik">
 		<class>korzhik</class>
 	</character>
+	<character id="shamil">
+		<class>shamil</class>
+	</character>
+	<character id="ivanych">
+		<class>ivanych</class>
+	</character>
+
 
 	<character id="agr_freedom_saboteur">
 		<class>agr_freedom_saboteur</class>

@@ -1,5 +1,11 @@
 [logic]
-active = ph_door@closed
+active = ph_door@locked
+
+[ph_door@locked]
+locked = true
+closed = true
+snd_open_start = metal_small_locked
+on_info = {+agr_catacombs_decoder_cine_end} ph_door@closed
 
 [ph_door@closed]
 locked = false
@@ -8,7 +14,6 @@ snd_open_start = metal_small_open
 snd_close_start = metal_small_close_start
 snd_close_stop = metal_small_close_stop
 on_use = ph_door@open
-; hit_on_bone = 1|ph_door@free|2|ph_door@free
 
 [ph_door@open]
 locked = false
@@ -17,10 +22,3 @@ snd_open_start = metal_small_open
 snd_close_start = metal_small_close_start
 snd_close_stop = metal_small_close_stop
 on_use = ph_door@closed
-; hit_on_bone = 1|ph_door@free|2|ph_door@free
-
-; [ph_door@free]
-; locked = false
-; closed = true
-; no_force = true
-; on_use = ph_door@open

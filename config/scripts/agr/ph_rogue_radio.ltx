@@ -1,0 +1,23 @@
+[logic]
+active = ph_idle@before_task
+
+[ph_idle@before_task]
+on_info = {+agr_code_sweet_sniper_dead} ph_idle@on_task
+
+[ph_idle@on_task]
+on_info = {=actor_distance_to_obj_le(120:2.5)} ph_idle@play_1 %=play_snd_from_object(characters_voice\scenario\agroprom\rogue_dead_1)%
+
+[ph_idle@play_1]
+on_timer = 4000 | ph_idle@play_2 %+agr_code_sweet_sniper_complete%
+
+[ph_idle@play_2]
+on_timer = 3000 | ph_idle@play_3 %=play_snd_from_object(characters_voice\scenario\agroprom\rogue_dead_2)%
+
+[ph_idle@play_3]
+on_timer = 3000 | ph_idle@play_4 %=play_snd_from_object(characters_voice\scenario\agroprom\rogue_dead_3)%
+
+[ph_idle@play_4]
+on_timer = 3000 | ph_idle@end_task %=play_snd_from_object(characters_voice\scenario\agroprom\rogue_dead_4)%
+
+[ph_idle@end_task]
+on_timer = 3000 | nil %+agr_explore_catacombs_start%

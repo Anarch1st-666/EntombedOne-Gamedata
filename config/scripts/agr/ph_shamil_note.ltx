@@ -1,0 +1,9 @@
+[logic]
+active = ph_idle@before_task
+
+[ph_idle@before_task]
+on_info = {+agr_explore_catacombs_start} ph_idle@on_task
+
+[ph_idle@on_task]
+on_use = %=open_document(shamil_note:agr_explore_catacombs_location3_1)%
+tips = st_read_note

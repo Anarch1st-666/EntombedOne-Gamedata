@@ -255,6 +255,201 @@
   <string id="agr_catacombs_wounded_main_29">
     <text>Это всё. Не делай глупостей — и останешься жить.</text>
   </string>
+  <string id="silent_drinking_101">
+    <text>Здравствуй.</text>
+  </string>
+  <string id="silent_drinking_102">
+    <text>Как закончилась? Не дело! Я мигом!</text>
+  </string>
+  <string id="silent_drinking_200">
+    <text>Быстро ты.</text>
+  </string>
+  <string id="silent_drinking_201">
+    <text>Вот. Угощаю.</text>
+  </string>
+  <string id="silent_drinking_202">
+    <text>Чего-то не хватает... Сейчас-сейчас.</text>
+  </string>
+  <string id="silent_drinking_1"> 
+    <text>Не помешаю?</text>
+  </string>
+  <string id="silent_drinking_2"> 
+    <text>Располагайся. Всё равно никого не жду.</text>
+  </string>
+  <string id="silent_drinking_3"> 
+    <text>(...)</text>
+  </string>
+  <string id="silent_drinking_4"> 
+    <text>Ты не из наших. Военный?</text>
+  </string>
+  <string id="silent_drinking_5"> 
+    <text>Военный сталкер. Капитан. Позывной Феникс.</text>
+  </string>
+  <string id="silent_drinking_6"> 
+    <text>Тихий. Раньше был Тихим. Теперь — не знаю.</text>
+  </string>
+  <string id="silent_drinking_7"> 
+    <text>Что пьёшь?</text>
+  </string>
+  <string id="silent_drinking_8"> 
+    <text>Что имеется. А имеется… уже ничего… Закончилась.</text>
+  </string>
+  <string id="silent_drinking_9"> 
+    <text>Тогда я угощаю!</text>
+  </string>
+  <string id="silent_drinking_10">
+    <text>Щедро. С чего вдруг?</text>
+  </string>
+  <string id="silent_drinking_11">
+    <text>С того, что ты сидишь здесь один. А я не люблю пить один. Подставляй стакан.</text>
+  </string>
+  <string id="silent_drinking_12">
+    <text>За Зону. Чтоб она сдохла.</text>
+  </string>
+  <string id="silent_drinking_13">
+    <text>(Пить.)</text>
+  </string>
+  <string id="silent_drinking_14">
+    <text>Знаешь, почему я здесь? Не потому что долг перед Долгом. Не потому что Гречкин или сам Воронин сказал. Я здесь, потому что больше негде. Я просто сижу. И жду, когда всё закончится.</text>
+  </string>
+  <string id="silent_drinking_15">
+    <text>Что закончится?</text>
+  </string>
+  <string id="silent_drinking_16">
+    <text>Давай ещё по одной. За знакомство.</text>
+  </string>
+  <string id="silent_drinking_17">
+    <text>Давай. (Пить.)</text>
+  </string>
+  <string id="silent_drinking_18">
+    <text>Ты странный, капитан. Не такой, как другие военные. Те приходят — приказы, приказы. А ты сидишь. Слушаешь.</text>
+  </string>
+  <string id="silent_drinking_19">
+    <text>Я не всегда был военным.</text>
+  </string>
+  <string id="silent_drinking_20">
+    <text>Расскажешь?</text>
+  </string>
+  <string id="silent_drinking_21">
+    <text>Это… долгая история.</text>
+  </string>
+  <string id="silent_drinking_22">
+    <text>Тогда давай выпьем. За хороший рассказ.</text>
+  </string>
+  <string id="silent_drinking_23">
+    <text>Верная мысль. (Пить.)</text>
+  </string>
+  <string id="silent_drinking_24">
+    <text>Так что же… расскажешь?</text>
+  </string>
+  <string id="silent_drinking_25">
+    <text>Я начинал в армии. Обычным. Срочка, потом контракт. Сначала на Большой земле. Потом отправили на периметр Зоны. И я увидел её… Своими глазами увидел… </text>
+  </string>
+  <string id="silent_drinking_26">
+    <text>И что тогда?</text>
+  </string>
+  <string id="silent_drinking_27">
+    <text>Тогда сразу понял, что устав здесь не работает. Здесь всё по-другому. Здесь люди живут не потому что приказали, а потому что могут. Или не могут — и тогда умирают.</text>
+  </string>
+  <string id="silent_drinking_28">
+    <text>И ты дезертировал.</text>
+  </string>
+  <string id="silent_drinking_29">
+    <text>Нет. Уволился. Контракт закончился, я снял погоны, взял рюкзак и ушёл. Стал сталкером. Ходил, искал, выживал. Как все.</text>
+  </string>
+  <string id="silent_drinking_30">
+    <text>Успешное завершение контракта? За такое нельзя не выпить!</text>
+  </string>
+  <string id="silent_drinking_31">
+    <text>Согласен! (Пить.)</text>
+  </string>
+  <string id="silent_drinking_32">
+    <text>А как обратно попал?</text>
+  </string>
+  <string id="silent_drinking_33">
+    <text>Волей случая. На Ростке с одним сталкером пересёкся, кстати тоже из Долга. Так он из военных оказался. Ну мы слово за слово — и он меня с командиром свёл.</text>
+  </string>
+  <string id="silent_drinking_34">
+    <text>И много ещё таких в Зоне?</text>
+  </string>
+  <string id="silent_drinking_35">
+    <text>Нет, как же. Это ж негласно всё. Вот и приходится подальше от Периметра держаться.</text>
+  </string>
+  <string id="silent_drinking_36">
+    <text>Давай выпьем. За тех, кто всегда тени, но без кого всё рассыпется. За таких, как ты.</text>
+  </string>
+  <string id="silent_drinking_37">
+    <text>Без нас они никто! (Пить.)</text>
+  </string>
+  <string id="silent_drinking_38">
+    <text>А может в тебе живёт больше сталкерского, чем военного?</text>
+  </string>
+  <string id="silent_drinking_39">
+    <text>Отчасти так. Я хожу, где хочу. Я говорю с кем хочу. Я делаю не совсем свою работу — но всегда по своим правилам.</text>
+  </string>
+  <string id="silent_drinking_40">
+    <text>Знаешь, я таких видел. Много. Все они говорили, что будут жить по своим правилам… Никто из них не вернулся.</text>
+  </string>
+  <string id="silent_drinking_41">
+    <text>Значит, я буду первым.</text>
+  </string>
+  <string id="silent_drinking_42">
+    <text>Тяжело быть первым. Но я тебя поддерживаю. Давай ещё по одной. За твоё первенство!</text>
+  </string>
+  <string id="silent_drinking_43">
+    <text>По-другому никак. (Пить.)</text>
+  </string>
+  <string id="silent_drinking_44">
+    <text>А ты, говорят, в Нижние катакомбы собрался?.. Знаешь, я вообще-то был там уже. Давно. Группа из пяти человек. Мы искали... неважно что. Нашли. Не то, что искали… Я один вышел. Четверо остались там.</text>
+  </string>
+  <string id="silent_drinking_45">
+    <text>Мутанты? Нет. Люди… Свои. Мы не поделили то, что нашли. Оно не стоило ничего. Но мы не знали. Мы думали — золото. А это был мусор. Просто мусор.</text>
+  </string>
+  <string id="silent_drinking_46">
+    <text>Жадность губит… Давай за то, чтоб в мире её было меньше.</text>
+  </string>
+  <string id="silent_drinking_47">
+    <text>Истина. Наливай.</text>
+  </string>
+  <string id="silent_drinking_48">
+    <text>(Пить.)</text>
+  </string>
+  <string id="silent_drinking_49">
+    <text>Я тебе кое-что сказать хочу. Потому что ты... ты нормально слушаешь. Не перебиваешь.</text>
+  </string>
+  <string id="silent_drinking_50">
+    <text>Что?</text>
+  </string>
+  <string id="silent_drinking_51">
+    <text>У южной вышки, на базе, есть цистерна. Все думают, что пустая. А там мой тайник.</text>
+  </string>
+  <string id="silent_drinking_52">
+    <text>И что в нём?</text>
+  </string>
+  <string id="silent_drinking_53">
+    <text>Дробовик. Хороший. Я его сам собрал. Из того, что нашёл. Он стреляет. Он спасает. Хочешь — забирай.</text>
+  </string>
+  <string id="silent_drinking_54">
+    <text>Ты уверен?</text>
+  </string>
+  <string id="silent_drinking_55">
+    <text>Уверен. Там аномалия гадкая возникла. Не рассосётся никак. Сам не полезу — боюсь её.</text>
+  </string>
+  <string id="silent_drinking_56">
+    <text>Спасибо. Подарок — это лучший повод, чтобы выпить.</text>
+  </string>
+  <string id="silent_drinking_57">
+    <text>Определённо!</text>
+  </string>
+  <string id="silent_drinking_58">
+    <text>(Пить.)</text>
+  </string>
+  <string id="silent_drinking_59">
+    <text>Кажись мой опустел. Вот и… Что называется… подлечились.</text>
+  </string>
+  <string id="silent_drinking_60">
+    <text>Да… это точно… Тихий, я пойду. За беседу спасибо. И за тайник, конечно, тоже.</text>
+  </string>
   <string id="agr_technician_bring_decoder_0">
     <text>Ты, говорят, электронщик ушлый. Надо починить одну штуку. Дело особой важности.</text>
   </string>
@@ -274,7 +469,10 @@
     <text>Готов дешифратор?</text>
   </string>
   <string id="agr_technician_take_decoder_1">
-    <text>Готов. Пользоваться, знаешь как?</text>
+    <text>Как раз закончил. Пользоваться, знаешь как?</text>
+  </string>
+  <string id="agr_technician_take_decoder_11">
+    <text>Нет, пока не готов.</text>
   </string>
   <string id="agr_technician_take_decoder_2">
     <text>Разберусь. Спасибо за помощь.</text>

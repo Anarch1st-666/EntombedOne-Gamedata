@@ -767,7 +767,7 @@ states = {
 				animstate = "stand",
 				animation = "oso_flying"
 			},
-	--/#+# barin start
+	--/#+# la start
 	sit_cop = {
 		weapon = "none",
 		movement = move.stand,
@@ -813,4 +813,29 @@ states = {
 		animation = "stand_wait",
 		reset = false
 	},
+	drink_vodka = {
+		weapon = "strapped",
+		movement = move.walk,
+		mental = anim.free,
+		bodystate = move.standing,
+		animstate = "stand",
+		animation = "drink_vodka"
+	},
+	drink_vodka_out = {
+		weapon = "strapped",
+		movement = move.walk,
+		mental = anim.free,
+		bodystate = move.standing,
+		animstate = "stand",
+		animation = "drink_vodka_out"
+	},
+	--/#+# la end
+
+	inspect = {weapon = "strapped",
+				movement = move.stand,
+				mental = anim.free,
+				bodystate = move.standing,
+				animstate = "stand",
+				animation = "inspecting"
+			},
 }

@@ -133,6 +133,22 @@ function actor_out_zone(actor, npc, p)
 	return not utils.npc_in_zone(db.actor, db.zone_by_name[p[1]])
 end
 
+function object_on_path(actor, npc, p)
+	local path = patrol(p[1])
+	local pos = path and path:point(0)
+	
+	if not pos then
+		log3("! patrol path [%s] not found!", p[1])
+		return true
+	end
+	
+	if pos:distance_to_sqr(npc:position()) < 1.0 then
+		return true
+	end
+	
+	return false
+end
+
 -- true, если здоровье npc <= заданному значению
 -- false в противном случае
 function health_le(actor, npc, p)
@@ -503,6 +519,38 @@ end
 function actor_has_item(actor, npc, p)
 	return p[1] ~= nil and actor:object( p[1] ) ~= nil
 end
+
+--' Есть ли у игрока нужный набор прмедметов
+-- TODO: корректная обработка патронов
+function actor_has_items(actor, object, tItems)
+--	log3("xr_conditions.actor_has_items : %s", tItems)
+    if not tItems or #tItems == 0 then
+        return true
+    end
+
+    local tDemands = {}
+    for i = 1, #tItems, 2 do
+        local section = tItems[i]
+        local count = tonumber(tItems[i + 1]) or 1
+        tDemands[section] = (tDemands[section] or 0) + count
+    end
+
+    db.actor:iterate_inventory(function(_, item)
+        local s = item:section()
+        if tDemands[s] and tDemands[s] > 0 then
+            tDemands[s] = tDemands[s] - 1
+        end
+    end, nil)
+
+    for _, iLeft in pairs(tDemands) do
+        if iLeft > 0 then
+            return false
+        end
+    end
+
+    return true
+end
+
 
 -- возвращает true, если в текущей схеме персонажа взведён указанный сигнал.
 function signal(actor, npc, p)
