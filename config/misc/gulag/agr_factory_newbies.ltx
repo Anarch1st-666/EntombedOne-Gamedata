@@ -1,0 +1,51 @@
+;=========================================================================================
+; Common
+;=========================================================================================
+[death@agr_gold_clock_owner]
+on_info = %+agr_gold_clocks_fail%
+
+[meet@gold_clocks_owner]
+meet_dialog = {-agr_gold_clocks_start -agr_gold_clocks_complete} gold_clock_request, {+agr_gold_clocks_start -agr_gold_clocks_complete} gold_clocks_in_process
+
+;=========================================================================================
+; Сидящий
+;=========================================================================================
+[logic@agr_factor_newbies_floor2_sit]
+active = walker1@agr_factor_newbies_floor2_sit
+on_death = death@agr_gold_clock_owner
+
+[walker1@agr_factor_newbies_floor2_sit]
+path_walk = floor2_sit_walk
+path_look = floor2_sit_look
+meet = meet@gold_clocks_owner
+
+;-----------------------------------------------------------------------------------------
+[logic@agr_factor_newbies_basement_guard]
+active = walker1@agr_factor_newbies_basement_guard
+on_death = death@agr_gold_clock_owner
+
+[walker1@agr_factor_newbies_basement_guard]
+path_walk = basement_guard_walk
+path_look = basement_guard_look
+meet = meet@gold_clocks_owner
+
+
+;=========================================================================================
+; Спящий
+;=========================================================================================
+[logic@agr_factor_newbies_floor2_sleep]
+active = walker1@agr_factor_newbies_floor2_sleep
+
+[walker1@agr_factor_newbies_floor2_sleep]
+path_walk = floor2_sleep_walk
+path_look = floor2_sleep_look
+meet = no_meet
+
+;-----------------------------------------------------------------------------------------
+[logic@agr_factor_newbies_basement_sit]
+active = walker1@agr_factor_newbies_basement_sit
+
+[walker1@agr_factor_newbies_basement_sit]
+path_walk = basement_sit_walk
+path_look = basement_sit_look
+meet = no_meet

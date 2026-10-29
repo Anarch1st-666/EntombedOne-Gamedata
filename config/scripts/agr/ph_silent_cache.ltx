@@ -1,0 +1,9 @@
+[logic]
+active = ph_idle@unknown
+
+[ph_idle@unknown]
+on_info = {+agr_decoder_repair_talk_to_silent} ph_idle@known %=add_object_spot(treasure:st_silent_cache_hint)%
+
+[ph_idle@known]
+on_use = nil %=remove_object_spot(treasure)%
+tips = st_search_treasure

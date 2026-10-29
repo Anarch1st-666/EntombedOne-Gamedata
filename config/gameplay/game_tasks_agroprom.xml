@@ -4,8 +4,9 @@
 		<objective>
 			<text>agr_crashcopter_0</text>
 			<article>agr_crashcopter</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_esc_blockpost_case_to_trader</icon>
 			<infoportion_complete>agr_crashcopter_complete</infoportion_complete>
+			<infoportion_fail>agr_grechkin_got_case</infoportion_fail>
 		</objective>
 		<objective>
 			<text>agr_crashcopter_1</text>
@@ -28,9 +29,9 @@
 		<objective>
 			<text>agr_crashcopter_4</text>
 			<map_location_type hint="agr_crashcopter_4_hint">green_location</map_location_type>
-			<object_story_id>agroprom_exit</object_story_id>
+			<object_story_id>grechkin_betrayer</object_story_id>
 			<infoportion_visible>agr_crashcopter_case_got</infoportion_visible>
-			<infoportion_complete>agr_crashcopter_case_got</infoportion_complete>
+			<infoportion_fail>agr_grechkin_got_case</infoportion_fail>
 		</objective>
 	</game_task>
 
@@ -40,7 +41,7 @@
 		<objective>
 			<text>agr_seek_duty_support_0</text>
 			<article>agr_seek_duty_support</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_bar_dolg_base_rules</icon>
 			<infoportion_complete>agr_seek_duty_support_complete</infoportion_complete>
 		</objective>
 		<objective>
@@ -64,7 +65,7 @@
 		<objective>
 			<text>agr_eavesdropping_0</text>
 			<article>agr_eavesdropping</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_agr_meet_krot_band</icon>
 			<infoportion_complete>agr_eavesdropping_complete</infoportion_complete>
 		</objective>
 		<objective>
@@ -102,8 +103,10 @@
 		<objective>
 			<text>agr_by_the_trace_0</text>
 			<article>agr_by_the_trace</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_agr_agr_help_krot</icon>
+			<!--icon>ui_iconsTotal_mil_mad_job</icon-->
 			<infoportion_complete>agr_by_the_trace_complete</infoportion_complete>
+			<infoportion_fail>agr_freedom_spies_can_attack_actor</infoportion_fail>
 		</objective>
 		<objective>
 			<text>agr_by_the_trace_1</text>
@@ -128,7 +131,7 @@
 		<objective>
 			<text>agr_by_the_trace_4</text>
 			<map_location_type hint="agr_scout_name">green_location</map_location_type>
-			<object_story_id>agr_scout</object_story_id>
+			<object_story_id>agr_scout_location</object_story_id>
 			<infoportion_visible>agr_by_the_trace_check_tunnel</infoportion_visible>
 			<infoportion_fail>agr_by_the_trace_scout_on_factory</infoportion_fail>
 		</objective>
@@ -138,37 +141,38 @@
 			<object_story_id>agr_scout_prisoner</object_story_id>
 			<infoportion_visible>agr_by_the_trace_scout_on_factory</infoportion_visible>
 			<infoportion_complete>agr_by_the_trace_complete</infoportion_complete>
+			<infoportion_fail>agr_freedom_spies_can_attack_actor</infoportion_fail>
 		</objective>
 	</game_task>
 
---/ Золотые часы
+--/ Серебряные часы
 	<game_task id="agr_gold_clocks" prio="523">
 		<title>agr_gold_clocks_0</title>
 		<objective>
 			<text>agr_gold_clocks_0</text>
 			<article>agr_gold_clocks</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_deficit</icon>
 			<infoportion_complete>agr_gold_clocks_complete</infoportion_complete>
 			<infoportion_fail>agr_gold_clocks_fail</infoportion_fail>
 		</objective>
 		<objective>
 			<text>agr_gold_clocks_1</text>
 			<map_location_type hint="agr_gold_clocks_1_hint">green_location</map_location_type>
-			<object_story_id>agr_garbage_road</object_story_id>
-			<infoportion_visible>agr_gold_clocks_talk_to_duty</infoportion_visible>
+			<object_story_id>agr_hydronode_entrance_main</object_story_id>
 			<infoportion_complete>agr_gold_clocks_find_bandits</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_gold_clocks_2</text>
 			<map_location_type hint="agr_gold_clocks_2_hint">green_location</map_location_type>
-			<object_story_id>agr_hydronode</object_story_id>
+			<object_story_id>hydronode_bandit_1</object_story_id>
+			<infoportion_visible>agr_gold_clocks_find_bandits</infoportion_visible>
 			<infoportion_complete>agr_gold_clocks_clocks_got</infoportion_complete>
 		</objective>
 		<objective>
 			<text>agr_gold_clocks_3</text>
 			<map_location_type hint="gold_clocks_owner">green_location</map_location_type>
 			<object_story_id>gold_clocks_owner</object_story_id>
-			<infoportion_visible>agr_gold_clocks_alarm</infoportion_visible>
+			<infoportion_visible>agr_gold_clocks_clocks_got</infoportion_visible>
 			<infoportion_complete>agr_gold_clocks_complete</infoportion_complete>
 		</objective>
 	</game_task>
@@ -179,7 +183,7 @@
 		<objective>
 			<text>agr_prisoner_0</text>
 			<article>agr_prisoner</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_val_prisoner_help</icon>
 			<infoportion_complete>agr_prisoner_complete</infoportion_complete>
 			<infoportion_fail>agr_prisoner_fail</infoportion_fail>
 		</objective>
@@ -188,12 +192,13 @@
 			<map_location_type hint="agr_prisoner_1_hint">green_location</map_location_type>
 			<object_story_id>agr_giant_lair</object_story_id>
 			<infoportion_complete>agr_prisoner_giant_dead</infoportion_complete>
+			<infoportion_fail>agr_freedom_spies_can_attack_actor</infoportion_fail>
 		</objective>
 		<objective>
 			<text>agr_prisoner_2</text>
 			<map_location_type hint="agr_prisoner_2_hint">green_location</map_location_type>
 			<object_story_id>agr_freedom_spies</object_story_id>
-			<infoportion_visible>agr_prisoner_giant_dead</infoportion_visible>
+			<!--infoportion_visible>agr_prisoner_giant_dead</infoportion_visible-->
 			<infoportion_complete>agr_prisoner_complete</infoportion_complete>
 		</objective>
 	</game_task>
@@ -204,7 +209,7 @@
 		<objective>
 			<text>agr_code_sweet_0</text>
 			<article>agr_code_sweet</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_yan_find_scientist_semenov</icon>
 			<infoportion_complete>agr_code_sweet_sniper_complete</infoportion_complete>
 		</objective>
 		<objective>
@@ -216,7 +221,7 @@
 		<objective>
 			<text>agr_code_sweet_2</text>
 			<map_location_type hint="agr_code_sweet_2_hint">green_location</map_location_type>
-			<object_story_id>rogue</object_story_id>
+			<object_story_id>rogue_izba</object_story_id>
 			<infoportion_visible>agr_code_sweet_sniper_dead</infoportion_visible>
 			<infoportion_complete>agr_code_sweet_sniper_complete</infoportion_complete>
 		</objective>
@@ -228,7 +233,7 @@
 		<objective>
 			<text>agr_explore_catacombs_0</text>
 			<article>agr_explore_catacombs</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_bar_dolg_svoboda_ambush_quest</icon>
 			<infoportion_complete>agr_explore_catacombs_complete</infoportion_complete>
 		</objective>
 		<objective>
@@ -268,7 +273,7 @@
 		<objective>
 			<text>agr_decoder_repair_0</text>
 			<article>agr_decoder_repair</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_tutorial_help_wounded</icon>
 			<infoportion_complete>agr_decoder_repair_complete</infoportion_complete>
 		</objective>
 		<objective>
@@ -310,7 +315,7 @@
 		<objective>
 			<text>agr_deep_catacombs_0</text>
 			<article>agr_deep_catacombs</article>
-			<icon>ui_iconsTotal_grouping</icon>
+			<icon>ui_iconsTotal_sar_secret_lab</icon>
 			<infoportion_complete>agr_deep_catacombs_complete</infoportion_complete>
 		</objective>
 		<objective>
@@ -335,6 +340,52 @@
 		</objective>
 	</game_task>
 
+--/ Проникнуть в здание НИИ
+	<game_task id="agr_nii_doors" prio="570">
+		<title>agr_nii_doors_0</title>
+		<objective>
+			<text>agr_nii_doors_0</text>
+			<article>agr_nii_doors</article>
+			<icon>ui_iconsTotal_eliminate_lager</icon>
+			<infoportion_complete>agr_nii_doors_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_nii_doors_1</text>
+			<map_location_type hint="agr_nii_doors_1_hint">green_location</map_location_type>
+			<object_story_id>nii_main_doors_key</object_story_id>
+			<infoportion_complete>agr_nii_doors_key_got</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_nii_doors_2</text>
+			<map_location_type hint="agr_nii_doors_2_hint">green_location</map_location_type>
+			<object_story_id>nii_main_doors</object_story_id>
+			<infoportion_complete>agr_nii_doors_complete</infoportion_complete>
+		</objective>
+	</game_task>
+	
+--/ Месть
+	<game_task id="agr_revenge" prio="580">
+		<title>agr_revenge_0</title>
+		<objective>
+			<text>agr_revenge_0</text>
+			<article>agr_revenge</article>
+			<icon>ui_iconsTotal_mil_lukash_job</icon>
+			<infoportion_complete>agr_revenge_complete</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_revenge_1</text>
+			<map_location_type hint="grechkin_name">green_location</map_location_type>
+			<object_story_id>grechkin_target</object_story_id>
+			<infoportion_complete>agr_revenge_kill_grechkin</infoportion_complete>
+		</objective>
+		<objective>
+			<text>agr_revenge_2</text>
+			<map_location_type hint="grechkin_name">green_location</map_location_type>
+			<object_story_id>grechkin_target</object_story_id>
+			<infoportion_visible>agr_revenge_kill_grechkin</infoportion_visible>
+			<infoportion_complete>agr_revenge_complete</infoportion_complete>
+		</objective>
+	</game_task>
 
 
 

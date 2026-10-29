@@ -1,0 +1,38 @@
+--/ --------------------------------------------------------------------------------------
+--/ CONSTANTs
+--/ --------------------------------------------------------------------------------------
+local PROGRESS_STEPS = 100 -- шаги дискретезации шкалы
+
+--/ --------------------------------------------------------------------------------------
+--/ VARIABLEs
+--/ --------------------------------------------------------------------------------------
+local m_progress_bar = nil
+
+--/ --------------------------------------------------------------------------------------
+--/ FUNCTIONs
+--/ --------------------------------------------------------------------------------------
+function init_custom_static()
+	local xml = CScriptXmlInit()
+	xml:ParseFile("boss_progress.xml")
+	
+	local custom_static = get_hud():AddCustomStatic("boss_health", true)
+	m_progress_bar = xml:InitProgressBar("boss_health_progress", custom_static:wnd() )
+	
+	return custom_static
+end
+
+function set_value(value)
+	local custom_static = get_hud():GetCustomStatic("boss_health")
+	if custom_static == nil or m_progress_bar == nil then
+		custom_static = init_custom_static()
+	end
+	m_progress_bar:SetProgressPos(value * PROGRESS_STEPS)
+end
+
+function remove_custom_static()
+	if get_hud():GetCustomStatic("boss_health") ~= nil then
+		get_hud():RemoveCustomStatic("boss_health")
+	end
+	m_progress_bar = nil
+end
+--/ --------------------------------------------------------------------------------------

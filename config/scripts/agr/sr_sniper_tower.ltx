@@ -1,0 +1,14 @@
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {+agr_by_the_trace_open_tower_cache !dialog_opened} sr_idle@play_delay
+
+[sr_idle@play_delay]
+on_timer = 1000 | sr_idle@play_1 %=send_tip(check_tunnel_1)%
+
+[sr_idle@play_1]
+on_timer = 6000 | sr_idle@play_2 %=send_tip(check_tunnel_2)%
+
+[sr_idle@play_2]
+on_timer = 2000 | nil %+agr_by_the_trace_check_tower =release_object%

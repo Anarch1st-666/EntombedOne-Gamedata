@@ -7,8 +7,8 @@ closed = true
 snd_open_start = metal_small_open
 snd_close_start = metal_small_close_start
 snd_close_stop = metal_small_close_stop
-on_use = ph_door@open
-; hit_on_bone = 1|ph_door@free|2|ph_door@free
+on_use = ph_door@open %+agr_gold_clocks_find_bandits +agr_gold_clocks_bandit_spawn%
+on_info = {+agr_gold_clocks_clocks_got -agr_gold_clocks_controller_dead} ph_door@locked
 
 [ph_door@open]
 locked = false
@@ -16,11 +16,11 @@ closed = false
 snd_open_start = metal_small_open
 snd_close_start = metal_small_close_start
 snd_close_stop = metal_small_close_stop
-on_use = ph_door@closed
-; hit_on_bone = 1|ph_door@free|2|ph_door@free
+on_use = ph_door@closed %+agr_gold_clocks_find_bandits +agr_gold_clocks_bandit_spawn%
+on_info = {+agr_gold_clocks_clocks_got -agr_gold_clocks_controller_dead} ph_door@locked
 
-; [ph_door@free]
-; locked = false
-; closed = true
-; no_force = true
-; on_use = ph_door@open
+[ph_door@locked]
+locked = true
+closed = true
+snd_open_start = metal_small_locked
+on_info = {+agr_gold_clocks_controller_dead}  ph_door@closed

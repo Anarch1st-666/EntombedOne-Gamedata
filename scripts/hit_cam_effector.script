@@ -1,0 +1,78 @@
+--/ --------------------------------------------------------------------------------------
+--/ CONSTANTs
+--/ --------------------------------------------------------------------------------------
+local CamEffectorID = 999
+
+local tEffectorThershold = {
+	base = 0.1,
+	strong = 0.4
+}
+
+local tEffectorsBase = {
+--	"camera_effects\\shell_shock.anm",
+	"camera_effects\\hit_front.anm",
+	"camera_effects\\hit_right.anm",
+	"camera_effects\\hit_back.anm",
+	"camera_effects\\hit_left.anm",
+	"camera_effects\\hit_front_left.anm",
+	"camera_effects\\hit_back_left.anm",
+	"camera_effects\\hit_front_right.anm",
+	"camera_effects\\hit_back_right.anm",
+}
+
+local tEffectorsStrong = {
+	"camera_effects\\head_shot.anm",
+--	"camera_effects\\fusker.anm",
+}
+--/ --------------------------------------------------------------------------------------
+
+
+--/ --------------------------------------------------------------------------------------
+--/ VARIABLEs
+--/ --------------------------------------------------------------------------------------
+local fLastHealth = 0.0
+local bGotBullet = false
+--/ --------------------------------------------------------------------------------------
+
+
+--/ --------------------------------------------------------------------------------------
+--/ FUNCTIONs
+--/ --------------------------------------------------------------------------------------
+local function play_cam_effector(tEffectors)
+	local cam_anm = tEffectors[math.random(#tEffectors)]
+--	log3("Hit cam effector played [%s]", cam_anm)
+--	log3(debug.traceback())
+	level.add_cam_effector(cam_anm, CamEffectorID, false, "")
+end
+
+function on_actor_hit(hit_type)
+	if not hit_type then
+		-- Заглушка, пока нет возможности получить 'hit_type'
+		bGotBullet = true
+		return
+	end
+
+	if hit_type == hit.fire_wound or hit_type == hit.explosion then
+		bGotBullet = true
+	end
+end
+
+function update()
+	if bGotBullet and db.actor:alive() then
+		local fHealthDelta = fLastHealth - db.actor.health
+		
+		if fHealthDelta > tEffectorThershold.strong then
+			play_cam_effector(tEffectorsStrong)
+		elseif fHealthDelta > tEffectorThershold.base then
+			play_cam_effector(tEffectorsBase)
+		end
+		
+		bGotBullet = false
+	end
+	
+	fLastHealth = db.actor.health
+end
+--/ --------------------------------------------------------------------------------------
+
+
+

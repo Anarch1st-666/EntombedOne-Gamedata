@@ -1,13 +1,20 @@
 [logic]
-active = nil ;sr_tip
+active = sr_idle
 
-[sr_tip]
-header = barman_message_header
-name = agr_ratcatcher_message
-sender = barman
-type = tips
-cond = {+agr_gunslinger_flash_have -agr_find_gunslinger_cache_final}
-single = true
-showtime = 20000
-on_signal = tip_sended|nil %+agr_ratcatcher_start +agr_find_gunslinger_cache_final%
-on_info = {+agr_ratcatcher_start +agr_find_gunslinger_cache_final} nil
+[sr_idle]
+on_actor_inside = {+agr_explore_catacombs_location_all} sr_idle@play_0 %+agr_explore_catacombs_complete%
+
+[sr_idle@play_0]
+on_timer = 1000 | sr_idle@play_1 %=send_tip(need_electric_1)%
+
+[sr_idle@play_1]
+on_timer = 2000 | sr_idle@play_2 %=send_tip(need_electric_2)%
+
+[sr_idle@play_2]
+on_timer = 2000 | sr_idle@play_3 %=send_tip(need_electric_3)%
+
+[sr_idle@play_3]
+on_timer = 7000 | sr_idle@play_4 %=send_tip(need_electric_4)%
+
+[sr_idle@play_4]
+on_timer = 4000 | nil %+agr_decoder_repair_start =release_object%

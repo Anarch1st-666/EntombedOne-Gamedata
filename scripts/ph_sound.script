@@ -3,6 +3,9 @@ function snd_source:__init (obj, storage)
 	self.object = obj
 	self.st	= storage
 	self.destructed = false
+	self.deactivated = false
+	
+	self.object:set_fastcall(self.fastcall, self)
 end
 function snd_source:reset_scheme(loading)
 	self.last_update = 0
@@ -44,37 +47,27 @@ function snd_source:hit_callback(obj, amount, local_direction, who, bone_index)
 end
 
 
-function snd_source:update(delta)
-    if self.destructed == true then return end
+function snd_source:update(delta)     
+end
+
+function snd_source:fastcall()
+	if self.deactivated == true then
+		return true
+	end
+	
+    if self.destructed == true then
+		return true
+	end
 
 	if xr_logic.try_switch_to_another_section (self.object, self.st, db.actor) then
-		return
+		return true
 	end
 
     if self.st.pause_time - device ():time_global () > 0 then
-        return
-    end
-       
-    self.st.pause_time = 0
-    if self.st.sound_set == true then
-        self.st.sound_set = false
+        return false
+    end  
 
-		if self.st.random then
-			self.played_sound = xr_sound.get_sound_object(self.st.theme, "random")
-		elseif self.st.looped then
-			self.played_sound = xr_sound.get_sound_object(self.st.theme, "looped")
-		else
-			self.played_sound = xr_sound.get_sound_object(self.st.theme, "seq")
-		end
-
-		if self.played_sound ~= nil then
-			self.played_sound:play_at_pos (self.object, self.object:position ())
-		else
-			self.st.signals["theme_end"] = true
-		end
-		self.first_sound = false
-	end   
-
+	self:replay()
        
     if self.last_update == 0 then
        self.last_update = device ():time_global ()
@@ -96,12 +89,39 @@ function snd_source:update(delta)
 			if self.st.pause_min ~= 0 or self.st.pause_max ~= 0 then
 				local time = math.random (self.st.pause_min, self.st.pause_max)
 				self.st.pause_time = device ():time_global () + time
-			end 
+			else
+				self:replay()
+			end
 			self.first_sound = false
 		else
 			self.played_sound:set_position (self.object:position ())
 		end
-	end       
+	end
+	
+	return false
+end
+
+function snd_source:replay()
+    self.st.pause_time = 0
+    if self.st.sound_set == true then
+        self.st.sound_set = false
+
+		if self.st.random then
+			self.played_sound = xr_sound.get_sound_object(self.st.theme, "random")
+		elseif self.st.looped then
+			self.played_sound = xr_sound.get_sound_object(self.st.theme, "looped")
+		else
+			self.played_sound = xr_sound.get_sound_object(self.st.theme, "seq")
+		end
+
+		if self.played_sound ~= nil then
+			self.played_sound:play_at_pos (self.object, self.object:position ())
+			self.played_sound.volume = self.st.volume
+		else
+			self.st.signals["theme_end"] = true
+		end
+		self.first_sound = false
+	end 
 end
 
 function snd_source:deactivate ()
@@ -109,8 +129,8 @@ function snd_source:deactivate ()
        self.played_sound:stop ()
        self.played_sound = nil
     end
+	self.deactivated = true
 end
-
 
 
 function add_to_binder (npc, ini, scheme, section, storage)
@@ -121,14 +141,15 @@ function add_to_binder (npc, ini, scheme, section, storage)
 end
 
 function set_scheme(npc, ini, scheme, section, gulag_name)
-	local st    = xr_logic.assign_storage_and_bind(npc, ini, scheme, section)
-	st.logic    = xr_logic.cfg_get_switch_conditions(ini, section, npc)
-	st.theme    = utils.cfg_get_string(ini, section, "snd",	npc, false, "")
-	st.looped   = utils.cfg_get_bool (ini, section, "looped", npc, false, false)
-	st.random   = utils.cfg_get_bool (ini, section, "random", npc, false, true)
+	local st     = xr_logic.assign_storage_and_bind(npc, ini, scheme, section)
+	st.logic     = xr_logic.cfg_get_switch_conditions(ini, section, npc)
+	st.theme     = utils.cfg_get_string(ini, section, "snd",	npc, false, "")
+	st.looped    = utils.cfg_get_bool (ini, section, "looped", npc, false, false)
+	st.random    = utils.cfg_get_bool (ini, section, "random", npc, false, true)
 	st.pause_min = utils.cfg_get_number (ini, section, "min_idle", npc, false, 0)
 	st.pause_max = utils.cfg_get_number (ini, section, "max_idle", npc, false, 0)
-	st.no_hit   = utils.cfg_get_bool (ini, section, "no_hit", npc, false, true)
+	st.volume    = utils.cfg_get_number(ini, section, "volume",	npc, false, 1.0)
+	st.no_hit    = utils.cfg_get_bool (ini, section, "no_hit", npc, false, true)
 	if st.pause_max < st.pause_min then
 	   abort ("PH_SOUND - invalid time range !!!")
     end	    

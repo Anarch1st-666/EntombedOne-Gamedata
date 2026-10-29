@@ -1,0 +1,38 @@
+<ui_texture2>
+    <file_name>ui\ui_common_tmb</file_name>
+    <texture id="enemy_health_bar" x="1" y="37" width="325" height="25" />
+    <texture id="health_bar_progress1" x="77" y="0" width="250" height="10" />
+    <texture id="health_bar_progress2" x="77" y="12" width="250" height="10" />
+    <texture id="health_bar_progress3" x="77" y="24" width="250" height="10" />
+	
+	<texture id="bfg_charge_bar" x="1" y="64" width="446" height="39" />
+	<texture id="bfg_charge_progress" x="1" y="103" width="446" height="39" />
+	<!--texture id="bfg_charge_bar_red" x="0" y="142" width="450" height="39" /-->
+	
+	<texture id="ui_speaker_background" x="1" y="243" width="444" height="94" />
+	<texture id="ui_speaker_top"      x="166" y="147" width="278" height="94" />
+	<texture id="ui_speaker_progress"   x="0" y="338" width="188" height="6" />
+	
+	<texture id="ui_subtitles_frame_lt"		x="1"  y="145" width="32" height="32" />
+	<texture id="ui_subtitles_frame_t"		x="33" y="145" width="32" height="32" />
+	<texture id="ui_subtitles_frame_rt"		x="65" y="145" width="32" height="32" />
+	<texture id="ui_subtitles_frame_l"		x="1"  y="177" width="32" height="32" />
+	<texture id="ui_subtitles_frame_back"	x="33" y="177" width="32" height="32" />
+	<texture id="ui_subtitles_frame_r"		x="65" y="177" width="32" height="32" />
+	<texture id="ui_subtitles_frame_lb"		x="1"  y="209" width="32" height="32" />
+	<texture id="ui_subtitles_frame_b"		x="33" y="209" width="32" height="32" />
+	<texture id="ui_subtitles_frame_rb"		x="65" y="209" width="32" height="32" />
+	
+	<texture id="ui_subtitles_small_frame_lt"	x="99"  y="145" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_t"	x="115" y="145" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_rt"	x="135" y="145" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_l"	x="99"  y="161" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_back"	x="115" y="161" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_r"	x="135" y="161" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_lb"	x="99"  y="181" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_b"	x="115" y="181" width="24" height="24" />
+	<texture id="ui_subtitles_small_frame_rb"	x="135" y="181" width="24" height="24" />
+
+	<texture id="ui_deimos_suit_menu" x="447" y="1" width="372" height="314" />
+	<texture id="ui_dlc_cell" x="820" y="0" width="128" height="64"/>
+</ui_texture2>

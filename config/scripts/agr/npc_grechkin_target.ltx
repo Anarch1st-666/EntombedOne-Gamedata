@@ -1,0 +1,16 @@
+[danger_ignore]
+ignore_distance = 0
+
+[death]
+on_info = %+agr_revenge_kill_grechkin%
+
+[logic]
+on_death = death
+active = camper
+
+[camper]
+radius = 0
+path_walk = agr_grechkin_hide_walk
+path_look = agr_grechkin_hide_look
+danger = danger_ignore
+meet = no_meet

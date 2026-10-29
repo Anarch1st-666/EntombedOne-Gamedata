@@ -1,0 +1,38 @@
+;-------------------------------------------------------------------------------
+[death@agr_rogue]
+on_info = %+agr_code_sweet_sniper_spawn +agr_code_sweet_sniper_dead%
+
+[hit@agr_rogue]
+on_info = {=hit_by_actor -agr_code_sweet_sniper_spawn} walker@agr_rogue_fight
+
+[combat_ignore]
+
+[danger_ignore]
+ignore_distance = 0
+
+
+[logic]
+active = camper@agr_rogue_hide
+on_death = death@agr_rogue
+on_hit = hit@agr_rogue
+combat_ignore = combat_ignore
+
+;; waiting actor / idle
+[camper@agr_rogue_hide]
+path_walk = agr_rogue_hide_walk
+path_look = agr_rogue_hide_look
+radius = 10.0
+danger = danger_ignore
+combat_ignore_cond = {!fighting_actor} true
+on_info = {+agr_code_sweet_sniper_spawn} camper@agr_rogue_sniper
+
+;; no restrictions, activates when actor pushes instead of going swamp
+[walker@agr_rogue_fight]
+path_walk = agr_rogue_hide_walk
+path_look = agr_rogue_hide_look
+on_info = {+agr_code_sweet_sniper_spawn} camper@agr_rogue_sniper
+
+;; catching actor / actor is on swamp
+[camper@agr_rogue_sniper]
+path_walk = agr_rogue_sniper_walk
+path_look = agr_rogue_sniper_look

@@ -116,5 +116,5 @@
      <texture id="ui_npc_u_actor" x="725" y="216" width="108" height="108"  />
      <texture id="ui_npc_u_stalker_loner_uniq_doctor" x="888" y="216" width="108" height="108"  />
      <texture id="ui_reach_dscape" x="499" y="47" width="83" height="47"  />
-     <texture id="ui_mono_informer" x="499" y="94" width="83" height="47"  />
+     <texture id="ui_iconsTotal_dolg" x="498" y="94" width="83" height="47" />
 </ui_texture>

@@ -50,7 +50,7 @@
 
 	<car_panel x="860" y="584" width="150" height="200"/>
 	
-	<static_pda_online x="138" y="167" width="35" height="28" light_anim="ui_pda_contacts" la_cyclic="0" la_texture="0" la_text="1" la_alpha="1">
+	<static_pda_online x="-9138" y="167" width="35" height="28" light_anim="ui_pda_contacts" la_cyclic="0" la_texture="0" la_text="1" la_alpha="1">
 		<texture>ui_hud_map_counter</texture>
 		<text y="6" align="c" font="graffiti19" r="238" g="155" b="23" a="255"/>
 	</static_pda_online>
@@ -67,11 +67,11 @@
 		<texture>ui_hud_icon_weapon</texture>
 	</weapon_jammed_static>
 
-	<radiation_static x="  0.00" y="0" width="27.43" height="48" stretch="1">
+	<radiation_static x="  0.00" y="0" width="" height="48" stretch="1">
 		<texture>ui_hud_icon_radiation</texture>
 	</radiation_static>
 
-	<wound_static x="0" y="0" width="48" height="27.43" stretch="1">
+	<wound_static x="0" y="0" width="27.43" height="48" stretch="1">
 		<texture>ui_hud_icon_drop</texture>
 	</wound_static>
 
@@ -104,5 +104,5 @@
 
 	<pick_up_item x="437" y="400" width="150" height="100"/>
 
-	<artefact_panel x="  6.86" y="720" width="571.43" height="50" cell_width="50" cell_height="50" scale="0.5" icons_align="c"/>
+	<artefact_panel x="  6.86" y="720" width="571.43" height="50" cell_width="28" cell_height="50" scale="0.5" icons_align="c"/>
 </window>

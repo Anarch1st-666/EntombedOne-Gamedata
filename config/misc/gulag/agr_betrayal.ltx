@@ -1,0 +1,87 @@
+;------------------ Общее -----------------------
+[hit@agr_betrayer]
+damage_ignore_cond = always
+
+[meet@agr_betrayer_guard]
+meet_state		= 10 | {+agr_grechkin_threats -agr_grechkin_got_case} threat_na, guard_na
+meet_state_wpn	= 10 | {+agr_grechkin_threats -agr_grechkin_got_case} threat_na, guard_na
+victim			= 10 | actor
+victim_wpn		= 10 | actor
+use				= false
+use_wpn			= false
+
+;------------------ Гречкин -----------------------
+[logic@agr_betrayer_grechkin]
+active = camper@agr_betrayer_grechkin
+danger = danger_ignore
+combat_ignore = combat_ignore
+on_hit = hit@agr_betrayer
+
+[camper@agr_betrayer_grechkin]
+radius = 0.0
+show_spot = false
+path_walk = grechkin_walk
+path_look = grechkin_look
+def_state_campering_fire = threat_fire
+combat_ignore_cond = always
+meet = meet@agr_betrayer_grechkin
+on_info = {+agr_grechkin_got_case} camper@agr_betrayer_grechkin_got_case
+
+[meet@agr_betrayer_grechkin]
+meet_state		= 10 | {-agr_grechkin_threats} guard_na, {+agr_grechkin_threats} threat_na
+meet_state_wpn	= 10 | {-agr_grechkin_threats} guard_na, {+agr_grechkin_threats} threat_na
+victim			= 10 | actor
+victim_wpn		= 10 | actor
+use				= {=dist_to_actor_le(3.0) -agr_grechkin_got_case -agr_grechkin_kill_order} self,true
+use_wpn			= {=dist_to_actor_le(3.0) -agr_grechkin_got_case -agr_grechkin_kill_order} self,true
+allow_break		= false
+meet_dialog		= {-agr_grechkin_got_case} grechkin_betrayal
+
+[camper@agr_betrayer_grechkin_got_case]
+radius = 0.0
+show_spot = false
+path_walk = grechkin_walk
+path_look = grechkin_look
+def_state_campering_fire = threat_fire
+combat_ignore_cond = always
+meet = meet@agr_betrayer_grechkin_got_case
+
+[meet@agr_betrayer_grechkin_got_case]
+meet_state		= 10 | {-agr_grechkin_threats} guard_na, {+agr_grechkin_threats} threat_na
+meet_state_wpn	= 10 | {-agr_grechkin_threats} guard_na, {+agr_grechkin_threats} threat_na
+victim			= 10 | actor
+victim_wpn		= 10 | actor
+use				= false
+use_wpn			= false
+
+;------------------ Охранник слева -----------------------
+[logic@agr_betrayer_left]
+active = camper@agr_betrayer_left
+danger = danger_ignore
+combat_ignore = combat_ignore
+on_hit = hit@agr_betrayer
+
+[camper@agr_betrayer_left]
+radius = 0.0
+show_spot = false
+path_walk = guard_left_walk
+path_look = grechkin_look
+def_state_campering_fire = threat_fire
+combat_ignore_cond = {-agr_grechkin_kill_order}
+meet = meet@agr_betrayer_guard
+
+;------------------ Охранник справа -----------------------
+[logic@agr_betrayer_right]
+active = walker@agr_betrayer_right
+danger = danger_ignore
+combat_ignore = combat_ignore
+on_hit = hit@agr_betrayer
+
+[walker@agr_betrayer_right]
+show_spot = false
+path_walk = guard_right_walk
+path_look = grechkin_look
+combat_ignore_cond = {-agr_grechkin_kill_order}
+meet = meet@agr_betrayer_guard
+
+

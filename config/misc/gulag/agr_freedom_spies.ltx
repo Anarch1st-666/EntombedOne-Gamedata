@@ -44,6 +44,7 @@ def_state_standing = sit_cop
 danger = danger@agr_freedom_spies
 combat_ignore_cond = {=fighting_actor -agr_freedom_spies_can_attack_actor}, {=check_fighting(110) -agr_freedom_spies_can_attack_actor}
 meet = meet@agr_freedom_spies_leader
+on_actor_dist_ge = 120 | {+agr_prisoner_complete -agr_freedom_spies_can_attack_actor} %+agr_freedom_spies_disappear%
 
 [meet@agr_freedom_spies_leader]
 meet_state = nil

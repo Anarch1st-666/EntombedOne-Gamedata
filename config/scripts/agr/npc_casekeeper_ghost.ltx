@@ -1,0 +1,67 @@
+[combat_ignore]
+
+[danger_ignore]
+ignore_distance = 0
+
+[hit]
+damage_ignore_cond = always
+
+[logic]
+combat_ignore = combat_ignore
+on_hit = hit
+active = walker1
+
+;-----------------------------------------------------------------------------------------
+[walker1]
+path_walk = agr_casekeeper_ghost_walk
+path_look = agr_casekeeper_ghost_look
+def_state_standing = sit
+danger = danger_ignore
+combat_ignore_cond = always
+on_info = {+agr_casekeeper_ghost_awoken} remark1
+meet = no_meet
+
+[remark1]
+target = actor
+anim = wait
+danger = danger_ignore
+combat_ignore_cond = always
+on_timer = 3000 | walker2 %=enable_ui_elements(input)%
+meet = no_meet
+
+[walker2]
+path_walk = agr_casekeeper_ghost_walk
+path_look = agr_casekeeper_ghost_look
+danger = danger_ignore
+combat_ignore_cond = always
+on_info = {+agr_casekeeper_ghost_talk_end} remark2 %=disable_ui_elements(input)%
+on_info2 = {!_used -agr_casekeeper_ghost_talk_end} %=run_talk_dialog%
+meet = meet@ghost
+
+[meet@ghost]
+meet_state = 3 | wait
+meet_state_wpn = 3 | wait
+victim = 3 | actor
+victim_wpn = 3 | actor
+;use = {+agr_casekeeper_ghost_awoken -agr_casekeeper_ghost_talk_end =dist_to_actor_le(3)} self, true
+;use_wpn = {+agr_casekeeper_ghost_awoken -agr_casekeeper_ghost_talk_end =dist_to_actor_le(3)} self, true
+use = true
+use_wpn = true
+meet_dialog = casekeeper_after_death
+allow_break = false
+
+[remark2]
+target = actor
+anim = salut
+danger = danger_ignore
+combat_ignore_cond = always
+on_signal = anim_end | walker3 %=run_postprocess(blink:913)%
+meet = no_meet
+
+[walker3]
+path_walk = agr_casekeeper_ghost_walk
+path_look = agr_casekeeper_ghost_look
+danger = danger_ignore
+combat_ignore_cond = always
+meet = no_meet
+on_timer = 200 | nil %=release_object +agr_casekeeper_ghost_released%

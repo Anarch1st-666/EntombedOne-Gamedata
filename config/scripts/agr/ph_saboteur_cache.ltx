@@ -1,0 +1,9 @@
+[logic]
+active = ph_idle@unknown
+
+[ph_idle@unknown]
+on_info = {+agr_got_saboteur_pda +agr_got_saboteur_cache} ph_idle@known
+
+[ph_idle@known]
+on_use = nil %=remove_object_spot(treasure)%
+tips = st_search_treasure

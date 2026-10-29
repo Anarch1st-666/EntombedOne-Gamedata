@@ -85,8 +85,6 @@ class "action_sound"
 function action_sound:__init( obj, storage )
 	self.object = obj
 	self.st = storage
-
-	self.is_actor_inside = nil
 end
 
 function action_sound:reset_scheme()
@@ -94,14 +92,13 @@ function action_sound:reset_scheme()
 
 	self.st.idle_end = 0
 	self.st.signals = {}
-	self.is_actor_inside = false
 	--if self.snd_obj ~= nil then
 	   --self.snd_obj:stop()
 	--end    
 	self.snd_obj = nil
 	
 	self.slide_active = false
-
+	self.sound_active = false
 end
 
 function action_sound:update( delta )
@@ -140,30 +137,13 @@ function action_sound:update( delta )
 	
 	local actor = db.actor
 	
-	--if self.st.play_at_actor == true and self.snd_obj ~= nil and self.snd_obj:playing () == true then
-	  -- self.snd_obj:set_position (actor:position ())
-	--end    
-	    
-
-	-- если мы ещё нигде, то не считать ни входа, ни выхода
-	if self.is_actor_inside == nil then
-		self.is_actor_inside = self.object:inside( actor:position() )
-		return
+	if self.sound_active == false then
+		self:on_enter( actor )
+		self.sound_active = true
 	end
 
-	if self.object:inside( actor:position() ) then
-		if not self.is_actor_inside then
-			self:on_enter( actor )
-			self.is_actor_inside = true
-		end
-        if self.snd_obj ~= nil and self.snd_obj:playing () == false then
-		   self.st.signals["sound_end"] = true
-		end    
-	else
-		if self.is_actor_inside then
-			--self.on_leave( actor )
-			self.is_actor_inside = false
-		end
+	if self.snd_obj ~= nil and self.snd_obj:playing () == false then
+		self.st.signals["sound_end"] = true
 	end
 
 	xr_logic.try_switch_to_another_section( self.object, self.st, actor )

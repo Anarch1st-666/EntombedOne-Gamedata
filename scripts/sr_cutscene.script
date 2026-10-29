@@ -7,7 +7,7 @@ local state_nowhere = 0 --' схема только что включилась
 local state_inside = 1  --' актер внутри 
 local state_outside = 2 --' актер снаружи
 
-local cutscene_finished
+local _action_cutscene = nil
 ----------------------------------------------------------------------------------------------------
 
 class "action_cutscene"
@@ -19,7 +19,7 @@ function action_cutscene:__init( obj, storage )
 
 	self.object = obj
 	self.st = storage
-	self.ui_disabled = false
+	self.current_effector_index = 0
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -42,18 +42,6 @@ function action_cutscene:update( delta )
 
 	--' храним персонажа локально (так быстрее обращаться)
     local actor = db.actor
-
-    if self.ui_disabled then
-        if cutscene_finished == true then
-           if not db.actor:is_talking() then 
-				xr_effects.enable_ui(db.actor, nil)
-		   else
-				level.enable_input()	
-		   end
-           self.ui_disabled = false
-           self.st.signals["cameff_end"] = true
-        end
-    end
 	
     --' собственно наша функция, осуществляющая вызов начала сцены
 	self:switch_state( actor )
@@ -117,12 +105,15 @@ function action_cutscene:zone_enter()
 	if self.st.point ~= "nil" then
 		xr_effects.teleport_actor(db.actor, nil, {self.st.point, self.st.look})
 	end
-    level.add_pp_effector (self.st.pp_effector, 234, false)
+	if self.st.pp_effector ~= nil then
+		level.add_pp_effector (self.st.pp_effector, 234, false)
+	end
     
-	level.add_cam_effector2(self.st.cam_effector, 123, false, "sr_cutscene.effector_callback")
     xr_effects.disable_ui(db.actor, nil)
-    self.ui_disabled = true
-	cutscene_finished = false
+	_action_cutscene = self
+	
+	self.current_effector_index = 0
+	self:play_next_cam_effector()
 	
 	return true
 end
@@ -138,6 +129,33 @@ end
 
 ---------------------------------------------------------------------------------------------------------------------
 
+function action_cutscene:play_next_cam_effector()
+	local idx = self.current_effector_index + 1
+	local cam_effector = self.st.cam_effectors[idx]
+
+	if cam_effector ~= nil then
+		self.st.signals["cameff_" .. idx .. "_start"] = true
+		level.add_cam_effector2(cam_effector, 123, false, "sr_cutscene.effector_callback")
+		self.current_effector_index = idx
+	else
+		self:cam_effector_end()
+	end
+end
+
+function action_cutscene:cam_effector_end()
+	if not db.actor:is_talking() then 
+		xr_effects.enable_ui(db.actor, nil)
+	else
+		level.enable_input()	
+	end
+	self.st.signals["cameff_end"] = true
+	
+	self.current_effector_index = 0
+	_action_cutscene = nil
+end
+
+---------------------------------------------------------------------------------------------------------------------
+
 function add_to_binder(npc, ini, scheme, section, storage)
 
 	--' printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
@@ -146,7 +164,6 @@ function add_to_binder(npc, ini, scheme, section, storage)
 
 	--' Зарегистрировать все actions, в которых должен быть вызван метод reset_scheme при изменении настроек схемы:
 	xr_logic.subscribe_action_for_events(npc, storage, new_action)
-
 end
 
 ----------------------------------------------------------------------------------------------------
@@ -158,14 +175,22 @@ function set_scheme(obj, ini, scheme, section, gulag_name)
 	
 	st.point = utils.cfg_get_string(ini, section, "point", obj, false, "", "nil")
 	st.look = utils.cfg_get_string(ini, section, "look", obj, st.point~="nil", "", "nil")
-	st.pp_effector = utils.cfg_get_string(ini, section, "pp_effector", obj, false, "", "blink") .. ".ppe"
-    st.cam_effector = utils.cfg_get_string(ini, section, "cam_effector", obj, true, "") .. ".anm"
-    st.cam_effector = "camera_effects\\" .. st.cam_effector
+	st.pp_effector = utils.cfg_get_string(ini, section, "pp_effector", obj, false, "", "blink")
+    local cam_effector = utils.cfg_get_string(ini, section, "cam_effector", obj, true, "")
 	st.condition = xr_logic.cfg_get_condlist(ini, section, "condition", obj)
+	
+	if st.pp_effector ~= nil then
+		st.pp_effector = st.pp_effector .. ".ppe"
+	end
+	
+	st.cam_effectors = parse_names(cam_effector)
+	for i,v in ipairs(st.cam_effectors) do
+		st.cam_effectors[i] = "camera_effects\\" .. v .. ".anm"
+	end
 end
 
 ----------------------------------------------------------------------------------------------------
 function effector_callback()
 	printf("HUYYASE")
-	cutscene_finished = true
+	_action_cutscene:play_next_cam_effector()
 end

@@ -5,7 +5,7 @@ active = ph_door@locked
 locked = true
 closed = true
 snd_open_start = metal_small_locked
-; hit_on_bone = 2|ph_door@close
+on_use = {=actor_has_item(catacombs_secret_room_key)} ph_door@close %=lost_item(catacombs_secret_room_key)%
 
 [ph_door@close]
 locked = false
@@ -14,7 +14,6 @@ snd_open_start = metal_small_open
 snd_close_start = metal_small_close_start
 snd_close_stop = metal_small_close_stop
 on_use = ph_door@open
-; hit_on_bone = 1|ph_door@free|2|ph_door@free
 
 [ph_door@open]
 locked = false
@@ -23,10 +22,3 @@ snd_open_start = metal_small_open
 snd_close_start = metal_small_close_start
 snd_close_stop = metal_small_close_stop
 on_use = ph_door@close
-; hit_on_bone = 1|ph_door@free|2|ph_door@free
-
-; [ph_door@free]
-; locked = false
-; closed = true
-; no_force = true
-; on_use = ph_door@open

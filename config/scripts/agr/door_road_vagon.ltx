@@ -1,0 +1,25 @@
+[logic]
+active = ph_door@locked
+
+[ph_door@locked]
+locked = true
+closed = true
+snd_open_start = metal_small_locked
+tip_unlock = st_need_key
+on_use = {=actor_has_item(road_vagon_key)} ph_door@open %+agr_road_vagon_opened =lost_item(road_vagon_key)%
+
+[ph_door@close]
+locked = false
+closed = true
+snd_open_start = metal_small_open
+snd_close_start = metal_small_close_start
+snd_close_stop = metal_small_close_stop
+on_use = ph_door@open
+
+[ph_door@open]
+locked = false
+closed = false
+snd_open_start = metal_small_open
+snd_close_start = metal_small_close_start
+snd_close_stop = metal_small_close_stop
+on_use = ph_door@close

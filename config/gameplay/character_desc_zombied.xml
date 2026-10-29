@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding="windows-1251"?>
+
+<xml>	
+<!---------------------------ZOMBIED----------------------->
+	<specific_character id="yan_zombied_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie1</icon>		
+		<class>yan_zombied_general</class>
+		<community>zombied</community>
+		
+		<rank>100</rank>
+		<reputation>20</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie1</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj \n
+			device_torch \n
+		</supplies>
+			
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie2</icon>
+		<class>yan_zombied_general</class>
+		<community>zombied</community>
+	
+		<rank>100</rank>
+		<reputation>20</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie2</visual>
+		<snd_config>characters_voice\human_02\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_walther \n
+			ammo_9x19_fmj \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie3</icon>
+		<class>yan_zombied_general</class>
+		<community>zombied</community>
+		
+		<rank>100</rank>
+		<reputation>-20</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie3</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_bm16 \n
+			ammo_12x70_buck = 1 \n
+			wpn_walther \n
+			ammo_9x19_fmj \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie4</icon>
+		<class>yan_zombied_general</class>
+		<community>zombied</community>
+		
+		<rank>100</rank>
+		<reputation>-20</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie4</visual>
+		<snd_config>characters_voice\human_02\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_bm16 \n
+			ammo_12x70_buck = 1 \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie5</icon>
+		<class>yan_zombied_general</class>
+		<community>zombied</community>
+		
+		<rank>100</rank>
+		<reputation>50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie5</visual>
+		<snd_config>characters_voice\human_02\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj = 1 \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_default6" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie7</icon>
+		<class>yan_zombied_general</class>
+		<community>zombied</community>
+	
+		<rank>100</rank>
+		<reputation>50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie7</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj = 1 \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_default7" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie8</icon>
+		<class>yan_zombied_general</class>
+		<community>zombied</community>
+		
+		<rank>100</rank>
+		<reputation>-50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie8</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_mp5 \n
+			ammo_9x19_fmj = 1 \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!---------------------------ZOMBIED VETERANS----------------------->
+	<specific_character id="yan_zombied_veteran_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie2</icon>
+		<class>yan_zombied_veteran</class>
+		<community>zombied</community>
+		
+		<rank>200</rank>
+		<reputation>-50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie2</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+
+		<supplies>
+			[spawn] \n
+			bandage \n
+			wpn_mp5 \n
+			ammo_9x19_fmj = 1 \n
+			grenade_f1 = 1 \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_veteran_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie3</icon>
+		<class>yan_zombied_veteran</class>
+		<community>zombied</community>
+		
+		<rank>200</rank>
+		<reputation>-50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie3</visual>
+		<snd_config>characters_voice\human_02\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj = 1 \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+			device_torch \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_veteran_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie4</icon>
+		<class>yan_zombied_veteran</class>
+		<community>zombied</community>
+		
+		<rank>200</rank>
+		<reputation>-50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie4</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_lr300 \n
+			ammo_5.56x45_ss190 = 1 \n
+			device_torch \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+		</supplies>
+			
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_veteran_default4" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie5</icon>
+		<class>yan_zombied_veteran</class>
+		<community>zombied</community>
+		
+		<rank>200</rank>
+		<reputation>-50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie5</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_ak74 \n
+			ammo_5.45x39_fmj = 1 \n
+			device_torch \n
+			grenade_rgd5 = 1 \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+		</supplies>
+
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_veteran_default5" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie6</icon>
+		<class>yan_zombied_veteran</class>
+		<community>zombied</community>
+		
+		<rank>200</rank>
+		<reputation>-50</reputation>
+
+		<visual>actors\stalker_zombi\stalker_zombie6</visual>
+		<snd_config>characters_voice\human_02\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_lr300 \n
+			ammo_5.56x45_ss190 = 1 \n
+			device_torch \n
+			wpn_pm \n
+			ammo_9x18_fmj = 1 \n
+		</supplies>
+		
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+<!---------------------------ZOMBIED dolg----------------------->
+	<specific_character id="yan_zombied_dolg_default1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie2</icon>
+		<class>yan_zombied_dolg</class>
+		<community>zombied</community>
+		<rank>200</rank>
+		<reputation>20</reputation>
+		<visual>actors\stalker_zombi\stalker_zombie2</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_abakan \n
+			ammo_5.45x39_fmj \n
+			wpn_fort \n
+			ammo_9x18_fmj \n
+			device_torch \n
+		</supplies>
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="yan_zombied_dolg_default2" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_mask_1</icon>
+		<class>yan_zombied_dolg</class>
+		<community>zombied</community>
+		<rank>430</rank>
+		<reputation>60</reputation>
+		<visual>actors\stalker_zombi\stalker_zombie_do_mask_1</visual>
+		<snd_config>characters_voice\human_02\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_beretta \n
+			ammo_9x19_fmj \n
+			wpn_val \n
+			ammo_9x39_sp5 \n
+#include "gameplay\character_items.xml" \n			
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+	</specific_character>
+
+	<specific_character id="yan_zombied_dolg_default3" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_do_antigas</icon>
+		<class>yan_zombied_dolg</class>
+		<community>zombied</community>
+		<rank>624</rank>
+		<reputation>40</reputation>
+		<visual>actors\stalker_zombi\stalker_zombie_do_antigas</visual>
+		<snd_config>characters_voice\human_03\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_colt1911 \n
+			ammo_11.43x23_fmj \n
+			wpn_groza \n
+			ammo_9x39_ap \n	
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>		
+#include "gameplay\character_criticals_6.xml"			
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+<!---------------------------ZOMBIED bandit----------------------->
+
+	<specific_character id="agr_hydronode_zombied_bandit_1" team_default = "1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_stalker_zombie1</icon>
+		<class>agr_hydronode_zombied_bandit_1</class>
+		<community>zombied</community>
+		<rank>100</rank>
+		<reputation>20</reputation>
+		<visual>actors\stalker_zombi\stalker_zombie1</visual>
+		<snd_config>characters_voice\human_01\zombied\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_hpsa \n
+			ammo_9x19_fmj \n
+			wpn_bm16 \n
+			ammo_12x70_buck \n
+			gold_clocks = 1 \n
+		</supplies>
+#include "gameplay\character_criticals_1.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
+
+	<specific_character id="agr_hydronode_zombied_bandit_2" team_default = "1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_5</icon>
+		<class>agr_hydronode_zombied_bandit_2</class>
+		<community>bandit</community>
+		<rank>133</rank>
+		<reputation>-100</reputation>
+		<snd_config>characters_voice\human_02\zombied\</snd_config>
+		<crouch_type>1</crouch_type>
+		<visual>actors\stalker_zombi\stalker_zombie_bandit_5</visual>
+		<supplies>
+			[spawn] \n
+			wpn_pm \n
+			ammo_9x18_fmj	= 1 \n
+			wpn_mp5 \n
+			ammo_9x19_pbp = 1 \n
+#include "gameplay\character_items.xml" \n
+#include "gameplay\character_drugs.xml" \n
+		</supplies>
+#include "gameplay\character_criticals_3.xml"					
+	</specific_character>
+
+	<specific_character id="agr_hydronode_zombied_bandit_3" team_default="1">
+		<name>GENERATE_NAME_bandit</name>
+		<icon>ui_npc_u_stalker_bandit_8</icon>
+		<class>agr_hydronode_zombied_bandit_3</class>
+		<community>bandit</community>
+		<rank>544</rank>
+		<reputation>-138</reputation>
+		<visual>actors\stalker_zombi\stalker_zombie_bandit_8</visual>
+		<snd_config>characters_voice\human_03\zombied\</snd_config>
+		<crouch_type>1</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_ak74u \n
+			ammo_5.45x39_fmj \n
+		</supplies>
+#include "gameplay\character_criticals_4.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+</xml>

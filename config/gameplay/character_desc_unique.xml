@@ -30,18 +30,76 @@
 	</specific_character>
 	
 ------------------------------------------------------------------------------------------
+--// Военный в с КЕЙСом
+------------------------------------------------------------------------------------------
+	<specific_character id="crashcopter_case_keeper" team_default = "1">
+		<name>casekeeper_name</name>
+		<icon>ui_npc_u_stalker_militari_1</icon>
+		<class>crashcopter_case_keeper</class>
+		<community>military</community>
+		<rank>660</rank>
+		<reputation>0</reputation>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\militari\stalker_militari_1</visual>		
+		<supplies>
+			[spawn] \n
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+		<start_dialog>hello_dialog</start_dialog>
+	</specific_character>
+
+	<specific_character id="crashcopter_case_keeper_ghost" team_default = "1">
+		<name>casekeeper_name</name>
+		<icon>ui_npc_u_stalker_militari_1</icon>
+		<class>crashcopter_case_keeper_ghost</class>
+		<community>military</community>
+		<rank>660</rank>
+		<reputation>0</reputation>
+		<crouch_type>-1</crouch_type>
+		<visual>actors\militari\stalker_militari_1_ghost</visual>		
+		<supplies>
+			[spawn] \n
+		</supplies>
+#include "gameplay\character_criticals_6.xml"
+		<start_dialog>casekeeper_after_death</start_dialog>
+	</specific_character>
+	
+------------------------------------------------------------------------------------------
 --// DUTY
 ------------------------------------------------------------------------------------------
 	<!-- Полковник Гречник -->
 	<specific_character id="grechkin" team_default = "1">
 		<name>grechkin_name</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<icon>ui_npc_e_grechkin</icon>
 		<class>grechkin</class>
 		<community>dolg</community>
 		<money min="5000" max="5000" infinitive="0"></money>
 		<rank>950</rank>
 		<reputation>200</reputation>
 		<visual>actors\dolg\stalker_dolg_uniq_grechkin</visual>
+		<snd_config>characters_voice\human_01\dolg\</snd_config>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_usp \n
+			ammo_11.43x23_fmj \n
+#include "gameplay\character_items.xml"	\n
+#include "gameplay\character_food.xml" \n
+#include "gameplay\character_drugs.xml"
+		</supplies>
+		<actor_dialog>grechkin_saboteur_pda</actor_dialog>
+	</specific_character>
+
+	<!-- Полковник Гречник -->
+	<specific_character id="grechkin_heavy" team_default = "1">
+		<name>grechkin_name</name>
+		<icon>ui_npc_e_grechkin</icon>
+		<class>grechkin_heavy</class>
+		<community>dolg</community>
+		<money min="5000" max="5000" infinitive="0"></money>
+		<rank>950</rank>
+		<reputation>200</reputation>
+		<visual>actors\dolg\stalker_dolg_uniq_grechkin_heavy</visual>
 		<snd_config>characters_voice\human_01\dolg\</snd_config>
 		<crouch_type>0</crouch_type>
 		<supplies>
@@ -77,7 +135,7 @@
 	<!-- Разведчик Долга -->
 	<specific_character id="agr_scout" team_default = "1">
 		<name>agr_scout_name</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<icon>ui_npc_e_kalejnik</icon>
 		<class>agr_scout</class>
 		<community>dolg</community>
 		<money min="5000" max="5000" infinitive="0"></money>
@@ -103,7 +161,7 @@
 	<!-- Тихий -->
 	<specific_character id="silent" team_default = "1">
 		<name>silent_name</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<icon>ui_npc_e_silent</icon>
 		<class>silent</class>
 		<community>dolg</community>
 		<money min="1000" max="5000" infinitive="0"></money>
@@ -116,8 +174,6 @@
 			[spawn] \n
 			wpn_beretta = 1 \n
 			ammo_9x19_fmj \n
-			wpn_abakan = 1 \n
-			ammo_5.45x39_fmj \n
 			vodka_a = 1 \n
 		</supplies>
 	</specific_character>
@@ -125,7 +181,7 @@
 	<!-- Фреон -->
 	<specific_character id="freon" team_default = "1">
 		<name>freon_name</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<icon>ui_npc_e_freon</icon>
 		<class>freon</class>
 		<community>dolg</community>
 		<money min="5000" max="5000" infinitive="0"></money>
@@ -153,8 +209,8 @@
 ------------------------------------------------------------------------------------------
 	<!-- Охранник -->
 	<specific_character id="factory_suspect_guard" team_default = "1">
-		<name>factory_suspect_guard_name</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_e_suspect_1</icon>
 		<class>factory_suspect_guard</class>
 		<community>stalker</community>
 		<money min="1000" max="5000" infinitive="0"></money>
@@ -179,14 +235,14 @@
 	<!-- Сталкер у костра 1 -->
 	<specific_character id="factory_suspect_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<icon>ui_npc_u_stalker_neytral_hood_4</icon>
 		<class>factory_suspect_1</class>
 		<community>stalker</community>
 		<money min="1000" max="5000" infinitive="0"></money>
 		<rank>360</rank>
 		<reputation>-70</reputation>
 		<visual>actors\neytral\stalker_neytral_hood_4</visual>
-		<snd_config>characters_voice\human_01\stalker\</snd_config>
+		<!--snd_config>characters_voice\human_01\stalker\</snd_config-->
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
@@ -204,14 +260,14 @@
 	<!-- Сталкер у костра 2 -->
 	<specific_character id="factory_suspect_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_do_nauchniy</icon>
+		<icon>ui_npc_u_stalker_neytral_rukzak_3</icon>
 		<class>factory_suspect_2</class>
 		<community>stalker</community>
 		<money min="1000" max="5000" infinitive="0"></money>
 		<rank>250</rank>
 		<reputation>0</reputation>
 		<visual>actors\neytral\stalker_neytral_rukzak_3</visual>
-		<snd_config>characters_voice\human_02\stalker\</snd_config>
+		<!--snd_config>characters_voice\human_02\stalker\</snd_config-->
 		<crouch_type>0</crouch_type>
 		<supplies>
 			[spawn] \n
@@ -302,7 +358,7 @@
 	<!-- Иваныч -->	
 	<specific_character id="ivanych" team_default = "1">
 		<name>ivanych_name</name>
-		<icon>ui_npc_u_stalker_bar_security</icon>
+		<icon>ui_npc_e_ivanych</icon>
 		<class>ivanych</class>
 		<community>killer</community>
 		<rank>350</rank>

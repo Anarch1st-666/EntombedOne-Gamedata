@@ -5,6 +5,18 @@
 --/---------------------------------------------------------------------------------------
 
 local tItemSectionToFunc = {
+	["crashcopter_case"] = function()
+		db.actor:give_info_portion("agr_crashcopter_case_got")
+	end,
+	["pda_saboteur"] = function()
+		if db.actor:dont_has_info("agr_got_saboteur_pda") then
+			-- Выдаём тайник только если не получили награду
+			db.actor:give_info_portion("agr_got_saboteur_pda")
+			db.actor:give_info_portion("agr_got_saboteur_cache")
+			news_manager.send_treasure("st_saboteur_cache")
+			level_tasks.add_location(story_ids.saboteur_cache, "treasure", "st_saboteur_cache_hint")
+		end
+	end,
 	["gold_clocks"] = function()
 		db.actor:give_info_portion("agr_gold_clocks_clocks_got")
 	end,
@@ -17,6 +29,12 @@ local tItemSectionToFunc = {
 		if db.actor:object("catacombs_decoder_plate") then
 			db.actor:give_info_portion("agr_explore_catacombs_location4")
 		end
+	end,
+	["nii_main_doors_key"] = function()
+		db.actor:give_info_portion("agr_nii_doors_key_got")
+	end,
+	["pda_grechkin"] = function()
+		db.actor:give_info_portion("agr_revenge_complete")
 	end,
 }
 
@@ -45,6 +63,10 @@ function process_info_portion(info_id)
 		} then
 			db.actor:give_info_portion("agr_seek_duty_support_nobody_to_ask")
 		end
+
+		if info_id == "agr_seek_duty_support_ask_east" then
+			level_tasks.add_location(story_ids.agr_road_vagon, "crlc_small", "st_road_vagon_hint")
+		end
 	end
 	
 	-- Исследование катакомб
@@ -56,12 +78,20 @@ function process_info_portion(info_id)
 			"agr_explore_catacombs_location4",
 		} then
 			db.actor:give_info_portion("agr_explore_catacombs_location_all")
-
-		elseif level_tasks.has_info_portions {
+		end
+		
+		if level_tasks.has_info_portions {
 			"agr_explore_catacombs_location3_1",
 			"agr_explore_catacombs_location3_2",
 		} then
 			db.actor:give_info_portion("agr_explore_catacombs_location3")
+		end
+	end
+	
+	if info_id == "agr_by_the_trace_check_tunnel" then
+		local st_obj = alife():story_object(story_ids.agr_scout)
+		if st_obj then
+			alife():release(st_obj)
 		end
 	end
 
@@ -69,10 +99,15 @@ function process_info_portion(info_id)
 		if db.actor:has_info("agr_prisoner_start") then
 			local sobj = alife():story_object(story_ids.agr_scout_prisoner)
 			if sobj and sobj:alive() then
+--				db.actor:give_info_portion("agr_freedom_spies_can_attack_prisoner")
 				sobj:on_death()
 				db.actor:give_info_portion("agr_prisoner_scout_dead")
 			end
 		end
+	end
+	
+	if info_id == "agr_gold_clocks_start" then
+		level_tasks.add_location(story_ids.agr_hydronode_entrance_secondary, "green_location", "agr_gold_clocks_1_hint")
 	end
 
 	return false

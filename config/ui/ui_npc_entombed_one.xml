@@ -1,0 +1,12 @@
+<ui_texture>
+    <file_name>ui\ui_npc_entombed_one</file_name>
+
+    <texture id="ui_npc_e_grechkin"     x="0"   y="0"   width="128" height="128" />
+    <texture id="ui_npc_e_kalejnik"     x="128" y="0"   width="128" height="128" />
+    <texture id="ui_npc_e_freon"        x="256" y="0"   width="128" height="128" />
+    <texture id="ui_npc_e_silent"       x="384" y="0"   width="128" height="128" />
+	
+    <texture id="ui_npc_e_suspect_1"    x="0"   y="128" width="128" height="128" />
+    <texture id="ui_npc_e_ivanych"      x="128" y="128" width="128" height="128" />
+
+</ui_texture>

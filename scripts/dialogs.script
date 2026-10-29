@@ -88,7 +88,12 @@ function relocate_item_section(victim, section, type)
 	local sim = alife()
 	if db.actor then
 		if type == "in" then
-			sim:create(section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			local item = victim and victim:object(section)
+			if item and _G.is_quest_item(section) then
+				victim:transfer_item(item, db.actor)
+			else
+				sim:create(section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+			end
 		elseif type == "out" then
 			local item = db.actor:object(section)
 			if not item then

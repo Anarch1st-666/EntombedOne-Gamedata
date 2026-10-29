@@ -8,16 +8,33 @@ text		= "NO TIP"
 sound		= 
 showtime	= 10000
 
+[actor]:default
+;icon		= ui_iconsTotal_actor
+name		= actor_name
+
 [agr_scout]:default
-icon		= ui_iconsTotal_agr_scout
+;icon		= ui_iconsTotal_agr_scout
 name		= agr_scout_name
 
-[actor]:default
-icon		= ui_iconsTotal_actor
-name		= actor_name
+[grechkin]:default
+;icon		= ui_iconsTotal_agr_scout
+name		= grechkin_name
+
+[freon]:default
+;icon		= ui_iconsTotal_freon
+name		= freon_name
 
 ;=========================================================================================
 ; TIPS SECTIONS
+;=========================================================================================
+[check_tunnel_1]:actor
+text		= check_tunnel_1
+sound		= characters_voice\scenario\agroprom\check_tunnel_1
+
+[check_tunnel_2]:agr_scout
+text		= check_tunnel_2
+sound		= characters_voice\scenario\agroprom\check_tunnel_2
+
 ;=========================================================================================
 [agr_scout_lost_1]:actor
 text		= agr_scout_lost_1
@@ -30,5 +47,48 @@ sound		= characters_voice\scenario\agroprom\scout_lost_2
 [agr_scout_lost_3]:actor
 text		= agr_scout_lost_3
 sound		= characters_voice\scenario\agroprom\scout_lost_3
+
+;=========================================================================================
+[need_electric_1]:actor
+text		= need_electric_1
+sound		= characters_voice\scenario\agroprom\need_electric_1
+
+[need_electric_2]:grechkin
+text		= need_electric_2
+sound		= characters_voice\scenario\agroprom\need_electric_2
+
+[need_electric_3]:actor
+text		= need_electric_3
+sound		= characters_voice\scenario\agroprom\need_electric_3
+
+[need_electric_4]:grechkin
+text		= need_electric_4
+sound		= characters_voice\scenario\agroprom\need_electric_4
+
+;=========================================================================================
+
+[resurrection_1]:default
+text		= resurrection_undertaker_1
+sound		= characters_voice\scenario\agroprom\resurrection_undertaker_1_radio
+
+[resurrection_2]:grechkin
+text		= resurrection_grechkin_1
+sound		= characters_voice\scenario\agroprom\resurrection_grechkin_1_radio
+
+[resurrection_3]:default
+text		= resurrection_undertaker_2
+sound		= characters_voice\scenario\agroprom\resurrection_undertaker_2_radio
+
+[resurrection_4]:grechkin
+text		= resurrection_grechkin_2
+sound		= characters_voice\scenario\agroprom\resurrection_grechkin_2_radio
+
+[resurrection_5]:freon
+text		= resurrection_freon_1
+sound		= characters_voice\scenario\agroprom\resurrection_freon_1_radio
+
+[resurrection_6]:grechkin
+text		= resurrection_grechkin_3
+sound		= characters_voice\scenario\agroprom\resurrection_grechkin_3_radio
 
 ;=========================================================================================

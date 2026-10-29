@@ -1,0 +1,22 @@
+[combat_ignore]
+
+[danger_ignore]
+ignore_distance = 0
+
+[hit]
+damage_ignore_cond = always
+
+[logic]
+combat_ignore = combat_ignore
+on_hit = hit
+active = walker
+
+;-----------------------------------------------------------------------------------------
+[walker]
+path_walk = agr_grechkin_radio_walk
+path_look = agr_grechkin_radio_look
+def_state_standing = ward
+danger = danger_ignore
+combat_ignore_cond = always
+meet = no_meet
+;on_info = %=release_object%

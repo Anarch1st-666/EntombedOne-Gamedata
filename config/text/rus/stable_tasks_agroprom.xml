@@ -2,10 +2,10 @@
 
 <string_table>
 	<string id="agr_crashcopter_desc">
-		<text>Военный вертолёт потерпел крушение на территории Агропрома. Необходимо выяснить причину крушения и эвакуировать КЕЙС — груз особой важности.</text>
+		<text>Военный вертолёт потерпел крушение на территории Агропрома. Необходимо выяснить причины крушения и эвакуировать КЕЙС — груз особой важности.</text>
 	</string>
 	<string id="agr_crashcopter_0">
-		<text>Икар-1</text>
+		<text>Эвакуировать груз борта Икар-1</text>
 	</string>
 	<string id="agr_crashcopter_1">
 		<text>Добраться до места крушения</text>
@@ -26,13 +26,13 @@
 		<text>Место крушения</text>
 	</string>
 	<string id="agr_crashcopter_4_hint">
-		<text>Выход</text>
+		<text>Выход на поверхность</text>
 	</string>
 	<string id="agr_seek_duty_support_desc">
 		<text>На НИИ Агропром находится крупная база Долга. Лучше них никто не знает, что творится в округе. Негласно Долг помогает военным. Пора выяснить, насколько эти слухи верны.</text>
 	</string>
 	<string id="agr_seek_duty_support_0">
-		<text>Помощь Долга</text>
+		<text>Заручиться помощью Долга</text>
 	</string>	
 	<string id="agr_seek_duty_support_1">
 		<text>Поговорить с полковником Гречкиным</text>
@@ -41,10 +41,10 @@
 		<text>Поговорить с разведчиком Долга</text>
 	</string>
 	<string id="agr_eavesdropping_desc">
-		<text>Калейник доложил, что группа сталкеров, обосновавшаяся на заводе ведёт подозрительную деятельность и может быть связана с крушением Икара-1. Необходимо подтвердить или развеять данные опасения.</text>
+		<text>Калейник доложил, что группа сталкеров, обосновавшаяся на заводе, ведёт подозрительную деятельность и может быть связана с крушением Икара-1. Необходимо подтвердить или развеять данные опасения.</text>
 	</string>
 	<string id="agr_eavesdropping_0">
-		<text>Подозрения</text>
+		<text>Проверить подозрительных сталкеров</text>
 	</string>
 	<string id="agr_eavesdropping_1">
 		<text>Поговорить со сталкерами</text>
@@ -71,7 +71,7 @@
 		<text>Необходимо понять, кто наблюдал за сталкерами. Возможно, он и за мной ведёт слежку.</text>
 	</string>
 	<string id="agr_by_the_trace_0">
-		<text>Новый след</text>
+		<text>Идти по следу</text>
 	</string>
 	<string id="agr_by_the_trace_1">
 		<text>Следовать за Калейником</text>
@@ -95,13 +95,13 @@
 		<text>Тоннель</text>
 	</string>
 	<string id="agr_gold_clocks_desc">
-		<text>Один непутёвый сталкер с завода Агропром просит тряхнуть бандитов, укравших его карманные золотые часы.</text>
+		<text>Один непутёвый сталкер с завода Агропром просит тряхнуть бандитов, укравших его карманные серебряные часы.</text>
 	</string>
 	<string id="agr_gold_clocks_0">
-		<text>Золотые часы</text>
+		<text>Помочь сталкеру вернуть серебряные часы</text>
 	</string>
 	<string id="agr_gold_clocks_1">
-		<text>Найти бандита со карманными золотыми часами</text>
+		<text>Отыскать лагерь бандитов</text>
 	</string>
 	<string id="agr_gold_clocks_2">
 		<text>Изъять часы у бандита</text>
@@ -110,16 +110,16 @@
 		<text>Вернуть часы сталкеру</text>
 	</string>
 	<string id="agr_gold_clocks_1_hint">
-		<text>Место, где обчистили сталкера</text>
+		<text>Вход в гидроузел</text>
 	</string>
 	<string id="agr_gold_clocks_2_hint">
-		<text>Бандит может быть где-то здесь</text>
+		<text>Бандит</text>
 	</string>
 	<string id="agr_prisoner_desc">
 		<text>Калейник угодил в плен свободовцев. Чтобы вызволить товарища, необходимо завалить огромное чудище, блокирующее тропку за Агропром.</text>
 	</string>
 	<string id="agr_prisoner_0">
-		<text>Пленник</text>
+		<text>Вызволить Калейника из плена свободовцев</text>
 	</string>
 	<string id="agr_prisoner_1">
 		<text>Завалить чудище</text>
@@ -137,7 +137,7 @@
 		<text>Внутри тоннеля лежала записка с упоминанием тайника на дне болота. Необходимо проверить место.</text>
 	</string>
 	<string id="agr_code_sweet_0">
-		<text>Код “Сладкий”</text>
+		<text>Код “сладкий”</text>
 	</string>
 	<string id="agr_code_sweet_1">
 		<text>Найти схрон, спрятанный на дне болота</text>
@@ -149,13 +149,13 @@
 		<text>Болото</text>
 	</string>
 	<string id="agr_code_sweet_2_hint">
-		<text>Труп снайпера</text>
+		<text>Лёжка снайпера</text>
 	</string>
 	<string id="agr_explore_catacombs_desc">
-		<text>Необходимо узнать, что наёмники делают в катакомбах.</text>
+		<text>Необходимо узнать, что наёмники делают в катакомбах. Стоит быть осторожным, поскольку ранее упоминалась "ударная группа".</text>
 	</string>
 	<string id="agr_explore_catacombs_0">
-		<text>Чернобыльский спелеолог</text>
+		<text>Выяснить, что наёмники делают в катакомбах</text>
 	</string>
 	<string id="agr_explore_catacombs_1">
 		<text>Исследовать катакомбы 1</text>
@@ -176,7 +176,7 @@
 		<text>Необходимо починить дешифратор наёмников, чтобы попасть в нижнюю часть катакомб.</text>
 	</string>
 	<string id="agr_decoder_repair_0">
-		<text>Дело техники</text>
+		<text>Ремонт дешифратора</text>
 	</string>
 	<string id="agr_decoder_repair_1">
 		<text>Найти электронщика на базе Долга</text>
@@ -194,7 +194,7 @@
 		<text>Последний след ведёт в катакомбы. Если я не найду КЕЙС сейчас, то успех моей операции под большим вопросом.</text>
 	</string>
 	<string id="agr_deep_catacombs_0">
-		<text>Погружение</text>
+		<text>Исследовать нижние катакомбы</text>
 	</string>
 	<string id="agr_deep_catacombs_1">
 		<text>Открыть гермодверь в нижние катакомбы</text>
@@ -203,13 +203,44 @@
 		<text>Исследовать нижние катакомбы</text>
 	</string>
 	<string id="agr_deep_catacombs_3">
-		<text>Выбраться из подземелья</text>
+		<text>Найти выход из подземелья</text>
 	</string>
 	<string id="agr_deep_catacombs_1_hint">
 		<text>Гермодверь в катакомбах</text>
 	</string>
 	<string id="agr_deep_catacombs_3_hint">
 		<text>Выход</text>
+	</string>
+
+	<string id="agr_revenge_desc">
+		<text>Полковник Гречкин совершил предательство. Его нужно покарать.</text>
+	</string>
+	<string id="agr_revenge_0">
+		<text>Месть</text>
+	</string>
+	<string id="agr_revenge_1">
+		<text>Убить Гречкина</text>
+	</string>
+	<string id="agr_revenge_2">
+		<text>Обыскать тело</text>
+	</string>
+	<string id="agr_nii_doors_desc">
+		<text>Железная дверь — весьма жалкое препятствие на пути моего правосудия.</text>
+	</string>
+	<string id="agr_nii_doors_0">
+		<text>Проникнуть в главное здание НИИ</text>
+	</string>
+	<string id="agr_nii_doors_1">
+		<text>Найти ключ от НИИ</text>
+	</string>
+	<string id="agr_nii_doors_2">
+		<text>Открыть двери в НИИ</text>
+	</string>
+	<string id="agr_nii_doors_1_hint">
+		<text>Ключи</text>
+	</string>
+	<string id="agr_nii_doors_2_hint">
+		<text>Двери в НИИ</text>
 	</string>
 </string_table>
 

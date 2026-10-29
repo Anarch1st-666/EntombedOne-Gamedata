@@ -8,13 +8,13 @@ path_look = walker_1_look
 meet = meet@agr_south_gates_walker_1
 
 [meet@agr_south_gates_walker_1]
-meet_state		= 15 | {-agr_south_gates_talk_to_guard -agr_crashcopter_reach} hello_wpn, guard
-meet_state_wpn	= 15 | guard
+meet_state		= 15 | {-agr_south_gates_ask_crashcopter -agr_crashcopter_reach} hello_wpn, guard_na | 3 | guard_na
+meet_state_wpn	= 15 | {-agr_south_gates_ask_crashcopter -agr_crashcopter_reach} hello_wpn, guard_na | 3 | guard_na
 victim		= 15 | actor
 victim_wpn	= 15 | actor
 use			= true
-use_wpn		= false
-;meet_dialog = {-agr_south_gates_talk_to_guard -agr_crashcopter_reach}
+use_wpn		= true
+meet_dialog = {-agr_south_gates_ask_agroprom -agr_crashcopter_reach} duty_south_gates
 
 ;------------------ Костёр -----------------------
 [logic@agr_south_gates_kamp_1]

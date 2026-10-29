@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+  <string id="st_mod_intro_1">
+    <text>В ночь на 15 августа 2011 года на территории Агропрома потерпел крушение военный вертолёт "Икар-1". На борту — груз особого назначения под кодовым обозначением КЕЙС.</text>
+  </string>
+  <string id="st_mod_intro_2">
+    <text>К месту крушения направлен ближайший военный сталкер. Позывной — "Феникс". Его задача: завладеть грузом и организовать эвакуацию.</text>
+  </string>
+  
+  <string id="st_mod_outro_1">
+    <text>Слушай внимательно, полковник. Завтра в час тридцать ночи, через Агропром пройдёт борт "Икар-1". Военный. С очень опасным грузом. Если этот груз попадёт за Периметр, нам грозит катастрофа — Зона уйдёт на расширение. Понимаешь, что это значит?</text>
+  </string>
+  <string id="st_mod_outro_2">
+    <text>Понимаю. Что прикажете делать?</text>
+  </string>
+  <string id="st_mod_outro_3">
+    <text>Задача: борт не должен дойти до точки назначения. Груз не должен попасть ни к военным, ни к кому-либо ещё. Его нужно уничтожить. Минимум свидетелей и никакой связи с Долгом. Официально мы помогаем военным. Если всплывёт, что это мы, — конец всему.</text>
+  </string>
+  <string id="st_mod_outro_4">
+    <text>Кто будет исполнять?</text>
+  </string>
+  <string id="st_mod_outro_5">
+    <text>Я отыскал людей на стороне — кто сделает всё профессионально и без лишних вопросов. Эти люди переходят в твоё распоряжение. Тебя назначаю ответственным за операцию.</text>
+  </string>
+  <string id="st_mod_outro_6">
+    <text>Вас понял, генерал. Задача ясна.</text>
+  </string>
+  
+  <string id="st_mod_credits_project">
+    <text>MOD "Погребённый"</text>
+  </string>
+  <string id="st_mod_credits_developer">
+    <text>Разработчик</text>
+  </string>
+  <string id="st_mod_credits_anarch1st">
+    <text>Anarch1st</text>
+  </string>
+  <string id="st_mod_credits_respect">
+    <text>Благодарности</text>
+  </string>
+  <string id="st_mod_credits_base">
+    <text>Платформа и инструментарий</text>
+  </string>
+  <string id="st_mod_credits_ogsr">
+    <text>Движок:</text>
+  </string>
+  <string id="st_mod_credits_ogsr2">
+    <text>OGSR Engine</text>
+  </string>
+  <string id="st_mod_credits_ogsr3">
+    <text>(https://github.com/OGSR/OGSR-Engine)</text>
+  </string>
+  <string id="st_mod_credits_sdk">
+    <text>Software Development Kit:</text>
+  </string>
+  <string id="st_mod_credits_sdk2">
+    <text>Farkashed Edition</text>
+  </string>
+  <string id="st_mod_credits_sdk3">
+    <text>(https://github.com/predvestnikapocalipsisa-hue/xray-sdk-0.4-Farkashed-Edition)</text>
+  </string>
+  <string id="st_mod_credits_materials">
+    <text>Использованные материалы</text>
+  </string>
+  <string id="st_mod_credits_npc_models">
+    <text>Модели персонажей:</text>
+  </string>
+  <string id="st_mod_credits_npc_models1">
+    <text>H8 Models Pack</text>
+  </string>
+  <string id="st_mod_credits_npc_models2">
+    <text>- hater8, messer</text>
+  </string>
+  <string id="st_mod_credits_weapons">
+    <text>Оружие:</text>
+  </string>
+  <string id="st_mod_credits_weapons1">
+    <text>Stalker Weapon Reanimation</text>
+  </string>
+  <string id="st_mod_credits_weapons2">
+    <text>- MarkoFin</text>
+  </string>
+  <string id="st_mod_credits_weather">
+    <text>Погода:</text>
+  </string>
+  <string id="st_mod_credits_weather1">
+    <text>CGIM 2</text>
+  </string>
+  <string id="st_mod_credits_weather2">
+    <text>- Жора Цементов</text>
+  </string>
+  <string id="st_mod_credits_textures">
+    <text>Текстуры:</text>
+  </string>
+  <string id="st_mod_credits_textures1">
+    <text>Vanilla Textures Overhaul</text>
+  </string>
+  <string id="st_mod_credits_textures2">
+    <text>- warezeater</text>
+  </string>
+  <string id="st_mod_credits_gui">
+    <text>UI/Интерфейс:</text>
+  </string>
+  <string id="st_mod_credits_gui1">
+    <text>Lost Alpha</text>
+  </string>
+  <string id="st_mod_credits_gui2">
+    <text>- Dezowave</text>
+  </string>
+  <string id="st_mod_credits_geometry">
+    <text>Исходники локации:</text>
+  </string>
+  <string id="st_mod_credits_geometry2">
+    <text>Lost Alpha (Dezowave)</text>
+  </string>
+
+</string_table>

@@ -36,4 +36,22 @@
 		</supplies>
 	</specific_character>
 	
+	<!-- Сцена: реинкарнация -->
+	<specific_character id="actor_cine_zombied" team_default="1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_npc_u_actor</icon>
+		<class>actor_cine_zombied</class>
+		<community>stalker</community>
+		<money min="1000" max="5000" infinitive="0"></money>
+		<rank>0</rank>
+		<reputation>0</reputation>
+		<visual>actors\hero\stalker_dead_military</visual>
+		<crouch_type>0</crouch_type>
+		<supplies>
+			[spawn] \n
+			wpn_pkm = 1
+			ammo_7.62x51_7h1 = 1
+		</supplies>
+	</specific_character>
+	
 </xml>

@@ -1,0 +1,16 @@
+;===================================================================================================
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {+agr_resurrection_cine_begin} sr_cutscene %=play_music(music\mus_resurrection:0.33) =set_snd_volume_smooth(1.0) =set_music_volume_smooth(0.0)%
+
+[sr_cutscene]
+point           = agr_undead_cine
+look            = agr_undead_look
+pp_effector     = 
+cam_effector	= agr_cine_resurrection_1, agr_cine_resurrection_2, agr_cine_resurrection_3, agr_cine_resurrection_4
+on_signal		= cameff_end | nil %+agr_resurrection_cine_end =set_music_volume_smooth(1.0) =resurrection_cine_end%
+on_signal2		= cameff_1_start | %+agr_resurrection_cine_actor_spawn%
+
+;===================================================================================================

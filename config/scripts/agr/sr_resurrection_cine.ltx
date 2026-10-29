@@ -1,0 +1,32 @@
+;===================================================================================================
+[logic]
+active = sr_idle
+
+[sr_idle]
+on_info = {+agr_resurrection_cine_begin} sr_idle1@cine_1
+
+[sr_idle1@cine_1]
+on_timer = 1800 | sr_idle2@cine_1 %=send_tip(resurrection_1) =play_snd_from_npc(resurrection_undertaker:147)%
+
+[sr_idle2@cine_1]
+on_timer = 5400 | sr_idle1@cine_2 %=send_tip(resurrection_2) =play_snd_from_npc(resurrection_grechkin:146)%
+
+[sr_idle1@cine_2]
+on_timer = 4200 | sr_idle1@cine_3 %=send_tip(resurrection_3) =play_snd_from_npc(resurrection_undertaker:147)%
+
+[sr_idle1@cine_3]
+on_timer = 2800 | sr_idle2@cine_3 %=send_tip(resurrection_4) =play_snd_from_npc(resurrection_grechkin:146)%
+
+[sr_idle2@cine_3]
+on_timer = 4000 | sr_idle1@cine_4 %=send_tip(resurrection_5)%
+
+[sr_idle1@cine_4]
+on_timer = 4200 | sr_idle@cine_end %=send_tip(resurrection_6) =play_snd_from_npc(resurrection_grechkin:146)%
+
+[sr_idle@cine_end]
+on_info = {+agr_resurrection_cine_end} sr_idle@revenge_start %=zombify_actor =enable_ui%
+
+[sr_idle@revenge_start]
+on_timer = 1000 | nil %+agr_revenge_start =autosave%
+
+;===================================================================================================

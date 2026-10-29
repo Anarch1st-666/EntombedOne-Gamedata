@@ -16,7 +16,7 @@ local action_descr_by_type = {
 --/ --------------------------------------------------------------------------------------
 function send_task(actor, type, task, objective)
 	if db.actor == nil then return false end
-	
+
 	--' Берем координаты из текстуры таска
     local task_texture, task_rect = get_texture_info("ui_iconsTotal_"..task:get_id(), "ui_iconsTotal_locations")
         

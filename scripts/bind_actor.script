@@ -67,6 +67,8 @@ function actor_binder:net_destroy()
 	self.object:set_callback(callback.level_border_enter, nil)
 	self.object:set_callback(callback.level_border_exit, nil)
 	self.object:set_callback(callback.take_item_from_box, nil)
+	self.object:set_callback(callback.hit, nil)
+	self.object:set_callback(callback.death, nil)
 
 	if sr_psy_antenna.psy_antenna then
 		sr_psy_antenna.psy_antenna:destroy()
@@ -99,6 +101,8 @@ function actor_binder:reinit()
 	self.object:set_callback(callback.level_border_enter, self.level_border_enter, self)
 	self.object:set_callback(callback.level_border_exit, self.level_border_exit, self)
 	self.object:set_callback(callback.take_item_from_box, self.take_item_from_box, self)
+	self.object:set_callback(callback.hit, actor_binder.hit_callback, self)
+	self.object:set_callback(callback.death, actor_binder.death_callback, self)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:take_item_from_box(box, item)
@@ -119,7 +123,7 @@ function actor_binder:level_border_exit(npc, info_id)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:info_callback(npc, info_id)
-	log3("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
+--	log3("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
 	--' Сюжет
 	level_tasks.proceed(self.object)
 	-- Отметки на карте
@@ -180,6 +184,28 @@ function actor_binder:map_location_added_callback(spot_type_str, object_id)
 	--'news_manager.send_task(db.actor, "new")
 end
 ----------------------------------------------------------------------------------------------------------------------
+function actor_binder:hit_callback(obj, amount, local_direction, who, bone_index)
+--	log3("actor_binder.hit_callback : amount[%s], who[%s], bone_index[%s]", amount, who and who:name(), bone_index)	
+	-- Grechkin betrayal
+	local se_obj = who and alife():object(who:id())
+	local smrt = alife():object("agr_betrayal")
+	if se_obj and smrt and se_obj.smart_terrain_id and se_obj:smart_terrain_id() == smrt.id then
+		dialog_agroprom.grechkin_kills_actor()
+	end
+
+	if amount ~= 0 then
+		hit_cam_effector.on_actor_hit()
+		return
+	end
+end
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:death_callback(victim, who)
+	local dir = device().cam_dir
+	db.actor:set_actor_direction(dir:getH())
+	level.add_cam_effector("actor_death.anm", 2532, false, "")
+	level.add_pp_effector("actor_death.ppe", 2011, false)
+end
+----------------------------------------------------------------------------------------------------------------------
 function actor_binder:update(delta)
 	object_binder.update(self, delta)
 
@@ -198,7 +224,10 @@ function actor_binder:update(delta)
 
 	-- апдейт звуковой схемы актера
 	xr_sound.update_actor()
-
+	
+	-- апдейт эффектов ранения
+	hit_cam_effector.update()
+	
 	-- Обновление отключения ввода с клавиатуры.
 	if self.st.disable_input_time ~= nil and
 	   game.get_game_time():diffSec(self.st.disable_input_time) >= self.st.disable_input_idle 
@@ -246,102 +275,26 @@ function actor_binder:update(delta)
 		end
 	end
 
-
-
  	if self.bCheckStart then
-		if not has_alife_info("storyline_actor_start") and
-		   (level.name() == "l01_escape")
+		if not has_alife_info("storyline_actor_start")
+--		  and (level.name() == "l01_escape")
 		then
 			self.object:give_info_portion("storyline_actor_start")
-			_G.g_start_avi = true
-			printf("*AVI* RUN START AVI")			
+--			_G.g_start_avi = true
+--			printf("*AVI* RUN START AVI")
 		end
 
 		if not has_alife_info("global_dialogs") then
 			self.object:give_info_portion("global_dialogs")
-		
-			local got = function(sect)
-				alife():create(sect,vector(),0,0,0)
-			end
-		
-			got("wpn_knife")
-			got("wpn_binoc")
-		
-			got("wpn_addon_scope")
-			got("wpn_addon_silencer")
-			got("wpn_addon_grenade_launcher")
-
-			got("wpn_beretta")
-			got("wpn_colt1911")
-			got("wpn_desert_eagle")
-			got("wpn_fort")
-			got("wpn_hpsa")
-			got("wpn_pb")
-			got("wpn_pm")
-			got("wpn_sig220")
-			got("wpn_usp")
-			got("wpn_walther")
-			
-			got("wpn_bm16")
-			got("wpn_spas12")
-			got("wpn_toz34")
-			got("wpn_wincheaster1300")
-
-			got("wpn_abakan")
-			got("wpn_ak74")
-			got("wpn_ak74u")
-			got("wpn_fn2000")
-			got("wpn_g36")
-			got("wpn_gauss")
-			got("wpn_groza")
-			got("wpn_l85")
-			got("wpn_lr300")
-			got("wpn_mp5")
-			got("wpn_rpg7")
-			got("wpn_sig550")
-			got("wpn_svd")
-			got("wpn_svu")
-			got("wpn_val")
-			got("wpn_vintorez")			
-			got("grenade_f1")
-			got("grenade_rgd5")
-			
-			got("wpn_pkm")
-			
---			got("wpn_rg6")
---			got("grenade_gd-05")
-
-			got("af_electra_flash")
-			
-			got("novice_outfit")
-			got("bandit_outfit")
-			got("killer_outfit")
-			got("monolit_outfit")
-			got("specops_outfit")
-			got("military_outfit")
-			got("stalker_outfit")
-			got("scientific_outfit")
-			got("exo_outfit")
-			got("svoboda_light_outfit")
-			got("svoboda_heavy_outfit")
-			got("dolg_outfit")
-			got("dolg_scientific_outfit")
-			got("ecolog_outfit")
-			got("protection_outfit")
-			
---			got("gold_clocks")
---			got("road_vagon_key")
---			got("catacombs_secret_room_key")
---			got("catacombs_decoder_plate")
---			got("catacombs_decoder_shell")
---			got("catacombs_decoder")
---			got("crashcopter_case")
---			got("pda_grechkin")
---			got("pda_saboteur")
+			local sim = alife()
+			sim:release(sim:story_object(story_ids.nii_main_doors_key))
+			sim:release(sim:story_object(story_ids.undertaker_kanistra))
+			sim:story_object(story_ids.hydronode_bandit_2):visible_for_map(false)
+			sim:story_object(story_ids.hydronode_bandit_3):visible_for_map(false)
 		end
 
 		self.bCheckStart = false		
-	end		
+	end
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)

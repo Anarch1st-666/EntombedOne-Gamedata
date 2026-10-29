@@ -464,4 +464,5 @@
 
 #include "ui\ui_credits.xml"
 #include "ui\ui_movies.xml"
+#include "ui\ui_movies_tmb.xml"
 </window>

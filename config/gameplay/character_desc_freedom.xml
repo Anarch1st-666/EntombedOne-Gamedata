@@ -77,7 +77,7 @@
 	</specific_character>
 <!---------------------------SVOBODA SABOUTER----------------------->
 	<specific_character id="agr_freedom_saboteur" team_default = "1">
-		<name>mil_Svoboda_trader_name</name>
+		<name>agr_freedom_saboteur</name>
 		<icon>ui_npc_u_stalker_sv_balon_1</icon>
 		<class>agr_freedom_saboteur</class>
 		<community>freedom</community>
@@ -93,6 +93,7 @@
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
 			device_torch \n
+			pda_saboteur \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml" \n

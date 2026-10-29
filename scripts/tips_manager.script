@@ -81,7 +81,7 @@ end
 function prefetch()
 	INI:iterate_sections(function(sect)
 		tTips[sect] = CTip():init_from_section(sect)
-		log3("* Tip [%s] prefetched", sect)
+--		log3("* Tip [%s] prefetched", sect)
 	end)
 end
 

@@ -1,0 +1,10 @@
+[logic]
+active = sr_idle@unknown
+
+[sr_idle@unknown]
+on_info = {+agr_gold_clocks_start} sr_idle@known %=add_object_spot(green_location:agr_gold_clocks_1_hint)%
+on_info2 = {+agr_gold_clocks_clocks_got} nil %=release_object%
+
+[sr_idle@known]
+on_info = {+agr_gold_clocks_find_bandits} nil %=release_object%
+on_actor_inside = nil %+agr_gold_clocks_find_bandits =release_object%

@@ -1,0 +1,273 @@
+--/ Вступление
+	<game_intro_tmb>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="-1" y="-1" width="1026" height="770" stretch = "1">
+				<texture>ui\ui_black</texture>
+			</auto_static>
+		</global_wnd>
+
+		<play_each_item>1</play_each_item>
+
+		<item>
+			<length_sec>20</length_sec>
+			<pause_state>on</pause_state>
+			<guard_key/>
+			<pause_sound>off</pause_sound>
+			<!--sound>music\credits</sound-->
+			<cursor_pos/>
+			<pda_section/>
+			<grab_input>1</grab_input>
+			<main_wnd>
+				<auto_static start_time="2" length_sec="18" x="256" y="220" width="512" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="j" font="graffiti32" color="white">st_mod_intro_1</text>
+				</auto_static>
+				<auto_static start_time="10" length_sec="10" x="256" y="400" width="512" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="j" font="graffiti32" color="white">st_mod_intro_2</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+	</game_intro_tmb>
+	
+--/ Концовка
+	<game_outro_tmb>
+		<global_wnd x="0" y="0" width="1024" height="768">
+			<auto_static x="-1" y="-1" width="130" height="770" stretch = "1">
+				<texture>ui\ui_black</texture>
+			</auto_static>
+			<auto_static x="767" y="-1" width="130" height="770" stretch = "1">
+				<texture>ui\ui_black</texture>
+			</auto_static>
+			<auto_static x="0" y="0" width="1024" height="768" stretch="1">
+				<texture x="0" y="0" width="640" height="360">intro\tmb_outro</texture>
+			</auto_static>
+		</global_wnd>
+
+      	<!--sound>music\mus_resurrection</sound-->
+		<play_each_item>1</play_each_item>
+
+		<item>
+			<sound>device\pda\pda_sms</sound>
+			<length_sec>0.7</length_sec>
+			<pause_state>on</pause_state>
+			<guard_key/>
+			<pause_sound>off</pause_sound>
+			<cursor_pos/>
+			<pda_section/>
+			<grab_input>1</grab_input>
+			<main_wnd></main_wnd>
+			<function_on_start>xr_effects.play_outro_music</function_on_start>
+		</item>
+		
+		<item>
+			<sound>characters_voice\scenario\outro_general_1</sound>
+			<length_sec>17.5</length_sec>
+			<pause_state>on</pause_state>
+			<pause_sound>off</pause_sound>
+			<grab_input>1</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="18" x="500" y="840" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="ui_clr_1">general_name</text>
+				</auto_static>
+				<auto_static start_time="0" length_sec="18" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="white">st_mod_outro_1</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+		<item>
+			<sound>characters_voice\scenario\outro_grechkin_1</sound>
+			<length_sec>3</length_sec>
+			<pause_state>on</pause_state>
+			<pause_sound>off</pause_sound>
+			<grab_input>1</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="3" x="500" y="840" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="ui_clr_1">grechkin_name</text>
+				</auto_static>
+				<auto_static start_time="0" length_sec="3" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="white">st_mod_outro_2</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+		
+		<item>
+			<sound>characters_voice\scenario\outro_general_2</sound>
+			<length_sec>16.7</length_sec>
+			<pause_state>on</pause_state>
+			<pause_sound>off</pause_sound>
+			<grab_input>1</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="17" x="500" y="840" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="ui_clr_1">general_name</text>
+				</auto_static>
+				<auto_static start_time="0" length_sec="17" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="white">st_mod_outro_3</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+		<item>
+			<sound>characters_voice\scenario\outro_grechkin_2</sound>
+			<length_sec>1.7</length_sec>
+			<pause_state>on</pause_state>
+			<pause_sound>off</pause_sound>
+			<grab_input>1</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="2" x="500" y="840" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="ui_clr_1">grechkin_name</text>
+				</auto_static>
+				<auto_static start_time="0" length_sec="2" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="white">st_mod_outro_4</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+		
+		<item>
+			<sound>characters_voice\scenario\outro_general_3</sound>
+			<length_sec>10.9</length_sec>
+			<pause_state>on</pause_state>
+			<pause_sound>off</pause_sound>
+			<grab_input>1</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="11" x="500" y="840" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="ui_clr_1">general_name</text>
+				</auto_static>
+				<auto_static start_time="0" length_sec="11" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="white">st_mod_outro_5</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+		<item>
+			<sound>characters_voice\scenario\outro_grechkin_3</sound>
+			<length_sec>3.3</length_sec>
+			<pause_state>on</pause_state>
+			<pause_sound>off</pause_sound>
+			<grab_input>1</grab_input>
+			<function_on_stop>xr_effects.start_credits</function_on_stop>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="3.3" x="500" y="840" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="ui_clr_1">grechkin_name</text>
+				</auto_static>
+				<auto_static start_time="0" length_sec="3.3" x="500" y="870" width="870" height="500" alignment="c" stretch="1" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti22" color="white">st_mod_outro_6</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+	</game_outro_tmb>
+
+
+--/ Титры
+	<credits_tmb>
+		<global_wnd x="0" y="0" width="1024" height="768">
+
+			<auto_static x="0" y="0" width="728" height="660" stretch = "1">
+						<texture x="0" y="0" width="728" height="660">ui\ui_mm_credits_back</texture>
+			</auto_static>
+
+
+			<auto_static x="0" y="0" width="1024" height="768">
+				<texture x="0" y="0" width="1024" height="768">ui\ui_static_mm_back_06</texture>
+			</auto_static>
+			<auto_static x="524" y="641" width="256" height="128">
+				<texture>ui\ui_mm_coal</texture>
+			</auto_static>
+
+
+		</global_wnd>
+
+		<play_each_item>1</play_each_item>
+
+		<item>
+			<length_sec>29</length_sec>
+			<pause_state>on</pause_state>
+			<function_on_stop>xr_effects.disconnect</function_on_stop>
+			<guard_key/>
+			<pause_sound>off</pause_sound>
+			<!--sound>music\credits</sound-->
+			<cursor_pos/>
+			<pda_section/>
+			<grab_input>1</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="127" x="186" y="40" width="500" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti50" color="white">st_mod_credits_project</text>
+				</auto_static>
+
+				<auto_static start_time="2" length_sec="5" x="185" y="250" width="500" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="letterica25" color="ui_clr_1">st_mod_credits_developer</text>
+				</auto_static>
+				<auto_static start_time="2" length_sec="5" x="185" y="310" width="500" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="graffiti32" color="white">st_mod_credits_anarch1st</text>
+				</auto_static>
+
+				<auto_static start_time="7" length_sec="30" x="185" y="160" width="500" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="letterica25" color="ui_clr_1">st_mod_credits_respect</text>
+				</auto_static>
+		
+				<auto_static start_time="7" length_sec="9" x="185" y="210" width="500" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="letterica25" color="ui_clr_1">st_mod_credits_base</text>
+				</auto_static>
+				<auto_static start_time="7" length_sec="9" x="124" y="270" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_ogsr</text>
+				</auto_static>
+				<auto_static start_time="7" length_sec="9" x="436" y="270" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_ogsr2</text>
+				</auto_static>
+				<auto_static start_time="7" length_sec="9" x="124" y="300" width="622" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="letterica25" color="white">st_mod_credits_ogsr3</text>
+				</auto_static>
+				<auto_static start_time="7" length_sec="9" x="124" y="350" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_sdk</text>
+				</auto_static>
+				<auto_static start_time="7" length_sec="9" x="436" y="350" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_sdk2</text>
+				</auto_static>
+				<auto_static start_time="7" length_sec="9" x="124" y="380" width="622" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="letterica25" color="white">st_mod_credits_sdk3</text>
+				</auto_static>
+				
+				<auto_static start_time="16" length_sec="15" x="185" y="210" width="500" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="c" font="letterica25" color="ui_clr_1">st_mod_credits_materials</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="124" y="240" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_npc_models1</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="436" y="240" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_npc_models2</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="124" y="270" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_weapons1</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="436" y="270" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_weapons2</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="124" y="300" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_weather1</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="436" y="300" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_weather2</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="124" y="330" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_textures1</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="436" y="330" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_textures2</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="124" y="360" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_gui1</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="436" y="360" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_gui2</text>
+				</auto_static>
+				<!--auto_static start_time="16" length_sec="15" x="124" y="390" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits_geometry</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="436" y="390" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits_geometry2</text>
+				</auto_static-->
+				<!--auto_static start_time="16" length_sec="15" x="124" y="420" width="300" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="r" font="graffiti32" color="white">st_mod_credits</text>
+				</auto_static>
+				<auto_static start_time="16" length_sec="15" x="436" y="420" width="310" height="40" light_anim="credits_head" la_cyclic="0" la_texture="0" la_alpha="1">
+					<text align="l" font="graffiti32" color="white">st_mod_credits</text>
+				</auto_static-->
+			</main_wnd>
+		</item>
+	</credits_tmb>

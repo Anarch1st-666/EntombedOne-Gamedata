@@ -5,7 +5,7 @@ active = ph_idle@before_task
 on_info = {+agr_code_sweet_sniper_dead} ph_idle@on_task
 
 [ph_idle@on_task]
-on_info = {=actor_distance_to_obj_le(120:2.5)} ph_idle@play_1 %=play_snd_from_object(characters_voice\scenario\agroprom\rogue_dead_1)%
+on_info = {+agr_code_sweet_rogue_radio_play} ph_idle@play_1 %=play_snd_from_object(characters_voice\scenario\agroprom\rogue_dead_1)%
 
 [ph_idle@play_1]
 on_timer = 4000 | ph_idle@play_2 %+agr_code_sweet_sniper_complete%

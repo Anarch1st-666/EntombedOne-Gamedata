@@ -1,0 +1,29 @@
+[logic]
+active = ph_door@close
+
+[ph_door@locked]
+locked = true
+closed = true
+snd_open_start = metal_small_open
+snd_close_start = metal_small_close_start
+snd_close_stop = metal_small_close_stop
+on_use = {-agr_nii_doors_start} %+agr_nii_doors_start%, {=actor_has_item(nii_main_doors_key)} %=lost_item(nii_main_doors_key) +agr_nii_doors_complete%
+on_info = {+agr_nii_doors_complete} ph_door@open
+
+[ph_door@close]
+locked = false
+closed = true
+snd_open_start = metal_small_open
+snd_close_start = metal_small_close_start
+snd_close_stop = metal_small_close_stop
+on_use = ph_door@open
+on_info = {+agr_revenge_start -agr_nii_doors_complete} ph_door@locked
+
+[ph_door@open]
+locked = false
+closed = false
+snd_open_start = metal_small_open
+snd_close_start = metal_small_close_start
+snd_close_stop = metal_small_close_stop
+on_use = ph_door@close
+on_info = {+agr_revenge_start -agr_nii_doors_complete} ph_door@locked

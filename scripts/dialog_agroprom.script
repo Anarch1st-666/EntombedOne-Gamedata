@@ -1,3 +1,19 @@
+function has_gold_clocks()
+	if db.actor:object("gold_clocks") then
+		return true
+	end
+	return false
+end
+
+function dont_has_gold_clocks()
+	return not has_gold_clocks()
+end
+
+function give_gold_clocks_to_owner()
+	dialogs.relocate_item_section(nil, "gold_clocks", "out")
+	dialogs.relocate_item_section(db.actor:get_talk_partner(), "catacombs_secret_room_key", "in")
+end
+
 --' "Долгаря в расход", игрок стоит ждёт
 function hide_saboteur_dialog_window()
 	level.disable_input()
@@ -17,7 +33,6 @@ function recieve_pda_saboteur_reward()
 	dialogs.relocate_item_section(nil, "pda_saboteur", "out")
 	dialogs.relocate_item_section(nil, "wpn_val", "in")
 	dialogs.relocate_item_section(nil, "ammo_9x39_sp5", "in")
-	dialogs.relocate_item_section(nil, "ammo_9x39_sp5", "in")
 end
 
 --' Награда свободовцев
@@ -26,9 +41,14 @@ function saboteur_reward()
 	dialogs.relocate_item_section(nil, "ammo_m209", "in")
 	dialogs.relocate_item_section(nil, "ammo_m209", "in")
 	dialogs.relocate_item_section(nil, "ammo_m209", "in")
-	dialogs.relocate_item_section(nil, "ammo_m209", "in")
 	dialogs.relocate_item_section(nil, "wpn_addon_grenade_launcher_m203", "in")
 	dialogs.relocate_money(db.actor:get_talk_partner(), 8000, "in")
+end
+
+function give_weapon_to_scout()
+	local npc = db.actor:get_talk_partner()
+	alife():create("wpn_beretta", npc:position(), 0, npc:game_vertex_id(), npc:id())
+	alife():create("ammo_9x19_fmj", npc:position(), 0, npc:game_vertex_id(), npc:id())
 end
 
 function make_freedom_enemy()
@@ -78,15 +98,47 @@ function give_vodka_to_silent()
 end
 
 function silent_drink_vodka(first_speaker, second_speaker)
---	local oItem = db.actor:object("vodka")
---	if oItem then
---		db.actor:eat(oItem)
---	else
---		local vodka_snd = sound_object("interface\\item_usage\\vodka_use")
---		vodka_snd:play(db.actor, 0, sound_object.s2d)
---		level.add_cam_effector("camera_effects\\weapon\\vodka_hands_eat_invtrans.anm",8020,false,"")
---		log3("script vodka")
---	end
 	db.actor:give_info_portion("agr_decoder_repair_drinking_vodka")
---	this.hide_saboteur_dialog_window()
+	this.hide_saboteur_dialog_window()
+	
+--	local vodka_snd = sound_object("interface\\inv_vodka")
+--	vodka_snd:play_no_feedback(db.actor, sound_object.s2d, 2.0, vector(), 1.0)
+end
+
+--' Предателсьтво Гречкина
+function grechkin_got_case()
+	dialogs.relocate_item_section(nil, "crashcopter_case", "out")
+end
+
+function grechkin_kill_order()
+	cmd("g_god on")
+--	db.actor:invulnerable(true)
+--	db.actor:set_character_community("zombied")
+	xr_effects.set_gulag_enemy_actor(db.actor, nil, {"agr_betrayal"})
+--	log3("invul[%s]", db.actor:invulnerable())
+end
+
+function disable_ui()
+	db.actor:hide_weapon()
+	level.disable_input()
+	level.hide_indicators()
+end
+
+function grechkin_kills_actor()
+	if db.actor:dont_has_info("agr_grechkin_kills_actor") then
+		db.actor:give_info_portion("agr_grechkin_kills_actor")
+		xr_effects.play_actor_death_effector()
+	end
+end
+
+function enable_ui()
+	level.show_indicators()
+	level.enable_input()
+	db.actor:restore_weapon()
+end
+
+function create_nii_main_door_key()
+	local sim = alife()
+	sim:create(sim:spawn_id(spawn_story_ids.nii_main_doors_key))
+	sr_weather.get_weather_effector():set_music_volume(0.1)
 end

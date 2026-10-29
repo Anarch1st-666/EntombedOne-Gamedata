@@ -56,6 +56,18 @@ function dist_to_actor_ge(actor, npc, p)
     return d and npc:position():distance_to_sqr(actor:position()) >= d * d
 end
 
+--/ 1: position.y (number)
+--/ 2: negative (bool)
+function pos_y_le(actor, npc, p)
+	if not p then
+		return false
+	end
+	
+	local pos_y = p[2] and -p[1] or p[1]
+	local npc_pos = npc:position()
+    return npc_pos.y < pos_y
+end
+
 -- проверка того что дистанция до обьекта <= заданной
 -- параметры: [sid,dist]
 function distance_to_obj_le(actor, npc, p)

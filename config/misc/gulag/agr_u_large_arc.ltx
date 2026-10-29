@@ -1,0 +1,49 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_u_large_arc_snork_1]
+active = mob_walker@agr_u_large_arc_snork_1
+
+[mob_walker@agr_u_large_arc_snork_1]
+path_walk = snork_1_walk
+path_look = snork_1_look
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_u_large_arc_snork_2]
+active = mob_walker@agr_u_large_arc_snork_2
+
+[mob_walker@agr_u_large_arc_snork_2]
+path_walk = snork_2_walk
+path_look = snork_2_look
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_u_large_arc_snork_3]
+active = mob_walker@agr_u_large_arc_snork_3
+
+[mob_walker@agr_u_large_arc_snork_3]
+path_walk = snork_3_walk
+path_look = snork_3_look
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_u_large_arc_snork_4]
+active = mob_walker@agr_u_large_arc_snork_4
+
+[mob_walker@agr_u_large_arc_snork_4]
+path_walk = snork_4_walk
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@agr_u_large_arc_controller]
+active = mob_walker@agr_u_large_arc_controller
+
+[mob_walker@agr_u_large_arc_controller]
+path_walk = controller_walk
+path_look = controller_look
+braindead = true
+friendly = true
+on_info = {+agr_large_arc_controller_spawn} mob_home@agr_u_large_arc_controller %=taunt%
+
+[mob_home@agr_u_large_arc_controller]
+path_home = controller_home
+home_min_radius = 3
+home_max_radius = 10
+aggressive_home
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

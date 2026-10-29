@@ -20,7 +20,8 @@ path_look				= agr_catocombs_wonded_look
 combat_ignore_cond		= {=fighting_actor -agr_catacombs_wounded_attacked}, {-agr_explore_catacombs_location1}
 danger					= danger_ignore
 meet					= meet
-on_actor_dist_ge_nvis	= 50 | {+agr_explore_catacombs_location1} nil %=release_object%
+on_actor_dist_ge_nvis	= 50 | {+agr_explore_catacombs_location1} nil %=release_object%, {+agr_catacombs_wounded_met} %-agr_catacombs_wounded_met%
+on_actor_dist_le_nvis	= 5 | {-agr_catacombs_wounded_met} %+agr_catacombs_wounded_met =play_snd_from_npc(catacombs_wounded)%
 
 [meet]
 meet_state = nil

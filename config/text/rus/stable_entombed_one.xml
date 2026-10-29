@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
+  <string id="tmb01_agroprom">
+    <text>Агропром</text>
+  </string>
+  <string id="st_def_blocker">
+    <text>Переход недоступен</text>
+  </string>
+  <string id="st_small_arc_exit_blocker">
+    <text>Рано уходить! Стоит получше проверить тоннель.</text>
+  </string>
+  <string id="st_small_arc_entrance_blocker">
+    <text>Опасный спуск! Лучше туда не соваться.</text>
+  </string>
   <string id="st_exit">
     <text>Выйти</text>
   </string>
@@ -16,9 +28,116 @@
     <text>Воспроизвести ($$ACTION_USE$$)</text>
   </string>
   <string id="st_keypad_locked">
-    <text>Требуется электронный ключ</text>
+    <text>Код неизвестен</text>
   </string>
   <string id="st_keypad_has_decoder">
     <text>Использовать дешифратор ($$ACTION_USE$$)</text>
+  </string>
+  <string id="st_need_key">
+    <text>Нужен ключ</text>
+  </string>
+  <string id="st_road_vagon_hint">
+    <text>%c[UI_orange]Вагончик\n%c[default]"По дороге вперёд вагончик стоит — там под утро, рядом в кустах, какой-то сталкерок копошился."</text>
+  </string>
+  <string id="st_silent_cache_hint">
+    <text>%c[UI_orange]Тайник Тихого\n%c[default]Тихий сдал свой тайник за небольшим разговором.</text>
+  </string>
+  <string id="st_saboteur_cache">
+    <text>Тайник Патриота</text>
+  </string>
+  <string id="st_found_new_treasure">
+    <text>Получена информация о тайнике</text>
+  </string>
+  <string id="st_saboteur_cache_hint">
+    <text>%c[UI_orange]Тайник Патриота\n%c[default]Тайник лидера отряда лазутчиков группировки Свобода.</text>
+  </string>
+  <string id="gold_clocks_owner">
+    <text>Сталкер, потерявший часы.</text>
+  </string>
+
+  <string id="actor_name">
+    <text>Феникс</text>
+  </string>
+  <string id="casekeeper_name">
+    <text>Лейтенант Бромов</text>
+  </string>
+  <string id="grechkin_name">
+    <text>Полковник Гречкин</text>
+  </string>
+  <string id="nii_trader_name">
+    <text>Прапорщик Бражников</text>
+  </string>
+  <string id="agr_scout_name">
+    <text>Сержант Калейник</text>
+  </string>
+  <string id="rogue_name">
+    <text>Плут</text>
+  </string>
+  <string id="korzhik_name">
+    <text>Коржик</text>
+  </string>
+  <string id="shamil_name">
+    <text>Шамиль</text>
+  </string>
+  <string id="ivanych_name">
+    <text>Иваныч</text>
+  </string>
+  <string id="freon_name">
+    <text>Фреон</text>
+  </string>
+  <string id="silent_name">
+    <text>Тихий</text>
+  </string>
+  <string id="agr_freedom_saboteur">
+    <text>Патриот</text>
+  </string>
+  <string id="general_name">
+    <text>Генерал "Долга"</text>
+  </string>
+
+  <string id="check_tunnel_1">
+    <text>Тут, похоже, бывал кто-то. Но ничего интересного не осталось. Я проверю тоннель.</text>
+  </string>
+  <string id="check_tunnel_2">
+    <text>Принял. Крою тоннель.</text>
+  </string>
+  <string id="agr_scout_lost_1">
+    <text>Калейник! Где тебя черти носят? Я же просил прикрывать отход!</text>
+  </string>
+  <string id="agr_scout_lost_2">
+    <text>Феникс… я на заводе. Нужна твоя помощь… Срочно.</text>
+  </string>
+  <string id="agr_scout_lost_3">
+    <text>Хм… Странно это…</text>
+  </string>
+  <string id="need_electric_1">
+    <text>"Центр" Фениксу.</text>
+  </string>
+  <string id="need_electric_2">
+    <text>"Центр" на связи.</text>
+  </string>
+  <string id="need_electric_3">
+    <text>Полковник, среди твоих людей не найдётся какой электронщик? Надо починить одну штуку.</text>
+  </string>
+  <string id="need_electric_4">
+    <text>Есть такой человек. Обратись к Фреону.</text>
+  </string>
+  <string id="resurrection_undertaker_1">
+    <text>Товарищ полковник, мы на месте. В пещере только одно тело. И это не Феникс.</text>
+  </string>
+  <string id="resurrection_grechkin_1">
+    <text>Что значит “в пещере”? Я же сказал на входе, а не внутри.</text>
+  </string>
+  <string id="resurrection_undertaker_2">
+    <text>Так на входе тоже нету.</text>
+  </string>
+  <string id="resurrection_grechkin_2">
+    <text>Фреон, что показывает маячок Феникса?</text>
+  </string>
+  <string id="resurrection_freon_1">
+    <text>Он… движется! Идёт на НИИ.</text>
+  </string>
+  <string id="resurrection_grechkin_3">
+    <text>Внимание, база! Полная боевая готовность! Повторяю, полная боевая готовность!</text>
   </string>
 </string_table>

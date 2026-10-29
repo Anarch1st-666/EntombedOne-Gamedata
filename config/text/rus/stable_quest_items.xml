@@ -10,7 +10,7 @@
     <text>Ключ от вагончика</text>
   </string>
   <string id="road_vagon_key_desc">
-    <text>Ключ о двери вагона, стоящего по дороге на восток от НИИ Агропром. Вероятно, внутри что-то ценное.</text>
+    <text>Ключ от двери вагона, стоящего по дороге на восток от НИИ Агропром. Вероятно, внутри что-то ценное.</text>
   </string>
   <string id="catacombs_secret_room_key">
     <text>Ключ от тайника в катакомбах</text>
@@ -46,10 +46,16 @@
     <text>Ударопрочный огнеупорный контейнер. Надпись на лицевой стороне: “Cryogenic Anomalous Sample Entity”.</text>
   </string>
   <string id="pda_grechkin">
-    <text>КПК Полковника Гречкина</text>
+    <text>КПК полковника Гречкина</text>
   </string>
   <string id="pda_grechkin_desc">
-    <text>КПК Полковника Гречкина.</text>
+    <text>КПК проливает свет на роль Долга в деле о пропавшем КЕЙСе.</text>
+  </string>
+  <string id="nii_main_doors_key">
+    <text>Ключ от здания НИИ</text>
+  </string>
+  <string id="nii_main_doors_key_desc">
+    <text>Ключ от дверей входа в главное здание НИИ.</text>
   </string>
   <string id="pda_saboteur">
     <text>КПК свободовца-лазутчика</text>

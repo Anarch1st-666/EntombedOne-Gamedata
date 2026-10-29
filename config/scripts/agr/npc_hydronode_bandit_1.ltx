@@ -1,0 +1,24 @@
+[combat_ignore]
+
+[death]
+;on_info = %+agr_gold_clocks_controller_spawn%
+
+[logic]
+combat_ignore = combat_ignore
+on_death = death
+active = walker@wounded
+
+;-----------------------------------------------------------------------------------------
+[walker@wounded]
+path_walk = agr_hydronode_bandit_1_walk
+path_look = agr_hydronode_bandit_1_look
+combat_ignore_cond = always
+combat_ignore_keep_when_attacked = true
+wounded = wounded
+
+[wounded]
+hp_state        = 0|wounded_zombied@state
+hp_state_see    = 0|wounded_zombied@state
+hp_victim       = 0|nil
+hp_fight        = 0|false
+hp_cover        = 0|false

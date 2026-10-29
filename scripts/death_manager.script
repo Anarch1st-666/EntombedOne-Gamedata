@@ -124,9 +124,10 @@ function drop_manager:create_release_item()
     --' Проверка на отсутствие спауна лута
     local ini = self.npc:spawn_ini()
 
-    if ini and ini:section_exist("dont_spawn_loot") then
+    if ini and ini:section_exist("spawn_loot") then
+		self:spawn_loot_from_ini(ini)
         return
-    end
+	end
 
     --' Доспавниваем необходимое количество итемов:
     --' Необходимо составить список объектов которые могут быть заспавнены для персонажа
@@ -143,6 +144,15 @@ function drop_manager:create_release_item()
     end
 end
 
+function drop_manager:spawn_loot_from_ini(ini)
+	ini:iterate_lines("spawn_loot", function(section, number)
+		local npc = self.npc
+        for i=1,(number or 0) do
+			alife():create(section, npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id())
+        end
+	end)
+end
+
 --' Функция вызывается для каждого предмета, если вернет false то предмет удалится.
 function keep_item(npc, item)
     local section = item:section()
@@ -154,6 +164,10 @@ function keep_item(npc, item)
     if always_keep_item[section] == true then
         return true
     end
+	
+	if _G.is_quest_item(section) then
+		return true
+	end
 
     local item_id = item:id()
     local item_in_slot = npc:item_in_slot(1)

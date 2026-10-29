@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="actor_btn_hint">
-		<text>Центр на Меченом</text>
+		<text>Центр на Фениксе</text>
 	</string>
 	<string id="add_spot_btn_hint">
 		<text>Добавить новую отметку</text>
@@ -148,7 +148,7 @@
 		<text>Убийство сталкеров</text>
 	</string>
 	<string id="st_map_actor">
-		<text>Меченый</text>
+		<text>Феникс</text>
 	</string>
 	<string id="st_news">
 		<text>Новость</text>

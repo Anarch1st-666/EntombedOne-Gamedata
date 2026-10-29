@@ -1,0 +1,8 @@
+[logic]
+active = sr_idle1
+
+[sr_idle1]
+on_info = {+agr_gold_clocks_clocks_got !dialog_opened} sr_idle2 %+agr_gold_clocks_controller_spawn =run_postprocess(alcohol:7911) =play_snd(ambient\rnd_outdoor\rnd_rock3)%
+
+[sr_idle2]
+on_timer = 1200 |  nil %=stop_postprocess(7911) =play_snd_from_story_object(scripts\controller_script_attack_1:141) =taunt(141) =release_object%

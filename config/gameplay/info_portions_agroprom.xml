@@ -1,9 +1,6 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <game_information_portions>
---/ Южные ворота
-    <info_portion id="agr_south_gates_talk_to_guard"/>
-
 --/ Упавший вертолёт
     <info_portion id="agr_crashcopter_start">
 		<task>agr_crashcopter</task>
@@ -17,6 +14,9 @@
     <info_portion id="agr_crashcopter_cine_hero_spawn"/>
     <info_portion id="agr_crashcopter_cine_begin"/>
     <info_portion id="agr_crashcopter_cine_end"/>
+	<!-- Опросник у входа на Агропром -->
+    <info_portion id="agr_south_gates_ask_crashcopter"/>
+    <info_portion id="agr_south_gates_ask_agroprom"/>
 
 --/ Помощь Долга
 	<info_portion id="agr_seek_duty_support_start">
@@ -24,11 +24,14 @@
 	</info_portion>
 	<info_portion id="agr_seek_duty_support_talk_to_grechkin"></info_portion>
 	<info_portion id="agr_seek_duty_support_complete"></info_portion>
+	<!-- Опросник -->
 	<info_portion id="agr_seek_duty_support_ask_north"/>
 	<info_portion id="agr_seek_duty_support_ask_south"/>
 	<info_portion id="agr_seek_duty_support_ask_east"/>
 	<info_portion id="agr_seek_duty_support_ask_west"/>
 	<info_portion id="agr_seek_duty_support_nobody_to_ask"/>
+	<!-- Тайничок -->
+	<info_portion id="agr_road_vagon_opened"/>
 
 --/ Подозрительные сталкеры
 	<info_portion id="agr_eavesdropping_start">
@@ -43,9 +46,13 @@
 	<info_portion id="agr_eavesdropping_complete"></info_portion>
 
 --/ Золотые часы
-	<info_portion id="agr_gold_clocks_start"></info_portion>
-	<info_portion id="agr_gold_clocks_talk_to_duty"></info_portion>
+	<info_portion id="agr_gold_clocks_start">
+		<task>agr_gold_clocks</task>
+	</info_portion>
 	<info_portion id="agr_gold_clocks_find_bandits"></info_portion>
+	<info_portion id="agr_gold_clocks_bandit_spawn"/>
+	<info_portion id="agr_gold_clocks_controller_spawn"/>
+	<info_portion id="agr_gold_clocks_controller_dead"/>
 	<info_portion id="agr_gold_clocks_clocks_got"></info_portion>
 	<info_portion id="agr_gold_clocks_complete"></info_portion>
 	<info_portion id="agr_gold_clocks_fail"></info_portion>
@@ -57,6 +64,7 @@
 	<info_portion id="agr_by_the_trace_follow_scout"></info_portion>
 	<info_portion id="agr_by_the_trace_open_tower_cache"></info_portion>
 	<info_portion id="agr_by_the_trace_check_tower"></info_portion>
+	<info_portion id="agr_by_the_trace_pseudodogs_attack_tower"></info_portion>
 	<info_portion id="agr_by_the_trace_check_tunnel"></info_portion>
 	<info_portion id="agr_by_the_trace_killer_seen_actor"/>
 	<info_portion id="agr_by_the_trace_scout_on_factory"></info_portion>
@@ -75,6 +83,10 @@
 		<action>dialog_agroprom.make_freedom_enemy</action>
 	</info_portion>
 	<info_portion id="agr_freedom_spies_can_attack_prisoner"></info_portion>
+	<!-- обработка тайника Патриота-->
+	<info_portion id="agr_got_saboteur_pda"></info_portion>
+	<info_portion id="agr_got_saboteur_cache"></info_portion>
+	<info_portion id="agr_freedom_spies_disappear"></info_portion>
 
 --/ Код "Сладкий"
     <info_portion id="agr_code_sweet_start">
@@ -82,7 +94,10 @@
 	</info_portion>
     <info_portion id="agr_code_sweet_sniper_spawn"/>
     <info_portion id="agr_code_sweet_sniper_dead"/>
+    <info_portion id="agr_code_sweet_rogue_radio_play"/>
     <info_portion id="agr_code_sweet_sniper_complete"/>
+	<!-- Хитрый снорк -->
+    <info_portion id="agr_swamp_snork_spawn"/>
 	
 --/ Верхние катакомбы
     <info_portion id="agr_explore_catacombs_start">
@@ -100,6 +115,7 @@
     <info_portion id="agr_explore_catacombs_location3_1"></info_portion>
     <info_portion id="agr_explore_catacombs_location3_2"></info_portion>
 	<!-- Раненый наёмник -->
+    <info_portion id="agr_catacombs_wounded_met"></info_portion>
     <info_portion id="agr_catacombs_wounded_ask_bloodsucker"></info_portion>
     <info_portion id="agr_catacombs_wounded_ask_client"></info_portion>
     <info_portion id="agr_catacombs_wounded_ask_why_here"></info_portion>
@@ -138,11 +154,45 @@
     <info_portion id="agr_deep_catacombs_door_open"></info_portion>
     <info_portion id="agr_deep_catacombs_case_got"></info_portion> --duplicate?
     <info_portion id="agr_deep_catacombs_complete"></info_portion>
+	<!-- Спавн всякой нечисти-->
+    <info_portion id="agr_large_arc_spawn_zombies"></info_portion>
+    <info_portion id="agr_large_arc_spawn_snork3"></info_portion>
+    <info_portion id="agr_large_arc_controller_spawn"></info_portion>
+    <info_portion id="agr_small_arc_bloodsucker_spawn"></info_portion>
+    <info_portion id="agr_kupol_poltergeist_spawn"></info_portion>
+	<!-- Предательство Гречкина-->
+    <info_portion id="agr_grechkin_threats"></info_portion>
+    <info_portion id="agr_grechkin_got_case"></info_portion>
+    <info_portion id="agr_grechkin_kill_order">
+		<action>dialog_agroprom.grechkin_kill_order</action>
+	</info_portion>
+    <info_portion id="agr_grechkin_kills_actor"></info_portion>
+    <info_portion id="agr_casekeeper_ghost_awoken"></info_portion>
+    <info_portion id="agr_casekeeper_ghost_talk_end"></info_portion>
+    <info_portion id="agr_casekeeper_ghost_released"></info_portion>
+	<!-- Реинкарнация -->
+	<info_portion id="agr_resurrection_cine_init"></info_portion>
+	<info_portion id="agr_resurrection_cine_begin"></info_portion>
+	<info_portion id="agr_resurrection_cine_actor_spawn"></info_portion>
+	<info_portion id="agr_resurrection_cine_end"></info_portion>
 	
 --/ Месть
+    <info_portion id="agr_revenge_start">
+		<task>agr_revenge</task>
+		<action>dialog_agroprom.create_nii_main_door_key</action>
+	</info_portion>
+    <info_portion id="agr_revenge_kill_grechkin"/>
+    <info_portion id="agr_revenge_complete"/>
+	<!-- Логика смарта НИИ -->
     <info_portion id="agr_nii_alarm"/>
-    <info_portion id="agr_revenge_start"/>
-	
+    <info_portion id="agr_nii_rupor_off"/>
+
+--/ Найти ключ от дверей НИИ
+    <info_portion id="agr_nii_doors_start">
+		<task>agr_nii_doors</task>
+	</info_portion>
+    <info_portion id="agr_nii_doors_key_got"/>
+    <info_portion id="agr_nii_doors_complete"/>
 
 </game_information_portions>
 

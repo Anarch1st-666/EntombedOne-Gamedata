@@ -39,13 +39,13 @@
 		<text>Новичок</text>
 	</string>
 	<string id="ui_mm_stalker">
-		<text>Опытный</text>
+		<text>Сталкер</text>
 	</string>
 	<string id="ui_mm_veteran">
 		<text>Ветеран</text>
 	</string>
 	<string id="ui_mm_master">
-		<text>Легенда</text>
+		<text>Мастер</text>
 	</string>
 	<string id="ui_mm_back">
 		<text>Назад</text>

@@ -42,5 +42,13 @@
 		<text>agr_deep_catacombs_desc</text>
 	</article>
 
+	<article id="agr_revenge" name="agr_revenge_0" article_type="task">
+		<text>agr_revenge_desc</text>
+	</article>
+
+	<article id="agr_nii_doors" name="agr_nii_doors_0" article_type="task">
+		<text>agr_nii_doors_desc</text>
+	</article>
+
 
 </encyclopedia>

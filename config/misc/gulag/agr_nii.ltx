@@ -64,40 +64,46 @@ use_wpn = true
 
 
 [logic@agr_silent]
-active = walker1@agr_silent
+active = walker@agr_silent_tired
 on_hit = hit@agr_nii_quest_person
 
-[walker1@agr_silent]
+[walker@agr_silent_tired]
 path_walk = bar_silent_walk
 path_look = bar_silent_look
-meet = meet@agr_silent
+def_state_standing = bar_head
 danger = danger_ignore
-on_info = {+agr_decoder_repair_talk_to_silent} walker2@agr_silent
-on_info2 = {+agr_decoder_repair_drinking_vodka} remark@agr_silent_drink_vodka; %=disable_ui%
+meet = no_meet
+danger = danger_ignore
+on_actor_dist_le_nvis = 5 | {+agr_decoder_repair_find_technician -agr_decoder_repair_talk_to_silent} walker@agr_silent_talk
+
+[walker@agr_silent_talk]
+path_walk = bar_silent_walk
+path_look = bar_silent_look
+def_state_standing = bar_fas
+danger = danger_ignore
+meet = meet@agr_silent
+on_info = {+agr_decoder_repair_talk_to_silent} walker@agr_silent_tired
+on_info2 = {+agr_decoder_repair_drinking_vodka} remark@agr_silent_drink_vodka %=play_snd(interface\inv_vodka:3)%
 
 [remark@agr_silent_drink_vodka]
 anim = drink_vodka
 target = actor
+danger = danger_ignore
 meet = meet@agr_silent
-;on_timer = 3000 | remark@agr_silent_stop_vodka %=eat_vodka_free%
-on_signal = anim_end |  walker1@agr_silent %=eat_vodka_free -agr_decoder_repair_drinking_vodka%
+on_timer = 5000 | remark@agr_silent_stop_vodka %=actor_gets_drunk%
 
 [remark@agr_silent_stop_vodka]
 anim = drink_vodka_out
 target = actor
+danger = danger_ignore
 meet = meet@agr_silent
-on_signal = anim_end | walker1@agr_silent %-agr_decoder_repair_drinking_vodka%; =enable_ui%
-
-[walker2@agr_silent]
-path_walk = bar_silent_walk
-path_look = bar_silent_look
-meet = no_meet
+on_signal = anim_end | walker@agr_silent_talk %-agr_decoder_repair_drinking_vodka =show_saboteur_dialog_window%
 
 [meet@agr_silent]
-meet_state = nil; 5|wait_trade
-meet_state_wpn = nil; 5|wait_trade
-victim = nil; 5|actor
-victim_wpn = nil; 5|actor
+meet_state = nil
+meet_state_wpn = nil
+victim = nil
+victim_wpn = nil
 use = true
 use_wpn = true
 allow_break = false
@@ -140,6 +146,11 @@ victim = 5|actor
 victim_wpn = 5|actor
 use = true
 use_wpn = true
+
+
+;=========================================================================================
+; INITIAL STATE
+;=========================================================================================
 
 ;------------------ дневные патрули -----------------------
 [logic@agr_nii_day_patrol_walker1]
@@ -332,8 +343,8 @@ path_look = bar_3_look
 meet = meet@agr_nii_bar_visitor3
 
 [meet@agr_nii_bar_visitor3]
-meet_state 		= 2 | bar_sleep@use_no_sleep
-meet_state_wpn  = 2 | bar_sleep@use_no_sleep
+meet_state 		= 3 | bar_sleep@use_no_sleep
+meet_state_wpn  = 3 | bar_sleep@use_no_sleep
 victim 			= nil
 victim_wpn 		= nil
 use			    = false
@@ -358,3 +369,99 @@ center_point = kamp_1
 radius = 2.0
 
 
+;=========================================================================================
+; ALARM STATE
+;=========================================================================================
+
+;------------------ 3-й этаж основного здания -----------------------
+[logic@agr_nii_floor3_camper1]
+active = camper1@agr_nii_floor3_camper1
+
+[camper1@agr_nii_floor3_camper1]
+radius = 5.0
+path_walk = floor3_camper1_walk
+path_look = floor3_camper1_look
+
+
+[logic@agr_nii_floor3_camper2]
+active = camper1@agr_nii_floor3_camper2
+
+[camper1@agr_nii_floor3_camper2]
+radius = 5.0
+path_walk = floor3_camper2_walk
+path_look = floor3_camper2_look
+
+
+[logic@agr_nii_floor3_camper3]
+active = camper1@agr_nii_floor3_camper3
+
+[camper1@agr_nii_floor3_camper3]
+radius = 10.0
+path_walk = floor3_camper3_walk
+path_look = floor3_camper3_look
+
+
+;------------------ Бар -----------------------
+[logic@agr_nii_bar_alarm_1]
+active = walker1@agr_nii_bar_alarm_1
+
+[walker1@agr_nii_bar_alarm_1]
+path_walk = bar_alarm_1_walk
+path_look = bar_alarm_1_look
+
+
+[logic@agr_nii_bar_alarm_2]
+active = walker1@agr_nii_bar_alarm_2
+
+[walker1@agr_nii_bar_alarm_2]
+path_walk = bar_alarm_2_walk
+path_look = bar_alarm_2_look
+
+
+[logic@agr_nii_bar_alarm_3]
+active = walker1@agr_nii_bar_alarm_3
+
+[walker1@agr_nii_bar_alarm_3]
+path_walk = bar_alarm_3_walk
+path_look = bar_alarm_3_look
+
+
+[logic@agr_nii_bar_alarm_4]
+active = walker1@agr_nii_bar_alarm_4
+
+[walker1@agr_nii_bar_alarm_4]
+path_walk = bar_alarm_4_walk
+path_look = bar_alarm_4_look
+
+
+;------------------ Костры -----------------------
+[logic@agr_nii_kamp_1_alarm_1]
+active = walker1@agr_nii_kamp_1_alarm_1
+
+[walker1@agr_nii_kamp_1_alarm_1]
+path_walk = kamp_1_alarm_1_walk
+path_look = kamp_1_alarm_1_look
+
+
+[logic@agr_nii_kamp_1_alarm_2]
+active = walker1@agr_nii_kamp_1_alarm_2
+
+[walker1@agr_nii_kamp_1_alarm_2]
+path_walk = kamp_1_alarm_2_walk
+path_look = kamp_1_alarm_2_look
+
+
+[logic@agr_nii_kamp_1_alarm_3]
+active = walker1@agr_nii_kamp_1_alarm_3
+
+[walker1@agr_nii_kamp_1_alarm_3]
+path_walk = kamp_1_alarm_3_walk
+path_look = kamp_1_alarm_3_look
+
+
+[logic@agr_nii_kamp_1_alarm_4]
+active = walker1@agr_nii_kamp_1_alarm_4
+
+[walker1@agr_nii_kamp_1_alarm_4]
+path_walk = kamp_1_alarm_4_walk
+path_look = kamp_1_alarm_4_look

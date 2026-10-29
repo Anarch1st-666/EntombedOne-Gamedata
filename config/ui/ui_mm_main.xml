@@ -2,6 +2,9 @@
 <window>
 	<background x="0" y="0" width="1024" height="768">
 		<texture>ui_menu_backgraund</texture>
+		<auto_static x="590" y="340" width="392" height="40">
+			<text align="c" font="graffiti32" r="180" g="180" b="180">st_mod_credits_project</text>
+		</auto_static>
 	</background>
 	
 	<back_movie x="148" y="0" width="876" height="400">

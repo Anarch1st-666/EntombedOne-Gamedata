@@ -1,0 +1,7 @@
+<window>
+	<boss_health_progress x="37.5" y="6" width="250" height="10" horz="1" min="0" max="100" stretch="1">
+		<progress>
+			<texture>health_bar_progress2</texture>
+		</progress>
+	</boss_health_progress>
+</window>

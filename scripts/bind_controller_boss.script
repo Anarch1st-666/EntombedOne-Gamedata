@@ -1,0 +1,232 @@
+--/ --------------------------------------------------------------------------------------
+--/ VARIABLEs
+--/ --------------------------------------------------------------------------------------
+local HEALTH_THRESHOLDS = {
+	[0] = 0.0,
+	[1] = 0.15, 
+	[2] = 0.4, 
+	[3] = 0.7
+}
+local BOSS_LIVES = #HEALTH_THRESHOLDS
+
+--/ --------------------------------------------------------------------------------------
+--/ BIND FUNCTION
+--/ --------------------------------------------------------------------------------------
+function bind(obj)
+    obj:bind_object(bind_boss(obj))
+end
+--/ --------------------------------------------------------------------------------------
+
+--/ --------------------------------------------------------------------------------------
+--/ BOSS BINDER
+--/ --------------------------------------------------------------------------------------
+local inherited = bind_monster.monster_binder
+class "bind_boss" (inherited)
+--/ --------------------------------------------------------------------------------------
+function bind_boss:__init (obj)
+	inherited.__init(self, obj)
+
+	self.lives = BOSS_LIVES
+	self.bFirstUpdate = true
+	self.bCanEscape = false
+	self.iEscapeTime = 0
+end
+
+function bind_boss:net_spawn(sobject)
+	if self.bCanEscape == true then
+		--/ escape after load
+		self:prepare_escape()
+	end
+	return inherited.net_spawn(self, sobject)
+end
+
+--/ --------------------------------------------------------------------------------------
+function bind_boss:update(delta)
+	inherited.update(self, delta)
+	
+	if self.object:alive() == false then
+		return
+	end
+	
+	if self.bFirstUpdate == true then
+		self.bFirstUpdate = false
+--		xr_effects.taunt(db.actor, self.object)
+	end
+
+	if (self.bCanEscape == true) and (self.object:controller_psy_hit_active() == false) and (device():time_global() > self.iEscapeTime) then
+		self:escape()
+	end
+end
+
+--/ --------------------------------------------------------------------------------------
+function bind_boss:hit_callback(victim, amount, local_direction, who, bone_index)
+--	log3("HIT_CALLBACK: victim[%s] amount[%s] who[%s]", victim:name(), amount, who and who:name())
+	inherited.hit_callback(self, victim, amount, local_direction, who, bone_index)
+	
+	if amount ~= 0 and victim:id() == self.object:id() then
+		self:on_hit()
+	end
+end
+
+function bind_boss:on_hit()
+	local fHealth = math.max(0, self.object.health)
+	if fHealth > 0 then
+		monster_health_bar.set_value(fHealth)
+	end
+	
+	local gonna_escape = false
+	local function check_thresholds()
+		if fHealth < HEALTH_THRESHOLDS[self.lives] then
+			self.lives = self.lives - 1
+--			log3("* Lives left[%s]", self.lives)
+			self.bCanEscape = true
+			gonna_escape = true
+			return true
+		end
+		return false
+	end
+	 
+	for i = 0, 1, 0 do
+		if check_thresholds() == false then break end
+	end
+	
+	if gonna_escape then
+		self:prepare_escape()
+	end
+end
+
+--/ --------------------------------------------------------------------------------------
+function bind_boss:death_callback(victim, who)
+	inherited.death_callback(self, victim, who)
+	self.lives = 0
+	monster_health_bar.remove_custom_static()
+	play_death_effector()
+	db.actor:give_info_portion("agr_gold_clocks_controller_dead")
+	db.actor.psy_health = 0.25
+end
+
+
+--/ --------------------------------------------------------------------------------------
+function bind_boss:save(packet)
+	inherited.save(self, packet)
+	
+	packet:w_u32(self.lives)
+	packet:w_bool(self.bCanEscape)
+--	log3("bind_boss:save(): self.object:name()='%s'; Lives[%s]", self.object:name(), self.lives)
+end
+
+function bind_boss:load(reader)
+	inherited.load(self, reader)
+	
+	self.lives = reader:r_u32()
+	self.bCanEscape = reader:r_bool()
+--	log3("bind_boss:load(): self.object:name()='%s'; Lives[%s]", self.object:name(), self.lives)
+end
+
+--/ --------------------------------------------------------------------------------------
+
+--/ --------------------------------------------------------------------------------------
+--/ ESCAPE LOGIC
+--/ --------------------------------------------------------------------------------------
+
+local tSpawnPaths = {
+	[1] = patrol("agr_hydronode_controller_spawn_1"),
+	[2] = patrol("agr_hydronode_controller_spawn_2"),
+	[3] = patrol("agr_hydronode_controller_spawn_3"),
+	[4] = patrol("agr_hydronode_controller_spawn_4"),
+	[5] = patrol("agr_hydronode_controller_spawn_5"),
+	[6] = patrol("agr_hydronode_controller_spawn_6"),
+}
+
+--/ key: actor respawn
+--/ value: allowed boss respawn due to 'key'
+local tPathsGraph = {
+	[1] = {3, 5, 6},
+	[2] = {3, 4, 5},
+	[3] = {1, 2, 4},
+	[4] = {2, 3, 5},
+	[5] = {1, 2},
+	[6] = {1, 4},  -- {1, 2, 4}
+}
+
+local function get_pos_and_dir(path)
+	local pos = path:point(0)
+	local dir = path:point(1):sub(pos)
+	return pos, -dir:getH()
+end
+--/ --------------------------------------------------------------------------------------
+
+function bind_boss:prepare_escape()
+	play_tp_effector()
+	self.iEscapeTime = device():time_global() + 2000
+end 
+
+function bind_boss:escape()
+	local iActorPath = math.random(#tPathsGraph)
+	local pos1, dir1 = get_pos_and_dir(tSpawnPaths[iActorPath])
+	db.actor:set_actor_position(pos1)
+	db.actor:set_actor_direction(dir1)	
+	
+    local tAllowed = tPathsGraph[iActorPath]
+    local iSelfIdx = math.random(#tAllowed)
+    local iSelfPath = tAllowed[iSelfIdx]
+	local pos2, _ = get_pos_and_dir(tSpawnPaths[iSelfPath])
+	self.object:set_npc_position(pos2)
+
+	db.actor.psy_health = 0.5
+	play_tp_sound(0.8)
+	level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")
+	self.bCanEscape = false
+end
+--/ --------------------------------------------------------------------------------------
+
+--/ --------------------------------------------------------------------------------------
+--/ TELEPORT EFFECTOR
+--/ --------------------------------------------------------------------------------------
+local iTeleportPP_ID = 7911
+local iLastSound = 0 -- Чтоб один звук не играл два раза подрят
+
+local tTpSounds = {
+	[[ambient\random\rnd_moan]],
+	[[ambient\random\rnd_moan1]],
+	[[ambient\random\rnd_moan2]],
+	[[ambient\random\rnd_moan4]],
+}
+
+function play_tp_sound(volume)
+	local iSound = math.random(#tTpSounds)
+	if iLastSound == iSound then
+		iSound = iSound + 1
+		if iSound > #tTpSounds then
+			iSound = 1
+		end
+	end
+	iLastSound = iSound
+	xr_sound.get_safe_sound_object(tTpSounds[iSound]):play_no_feedback(db.actor, sound_object.s2d, 0, vector(), volume or 1.0)
+end
+
+function play_tp_postprocess()
+	level.add_pp_effector("blink.ppe", iTeleportPP_ID + 1, false)
+	level.add_pp_effector("fade_in_out.ppe", iTeleportPP_ID, false)
+	level.hide_indicators()
+	local show_indicators_time = device():time_global() + 4800
+	level.add_call(
+		function()
+			return device():time_global() > show_indicators_time
+		end,
+		function()
+			level.show_indicators()
+		end
+	)
+end
+
+function play_tp_effector()
+	play_tp_sound(1.0)
+	play_tp_postprocess()
+end
+
+function play_death_effector()
+	level.add_pp_effector("blink.ppe", iTeleportPP_ID + 1, false)
+end
+
+--/ --------------------------------------------------------------------------------------

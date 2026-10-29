@@ -41,9 +41,6 @@ function weather_effector:__init()
 	self.environment = level.environment()
 
 	self.zones_counter = 0
-
-	self.current_ambient = 1.0
-	self.current_fog = 1.0
 	
 	self.factors = {
 		ambient = env_factor(
@@ -54,6 +51,16 @@ function weather_effector:__init()
 		fog = env_factor(
 			function(v)
 				level.environment():set_fog_color_factor(v)
+			end
+		),
+		snd = env_factor(
+			function(v)
+				level.set_snd_volume(v)
+			end
+		),
+		music = env_factor(
+			function(v)
+				level.set_music_volume(v)
 			end
 		),
 	}
@@ -77,6 +84,10 @@ function weather_effector:update(delta)
 	local max_step = delta / self.transition_duration
 	self.factors.ambient:update(max_step)
 	self.factors.fog:update(max_step)
+	
+	-- not [sr_weather] part
+	self.factors.snd:update(max_step * 2)
+	self.factors.music:update(max_step * 2)
 end
 
 function weather_effector:on_zone_enter(zone_params)
@@ -103,6 +114,19 @@ function weather_effector:reset()
 	self.environment:set_env_ambient("")
 	self.environment:set_ambient_color_factor(1.0)
 	self.environment:set_fog_color_factor(1.0)
+	level.set_snd_volume(1.0)
+	level.set_music_volume(1.0)
+end
+
+function weather_effector:set_sound_volume(value, bSnap)
+	if bSnap then
+		self.factors.snd:snap(value)
+		return
+	end
+	self.factors.snd:set_target(value)
+end
+function weather_effector:set_music_volume(value)
+	self.factors.music:set_target(value)
 end
 
 --/------------------------------------------------------------------
@@ -161,9 +185,9 @@ function set_scheme(obj, ini, scheme, section, gulag_name)
 	local st = xr_logic.assign_storage_and_bind(obj, ini, scheme, section)
 	st.logic = xr_logic.cfg_get_switch_conditions(ini, section, obj)
 	
-	st.sound_ambient = utils.cfg_get_string(ini, section, "sound_ambient", obj, false, "", "indoor")
-	st.ambient_factor = utils.cfg_get_number(ini, section, "ambient_factor", obj, false, 0.0)
-	st.fog_factor = utils.cfg_get_number(ini, section, "fog_factor", obj, false, 0.0)
+	st.sound_ambient = utils.cfg_get_string(ini, section, "sound_ambient", obj, false, "", "")
+	st.ambient_factor = utils.cfg_get_number(ini, section, "ambient_factor", obj, false, 1.0)
+	st.fog_factor = utils.cfg_get_number(ini, section, "fog_factor", obj, false, 1.0)
 end
 --/ -----------------------------------------------------------------------------------------------
 

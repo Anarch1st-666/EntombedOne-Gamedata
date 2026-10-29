@@ -26,7 +26,7 @@
 	<!---- Снаряжение --->
 	 
      <dragdrop_bag 				x="  2.86" y="9" width="188.50" height="385" cell_width="19" cell_height="35" rows_num="11" cols_num="9" unlimited="1" group_similar="1"/>
-     <dragdrop_belt 			x="840" y="15" width="140.00" height="36" cell_width="19" cell_height="35" rows_num="1" cols_num="7" custom_placement="1"/>
+     <dragdrop_belt 			x="840" y="15" width="140.00" height="36" cell_width="19" cell_height="35" rows_num="1" cols_num="7" custom_placement="1" a="0"/>
      <dragdrop_outfit 			x="702.86" y="270" width=" 57.14" height="250" cell_width="28" cell_height="50" rows_num="3" cols_num="2" custom_placement="0" a="0"/>
      <!--dragdrop_helmets 			x="440" y="125" width="106" height="110" cell_width="50" cell_height="50" rows_num="2" cols_num="2" custom_placement="1" a="0"/-->
 	 

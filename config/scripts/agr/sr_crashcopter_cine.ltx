@@ -1,8 +1,14 @@
 [logic]
-active = sr_idle@on_start
+active = sr_idle@black
+
+[sr_idle@black]
+on_info = sr_idle@movie %=run_postprocess(black:7910:true) =disable_ui_elements(hud) =set_snd_volume(0.0)%
+
+[sr_idle@movie]
+on_timer = 500 | sr_idle@on_start %=run_tutorial(game_intro_tmb) =stop_postprocess(7910) =set_snd_volume_smooth(1.0)%
 
 [sr_idle@on_start]
-on_timer = 1000 | sr_idle@far %+agr_crashcopter_start%
+on_timer = 1000 | sr_idle@far %+agr_crashcopter_start =enable_ui_elements(hud)%
 
 [sr_idle@far]
 on_actor_inside = sr_idle@near %+agr_crashcopter_reach%

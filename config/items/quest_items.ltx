@@ -6,25 +6,25 @@
 class				= II_ATTCH
 cost				= 0
 inv_weight			= 0
-;quest_item			= true
+quest_item			= true
 
 
 [quest_pda]:quest_item
 $spawn 				= "devices\quest_items\quest_pda"
 visual				= equipments\item_pda.ogf
-inv_grid_width		= 2
-inv_grid_height		= 1
-inv_grid_x			= 6
-inv_grid_y			= 13
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 11
+inv_grid_y         = 27
 
 
 [quest_key]:quest_item
 $spawn 				= "devices\quest_items\quest_key"
 visual				= equipments\item_key.ogf
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 3
-inv_grid_y			= 19
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 12
+inv_grid_y         = 27
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -40,14 +40,14 @@ description         = gold_clocks_desc
 inv_name			= gold_clocks
 inv_name_short		= gold_clocks
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 3
-inv_grid_y			= 19
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 15
+inv_grid_y         = 27
 
 
 [road_vagon_key]:quest_key
-$spawn 				= "devices\quest_items\catacombs_secret_room_key"
+$spawn 				= "devices\quest_items\road_vagon_key"
 
 description         = road_vagon_key_desc
 inv_name			= road_vagon_key
@@ -70,10 +70,10 @@ description         = catacombs_decoder_plate_desc
 inv_name			= catacombs_decoder_plate
 inv_name_short		= catacombs_decoder_plate
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 11
-inv_grid_y			= 3
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 13
+inv_grid_y         = 27
 
 
 [catacombs_decoder_shell]:quest_item
@@ -84,10 +84,10 @@ description         = catacombs_decoder_shell_desc
 inv_name			= catacombs_decoder_shell
 inv_name_short		= catacombs_decoder_shell
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 11
-inv_grid_y			= 3
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 14
+inv_grid_y         = 27
 
 
 [catacombs_decoder]:quest_item
@@ -113,10 +113,10 @@ description         = crashcopter_case_desc
 inv_name			= crashcopter_case
 inv_name_short		= crashcopter_case
 
-inv_grid_width		= 2
-inv_grid_height		= 1
-inv_grid_x			= 8
-inv_grid_y			= 18
+inv_grid_width     = 2
+inv_grid_height    = 1
+inv_grid_x         = 8
+inv_grid_y         = 18
 
 
 [pda_grechkin]:quest_pda
@@ -124,6 +124,14 @@ $spawn 				= "devices\quest_items\pda_grechkin"
 description         = pda_grechkin_desc
 inv_name			= pda_grechkin
 inv_name_short		= pda_grechkin
+
+
+[nii_main_doors_key]:quest_key
+$spawn 				= "devices\quest_items\nii_main_doors_key"
+
+description         = nii_main_doors_key_desc
+inv_name			= nii_main_doors_key
+inv_name_short		= nii_main_doors_key
 
 
 [pda_saboteur]:quest_pda

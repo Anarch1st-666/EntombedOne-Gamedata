@@ -243,7 +243,7 @@ damage					= m_controller_damage
 psy_hit_damage			= 0.15;
 tube_damage				= 0.50;
 tube_at_once			= false
-tube_min_dist			= 10
+tube_min_dist			= 5 ;10
 
 control_fx_texture		= act\act_controller_hit
 control_fx_texture2		= act\act_controller_hit1
@@ -287,6 +287,24 @@ rank						= 401
 spec_rank					= normal
 community					= controller
 
+;------------------------------------------------------------------------
+; Influences
+;------------------------------------------------------------------------
+psy_linear_factor     = 0.5
+psy_quadratic_factor  = 0.0
+psy_max_distance      = 50
+psy_max_power         = 1.0
+psy_pp_highest_at     = 0.1
+psy_sound             = monsters\controller\controller_presence_l
+psy_pp_effector_name  = postprocess_psi_aura ;psy_antenna
+
+[postprocess_psi_aura]
+pp_eff_name        = psy_antenna_indoor.ppe ;radiation.ppe
+pp_eff_cyclic      = 1
+pp_eff_overlap     = true
+radius_min         = 0.5
+radius_max         = 1.1
+
 
 ;===========================================================================
 ; Step Events
@@ -305,15 +323,15 @@ stand_run_dmg_0	 	=	    1,	   0.01,     1,	    0.25,    0.6,
 ; IMMUNITIES
 ;===========================================================================
 [controller_immunities]
-burn_immunity 						= 1.0				;коэффициенты иммунитета 
-strike_immunity 					= 0.9
-shock_immunity 						= 1.0
-wound_immunity 						= 0.2
+burn_immunity 						= 0.5				;коэффициенты иммунитета 
+strike_immunity 					= 0.5
+shock_immunity 						= 0.5
+wound_immunity 						= 0.1
 radiation_immunity 					= 0.0
 telepatic_immunity 					= 0.0
-chemical_burn_immunity 				= 0.9
-explosion_immunity 					= 1.0
-fire_wound_immunity  				= 0.2
+chemical_burn_immunity 				= 0.5
+explosion_immunity 					= 0.5
+fire_wound_immunity  				= 0.1
 
 ;=========================================================================================
 ; CONTROL Effector
@@ -468,11 +486,41 @@ spec_rank			= strong
 rank				= 801
 community			= controller
 
-[controller_tubeman]:m_controller_normal
+[controller_tubeman]:m_controller_old
 $spawn              = "monsters\controllers\controller_tubeman"
 tube_at_once		= true
-tube_damage			= 0.50
+tube_damage			= 0.7
 satiety_threshold	= 0.6
+psy_linear_factor     = 1.0
+psy_max_distance      = 33
+psy_pp_highest_at     = 0.3
+
+;===========================================================================
+; BOSS CONTROLLER
+;===========================================================================
+[controller_hydronode]:m_controller_normal_fat
+$spawn              = "monsters\controllers\controller_hydronode"
+script_binding  	= bind_controller_boss.bind
+
+icon				= ui_npc_monster_kontroler
+
+hit_type			= shock
+tube_at_once		= true
+tube_damage			= 0.50
+
+immunities_sect				= controller_hydronode_immunities
+
+[controller_hydronode_immunities]
+burn_immunity 						= 0.2				;коэффициенты иммунитета 
+strike_immunity 					= 0.2
+shock_immunity 						= 0.2
+wound_immunity 						= 0.04
+radiation_immunity 					= 0.0
+telepatic_immunity 					= 0.0
+chemical_burn_immunity 				= 0.2
+explosion_immunity 					= 0.3
+fire_wound_immunity  				= 0.04
+;===========================================================================
 
 
 

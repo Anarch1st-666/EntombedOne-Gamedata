@@ -87,5 +87,10 @@
     <text x="80" y="50" font="graffiti32" r="238" g="155" b="23" a="255"/>
   </max_ping_warn_4>
 
+--/ Entombed One
+<boss_health x="350" y="15" width="318" height="25" stretch="1">
+	<texture>enemy_health_bar</texture>
+</boss_health>
+
 
 </header>

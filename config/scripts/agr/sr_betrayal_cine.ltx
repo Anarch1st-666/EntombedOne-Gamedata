@@ -1,0 +1,39 @@
+;===================================================================================================
+[logic]
+active = sr_idle1
+
+[sr_idle1]
+on_info = {+agr_grechkin_got_case} sr_idle1@alternate_1 %=disable_ui%
+on_info2 = {+agr_grechkin_kill_order} sr_idle2 %=disable_ui =release_case%
+
+[sr_idle1@alternate_1]
+on_timer = 1000 | sr_idle1@alternate_2 %-agr_grechkin_threats%
+
+[sr_idle1@alternate_2]
+on_timer = 1000 | sr_idle1@alternate_3 %=play_snd_from_npc(betrayal_order:102)%
+
+[sr_idle1@alternate_3]
+on_timer = 800 | sr_idle2 %+agr_grechkin_kill_order%
+
+[sr_idle2]
+on_info = {+agr_grechkin_kills_actor} sr_idle3 %=play_actor_death_effector%
+
+[sr_idle3]
+on_timer = 2000 | sr_idle5 %=run_postprocess(fade_in_out:7911) =teleport_actor(agr_actor_casekeeper_walk:agr_actor_casekeeper_look) =disable_god%
+
+[sr_idle5]
+on_timer = 5000 | sr_idle6 %+agr_casekeeper_ghost_awoken =set_snd_volume_smooth(1.0)%
+
+;===================================================================================================
+
+[sr_idle6]
+on_info = {+agr_casekeeper_ghost_released} sr_idle7 %=run_cam_effector(radar_stop:2506:false) =x18_gluk%
+
+[sr_idle7]
+on_timer = 11000 | sr_idle8 %=run_postprocess(agr_u_fade:914) =set_snd_volume_smooth(0.0)%
+
+[sr_idle8]
+on_timer = 5000 | sr_idle9 %=run_postprocess(black:7910:true) +agr_resurrection_cine_init =teleport_actor(agr_undead_cine:agr_undead_look)%
+
+[sr_idle9]
+on_timer = 2000 | nil %=stop_postprocess(7910) +agr_resurrection_cine_begin%

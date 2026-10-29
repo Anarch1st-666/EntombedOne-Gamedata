@@ -1,0 +1,8 @@
+[logic]
+active = ph_idle@turned_on
+
+[ph_idle@turned_on]
+on_info = {=distance_to_obj_ge(115:2.0)} ph_idle@turned_off %=turn_off_object%
+
+[ph_idle@turned_off]
+on_info = {=distance_to_obj_le(115:2.0)} ph_idle@turned_on %=turn_on_object%

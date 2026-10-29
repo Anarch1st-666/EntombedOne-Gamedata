@@ -102,7 +102,7 @@ ph_snd_themes = { --/ таблица звуков физ.объектов (пр�
 		"script_replics\\megafon\\alarm\\megafon_alarm_8",
 		"script_replics\\megafon\\alarm\\megafon_alarm_9",
 	},
-	siren          = { "ambient\\siren2" },
+	siren          = { "ambient\\a_siren" },
 	siren_1        = { "ambient\\siren1" },
 	siren_2        = { "ambient\\siren2" },
 	dar_alarm      = { "scripts\\alarm\\l_alarm" },
@@ -272,7 +272,6 @@ ph_snd_themes = { --/ таблица звуков физ.объектов (пр�
 	yan_antenna = {{"characters_voice\\scenario\\yantar\\psy_voices_1"}},
 }
 
-ph_snd_themes["siren"] =  { "ambient\\siren2" }
 ph_snd_themes["bomb"] = {"detectors\\bomb_timer"}
 ph_snd_themes["detector"] = {"detectors\\da-2_beep1"}
 
@@ -336,7 +335,12 @@ ph_snd_themes["wood_large_close_stop"]		= {[[device\wood_large_close_stop]]}
 ph_snd_themes["metal_small_open"]			= {[[device\metal_small_open]]}
 ph_snd_themes["metal_small_close_start"]	= {[[device\metal_small_close_start]]}
 ph_snd_themes["metal_small_close_stop"]		= {[[device\metal_small_close_stop]]}
-
+	
+--/ Entombed One
+ph_snd_themes["lamp_squeaks_1"]				= {[[ambient\lamp_squeaks_1]]}
+ph_snd_themes["lamp_squeaks_2"]				= {[[ambient\lamp_squeaks_2]]}
+ph_snd_themes["fan_big"]					= {[[ambient\fan1]]}
+ph_snd_themes["steam_1"]					= {[[ambient\underground\steam_1]]}
 
 -----------------------------------------------------------------------------------------------------------------------------------
 --	Theme  functions
@@ -789,14 +793,17 @@ theme = {
     mil_cherep_hi                  = {min_snd = 1, max_snd = 3, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
 	
 	-- Entombed One
-    crashcopter_actor              = {min_snd = 1, max_snd = 3, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
-    factory_suspect_backoff        = {min_snd = 1, max_snd = 1, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
-    suspects_cine_suspect1         = {min_snd = 1, max_snd = 2, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
-    suspects_cine_suspect2         = {min_snd = 1, max_snd = 1, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
-    suspects_cine_suspect3         = {min_snd = 1, max_snd = 2, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
-	catacombs_wounded              = {min_snd = 5, max_snd = 10, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
-	decoder_cine_owner             = {min_snd = 5, max_snd = 10, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
-	decoder_cine_ivanych           = {min_snd = 5, max_snd = 10, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+    crashcopter_actor              = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+    factory_suspect_backoff        = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+    suspects_cine_suspect1         = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+    suspects_cine_suspect2         = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+    suspects_cine_suspect3         = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+	catacombs_wounded              = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+	decoder_cine_owner             = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+	decoder_cine_ivanych           = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+	betrayal_order                 = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+	resurrection_grechkin          = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
+	resurrection_undertaker        = {min_snd = 3, max_snd = 5, rnd = 100, prior = 5, rnd_id = id(), into_id = id(), max_ids = {}},
 }
    
 --' В темах для игрока интервал задается в миллисекундах!!!

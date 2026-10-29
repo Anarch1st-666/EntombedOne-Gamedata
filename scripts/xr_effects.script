@@ -272,6 +272,17 @@ function hit_by_killer(actor, npc, p)
 	h.impulse = p[3]
 	npc:hit(h)
 end
+
+function taunt(actor, npc, p)
+	local object = p and level_object_by_sid(p[1]) or npc
+	local h = hit()
+	h.power = 0.01
+	h.direction = object:direction()
+	h.draftsman = db.actor 
+	h.impulse = 1
+	h.type = hit.wound
+	object:hit(h)
+end
 -- ---------------------------------------------------------------------------------------------------------------------
 
 -- играть звук в голове актёра
@@ -283,7 +294,17 @@ function play_snd(actor, npc, p)
 	end
 end
 
--- играть звук от НПС
+local mus_obj = nil
+--' only stereo
+function play_music(actor, npc, p)
+	if p then
+		mus_obj = sound_object(p[1], 0, sound_object.music)
+		mus_obj:play(actor, 0, sound_object.s2d)
+		mus_obj.volume = p[2] or 1.0
+	end
+end
+
+-- играть звук от объекта
 -- p1: sound
 -- p2: delay
 function play_snd_from_object(actor, npc, p)
@@ -308,7 +329,7 @@ function play_snd_from_story_object(actor, npc, p)
 	end
 end
 
--- играть звук от указанного НПС
+-- играть звук от указанного НПС с анимацией губ
 function play_snd_from_npc(actor, obj, p)
 	local speech, sid = unpack(p)
 	local npc = sid and level_object_by_sid(sid) or obj
@@ -448,8 +469,14 @@ function kill(actor, npc)
 	npc:kill( npc )
 end
 
-function release_object(actor, npc)
-	local sobj = alife():object(npc:id())
+function release_object(actor, npc, p)
+	local sobj
+	if p then
+		sobj = alife():story_object(p[1])
+	else
+		sobj = alife():object(npc:id())
+	end
+	
 	if sobj then
 		alife():release(sobj)
 	end
@@ -551,19 +578,132 @@ function shmail_radio_play(actor, object)
 	shamil_radio_snd:play_at_pos(object, object:position())
 end
 
-function eat_vodka_free(actor, npc)
-	local sobj = alife():create("vodka",vector(),0,actor:game_vertex_id(),actor:id())
-	level.client_spawn_manager():add(sobj.id,65535,
-		function (id, item)
-			level.add_call(
-				function()
-					return true
-				end,
-				function()
-					actor:eat(item)
-				end
-			)
-		end
-	)
+function actor_gets_drunk(actor, npc)
+	actor.alcohol = 0.1
+	actor.satiety = -0.05
+--	log3("alcohol[%s] satiety[%s]", actor.alcohol, actor.satiety)
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function add_object_spot(actor, object, p)
+--	log3("add_object_spot p1[%s], p2[%s]", p[1], p[2])
+	level.map_add_object_spot(object:id(), p[1], p[2])
 end
 
+function remove_object_spot(actor, object, p)
+	if level.map_has_object_spot(object:id(), p[1]) ~= 0 then
+		level.map_remove_object_spot(object:id(), p[1])
+	end
+end
+-- ---------------------------------------------------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------------------------------------------------
+-- Grechkin betrayal
+-- ---------------------------------------------------------------------------------------------------------------------
+function enable_god(actor, object)
+	cmd("g_god on")
+end
+
+function disable_god(actor, object)
+	cmd("g_god off")
+end
+
+function set_music_volume_smooth(actor, object, p)
+	sr_weather.get_weather_effector():set_music_volume(p[1])
+end
+
+function play_actor_death_effector(actor, object)
+	local dir = device().cam_dir
+	db.actor:set_actor_direction(dir:getH())
+	level.add_cam_effector("actor_death.anm", 2532, false, "")
+	level.add_pp_effector("actor_death.ppe", 2011, false)
+	
+	sr_weather.get_weather_effector():set_sound_volume(0.0)
+	sr_weather.get_weather_effector():set_music_volume(0.0)
+end
+
+function set_snd_volume(actor, object, p)
+	if p[1] > 1.0 then
+		p[1] = 1.0
+	end
+	sr_weather.get_weather_effector():set_sound_volume(p[1], true)
+end
+
+function set_snd_volume_smooth(actor, object, p)
+	if p[1] > 1.0 then
+		p[1] = 1.0
+	end
+	sr_weather.get_weather_effector():set_sound_volume(p[1])
+end
+
+function release_case(actor, npc)
+	local cobj = actor:object("crashcopter_case")
+	if cobj then
+		alife():release(alife():object(cobj:id()))
+	end
+end
+
+function x18_gluk(actor, npc)
+	level.add_pp_effector ("blink.ppe", 234, false)
+	local sound_obj_l		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
+	local sound_obj_r		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
+	local snd_obj			= xr_sound.get_safe_sound_object( [[affects\tinnitus3a]] )
+	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0)
+	sound_obj_l:play_no_feedback(actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
+	sound_obj_r:play_no_feedback(actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
+	level.add_cam_effector("camera_effects\\earthquake.anm", 1974, false, "")
+	-- for the next cine
+	alife():create(alife():spawn_id(spawn_story_ids.undertaker_kanistra))
+end
+
+function run_talk_dialog(actor, npc)
+	actor:run_talk_dialog(npc)
+end
+
+function resurrection_cine_end()
+	local function release(sid)
+		local st_obj = alife():story_object(sid)
+		if st_obj then
+			alife():release(st_obj)
+		end
+	end
+	release(story_ids.grechkin_resurrection_cine)
+	release(story_ids.undertaker_leader)
+	release(story_ids.actor_cine_resurrection)
+	release(story_ids.silent)
+	release(story_ids.nii_trader)
+end
+
+function zombify_actor(actor, npc)
+	actor:set_character_community("zombied")
+end
+
+function autosave()
+	cmd("save " .. user_name() .. " - autosave")
+end
+
+-- ---------------------------------------------------------------------------------------------------------------------
+
+function end_game(actor, object)
+	local wnd = level.main_input_receiver()
+	if wnd then
+		level.start_stop_menu(wnd, true)
+	end
+	level.hide_indicators()
+    level.disable_input()
+	sr_weather.get_weather_effector():set_sound_volume(0.8)
+	sr_weather.get_weather_effector():set_music_volume(0.0)
+	level.add_pp_effector("agr_u_fade.ppe", 914, false)
+end
+
+function play_outro_music()
+--	play_music(db.actor, nil, {"music\\hospital", 1.5})
+end
+
+function start_credits(actor, npc)
+	game.start_tutorial("credits_tmb")
+end
+
+function disconnect(actor, npc)
+	cmd("disconnect")
+end

@@ -1,0 +1,11 @@
+;===================================================================================================
+[logic]
+active = sr_idle1
+
+[sr_idle1]
+on_info = {+agr_revenge_complete} sr_idle2 %=end_game =play_music(music\hospital:1.2)%
+
+[sr_idle2]
+on_timer = 4000 | nil %=run_tutorial(game_outro_tmb)%
+
+;===================================================================================================

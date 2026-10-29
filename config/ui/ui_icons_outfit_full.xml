@@ -1,0 +1,5 @@
+<ui_texture>
+    <file_name>ui\ui_icons_outfit_full</file_name>
+	
+	<texture id="npc_icon_dead_military_outfit"		x="0"   y="0"   width="128" height="320" />
+</ui_texture>
